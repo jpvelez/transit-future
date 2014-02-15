@@ -43,6 +43,8 @@ if (typeof console === "undefined" || typeof console.log === "undefined") {
   console = {log:function(){}};
 }
 
+
+// Fadeout loading once first image is loaded.
 $(function(){
   var readytoshow = false;
   $('<img/>').attr('src', 'img/eltrain.jpg').load(function() {
@@ -171,8 +173,12 @@ $(function(){
   };
 
 
+  // When you hit the middle of the page, fade in the page's background.
   scrollEvent.on("middle", $(".page"), function(el,i){
     $($("div.pagebg")[i]).fadeIn({duration:500});
+
+    // If nosidebar param is set on page, hide sidebartitle element.
+    // Otherwise show it.
     if(($(el).attr("class").indexOf("quote") >= 0) || ($(el).attr("class").indexOf("nosidebar") >= 0))
       $("div.sidebartitle").hide();
     else{
@@ -190,6 +196,7 @@ $(function(){
   }, function(el, i, pos){
   });
 
+  // When you hit fellowship element, load map.
   scrollEvent.on("bottom", $(".fellowship"), function(el,i){
 
     $("#mapcontainer").css({"position":"absolute", "top":0});
@@ -234,6 +241,7 @@ $(function(){
 
     }
     
+    // Once you get past a certain point, alter title and map
     if($(el).attr("class").indexOf("fellowship2012") >= 0){
       $(".yeartitle h1").css("color","#"+color2012).text("2012");
       $(".yeartitle h2").css("color","#"+color2012).text("The Fellowship");
@@ -259,6 +267,7 @@ $(function(){
     $(".downarrow").animate({opacity:1}, 800, "swing");
   });
 
+  // If you click map arrow, go to next section.
   $(".downarrow").on("click touchend", function(){
 
     if(mapcurrentyear === "2011"){

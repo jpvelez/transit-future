@@ -376,7 +376,7 @@ input[type="text"] {
   width:400px;
   left:0px;
   position:absolute;
-  top:80px;
+  top:50px;
 }
 
 .sidebartitle h1{ 
@@ -421,6 +421,18 @@ input[type="text"] {
 .pagebg.appear{ 
 
 }
+
+
+/*Transit future images*/
+.pagebg.downtownarial{ 
+  background: url("../img/downtownarial.jpg") no-repeat;
+  background-size:cover;
+  background-position:right;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/downtownarial.jpg', sizingMethod='scale')";
+}
+
+
+/*Open data images*/
 .pagebg.imageeltrain{ 
   background: url("../img/eltrain.jpg") no-repeat;
   background-size:cover;
