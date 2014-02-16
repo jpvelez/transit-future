@@ -1,0 +1,116 @@
+<div class="row-fluid">
+  <div class="span12">
+    <h2>Datasets have more than doubled</h2>
+    <p class="blurb">As of December 20, 2013, the data portal contains 592 datasets across a range of categories. Just two years prior, the portal only contained 271 datasets. <a href="https://github.com/Chicago/open-data-annual-report/blob/master/data/data-datasets.csv">View data</a></p>
+<div id="chart-datasets">
+  <script>
+
+    var margin = {top: 20, right: 50, bottom: 30, left: 80},
+        width = 900,
+        height = 500;
+
+    var parseDate = d3.time.format("%d-%b-%y").parse,
+        bisectDate = d3.bisector(function(d) { return d.date; }).left,
+        formatValue = d3.format(",.0f"),
+        formatShowDatasets = function(d) { return formatValue(d) + " Datasets" ;};
+
+    var x = d3.time.scale()
+        .range([0, width]);
+
+    var y = d3.scale.linear()
+        .range([height, 0]);
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+        .ticks(3);
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        .tickSize(-width).tickSubdivide(true);
+
+    var area = d3.svg.area()
+        .x(function(d) { return x(d.date); })
+        .y0(height)
+        .y1(function(d) { return y(d.value); });
+     														// Note that dataset #s is stored in variable "close"
+
+
+    var chartDataset = d3.select("#chart-datasets").append("svg")
+        .attr("viewBox", "0 0 1000 1000") 
+        .attr("preserveAspectRatio", "meet") 
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    d3.csv("data/data-datasets.csv", function(error, data) {
+      data.forEach(function(d) {
+        d.date = parseDate(d.date);
+        d.value = +d.value;
+      });
+
+      data.sort(function(a, b) {
+        return a.date - b.date;
+      });
+
+      x.domain([data[0].date, data[data.length - 1].date]);
+      y.domain(d3.extent(data, function(d) { return d.value; }));
+
+      chartDataset.append("path")
+          .datum(data)
+          .attr("class", "area")
+          .attr("d", area);
+          
+      chartDataset.append("g")
+          .attr("class", "xaxis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis)
+          .append("text")
+          .attr("y", 6)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end")
+          .text ("2011");
+
+      chartDataset.append("g")
+          .attr("class", "yaxis")
+          .call(yAxis)
+          .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 6)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end");
+
+      var focusDataset = chartDataset.append("g")
+          .attr("class", "focus")
+          .style("display", "none");
+
+      focusDataset.append("circle")
+          .attr("r", 4.5);
+
+      focusDataset.append("text")
+          .attr("x", 9)
+          .attr("dy", ".35em");
+
+      chartDataset.append("rect")
+          .attr("class", "overlay")
+          .attr("width", width)
+          .attr("height", height)
+          .on("mouseover", function() { focusDataset.style("display", null); })
+          .on("mouseout", function() { focusDataset.style("display", "none"); })
+          .on("mousemove", datasetMouseMove);
+
+      function datasetMouseMove() {
+        var x1 = x.invert(d3.mouse(this)[0]),
+            j = bisectDate(data, x1, 1),
+            e0 = data[j - 1],
+            e1 = data[j],
+            e = x1 - e0.date > e1.date - e1 ? e1 : e0;
+        focusDataset.attr("transform", "translate(" + x(e.date) + "," + y(e.value) + ")");
+        focusDataset.select("text").text(formatShowDatasets(e.value) + " " );
+      }
+    });
+
+  </script>
+    </div>
+  </div>
+</div>
