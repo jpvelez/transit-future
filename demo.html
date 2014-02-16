@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chicago Overview</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <style>
+      html, body, #map {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      .text_over {
+        z-index: 99;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        color: #444;
+        background-color: rgba(250,250,250,0.8);
+        font-size: 18px;
+        line-height: 22px;
+        font-family: arial;
+        height: 300px;
+        padding: 15px;
+        width: 200px;
+        overflow: scroll;
+      }
+      .text_over p {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="text_over">
+      <p>So much scrollable text</p>
+      <p>OMG</p>
+      <p class="prepara">CartoDB offers a simple unified JavaScript library called CartoDB.js that let you interact with the CartoDB service. This library allows you to connect to your stored visualizations, create new visualizations, add custom interaction, or access and query your raw data from a web browser; meaning, your applications just got a whole lot more powerful with a lot less code.</p>
+      <p class="midpara">CartoDB offers a simple unified JavaScript library called CartoDB.js that let you interact with the CartoDB service. This library allows you to connect to your stored visualizations, create new visualizations, add custom interaction, or access and query your raw data from a web browser; meaning, your applications just got a whole lot more powerful with a lot less code.</p>
+      <p class="endpara">CartoDB offers a simple unified JavaScript library called CartoDB.js that let you interact with the CartoDB service. This library allows you to connect to your stored visualizations, create new visualizations, add custom interaction, or access and query your raw data from a web browser; meaning, your applications just got a whole lot more powerful with a lot less code.</p>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
+
+    <script>
+
+// Define Modest Map of region with transit lines.
+var map;
+function main(){
+  var basemap = mapbox.layer().id('mapmeld.map-x20zuxfw');
+  map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler() ]);
+  map.centerzoom({ lat: 42.363575, lon: -87.735443 }, 9);
+
+  var template = new MM.Template('http://3.api.cartocdn.com/jpvelez/tiles/layergroup/bea5a29797ccf9e0bb6993f899bc5cd5:1392512230853.3398/{Z}/{X}/{Y}.png');
+  var layer = new MM.Layer(template);
+  map.addLayer(layer);
+}
+
+// Load map when window is done loading.
+window.onload = main;
+
+
+// Ease around the map as you scroll through the text.
+// Define map views for each paragraph.
+var current_view = 0;
+var views = [
+  null, // First paragraph stays on the initialization view.
+  [42.123575, -87.755443, 13],  // View for second paragraph..
+  [41.923575, -87.755443, 9],
+  [41.923575, -87.755443, 12],
+  [41.563575, -87.735443, 12]
+];
+
+// When you scroll..
+$(".text_over").scroll(function(e){
+  
+  var paras = $(".text_over p");
+
+  // Loop through paragraphs
+  for(var p=0;p<paras.length;p++){
+
+    // Subtract distance between top of page and para from distance between top of page and text_over box.
+    // Positive number means paragraph is below top edge of box, negative number means it's above.
+    var top_offset = $(paras[p]).offset().top - $(".text_over").offset().top;
+
+    // If paragraph is below top offset..
+    if(top_offset >= 0){
+
+      // select paragraph
+      if(p == current_view){
+        // view unchanged
+        break;
+      }
+
+      current_view = p;
+      if(views[current_view] === null){
+        break;
+      }
+
+      // Ease to lat/lon/z view of current paragraph - the first p element
+      // below the top edge of the box. This gets called the instant the previous
+      // element's offset becomes negative.
+      map.ease.location({
+        lat: views[current_view][0],
+        lon: views[current_view][1]
+      }).zoom(views[current_view][2]).optimal();
+
+      break;
+    }
+  }
+});
+    </script>
+  </body>
+</html>
