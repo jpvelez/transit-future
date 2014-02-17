@@ -34,11 +34,18 @@
   <body>
     <div id="map"></div>
     <div class="text_over">
-      <p>So much scrollable text</p>
-      <p>OMG</p>
-      <p class="prepara">CartoDB offers a simple unified JavaScript library called CartoDB.js that let you interact with the CartoDB service. This library allows you to connect to your stored visualizations, create new visualizations, add custom interaction, or access and query your raw data from a web browser; meaning, your applications just got a whole lot more powerful with a lot less code.</p>
-      <p class="midpara">CartoDB offers a simple unified JavaScript library called CartoDB.js that let you interact with the CartoDB service. This library allows you to connect to your stored visualizations, create new visualizations, add custom interaction, or access and query your raw data from a web browser; meaning, your applications just got a whole lot more powerful with a lot less code.</p>
-      <p class="endpara">CartoDB offers a simple unified JavaScript library called CartoDB.js that let you interact with the CartoDB service. This library allows you to connect to your stored visualizations, create new visualizations, add custom interaction, or access and query your raw data from a web browser; meaning, your applications just got a whole lot more powerful with a lot less code.</p>
+      <p>The plan</p>
+      <br><br><br>
+      <p>Gold line</p>
+      <br><br><br>
+      <p class="prepara">Ashland BRT</p>
+      <br><br><br>
+      <p class="midpara">Lime line</p>
+      <br><br><br>
+      <p class="endpara">Orange line extension</p>
+      <br><br><br>
+      <p>Red line extension</p>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -52,7 +59,7 @@ var map;
 function main(){
   var basemap = mapbox.layer().id('mapmeld.map-x20zuxfw');
   map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler() ]);
-  map.centerzoom({ lat: 42.363575, lon: -87.735443 }, 9);
+  map.centerzoom({ lat: 41.853575, lon: -87.735443 }, 11);
 
   var template = new MM.Template('http://3.api.cartocdn.com/jpvelez/tiles/layergroup/bea5a29797ccf9e0bb6993f899bc5cd5:1392512230853.3398/{Z}/{X}/{Y}.png');
   var layer = new MM.Layer(template);
@@ -68,10 +75,11 @@ window.onload = main;
 var current_view = 0;
 var views = [
   null, // First paragraph stays on the initialization view.
-  [42.123575, -87.755443, 13],  // View for second paragraph..
-  [41.923575, -87.755443, 9],
-  [41.923575, -87.755443, 12],
-  [41.563575, -87.735443, 12]
+  [41.80177479, -87.58953094, 13],  // View for second paragraph..
+  [41.87876395, -87.64411926, 13],
+  [41.89026600, -87.78522491, 12],
+  [41.77848077,  -87.719650268, 14],
+  [41.69887172,  -87.624292373, 14]
 ];
 
 // When you scroll..
