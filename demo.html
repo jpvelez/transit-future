@@ -15,15 +15,15 @@
         z-index: 99;
         position: absolute;
         top: 70px;
-        left: 20px;
+        left: 600px;
         color: #444;
         background-color: rgba(250,250,250,0.8);
         font-size: 18px;
         line-height: 22px;
         font-family: arial;
-        height: 300px;
+        height: 600px;
         padding: 15px;
-        width: 200px;
+        width: 500px;
         overflow: scroll;
       }
       .text_over p {
@@ -34,17 +34,85 @@
   <body>
     <div id="map"></div>
     <div class="text_over">
-      <p>The plan</p>
+      <h3>The plan</h3>
       <br><br><br>
-      <p>Gold line</p>
+
+      <h3>Gold line</h3>
+      <p>The Gold Line is a brand new L line that connects the Loop to the South Side.</p>
+      <p>Tired of waiting hours to get to Hyde Park or South Shore? Wait a few minutes.</p>
+      <p>The Gold Line will run along existing railroad tracks, and connect Chicagoans to the 50,000 jobs around the University of Chicago.</p>
+
+      <h3>Ashland BRT</h3>
+      <p>Bus Rapid Transit is like a subway on the street. Buses have their own lane, they have less frequent stops, and they can turn streetlights green - so they can speed through rush hour traffic.<p>
+      <p>BRT on Ashland will run from the North Side to the Far South Side. You'll be able to zip from Lakeview to Wicker Park, from the West Loop to UIC, from Pilsen to Englewood - and beyond.</p>
+      <h3></h3>
+      <p>The route also runs by Whitney Young High School, Malcolm X College, and the University of Illinois at Chicago - now everyone can get to school.<p>
+      <p>And it connects to major job centers - from West Loop lofts to Back of the Yards factories.</p>
       <br><br><br>
-      <p class="prepara">Ashland BRT</p>
+
+      <h3>Lime line</h3>
+      <p>Like a west side Red Line, the Lime Line will run from the O'Hare Blue Line to Midway Airport--a speedy north-south route along Chicago's edge.</p>
+      <h3></h3>
+      <p>The route connects to the Blue, Green, Pink, and Orange Lines - making it easier for Westsiders to get to downtown jobs.</p>
+      <h3></h3>
+      <p>At Midway, the Lime Line heads east through south side transit deserts, linking up with the Red Line at 87th street.</p>
       <br><br><br>
-      <p class="midpara">Lime line</p>
+
+      <h3>Orange line extension</h3>
+      <p>A bit more orange means a lot more green. Extending the Orange Line to Ford City Mall and Richard J. Daley college means shops, jobs and classrooms are just an L stop away.</p>
       <br><br><br>
-      <p class="endpara">Orange line extension</p>
+      
+      <h3>Red line extension</h3>
+      <p>Finally, rapid transit reaches Chicago's southern edge. The far South Side is now on the grid.</p>
+      <p>The extension will slice commute times to the Loop, bringing economic opportunity to Roseland, Pullman, and Altgeld Gardens.</p>
       <br><br><br>
-      <p>Red line extension</p>
+
+      <h3>Blue Line West - Forest Park to Oak Brook</h3>
+      <b>PLACEHOLDERS START HERE</b>
+
+      <p>The Blue line will be extended west from Forest Park to Oak Brook, creating a fast and convenient commute to one of the Chicagoland's biggest job centers.</b>
+      <br><br><br>
+
+      <b>Blue Line North - O'Hare to Schaumburg</b>
+      <p>From airport to northwest burbs.</p>
+      <p>Make it easier for NW commutes to get to jobs at O'hare, city people to get to jobs in Schaumburg</p>
+
+      <h3>Your New Blue - O'Hare Branch improvements</h3>
+      <p>The O'Hare branch of the blue line will get a major upgrade to track and stations from Grand to the airport.</p>
+      <br><br><br>
+
+      <br><br><br>
+
+      <h3>Inner Circumferential</h3>
+
+      <br><br><br>
+
+      <h3>Brown line extension</h3>
+
+      <br><br><br>
+
+      <h3>Red/Purple modernization</h3>
+
+      <br><br><br>
+
+      <h3>Yellow line extension</h3>
+
+      <br><br><br>
+
+      <h3>Downtown Circulator</h3>
+
+      <br><br><br>
+
+      <h3>West Loop Transportation Center</h3>
+
+      <br><br><br>
+
+      <h3>Southeast Service</h3>
+
+
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 
@@ -59,7 +127,7 @@ var map;
 function main(){
   var basemap = mapbox.layer().id('mapmeld.map-x20zuxfw');
   map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler() ]);
-  map.centerzoom({ lat: 41.853575, lon: -87.735443 }, 11);
+  map.centerzoom({ lat: 41.853575, lon: -87.615443 }, 11);
 
     var s = document.createElement("script");
     s.type = "text/javascript";
@@ -84,17 +152,32 @@ window.onload = main;
 var current_view = 0;
 var views = [
   null, // First paragraph stays on the initialization view.
-  [41.80177479, -87.58953094, 13],  // View for second paragraph..
-  [41.87876395, -87.64411926, 13],
-  [41.89026600, -87.78522491, 12],
-  [41.77848077,  -87.719650268, 14],
-  [41.69887172,  -87.624292373, 14]
+  [41.79876395, -87.50411926, 12],  // Gold line
+  [41.77177479, -87.53053094, 13],  // Gold line closeup
+  [41.87876395, -87.61411926, 13],  // BRT
+  [41.87876395, -87.65411926, 15],  // BRT closeup
+  [41.86426600, -87.48822491, 11],  // Lime line
+  [41.87648077,  -87.684650268, 13], // Lime line West side
+  [41.79448077,  -87.692650268, 13],  // Lime line South side
+  [41.77848077,  -87.719650268, 14],  // Orange line extension
+  [41.69887172,  -87.624292373, 14],  // Red line extension
+  [41.93747172,  -87.873292373, 12],  // Blue Line West - Forest Park to Oak Brook
+  [41.88926600,  -87.733292373, 12],  // Blue Line fixes 
+  [41.88926600,  -87.733292373, 12],  // Inner Circumferential
+  [41.92276600,  -87.790292373, 12],  // Brown Line extension
+  [42.00440721,  -87.624933922, 13],  // Red/Purple Modernization
+  [42.04387172,  -87.733292373, 14],  // Yellow line 
+  [41.88087172,  -87.628292373, 15],  // Downtown circulator
+  // [41.88087172,  -87.628292373, 15],  // West Loop Transportation Center
+  [41.66887172,  -87.624292373, 11],  // Southeast Service
 ];
+
+         
 
 // When you scroll..
 $(".text_over").scroll(function(e){
   
-  var paras = $(".text_over p");
+  var paras = $(".text_over h3");
 
   // Loop through paragraphs
   for(var p=0;p<paras.length;p++){
