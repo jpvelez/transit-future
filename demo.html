@@ -251,6 +251,36 @@ $(".text_over").scroll(function(e){
         break;
       }
 
+      // if current_view is a lat/lng bounds, calculate viewport
+      // [south, west, north, east]
+      if(views[current_view].length == 4){
+        var lat_coefficient = 0.00051144938704069;
+        var lng_coefficient = 0.00068664550781251;
+        var zoom_coefficient = 11;
+        var pixel_lng = (views[current_view][3] - views[current_view][1]) / lng_coefficient;
+        var pixel_lat = (views[current_view][2] - views[current_view][0]) / lat_coefficient;
+
+        views[current_view][0] = (views[current_view][0] + views[current_view][2]) / 2; // lat
+        views[current_view][1] = (views[current_view][1] + views[current_view][3]) / 2; // lng
+        views[current_view].pop();
+
+        // explaining the math:
+        // pixels_at_zoom_11 = SCREEN_DIMENSION_TO_STRETCH / DEGREE_PER_PIXEL
+        // multiply_scale_by = (AVAILABLE_PIXELS / pixels_at_zoom_11)
+        // zoom_delta = log(multiply_scale_by) / log(2) because width is 2^zoom
+
+        if(pixel_lng / pixel_lat > $("#map").width() / $("#map").height()){
+          // we're going to squeeze until the width fits
+          views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lng / $("#map").width()) ) / Math.log(2) );
+        }
+        else{
+          // we're going to squeeze until the height fits
+          views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lat / $("#map").height()) ) / Math.log(2) );
+        }
+
+        console.log(views[current_view]);
+      }
+
       // Ease to lat/lon/z view of current paragraph - the first p element
       // below the top edge of the box. This gets called the instant the previous
       // element's offset becomes negative.
