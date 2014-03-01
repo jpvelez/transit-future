@@ -61,7 +61,7 @@
       <h3>Orange line extension</h3>
       <p>A bit more orange means a lot more green. Extending the Orange Line to Ford City Mall and Richard J. Daley college means shops, jobs and classrooms are just an L stop away.</p>
       <br><br><br>
-      
+
       <h3>Red line extension</h3>
       <p>Finally, rapid transit reaches Chicago's southern edge. The far South Side is now on the grid.</p>
       <p>The extension will slice commute times to the Loop, bringing economic opportunity to Roseland, Pullman, and Altgeld Gardens.</p>
@@ -131,7 +131,9 @@ function main(){
 
     var s = document.createElement("script");
     s.type = "text/javascript";
-    s.src = "http://jpvelez.cartodb.com/tiles/layergroup?config=%7B%22version%22%3A%221.0.1%22%2C%22stat_tag%22%3A%2274b8ee36-96a5-11e3-891c-0edd25b1ac90%22%2C%22layers%22%3A%5B%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22SELECT%20*%20%5CnFROM%20cmap_capital_projects%5CnWHERE%20cartodb_id%3D5%5CnOR%20cartodb_id%3D7%5CnOR%20cartodb_id%3D11%5CnOR%20cartodb_id%3D12%5CnOR%20cartodb_id%3D19%5CnOR%20cartodb_id%3D20%5CnOR%20cartodb_id%3D21%5CnOR%20cartodb_id%3D27%5CnOR%20cartodb_id%3D31%5CnOR%20cartodb_id%3D35%5Cn%5Cn%22%2C%22cartocss%22%3A%22%2F**%20simple%20visualization%20*%2F%5Cn%5Cn%23cmap_capital_projects%7B%5Cn%20%20line-color%3A%20%23F11810%3B%5Cn%20%20line-width%3A%203%3B%5Cn%20%20line-opacity%3A%200.7%3B%5Cn%7D%22%2C%22cartocss_version%22%3A%222.1.1%22%2C%22interactivity%22%3A%5B%22cartodb_id%22%5D%7D%7D%2C%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22SELECT%20*%20%5CnFROM%20metra_lines%5CnWHERE%20NOT%20cartodb_id%3D208%22%2C%22cartocss%22%3A%22%2F**%20simple%20visualization%20*%2F%5Cn%5Cn%23metra_lines%7B%5Cn%20%20line-color%3A%20%23A53ED5%3B%5Cn%20%20line-width%3A%203%3B%5Cn%20%20line-opacity%3A%200.7%3B%5Cn%7D%22%2C%22cartocss_version%22%3A%222.1.1%22%2C%22interactivity%22%3A%5B%22cartodb_id%22%5D%7D%7D%2C%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22select%20*%20from%20l_lines%22%2C%22cartocss%22%3A%22%2F**%20simple%20visualization%20*%2F%5Cn%5Cn%23l_lines%7B%5Cn%20%20line-color%3A%20%23229A00%3B%5Cn%20%20line-width%3A%203%3B%5Cn%20%20line-opacity%3A%200.7%3B%5Cn%7D%22%2C%22cartocss_version%22%3A%222.1.1%22%2C%22interactivity%22%3A%5B%22cartodb_id%22%5D%7D%7D%2C%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22select%20*%20from%20brt_phase1%22%2C%22cartocss%22%3A%22%2F**%20simple%20visualization%20*%2F%5Cn%5Cn%23brt_phase1%7B%5Cn%20%20line-color%3A%20%23f11810%3B%5Cn%20%20line-width%3A%203%3B%5Cn%20%20line-opacity%3A%200.7%3B%5Cn%7D%22%2C%22cartocss_version%22%3A%222.1.1%22%2C%22interactivity%22%3A%5B%22cartodb_id%22%5D%7D%7D%5D%7D&callback=loadedToken&t="
+    s.src = "http://jpvelez.cartodb.com/api/v1/map?"
+      + "config=%7B%22version%22%3A%221.0.1%22%2C%22stat_tag%22%3A%22f1e3cbd2-a15f-11e3-8d43-0edbca4b5057%22%2C%22layers%22%3A%5B%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22select%20*%20from%20transit_future_projects%22%2C%22cartocss%22%3A%22%2F**%20simple%20visualization%20*%2F%5Cn%5Cn%23transit_future_projects%7B%5Cn%20%20line-color%3A%20%23FF6600%3B%5Cn%20%20line-width%3A%202%3B%5Cn%20%20line-opacity%3A%200.7%3B%5Cn%7D%22%2C%22cartocss_version%22%3A%222.1.1%22%2C%22interactivity%22%3A%5B%22cartodb_id%22%5D%7D%7D%2C%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22select%20*%20from%20l_lines%22%2C%22cartocss%22%3A%22%2F**%20simple%20visualization%20*%2F%5Cn%5Cn%23l_lines%7B%5Cn%20%20line-color%3A%20%233e7bb6%3B%5Cn%20%20line-width%3A%202%3B%5Cn%20%20line-opacity%3A%200.7%3B%5Cn%7D%22%2C%22cartocss_version%22%3A%222.1.1%22%2C%22interactivity%22%3A%5B%22cartodb_id%22%5D%7D%7D%5D%7D"
+      + "&callback=loadedToken&t="
       + (new Date()) * 1;
     document.body.appendChild(s);
 }
@@ -162,21 +164,21 @@ var views = [
   [41.77848077,  -87.719650268, 14],  // Orange line extension
   [41.69887172,  -87.624292373, 14],  // Red line extension
   [41.93747172,  -87.873292373, 12],  // Blue Line West - Forest Park to Oak Brook
-  [41.88926600,  -87.733292373, 12],  // Blue Line fixes 
+  [41.88926600,  -87.733292373, 12],  // Blue Line fixes
   [41.88926600,  -87.733292373, 12],  // Inner Circumferential
   [41.92276600,  -87.790292373, 12],  // Brown Line extension
   [42.00440721,  -87.624933922, 13],  // Red/Purple Modernization
-  [42.04387172,  -87.733292373, 14],  // Yellow line 
+  [42.04387172,  -87.733292373, 14],  // Yellow line
   [41.88087172,  -87.628292373, 15],  // Downtown circulator
   // [41.88087172,  -87.628292373, 15],  // West Loop Transportation Center
   [41.66887172,  -87.624292373, 11],  // Southeast Service
 ];
 
-         
+
 
 // When you scroll..
 $(".text_over").scroll(function(e){
-  
+
   var paras = $(".text_over h3");
 
   // Loop through paragraphs
