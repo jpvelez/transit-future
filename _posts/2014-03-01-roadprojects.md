@@ -1,5 +1,7 @@
 ---
-published: false
+published: true
+pagetype: quote
+layout: fullpage
 ---
 
 ## Road Projects
