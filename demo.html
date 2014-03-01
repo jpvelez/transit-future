@@ -123,7 +123,7 @@
 
       <h3>West Loop Transportation Center</h3>
 
-      <p>The region's new hub for transit, commuter rail, Amtrak and high-speed rail.</p> 
+      <p>The region's new hub for transit, commuter rail, Amtrak and high-speed rail.</p>
       <p>Will let people switch from the L to Metra to Amtrak, and will someday serve as the major station for midwest high speed rail.</p>
 
       <br><br><br>
@@ -153,10 +153,35 @@ function main(){
   map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler() ]);
   map.centerzoom({ lat: 41.853575, lon: -87.615443 }, 11);
 
+    var map_data = {
+      "version":"1.0.1",
+      "stat_tag":"f1e3cbd2-a15f-11e3-8d43-0edbca4b5057",
+      "layers":[
+        {
+          "type":"cartodb",
+          "options":{
+            "sql":"select * from transit_future_projects",
+            "cartocss":"/** simple visualization */\n\n#transit_future_projects{\n  line-color: #FF6600;\n  line-width: 2;\n  line-opacity: 0.7;\n}",
+            "cartocss_version":"2.1.1",
+            "interactivity":["cartodb_id"]
+          }
+        },
+        {
+          "type":"cartodb",
+          "options":{
+            "sql":"select * from l_lines",
+            "cartocss":"/** simple visualization */\n\n#l_lines{\n  line-color: #3e7bb6;\n  line-width: 2;\n  line-opacity: 0.7;\n}",
+            "cartocss_version":"2.1.1",
+            "interactivity":["cartodb_id"]
+          }
+        }
+      ]
+    };
+
     var s = document.createElement("script");
     s.type = "text/javascript";
     s.src = "http://jpvelez.cartodb.com/api/v1/map?"
-      + "config=%7B%22version%22%3A%221.0.1%22%2C%22stat_tag%22%3A%22f1e3cbd2-a15f-11e3-8d43-0edbca4b5057%22%2C%22layers%22%3A%5B%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22select%20*%20from%20transit_future_projects%22%2C%22cartocss%22%3A%22%2F**%20simple%20visualization%20*%2F%5Cn%5Cn%23transit_future_projects%7B%5Cn%20%20line-color%3A%20%23FF6600%3B%5Cn%20%20line-width%3A%202%3B%5Cn%20%20line-opacity%3A%200.7%3B%5Cn%7D%22%2C%22cartocss_version%22%3A%222.1.1%22%2C%22interactivity%22%3A%5B%22cartodb_id%22%5D%7D%7D%2C%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22select%20*%20from%20l_lines%22%2C%22cartocss%22%3A%22%2F**%20simple%20visualization%20*%2F%5Cn%5Cn%23l_lines%7B%5Cn%20%20line-color%3A%20%233e7bb6%3B%5Cn%20%20line-width%3A%202%3B%5Cn%20%20line-opacity%3A%200.7%3B%5Cn%7D%22%2C%22cartocss_version%22%3A%222.1.1%22%2C%22interactivity%22%3A%5B%22cartodb_id%22%5D%7D%7D%5D%7D"
+      + "config=" + escape(JSON.stringify(map_data))
       + "&callback=loadedToken&t="
       + (new Date()) * 1;
     document.body.appendChild(s);
