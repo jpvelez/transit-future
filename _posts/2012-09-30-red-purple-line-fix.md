@@ -7,4 +7,6 @@ published: true
 extrapadding: 100px
 ---
 
+<div class="mapstage"></div>
+
 ## The People's Line is over a hundred years old.

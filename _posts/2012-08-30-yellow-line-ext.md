@@ -7,4 +7,6 @@ published: true
 extrapadding: 100px
 ---
 
+<div class="mapstage"></div>
+
 ## Extends the Yellow line to Old Orchard Mall in Skokie.

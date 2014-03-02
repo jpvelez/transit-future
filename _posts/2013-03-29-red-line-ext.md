@@ -7,4 +7,4 @@ published: true
 extrapadding: 100px
 ---
 
-## The extension will slice commute times to the Loop, bringing economic opportunity to **Roseland**, **Pullman**, and **Altgeld Gardens**.
+## The Red Line extension will slice commute times to the Loop, bringing opportunity to **Roseland**, **Pullman**, and **Altgeld Gardens**.

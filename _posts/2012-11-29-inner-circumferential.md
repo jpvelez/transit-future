@@ -7,6 +7,6 @@ published: true
 extrapadding: 100px
 ---
 
-## Get around western Cook County quickly.
+## Get around western Cook County - quickly.
 
-## Links **Melrose Park**, **Brookfield**, and other 'burbs to the L.</p>
+## Links **Melrose Park**, **Brookfield**, and nearby suburbs to the L.</p>
