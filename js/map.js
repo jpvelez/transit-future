@@ -1,9 +1,20 @@
 // Define Modest Map of region with transit lines.
 var map;
 function main(){
+
+// Define a basemap
 var basemap = mapbox.layer().id('mapmeld.hdfkjm4m');
+
+// Create a map in the map container, using the basemap.
+// We're using Modest Maps with mapbox.js on top.
 map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler() ]);
+
+// Center the map.
 map.centerzoom({ lat: 41.853575, lon: -87.615443 }, 11);
+
+// Create transit line tileset using CartoDB API.
+// You define what features to show using a PostgreSQL-like query.
+// You define how to style those features using CartoCSS.
 
 var map_data = {
   "version":"1.0.1",
@@ -30,6 +41,7 @@ var map_data = {
   ]
 };
 
+// Create the tileset in CartoDB using map_data info.
 var s = document.createElement("script");
 s.type = "text/javascript";
 s.src = "http://jpvelez.cartodb.com/api/v1/map?"
@@ -39,6 +51,8 @@ s.src = "http://jpvelez.cartodb.com/api/v1/map?"
 document.body.appendChild(s);
 }
 
+
+// Load the tileset onto the Modest Map.
 function loadedToken(tokenInfo){
 var token = tokenInfo.layergroupid;
 var template = new MM.Template('http://3.api.cartocdn.com/jpvelez/tiles/layergroup/' + token + '/{Z}/{X}/{Y}.png');
@@ -46,11 +60,12 @@ var layer = new MM.Layer(template);
 map.addLayer(layer);
 }
 
-// Load map when window is done loading.
+// Load the map when window is done loading.
+// The map will only be displayed once you scroll the to the right part of the page.
 window.onload = main;
 
 
-// Ease around the map as you scroll through the text.
+// Ease around the map as you scroll through the project posts.
 // Define map views for each paragraph.
 var current_view = -1;
 var views = [
