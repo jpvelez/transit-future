@@ -1,5 +1,8 @@
 ---
 published: true
+pagetype: quote
+layout: fullpage
+bgcolor: FF8000
 ---
 
 ## Transit Future Leadership Group
@@ -18,5 +21,3 @@ These leaders from Cook County's business, civic, labor and cultural communities
 * Karen Walker – Managing Director, Siebert Brandford Shank & Co.
 * Doug Whitley – President and CEO, Illinois Chamber of Commerce
 * Bob Weissbourd – President, RW Ventures
-
-

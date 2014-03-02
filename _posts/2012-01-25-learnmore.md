@@ -2,6 +2,7 @@
 published: true
 pagetype: quote
 layout: fullpage
+bgcolor: FF8000
 ---
 
 ## Learn more
@@ -14,13 +15,12 @@ Click here to learn more about CNT’s research in the fields of housing and tra
 
 ## Contact
 
-If your organization wants to join the campaign, contact Edward Oser link to my e-mail.
+If your organization wants to join the campaign, contact [Edward Oser](eoser@cnt.org).
 
-If you are a member of the media, contact Ryan Kilpatrick link to Ryan’s e-mail.
+If you are a member of the media, contact [Ryan Kilpatrick](rkilpatrick@cnt.org).
 
 
 ## Credit
 
 A project by:
 [OpenCity](http://opencityapps.org/) + [Cartographika](http://cartografika.net/) + [CNT](http://www.cnt.org)
-
