@@ -2,7 +2,7 @@
 layout: fullpage
 title: Orange Line extension
 pagetype: story
-bgcolor: C89BF6
+bgcolor: 22A7DA
 published: true
 extrapadding: 100px
 ---

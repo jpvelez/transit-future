@@ -2,7 +2,7 @@
 layout: fullpage
 title: Yellow Line Extension
 pagetype: story
-bgcolor: C89BF6
+bgcolor: 69579c
 published: true
 extrapadding: 100px
 ---
