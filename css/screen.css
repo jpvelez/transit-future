@@ -31,7 +31,7 @@ body {
   font-size: 16px;
   font-family: sans-serif;
   fill: #212121;
-  background-color:transparent;           
+  background-color:transparent;
 }
 
 #chart-dataasets{
@@ -40,7 +40,7 @@ body {
   font-size: 16px;
   font-family: sans-serif;
   fill: #212121;
-  background-color:transparent;           
+  background-color:transparent;
 }
 
 #chart-views{
@@ -49,7 +49,7 @@ body {
   font-size: 16px;
   font-family: sans-serif;
   fill: #212121;
-  background-color:transparent;           
+  background-color:transparent;
 }
 
 #chart-accessed{
@@ -58,7 +58,7 @@ body {
   font-size: 16px;
   font-family: sans-serif;
   fill: #212121;
-  background-color:transparent;           
+  background-color:transparent;
 }
 
 .xaxis path,
@@ -103,7 +103,7 @@ body {
 .focus text {
 	font: 14px sans-serif;
   fill: white;
-} 
+}
 
 h1 {
   margin-bottom: 1em;
@@ -135,7 +135,7 @@ table {
 .page {
   clear: both;
 }
-.clear{ 
+.clear{
   clear:both;
 }
 
@@ -173,9 +173,9 @@ li {
   border-color: #1b1b1b;
 }
 
-#loading{ 
+#loading{
   background:url("../img/chicago-seal-background.jpg") no-repeat;
-/*background:#a6d5ef;*/    
+/*background:#a6d5ef;*/
   background-size:cover;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/chicago-seal-background.jpg', sizingMethod='scale')";
   position:fixed;
@@ -203,8 +203,8 @@ li {
   margin: 90px auto 117px;
   font-weight: 600;
 }
- 
-#loading p{ 
+
+#loading p{
   text-transform:uppercase;
   font-size: 63px;
   font-weight: 300;
@@ -267,7 +267,7 @@ h6 {
   text-transform: uppercase;
 }
 
-p { 
+p {
   font-weight: 300;
   font-size: 17px;
   text-align: left;
@@ -305,7 +305,7 @@ input[type="text"] {
   margin: 20px 0px;
 }
 
-.clear{ 
+.clear{
   clear:both;
 }
 
@@ -325,7 +325,7 @@ input[type="text"] {
 }
 
 .page.quote,
-.page.story{ 
+.page.story{
   overflow-x:hidden;
   position:relative;
   padding:300px 80px 100px;
@@ -334,13 +334,13 @@ input[type="text"] {
   -webkit-box-sizing:border-box; /* Safari */
   padding-bottom:400px;
 }
-.page.story.nosidebar{ 
+.page.story.nosidebar{
   padding:0px;
 }
 
 
 .page.quote h1,
-.page.story h1 { 
+.page.story h1 {
   text-align:left;
   color:#fff;
   font-size: 56px;
@@ -352,34 +352,33 @@ input[type="text"] {
   margin-bottom: 0px;
 }
 
-.page.story{ 
+.page.story{
   position:relative;
   width:100%;
   height:auto;
   padding-top:10px;
   padding-left:400px;
   box-sizing: border-box;
-  -moz-box-sizing:border-box; /* Firefox 
+  -moz-box-sizing:border-box; /* Firefox
   -webkit-box-sizing:border-box; /* Safari */
 }
 
-.sidebar{ 
+.sidebar{
   width:400px;
   position:fixed;
   left:0px;
   top:0px;
   bottom:0px;
-  z-index:-7;
 }
 
-.sidebartitle{ 
+.sidebartitle{
   width:400px;
   left:0px;
   position:absolute;
   top:50px;
 }
 
-.sidebartitle h1{ 
+.sidebartitle h1{
   font-size: 100px;
   color: #fff;
   margin: 30px 0px 0px 50px;
@@ -387,44 +386,44 @@ input[type="text"] {
   text-shadow: 0px 2px 6px rgba(0, 0, 0, .05);
 }
 
-.mapsidebar h1{ 
+.mapsidebar h1{
   font-size: 100px;
   color: #333;
   margin-bottom: 0px;
 }
 
-.sidebartitle h2{ 
+.sidebartitle h2{
   position:relative;
   left:-400px;
   margin-top:40px;
   text-transform: uppercase;
 }
 
-.sidebartitle.appear h2{ 
+.sidebartitle.appear h2{
   left: 50px;
   transition: left 1s;
   -webkit-transition: left 1s;
 }
 
-.pagebg{ 
+.pagebg{
   position:fixed;
-  top:0px; 
+  top:0px;
   bottom:0px;
   left:0px;
   right:0px;
   z-index:-10;
   display:none;
 }
-.pagebg.quote{ 
+.pagebg.quote{
   z-index:-5;
 }
-.pagebg.appear{ 
+.pagebg.appear{
 
 }
 
 
 /*Transit future images*/
-.pagebg.downtownarial{ 
+.pagebg.downtownarial{
   background: url("../img/downtownarial.jpg") no-repeat;
   background-size:cover;
   background-position:right;
@@ -433,25 +432,25 @@ input[type="text"] {
 
 
 /*Open data images*/
-.pagebg.imageeltrain{ 
+.pagebg.imageeltrain{
   background: url("../img/eltrain.jpg") no-repeat;
   background-size:cover;
   background-position:right;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/eltrain.jpg', sizingMethod='scale')";
 }
-/*.pagebg.imagebike{ 
+/*.pagebg.imagebike{
   background: url("../img/bike.jpg");
   background-size:cover;
   background-position:center;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bike.jpg', sizingMethod='scale')";
 }*/
-.pagebg.imagechicagocityhall{ 
+.pagebg.imagechicagocityhall{
   background: url("../img/chicago_cityhall.jpg");
   background-size:cover;
   background-position:center;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/chicago_cityhall.jpg', sizingMethod='scale')";
 }
-/*.pagebg.imagebigdata2{ 
+/*.pagebg.imagebigdata2{
   background: url("../img/big_data2.jpg");
   background-size:cover;
   background-position:center;
@@ -517,37 +516,37 @@ input[type="text"] {
   background-position:center;
   -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/planning-areas_1941_south.jpg', sizingMethod='scale')";
 }
-/*.pagebg.imagefellows{ 
+/*.pagebg.imagefellows{
   background: url("../img/fellows.jpg");
   background-size:cover;
   background-position:center;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fellows.jpg', sizingMethod='scale')";
 }*/
-/*.pagebg.imagebigdata{ 
+/*.pagebg.imagebigdata{
   background: url("../img/big_data.jpg");
   background-size:cover;
   background-position:center;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/big_data.jpg', sizingMethod='scale')";
 }
-.pagebg.imagehonolulu{ 
+.pagebg.imagehonolulu{
   background: url("../img/honolulu.jpg");
   background-size:cover;
   background-position:center;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/honolulu.jpg', sizingMethod='scale')";
 }*/
-.pagebg.imagechicagoskyway{ 
+.pagebg.imagechicagoskyway{
   background: url("../img/chicago_skyway.jpg");
   background-size:cover;
   background-position:center;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/chicagoskyway.jpg', sizingMethod='scale')";
 }
-.pagebg.imagecommunity{ 
+.pagebg.imagecommunity{
   background: url("../img/community.jpg");
   background-size:cover;
   background-position:center;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/community.jpg', sizingMethod='scale')";
 }
-/*.pagebg.imagecfaoffice{ 
+/*.pagebg.imagecfaoffice{
   background: url("../img/cfa_office.jpg");
   background-size:cover;
   background-position:center;
@@ -556,7 +555,7 @@ input[type="text"] {
 
 
 
-.pagebg img{ 
+.pagebg img{
   min-width:100%;
   min-height:100%;
 }
@@ -660,12 +659,12 @@ padding-left: 20px;
   font-family: 'Arvo', 'Georgia', serif;
 }
 
-.getinvolved p:first-child:first-letter { 
-  float: left; 
+.getinvolved p:first-child:first-letter {
+  float: left;
   font-size: 48px;
   line-height: 50px;
-  padding-right: 8px; 
-  padding-left: 3px; 
+  padding-right: 8px;
+  padding-left: 3px;
 }
 
 .getinvolved h1 {
@@ -747,44 +746,45 @@ padding-left: 20px;
   line-height: 30px;
 }
 
-.fellowship{ 
+.fellowship{
   color:#333;
-  position:relative; height:100%; width:100%; 
+  position:relative; height:100%; width:100%;
 }
 
 #map{
-  position:absolute; top:0; bottom:0; width:100%; 
-
+  position:absolute; top:0; bottom:0; width:100%;
+  background-color: #444;
+  visibility: hidden;
 }
 #mapcontainer{
-  position:absolute; top:0; bottom:0; width:100%; 
+  position:absolute; top:0; bottom:0; width:100%;
 }
 
-#map.apply{ 
+#map.apply{
   position:fixed !important;
 }
-.downarrow{ 
+.downarrow{
   position:absolute;
   bottom:30px;
   right:40px;
   opacity:0;
 }
-.downarrow svg{ 
+.downarrow svg{
   color:#fff;
   fill:#fff;
   height:100px;
   width:50px;
 }
 
-.marker-popup{ 
+.marker-popup{
   max-width:600px;
   width:600px;
   padding:0px;
 }
-.marker-popup  h4{ 
+.marker-popup  h4{
   margin:0px;
 }
-.marker-popup  .close{ 
+.marker-popup  .close{
   position:absolute;
   top:8px;
   right:8px;
@@ -792,7 +792,7 @@ padding-left: 20px;
   color:#fff;
 }
 
-.marker-popup  .prev{ 
+.marker-popup  .prev{
   position:absolute;
   top:100px;
   left:-24px;
@@ -816,24 +816,24 @@ padding-left: 20px;
   width:10px;
   padding:20px 5px;
   cursor:pointer;
-} 
+}
 .marker-popup  .next:hover{
   opacity:1.0;
 }
 .marker-popup  .prev:hover{
   opacity:1.0;
 }
-.zoomer{ 
+.zoomer{
   top:210px;
   left:50px;
 }
-.zoomin{ 
+.zoomin{
   left:50px;
 }
-.zoomout{ 
+.zoomout{
   top:239px;
 }
-.fellowshipyearfixed{ 
+.fellowshipyearfixed{
   position:fixed;
   top:0px;
   left:50px;
@@ -841,7 +841,7 @@ padding-left: 20px;
   display:inherit;
 }
 
-.citycardscontainer{ 
+.citycardscontainer{
   display:none;
 }
 
@@ -854,7 +854,7 @@ padding-left: 20px;
   margin-top: 0px;
 }
 
-.citycard a {  
+.citycard a {
   color: #000;
 }
 
@@ -871,7 +871,7 @@ padding-left: 20px;
   margin: 10px 0;
 }
 
-.citycard[data-year="2011"] h4 { 
+.citycard[data-year="2011"] h4 {
  background: #FED100;
 }
 
@@ -879,7 +879,7 @@ padding-left: 20px;
   border: solid 1px #FED100;
 }
 
-.citycard[data-year="2011"] h5 { 
+.citycard[data-year="2011"] h5 {
  color: #FED100;
 }
 
@@ -893,8 +893,8 @@ padding-left: 20px;
 .bostonseal,
 .phillyseal,
 .seattleseal,
-.austinseal, 
-.chiseal, 
+.austinseal,
+.chiseal,
 .detroitseal,
 .hnlseal,
 .maconseal,
@@ -946,11 +946,11 @@ padding-left: 20px;
 .scseal {
   background-position: 0 -531px;
 }
-.mapscroll{ 
+.spacescroll{
   height:800px;
 }
 
-.fellowship .fellow{ 
+.fellowship .fellow{
   position:fixed;
   bottom:50px;
   right:-800px;
@@ -963,7 +963,7 @@ padding-left: 20px;
 
 }
 
-.fellowship .fellow.appear{ 
+.fellowship .fellow.appear{
   right:100px;
 
   -webkit-transition: 0.6s ease-in-out right;
@@ -972,7 +972,7 @@ padding-left: 20px;
           transition: 0.6s ease-in-out right;
 }
 
-.fellowship .yeartitle{ 
+.fellowship .yeartitle{
   z-index:0;
   position:relative;
   top:20px;
@@ -982,7 +982,7 @@ padding-left: 20px;
 .fellowship .yeartitle h1 {
   font-size: 100px;
   color: #333;
-  margin: 80px 0px 0px; 
+  margin: 80px 0px 0px;
 }
 
 .fellowship h2 {
@@ -1063,7 +1063,7 @@ padding-left: 20px;
 .blight,
 .blockee,
 .hnlanswers,
-.localdata, 
+.localdata,
 .neighborhow,
 .opencounter,
 .openstatus,
@@ -1221,7 +1221,7 @@ padding-left: 20px;
 .pete,
 .ryan,
 .scotts,
-.talin, 
+.talin,
 .tyler,
 .alexp,
 .alexy,
@@ -1793,14 +1793,14 @@ img.progicons {
   color: #000;
   text-shadow: none;
 }
- 
+
 .popover-title,
 .popover-title {
   font-weight: 700;
   background: none;
   border: none;
   padding-bottom: 0px;
-} 
+}
 
 .captains .popover-content,
 .morefellows .popover-content {
@@ -2136,7 +2136,7 @@ img.progicons {
   line-height: 22px;
 }
 
-.expensesdata, 
+.expensesdata,
 .revenuedata {
   cursor: pointer;
 }
@@ -2167,15 +2167,15 @@ img.progicons {
   max-width: 960px;
 }
 
-.sharebutton{ 
+.sharebutton{
   position:fixed;
   bottom:10px;
   left:30px;
   z-index:100;
-  height:70px; 
+  height:70px;
 }
 
-.sharebutton iframe{ 
+.sharebutton iframe{
   min-height:auto;
 }
 
@@ -2201,7 +2201,7 @@ img.progicons {
   .navbar .container {
     margin-left: 30px;
   }
-  
+
   h4 {
     font-size: 20px;
   }
@@ -2224,11 +2224,11 @@ img.progicons {
     line-height: 25px;
   }
 
-  .sidebar{ 
+  .sidebar{
     top:40px;
   }
 
-  .sidebartitle{ 
+  .sidebartitle{
     top:0px;
   }
 
@@ -2237,22 +2237,22 @@ img.progicons {
   }
 
   .sidebartitle h1,
-  .fellowship .yeartitle h1 { 
+  .fellowship .yeartitle h1 {
     font-size: 60px;
-  } 
+  }
 
   .sidebartitle h1 {
     margin-left: 30px;
   }
 
   .sidebartitle h2,
-  .fellowship .yeartitle h2 { 
+  .fellowship .yeartitle h2 {
     font-size: 24px;
     line-height: 30px;
     margin-top: 20px;
   }
 
-  .sidebartitle.appear h2{ 
+  .sidebartitle.appear h2{
     left: 30px;
   }
 
@@ -2274,8 +2274,8 @@ img.progicons {
     font-size: 130px;
     margin: 50px auto 60px;
   }
- 
-  #loading p { 
+
+  #loading p {
     font-size: 38px;
   }
 
@@ -2345,10 +2345,10 @@ img.progicons {
 }
 
 @media (max-width: 480px) {
-  .sidebar{ 
+  .sidebar{
     display:none;
   }
-  .page.story{ 
+  .page.story{
     padding-left:20px
   }
 

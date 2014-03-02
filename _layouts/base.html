@@ -4,7 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=800, initial-scale=0.25, maximum-scale=1">
   <title>{{ page.title }}</title>
-   
+
     <!-- Homepage CSS -->
     <link rel='icon' href='favicon.ico' type='image/x-icon' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,600,700' rel='stylesheet' type='text/css' />
@@ -18,18 +18,20 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
     <script src="http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js"></script>
     <script src="http://d3js.org/d3.v3.js"></script>
 
      {{ page.script }}
   </head>
   <body>
-
+    <div id="map" class="map">
+    </div>
 
   {{ content }}
-  
+
   <!-- Google Analytics -->
-  
+
   <!-- Google Analytics end -->
 
   </body>

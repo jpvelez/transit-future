@@ -1,41 +1,3 @@
-var cityLocations = [{
-    "geometry": { "type": "Point", "coordinates": [-75.162, 39.947]},
-    "properties": { "city": "philadelphia", "year": "2011" }
-},  {
-    "geometry": { "type": "Point", "coordinates": [-71.053, 42.352]},
-    "properties": { "city": "boston", "year": "2011" }
-}, {
-    "geometry": { "type": "Point", "coordinates": [-122.326, 47.604]},
-    "properties": { "city": "seattle", "year": "2011" }
-}, {
-    "geometry": { "type": "Point", "coordinates": [-122.4183, 37.7750]},
-    "properties": { "city": "sanfrancisco", "year":"2011" }
-}, {
-    "geometry": { "type": "Point", "coordinates": [-75.162, 39.947]},
-    "properties": { "city": "philadelphia", "year": "2012" }
-}, {
-    "geometry": { "type": "Point", "coordinates": [-83.6365, 32.8398]},
-    "properties": { "city": "macon", "year":"2012" }
-}, {
-    "geometry": { "type": "Point", "coordinates": [-122.0306, 36.9724]},
-    "properties": { "city": "santacruz", "year":"2012" }
-}, {
-    "geometry": { "type": "Point", "coordinates": [-87.655, 41.886]},
-    "properties": { "city": "chicago", "year":"2012" }
-}, {
-    "geometry": { "type": "Point", "coordinates": [-157.859, 21.305]},
-    "properties": { "city": "honolulu", "year":"2012" }
-},{
-    "geometry": { "type": "Point", "coordinates": [-90.087, 29.968]},
-    "properties": { "city": "neworleans", "year":"2012" }
-}, {
-    "geometry": { "type": "Point", "coordinates": [-97.756, 30.276]},
-    "properties": { "city": "austin", "year":"2012" }
-}, {
-    "geometry": { "type": "Point", "coordinates": [-83.059, 42.360]},
-    "properties": { "city": "detroit", "year":"2012" }
-}];
-
 var color2011 = "fedd44",
     color2012 = "C82A45";
 
@@ -65,17 +27,19 @@ $(function(){
   var setSize = function(){
     height = $(window).height();
     width = $(window).width();
-    
+
     $(".quote").css({width:width, "min-height":height});
     $(".story").css({width:width, "min-height":height});
     $(".pagebg").css({width:width, "min-height":height});
-    $(".scrollout").css({height:height});
-    $(".fellowship").css({height:height});
+    $(".scrollout").css({height: 100});
+    $(".fellowship").css({height: 100});
     $(".mapscroll").css({height:height});
     scrollEvent.onScroll();
-    
+
   }
 
+  // scrollEvent keeps track of where any element is on the page
+  // it should be left unchanged
   var scrollEvent = {
     handlers: {top:[], middle:[], bottom:[], inview:[]},
     currentElements: {top:[], middle:[], bottom:[], inview:[]},
@@ -95,16 +59,16 @@ $(function(){
 
       if(pos < 0)
         return;
-      
+
       for(e in scrollEvent.handlers.middle){
         var el = scrollEvent.handlers.middle[e].el;
         if(typeof el !== "object")
           continue;
 
-        console.log(el);
+        //console.log(el);
         //middle
-        if(($(el).offset().top <= (pos + height/2)) && 
-           ($(el).offset().top + $(el).outerHeight()  >= (pos + height/2))){          
+        if(($(el).offset().top <= (pos + height/2)) &&
+           ($(el).offset().top + $(el).outerHeight()  >= (pos + height/2))){
           scrollEvent.setCurrentElement("middle", scrollEvent.handlers.middle[e]);
        }else{
           scrollEvent.removeCurrentElement("middle", scrollEvent.handlers.middle[e]);
@@ -117,7 +81,7 @@ $(function(){
           continue;
 
         //if the element is at the top of the page
-        if(($(el).offset().top <= pos) && 
+        if(($(el).offset().top <= pos) &&
            ($(el).offset().top + $(el).outerHeight()  >= pos)){
           scrollEvent.setCurrentElement("top", scrollEvent.handlers.top[e]);
 
@@ -131,7 +95,7 @@ $(function(){
           continue;
 
         //if the element is at the top of the page
-        if(($(el).offset().top <= (pos+ height)) && 
+        if(($(el).offset().top <= (pos+ height)) &&
            ($(el).offset().top + $(el).outerHeight()  >= (pos +height))){
           scrollEvent.setCurrentElement("bottom", scrollEvent.handlers.bottom[e]);
 
@@ -145,7 +109,7 @@ $(function(){
           continue;
 
         //if the element is at the top of the page
-        if(($(el).offset().top + $(el).outerHeight() >= pos) && 
+        if(($(el).offset().top + $(el).outerHeight() >= pos) &&
            ($(el).offset().top   <= (pos +height))){
           scrollEvent.setCurrentElement("inview", scrollEvent.handlers.inview[e]);
 
@@ -173,7 +137,7 @@ $(function(){
   };
 
 
-  // When you hit the middle of the page, fade in the page's background.
+  // When you hit the middle of any page, fade in the page's background.
   scrollEvent.on("middle", $(".page"), function(el,i){
     $($("div.pagebg")[i]).fadeIn({duration:500});
 
@@ -188,7 +152,6 @@ $(function(){
   }, function(el, i){
     $($("div.pagebg")[i]).fadeOut({duration:700});
     $($("div.sidebartitle")[i]).removeClass("appear");
-
   });
   scrollEvent.on("inview", $("iframe[data-src]"), function(el,i){
     if($(el).attr("src") === undefined)
@@ -196,96 +159,28 @@ $(function(){
   }, function(el, i, pos){
   });
 
-  // When you hit fellowship element, load map.
+
+  // When you hit map section, make map appear
   scrollEvent.on("bottom", $(".fellowship"), function(el,i){
+    $("#map").css({"position":"fixed", "top": $(".fellowship").offset().top - $($(".pagebg")[0]).offset().top, "visibility": "visible" });
 
-    $("#mapcontainer").css({"position":"absolute", "top":0});
-    $(".yeartitle h1").css("color","#"+color2011).text("2011");
-    $(".yeartitle h2").css("color","#"+color2011).text("The Fellowship");
+    // the top of the map follows the top of the map_follow_element until it is at the top of the window
+    map_follow_element = $(".fellowship");
 
-  }, function(el, i, pos){
-  });
-  scrollEvent.on("top", $(".fellowship"), function(el,i){
-    $("#mapcontainer").css({"position":"fixed", "top":"0", "bottom": "0"});
+  }, function(el, i, pos){});
 
+  scrollEvent.on("bottom", $(".scrollout"), function(el, i){
+    // the bottom of the map follows the top of the map_tail_element until it is above or below the window
+      //map_follow_element = null;
+      map_tail_element = $(".scrollout");
+  }, function(){ });
 
-  }, function(el, i, pos){
-
-    if($(".fellowship").offset().top <= $(window).scrollTop())
-      $("#mapcontainer").css({"position":"absolute", "top":$(".fellowship").height(), "bottom":"auto", "height":$(window).height()});
-    else
-      $("#mapcontainer").css({"position":"absolute", "top":0});
-    
-  });
-  scrollEvent.on("top", $(".scrollout"), function(el, i){
-      $("#mapcontainer").css({"position":"absolute", "top":$(".fellowship").height(), "bottom":"auto", "height":$(window).height()});
-
-  }, function(){});
-  var arrowInterval =0;
-  var mapcurrentyear = "2011";
-  scrollEvent.on("middle", $(".mapscroll"), function(el,i){
-
-    if($(el).attr("class").indexOf("fellowship2011") >= 0){
-      $(".yeartitle h1").css("color","#"+color2011).text("2011");
-      $(".yeartitle h2").css("color","#"+color2011).text("The Fellowship");
-      mapcurrentyear = "2011";
-      interaction.hideTooltips();
-      displayedMarkers = [];
-      markerLayer.filter(function(f) {
-        return f.properties['year'] === '2011';
-      });
-
-      map.ease.to(map.extentCoordinate(markerLayer.extent())).optimal();
-
-      //setTimeout(showRandomTooltip, 1200);
-
-    }
-    
-    // Once you get past a certain point, alter title and map
-    if($(el).attr("class").indexOf("fellowship2012") >= 0){
-      $(".yeartitle h1").css("color","#"+color2012).text("2012");
-      $(".yeartitle h2").css("color","#"+color2012).text("The Fellowship");
-      mapcurrentyear = "2012";
-      interaction.hideTooltips();
-      displayedMarkers = [];
-      markerLayer.filter(function(f) {
-        return f.properties['year'] === '2012';
-      });
-      
-      map.ease.to(map.extentCoordinate(markerLayer.extent())).optimal();
-
-      //setTimeout(showRandomTooltip, 1200);
-    }
-
-    arrowInterval = setInterval(function(){
-      $(".downarrow").animate({opacity:1}, 800, "swing", function(){
-        $(".downarrow").animate({opacity:0}, 800, "swing");
-      })}, 2000);
-
-  }, function(el, i){
-    clearInterval(arrowInterval);
-    $(".downarrow").animate({opacity:1}, 800, "swing");
-  });
-
-  // If you click map arrow, go to next section.
-  $(".downarrow").on("click touchend", function(){
-
-    if(mapcurrentyear === "2011"){
-     $("html body").animate({
-        scrollTop: $("div.fellowship2012.mapscroll").offset().top
-      }, 1500);
-    }else if(mapcurrentyear === "2012"){
-      $("html body").animate({
-        scrollTop: $("div.story div.cityLeaders").offset().top - 20
-      }, 1500);
-    }
-  })
  scrollEvent.on("top", $(".page"), function(el,i){
 
    $(".navbar li").removeClass("active");;
    if($(el).attr("data-section") !== "")
      $(".navbar li."+$(el).attr("data-section")).addClass("active");
-   
+
  },function(){
 
  });
@@ -294,10 +189,55 @@ $(function(){
    $(".navbar li").removeClass("active");;
    if($(el).attr("data-section") !== "")
      $(".navbar li."+$(el).attr("data-section")).addClass("active");
-   
- },function(){
 
- });
+ },function(){});
+
+ // every element with the class 'mapstage' is tracked here
+ scrollEvent.on("middle", $(".mapstage"), function(el, i){
+
+    // select mapstage
+    if(i == current_view || views[i] === null){
+      // already viewing this mapstage, or one does not exist
+      return;
+    }
+    current_view = i;
+
+    // if view is defined with [south,west,north,east] bounds, calculate lat,lng,zoom
+    if(views[current_view].length == 4){
+      var lat_coefficient = 0.00051144938704069;
+      var lng_coefficient = 0.00068664550781251;
+      var zoom_coefficient = 11;
+      var pixel_lng = (views[current_view][3] - views[current_view][1]) / lng_coefficient;
+      var pixel_lat = (views[current_view][2] - views[current_view][0]) / lat_coefficient;
+
+      views[current_view][0] = (views[current_view][0] + views[current_view][2]) / 2; // lat
+      views[current_view][1] = (views[current_view][1] + views[current_view][3]) / 2; // lng
+      views[current_view].pop();
+
+      // explaining the math:
+      // pixels_at_zoom_11 = SCREEN_DIMENSION_TO_STRETCH / DEGREE_PER_PIXEL
+      // multiply_scale_by = (AVAILABLE_PIXELS / pixels_at_zoom_11)
+      // zoom_delta = log(multiply_scale_by) / log(2) because width is 2^zoom
+
+      if(pixel_lng / pixel_lat > $("#map").width() / $("#map").height()){
+        // we're going to squeeze until the width fits
+        views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lng / $("#map").width()) ) / Math.log(2) );
+      }
+      else{
+        // we're going to squeeze until the height fits
+        views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lat / $("#map").height()) ) / Math.log(2) );
+      }
+    }
+
+    // Ease to lat/lon/z view of current paragraph - the first p element
+    // below the top edge of the box. This gets called the instant the previous
+    // element's offset becomes negative.
+    map.ease.location({
+      lat: views[current_view][0],
+      lon: views[current_view][1]
+    }).zoom(views[current_view][2]).optimal();
+
+  });
 
   $(".navbar .nav li a").on("click touchend", function(e){
     e.preventDefault();
@@ -305,29 +245,41 @@ $(function(){
     $("body,html").animate({scrollTop: $($("div.page[data-section='"+section+"']")[0]).offset().top}, 1000);
   });
 
-
-
-  var showRandomTooltip = function(){
-
-    currentMarker = displayedMarkers[Math.floor(Math.random()*displayedMarkers.length)]
-
-    currentMarker.showTooltip();
-
-    point = map.locationPoint({
-      lat: currentMarker.data.geometry.coordinates[1],
-      lon: currentMarker.data.geometry.coordinates[0]
-    })
-
-    var quarter = map.dimensions.y * (1/ 4);
-    point.y -= quarter;
-    map.ease.location(map.pointLocation(point)).zoom(map.zoom()).optimal();
-
-  }
-
+  // call scrollEvent now to set what's on the page
   scrollEvent.onScroll();
+  // call scrollEvent again whenever the page is scrolled
   $(window).scroll(scrollEvent.onScroll);
-  
-    
+
+  // set map to follow map_follow_element and map_tail_element
+  map_follow_element = null;
+  map_tail_element = null;
+  var scrollUpdate = function(){
+    if(map_follow_element){
+      // move top of map to follow the map_follow_element
+      // when map_follow_element is above the top of the window, fix map to top of window
+      var suggestTop = map_follow_element.offset().top - $($(".pagebg")[0]).offset().top;
+      if(suggestTop > 10){
+        $("#map").css({"top": suggestTop, "height": "auto" });
+      }
+      else{
+        $("#map").css({"top": 10 });
+      }
+    }
+    if(map_tail_element){
+      // move bottom of map to follow the map_tail_element
+      // when map_tail_element is below the bottom of the window, forget about the tail element
+      var suggestBottom = $(window).height() - $(".scrollout").offset().top + $($(".pagebg")[0]).offset().top;
+      if(suggestBottom < $(window).height() + $("#map").height() ){
+        $("#map").css({"bottom": suggestBottom, "height": "auto"});
+      }
+      else{
+        map_tail_element = null;
+      }
+    }
+  };
+  // call the above scrollUpdate function whenever the page scrolls
+  $(window).scroll(scrollUpdate);
+
   setSize();
   $(window).resize(setSize);
 
@@ -346,14 +298,6 @@ $(function(){
     trigger: 'hover'
   });
 
-  $('#map').delegate(".fellowpop", "mouseenter", function(e){
-    var name = $(e.currentTarget).attr('data-original-title');
-    $(e.currentTarget).parents('.innercard').find('.name').text(name);
-  });
-  $("#map").delegate(".fellowpop", "mouseleave", function(e){
-    $(e.currentTarget).parents('.innercard').find('.name').html('&nbsp;');
-  });
-
   $('.appspop').popover({
     placement: 'top',
     trigger: 'hover',
@@ -365,142 +309,7 @@ $(function(){
   });
 
 
-  // Create map
-  var layer = mapbox.layer().id('dmt.map-cdkzgmkx');
-
-
-  var map = mapbox.map('map', layer, null, [easey_handlers.DragHandler()]);
-
-  map.centerzoom({lat: 43.6, lon: -79.4 }, 4)
-
-  var markerLayer = mapbox.markers.layer().features(cityLocations);
-  var interaction = mapbox.markers.interaction(markerLayer).exclusive(true).showOnHover(false);//.hideOnMove(false);
-
-  var displayedMarkers = [];
-  var currentMarker = null;
-
-  markerLayer.sort(function(a, b) {
-    return a.geometry.coordinates[0] -
-      b.geometry.coordinates[0];
-  });
-
-  markerLayer.addCallback("markeradded", function(l, m){
-    if($(m.element).attr("class").indexOf("simplestyle-marker") === -1)
-      return;
-    displayedMarkers.push(m);
-    $(m.element).css("top", "-1000px");
-    
-    setTimeout(function(){
-      $(m.element).animate({"top":"0px"}, 400);
-    }, Math.random() * 300);
-
-
-  });
-
-
-
-  var markerFactory = function(m) {
-
-    // Create a marker using the simplestyle factory
-    var elem = $(mapbox.markers.simplestyle_factory(m));
-    elem.attr("data-city", m.properties.city);
-    elem.attr("data-year", m.properties.year);
-
-    // Add function that centers marker on click
-    MM.addEvent(elem[0], 'click', function(e) {
-      markers  = markerLayer.markers();
-      for(mark in markers){
-        if((typeof markers[mark] !== "object") || ($(markers[mark].element).attr("class").indexOf("simplestyle-marker") === -1))
-          continue;
-        if(($(e.toElement).attr("data-city") === markers[mark].data.properties.city) &&
-           ($(e.toElement).attr("data-year") === markers[mark].data.properties.year)){
-          currentMarker = markers[mark];
-        }        
-      }
-
-      point = map.locationPoint({
-        lat: m.geometry.coordinates[1],
-        lon: m.geometry.coordinates[0]
-      })
-      var quarter = map.dimensions.y * (3/ 8);
-      point.y -= quarter;
-      map.ease.location(map.pointLocation(point)).zoom(map.zoom()).optimal();
-    });
-
-
-
-    if(m.properties.year == "2011")
-      elem.attr("src", "http://a.tiles.mapbox.com/v3/marker/pin-m+"+color2011+"@2x.png");
-    else
-      elem.attr("src", "http://a.tiles.mapbox.com/v3/marker/pin-m+"+color2012+"@2x.png");
-      
-    return elem[0]; 
-  }
-
-  
-  var cycleMarker = function(direction){
-
-    var position = displayedMarkers.indexOf(currentMarker);
-
-    if(direction === "next"){
-
-       if(position +1 >= displayedMarkers.length)
-        position =0;
-      else
-        position++;
-
-    }else{
-      if(position -1 < 0)
-        position =displayedMarkers.length-1;
-      else
-        position--;
-    }
-    currentMarker = displayedMarkers[position];
-    displayedMarkers[position].showTooltip();
-
-    point = map.locationPoint({
-      lat: currentMarker.data.geometry.coordinates[1],
-      lon: currentMarker.data.geometry.coordinates[0]
-    })
-
-    var quarter = map.dimensions.y * (1/ 8);
-    point.y -= quarter;
-    map.ease.location(map.pointLocation(point)).zoom(map.zoom()).optimal();
-    
-  }
-
-
-  markerLayer.factory(markerFactory);
-
-
-  interaction.formatter(function(feature) {
-    var html = $("<div>").append($(".citycardscontainer .citycard[data-city='"+feature.properties.city+"'][data-year='"+feature.properties.year+"']").clone()).html();
-    html = "<div class='close'>X</div>" +html;
-    return html;
-  });
-
-  $("#map").delegate(".prev,.next", "click", function(e){
-    cycleMarker($(e.currentTarget).attr("class"));
-  });
-
-  $("#map").delegate(".close", "touchend click", function(e){
-    interaction.hideTooltips();
-    map.ease.to(map.extentCoordinate(markerLayer.extent())).optimal();
-  });
-
-  map.addLayer(markerLayer).setExtent(markerLayer.extent());
-
-  markerLayer.filter(function(f) {
-    return f.properties['year'] === '';
-  });
-
-
-  $($("#map").children()[1]).css("z-index", "1");
-
-  // Attribute map
-  map.ui.attribution.add()
-    .content('<a href="http://mapbox.com/about/maps">Map by Mapbox</a>');
-
+  //$($("#map").children()[1]).css("z-index", "1");
 
   var colors = ["#5db7ad", "#88c5be", "#9ccdc8", "#aed5d1", "#c2dedb", "#d4e7e5", "#e8f2f1", "#FFFFFF"];
 
@@ -508,7 +317,7 @@ $(function(){
 
     var that = this;
 
-    var total = 0; 
+    var total = 0;
     // Count all the money for each data point in the source
     $("."+$(el).attr("data-source")).each(function(i, el){
       // remove commas and dollar signs
