@@ -1,11 +1,11 @@
-Chicago Open Data Annual Report 2013
+What Is Transit Future?
 ------------------------------------
 
-Chicago's inaugural [open data annual report](http://report.cityofchicago.org/open-data-2013/), published in 2013.
+Transit Future is a campaign by the Center for Neighborhood Technology to build a dozen transit lines in Cook County.
 
-!['Screenshot of Open Data Annual Report 2013'](img/report_screenshot.png)
+How do we pay for it? That's the question.
 
-The website that powers this report is a fork of @codeforamerica [Annual Report](http://github.com/codeforamerica/annual). Open Source helped make this possible.
+This project is an explanatory web graphic that introduces people to the projects and how we'll pay for them.
 
 Install
 -------
