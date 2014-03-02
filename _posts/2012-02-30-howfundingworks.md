@@ -1,7 +1,9 @@
 ---
-published: true
-pagetype: quote
 layout: fullpage
+title: null
+image: downtownarial
+pagetype: quote
+published: true
 ---
 
 ## How funding works
