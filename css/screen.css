@@ -759,6 +759,10 @@ padding-left: 20px;
 #mapcontainer{
   position:absolute; top:0; bottom:0; width:100%;
 }
+.mapstage{
+  height: 150px;
+  margin-top: -150px;
+}
 
 #map.apply{
   position:fixed !important;
