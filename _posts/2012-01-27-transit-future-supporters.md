@@ -4,8 +4,23 @@ layout: fullpage
 pagetype: quote
 ---
 
-## Who is Transit Future
+These organizations are supporting Transit Future:
 
-These organizations have signed-on to support Transit Future
+### LOGO HERE
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+### LOGO HERE
+
+### LOGO HERE
+
+### LOGO HERE
+
+### LOGO HERE
+
+### LOGO HERE
+
+### LOGO HERE
+
+### LOGO HERE
+
+### LOGO HERE
+
