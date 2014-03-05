@@ -7,4 +7,4 @@ published: true
 extrapadding: 100px
 ---
 
-## Yep - you can finally make that flight on time.
+## You can finally make that flight on time.

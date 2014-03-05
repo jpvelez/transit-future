@@ -9,4 +9,4 @@ extrapadding: 100px
 
 <div class="mapstage"></div>
 
-## BRT to stitches the Loop together.
+## BRT to stitch the Loop together.
