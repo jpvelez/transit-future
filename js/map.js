@@ -3,7 +3,7 @@ var map;
 function main(){
 
 // Define a basemap
-var basemap = mapbox.layer().id('mapmeld.hdfkjm4m');
+var basemap = mapbox.layer().id('jpvelez.map-h88danj5');
 
 // Create a map in the map container, using the basemap.
 // We're using Modest Maps with mapbox.js on top.
