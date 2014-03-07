@@ -49,27 +49,33 @@ map.addLayer(layer);
 // Load map when window is done loading.
 window.onload = main;
 
+// special CartoCSS states
+var layer_states = {
+  "lime_line": "",
+  "brown_line_extension": "",
+  "red_line_extension": ""
+};
 
 // Ease around the map as you scroll through the text.
 // Define map views for each paragraph.
 var current_view = -1;
 var views = [
-[41.79876395, -87.50411926, 12],  // Gold line
-[41.77177479, -87.53053094, 13],  // Gold line closeup
-[41.87876395, -87.61411926, 13],  // BRT
-[41.87876395, -87.65411926, 15],  // BRT closeup
-[41.86426600, -87.48822491, 11],  // Lime line
-[41.87648077,  -87.684650268, 13], // Lime line West side
-[41.79448077,  -87.692650268, 13],  // Lime line South side
-[41.77848077,  -87.719650268, 14],  // Orange line extension
-[41.69887172,  -87.624292373, 14],  // Red line extension
-[41.93747172,  -87.873292373, 12],  // Blue Line West - Forest Park to Oak Brook
-[41.88926600,  -87.733292373, 12],  // Blue Line fixes
-[41.88926600,  -87.733292373, 12],  // Inner Circumferential
-[41.92276600,  -87.790292373, 12],  // Brown Line extension
-[42.00440721,  -87.624933922, 13],  // Red/Purple Modernization
-[42.04387172,  -87.733292373, 14],  // Yellow line
-[41.88087172,  -87.628292373, 15],  // Downtown circulator
-// [41.88087172,  -87.628292373, 15],  // West Loop Transportation Center
-[41.66887172,  -87.624292373, 11],  // Southeast Service
+[41.79876395, -87.50411926, 12],                            // Gold line
+[41.77177479, -87.53053094, 13],                            // Gold line closeup
+[41.87876395, -87.61411926, 13],                            // BRT
+[41.87876395, -87.65411926, 15],                            // BRT closeup
+[41.86426600, -87.48822491, 11, "lime_line"],               // Lime line
+[41.87648077,  -87.684650268, 13, "lime_line"],             // Lime line West side
+[41.79448077,  -87.692650268, 13, "lime_line"],             // Lime line South side
+[41.77848077,  -87.719650268, 14],                          // Orange line extension
+[41.69887172,  -87.624292373, 14, "red_line_extension"],    // Red line extension
+[41.93747172,  -87.873292373, 12],                          // Blue Line West - Forest Park to Oak Brook
+[41.88926600,  -87.733292373, 12],                          // Blue Line fixes
+[41.88926600,  -87.733292373, 12],                          // Inner Circumferential
+[41.92276600,  -87.790292373, 12, "brown_line_extension"],  // Brown Line extension
+[42.00440721,  -87.624933922, 13],                          // Red/Purple Modernization
+[42.04387172,  -87.733292373, 14],                          // Yellow line
+[41.88087172,  -87.628292373, 15],                          // Downtown circulator
+// [41.88087172,  -87.628292373, 15],                       // West Loop Transportation Center
+[41.66887172,  -87.624292373, 11],                          // Southeast Service
 ];

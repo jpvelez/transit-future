@@ -203,7 +203,7 @@ $(function(){
     current_view = i;
 
     // if view is defined with [south,west,north,east] bounds, calculate lat,lng,zoom
-    if(views[current_view].length == 4){
+    if(views[current_view].length > 3 && typeof views[current_view][3] != "string"){
       var lat_coefficient = 0.00051144938704069;
       var lng_coefficient = 0.00068664550781251;
       var zoom_coefficient = 11;
@@ -212,6 +212,10 @@ $(function(){
 
       views[current_view][0] = (views[current_view][0] + views[current_view][2]) / 2; // lat
       views[current_view][1] = (views[current_view][1] + views[current_view][3]) / 2; // lng
+
+      if(views[current_view].length == 5){
+        views[current_view][3] = views[current_view][4]
+      }
       views[current_view].pop();
 
       // explaining the math:
@@ -227,6 +231,21 @@ $(function(){
         // we're going to squeeze until the height fits
         views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lat / $("#map").height()) ) / Math.log(2) );
       }
+    }
+
+    // set layer_state
+    if(views[current_view].length > 3 && typeof views[current_view][3] == "string"){
+      if(current_layer_state !== views[current_view][3]){
+        // change last layer_state to the current map state
+        map.removeLayer(highlight_layer);
+        current_layer_state = views[current_view][3];
+
+      }
+    }
+    else if current_layer_state {
+      // remove last layer_state for this map stage
+      map.removeLayer(highlight_layer);
+      current_layer_state = null;
     }
 
     // Ease to lat/lon/z view of current paragraph - the first p element
@@ -253,6 +272,8 @@ $(function(){
   // set map to follow map_follow_element and map_tail_element
   map_follow_element = null;
   map_tail_element = null;
+  current_layer_state = null;
+  highlight_layer = null;
   var scrollUpdate = function(){
     if(map_follow_element){
       // move top of map to follow the map_follow_element
@@ -308,8 +329,6 @@ $(function(){
     trigger: 'hover'
   });
 
-
-  //$($("#map").children()[1]).css("z-index", "1");
 
   var colors = ["#5db7ad", "#88c5be", "#9ccdc8", "#aed5d1", "#c2dedb", "#d4e7e5", "#e8f2f1", "#FFFFFF"];
 
