@@ -62,8 +62,8 @@ var map_data = {
     {
       "type":"cartodb",
       "options":{
-        "sql":"select * from l_lines",
-        "cartocss":"/** simple visualization */\n\n#l_lines{\n  line-color: #3e7bb6;\n  line-width: 2;\n  line-opacity: 0.7;\n}",
+        "sql":"select * from cta_rail_updated_cartodb",
+        "cartocss":"#cta_rail_updated_cartodb{ \n line-width: 2;\nline-cap: round;\nline-join: round;\n[name_new='Red'] {\nline-color: #EA5854;\n}\n[name_new='Brown'] {\nline-color: #73451C;\n}\n[name_new='Pink'] {\nline-color: #F38CB4;\n}\n[name_new='Purple'] {\nline-color: #823393;\n}\n[name_new='Yellow'] {\nline-color: #FEE800;\n}\n[name_new='Blue'] {\nline-color: #74BBE7;\n}\n[name_new='Orange'] {\nline-color: #F37537;\n}\n[name_new='Green'] {\nline-color: #1DAA4D;\n}\n}",
         "cartocss_version":"2.1.1"
       }
     }
