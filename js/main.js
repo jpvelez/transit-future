@@ -233,17 +233,43 @@ $(function(){
       }
     }
 
-    // set layer_state
+    // add and remove special CartoCSS style layers
+    // a mapstage has a CartoCSS layer if you add a named layer_state string
+    // [lat, lng, zoom, layer_state] or [south, west, north, east, layer_state]
     if(views[current_view].length > 3 && typeof views[current_view][3] == "string"){
       if(current_layer_state !== views[current_view][3]){
         // change last layer_state to the current map state
-        map.removeLayer(highlight_layer);
+        if(highlight_layer){
+          map.removeLayer(highlight_layer);
+        }
         current_layer_state = views[current_view][3];
 
+        if(typeof layer_states[current_layer_state] == "string"){
+          // need to generate the tile template URL for this CartoCSS layer
+          var custom_layer = $.extend(true, {}, map_data);
+          custom_layer.layers[0].options.cartocss = layer_states[current_layer_state];
+          custom_layer.layers.pop(); // remove L layer
+
+          // call for a tile template URL for the CartoCSS
+          layer_to_set = current_layer_state;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.src = "http://jpvelez.cartodb.com/api/v1/map?"
+            + "config=" + escape(JSON.stringify(custom_layer))
+            + "&callback=loadedToken&t="
+            + (new Date()) * 1;
+          document.body.appendChild(s);
+        }
+        else{
+          // use a known tile template for this layer
+          highlight_layer = new MM.Layer(layer_states[current_layer_state]);
+          map.addLayer(highlight_layer);
+        }
       }
     }
-    else if current_layer_state {
-      // remove last layer_state for this map stage
+    else if(current_layer_state){
+      // this mapstage has no CartoCSS layer
+      // remove any existing CartoCSS layer
       map.removeLayer(highlight_layer);
       current_layer_state = null;
     }
@@ -273,7 +299,6 @@ $(function(){
   map_follow_element = null;
   map_tail_element = null;
   current_layer_state = null;
-  highlight_layer = null;
   var scrollUpdate = function(){
     if(map_follow_element){
       // move top of map to follow the map_follow_element
