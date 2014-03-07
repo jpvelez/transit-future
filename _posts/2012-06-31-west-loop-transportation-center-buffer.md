@@ -8,4 +8,5 @@ extrapadding: 100px
 
 <div class="mapstage"></div>
 
-# The West Loop Transportation Center
+# WEST LOOP
+# TRANSPORTATION CENTER
