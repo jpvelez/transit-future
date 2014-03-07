@@ -1,12 +1,10 @@
 ---
 layout: fullpage
 title: The Southeast Service
-pagetype: story
+pagetype: story map
 bgcolor: C82A45
 published: true
 extrapadding: 100px
 ---
-
-<div class="mapstage"></div>
 
 ## Commuter rail connecting the South Suburbs to jobs in the Loop and beyond.

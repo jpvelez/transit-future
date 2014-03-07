@@ -1,12 +1,10 @@
 ---
 layout: fullpage
 title: Downtown Circulator BRT
-pagetype: story
+pagetype: story map
 bgcolor: 22A7DA
 published: true
 extrapadding: 100px
 ---
-
-<div class="mapstage"></div>
 
 ## BRT to stitch the Loop together.

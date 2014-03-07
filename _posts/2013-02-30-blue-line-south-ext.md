@@ -1,13 +1,11 @@
 ---
 layout: fullpage
 title: Blue Line - Oak Brook Extension
-pagetype: story
+pagetype: story map
 bgcolor: C82A45
 published: true
 extrapadding: 100px
 ---
-
-<div class="mapstage"></div>
 
 ### Extends the Blue Line from Forest Park to Oak Brook.
 

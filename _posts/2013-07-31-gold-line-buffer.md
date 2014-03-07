@@ -8,5 +8,4 @@ extrapadding: 100px
 
 <div class="mapstage"></div>
 
-# The Lime Line
-
+# THE GOLD LINE

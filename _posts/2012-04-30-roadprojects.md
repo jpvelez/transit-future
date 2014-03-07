@@ -1,7 +1,7 @@
 ---
 layout: fullpage
 title: Road Projects
-pagetype: story
+pagetype: story map
 bgcolor: 69579c
 published: true
 extrapadding: 100px

@@ -348,6 +348,7 @@ input[type="text"] {
   line-height: 60px;
 }
 
+
 .page.quote h1 {
   margin-bottom: 0px;
 }
@@ -362,6 +363,26 @@ input[type="text"] {
   -moz-box-sizing:border-box; /* Firefox
   -webkit-box-sizing:border-box; /* Safari */
 }
+
+.page.quote.map{
+  padding-top:400px !important;
+}
+
+.page.quote.map h1,
+.page.quote.map h2,
+.page.quote.map h3 {
+  color: black;
+  text-shadow: none;
+}
+
+
+.page.story.map h1,
+.page.story.map h2,
+.page.story.map h3 {
+  color: black;
+  text-shadow: none;
+}
+
 
 .sidebar{
   width:400px;
@@ -401,6 +422,8 @@ input[type="text"] {
 
 .sidebartitle.appear h2{
   left: 50px;
+  color: black;
+  text-shadow: none;
   transition: left 1s;
   -webkit-transition: left 1s;
 }

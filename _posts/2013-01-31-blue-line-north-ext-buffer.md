@@ -6,7 +6,5 @@ published: true
 extrapadding: 100px
 ---
 
-<div class="mapstage"></div>
-
-# The Lime Line
-
+# BLUE LINE
+# O'HARE TO SCHAUMBURG
