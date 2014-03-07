@@ -1,0 +1,531 @@
+/** CTA RAIL SYMBOLOGY (FOR ALL MAP VIEWS. OPTION: increase width +1 for zoom level 12+) */
+
+
+#cta_rail_updated_cartodb{
+  
+  line-width: 2;
+  line-cap: round;
+  line-join: round;
+
+  
+  [name_new='Red'] {
+  line-color: #EA5854;
+  }
+  
+  [name_new='Brown'] {
+  line-color: #73451C;
+  }
+
+  [name_new='Pink'] {
+  line-color: #F38CB4;
+  }
+
+  [name_new='Purple'] {
+  line-color: #823393;
+  }
+  
+  [name_new='Yellow'] {
+  line-color: #FEE800;
+  }
+  
+  [name_new='Blue'] {
+  line-color: #74BBE7;
+  }
+
+  [name_new='Orange'] {
+  line-color: #F37537;
+  }
+
+  [name_new='Green'] {
+  line-color: #1DAA4D;
+  }
+  
+}
+
+
+######################################
+
+
+/** View 1: ALL PROPOSED LINES with Legend (remove legend after this view)*/
+
+#transit_future_projects{
+  line-width: 3;
+  line-join: round;
+  line-cap: round;
+}
+  
+ 
+
+#transit_future_projects{
+
+  [type='Rapid Transit']{
+    line-color: #f84f40;
+  }
+  
+  [type='Commuter Rail']{
+    line-color: #2e5387;
+  }
+  [type='BRT']{
+    line-color: #229A00;
+  }
+  
+}
+
+#transit_future_projects{
+ 
+  [cartodb_id=1]{
+  line-color: #5EEA8C;
+  }
+  
+  [cartodb_id=2]{
+    line-color:  #F37537;
+  }
+  
+  [cartodb_id=3]{
+    line-color:  #74BBE7;
+  }
+  
+  [cartodb_id=4]{
+    line-color:  #EA5854;
+  }
+  [cartodb_id=5]{
+    line-color:  #FEE800;
+  }
+  [cartodb_id=6]{
+    line-color: #73451C;
+  }
+  [cartodb_id=7]{
+    line-color:  #74BBE7;
+  }
+  [cartodb_id=8]{
+    line-color:  grey;
+  }
+  [cartodb_id=9]{
+    line-color:  #9A51A0 ;
+  }
+  [cartodb_id=10]{
+    line-color:  #EA5854;
+    line-width: 3;
+  [cartodb_id=10]::offset{
+    line-color: #823393;
+    line-offset: 4;
+    line-width: 3;
+    line-cap: round;
+    line-join: round;
+    }
+  }
+  [cartodb_id=11]{
+    line-color:  blue;
+  }
+  [cartodb_id=12]{
+    line-color:  #74BBE7;
+  }
+  [cartodb_id=13]{
+    line-color:  #E0CE4B;
+  }
+  [cartodb_id=14]{
+    line-color:  grey;
+  }
+  [cartodb_id=15]{
+    line-color:  grey;
+  }
+  
+  
+  
+  
+  
+}
+
+
+######################################
+
+
+/**  Lime Line Zoom 11 */
+
+#transit_future_projects{
+
+
+#transit_future_projects{
+    [cartodb_id=1]{
+    line-color: lime;
+    line-width: 4;
+  
+  	[cartodb_id=1]::glow{
+    line-color: #5EEA8C;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+  }
+}
+}
+}
+
+
+######################################
+
+
+/**  Lime Line Zoom 13 (two map views) */
+
+#transit_future_projects{
+
+
+#transit_future_projects{
+    [cartodb_id=1]{
+    line-color: lime;
+    line-width: 4;
+  
+  	[cartodb_id=1]::glow{
+    line-color: #5EEA8C;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+  }
+}
+}
+}
+
+######################################
+
+/**  Orange Line Ext Zoom 14 */
+
+
+#transit_future_projects{
+    [cartodb_id=2]{
+    line-color: #F37537;
+    line-width: 5;
+  
+  	[cartodb_id=2]::glow{
+    line-color: #F37537;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+  }
+}
+}
+
+
+######################################
+
+/**  Blue Line West Ext Zoom 12 */
+
+#transit_future_projects{
+   [cartodb_id=3]{
+    line-color: #74BBE7;
+    line-width: 5;
+    line-join: round;
+    line-cap: round;
+  
+   [cartodb_id=3]::glow{
+    line-color: #74BBE7;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+
+  }
+}
+}
+
+######################################
+
+/**  Red Line Ext Zoom 14 */
+
+
+#transit_future_projects{
+    [cartodb_id=4]{
+    line-color: #EA5854;
+    line-width: 5;
+    line-cap: round;
+    line-join: round;
+  
+ [cartodb_id=4]::glow{
+    line-color: #EA5854;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+
+  }
+}
+}
+
+
+######################################
+
+/**  Yellow Line Ext Zoom 14*/
+
+
+#transit_future_projects{
+    [cartodb_id=5]{
+    line-color: #FEE800;
+    line-width: 5;
+    line-cap: round;
+    line-join: round;
+  
+  	[cartodb_id=5]::glow{
+    line-color: #FEE800;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+
+  }
+}
+}
+
+######################################
+
+
+/**  Brown Line Ext Zoom */
+
+
+#transit_future_projects{
+    [cartodb_id=6]{
+    line-color: #73451C;
+    line-width: 5;
+    line-cap: round;
+    line-join: round;
+  
+  	[cartodb_id=6]::glow{
+    line-color: #73451C;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+
+  }
+}
+}
+
+######################################
+
+/**  Blue Line Shaumburg to O'hare */
+
+
+#transit_future_projects{
+    [cartodb_id=7]{
+    line-color: #74BBE7;
+    line-width: 5;
+    line-join: round;
+    line-cap: round;
+  
+  	[cartodb_id=7]::glow{
+    line-color: #74BBE7;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+
+  }
+}
+}
+
+######################################
+
+
+/**  Metra SE Service Corridor */
+
+
+#transit_future_projects{
+    [cartodb_id=8]{
+    line-color: grey;
+    line-width: 5;
+    line-cap: round;
+    line-join: round;
+  
+  [cartodb_id=8]::glow{
+    line-color: grey;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+
+  }
+}
+}
+
+######################################
+
+/**  Inner Circumferential */
+
+
+#transit_future_projects{
+    [cartodb_id=9]{
+    line-color: #9A51A0;
+    line-width: 5;
+    line-cap: round;
+    line-join: round;
+  
+  	[cartodb_id=9]::glow{
+    line-color: #9A51A0;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+
+  }
+}
+}
+
+######################################
+
+
+/**  Red/Purple Modernization */
+
+
+#transit_future_projects{
+    [cartodb_id=10]{
+    line-color: #EA5854;
+    line-width: 5;
+    line-cap: round;
+    line-join: round;
+  
+  	[cartodb_id=10]::glow{
+    line-color: #823393;
+    line-width: 5;
+    line-cap: round;
+    line-join: round;
+    line-offset: 7;
+
+  }
+}
+}
+
+######################################
+
+/**  Ashland BRT (zoom 13) */
+
+#transit_future_projects{
+
+  [cartodb_id=11]{
+    line-color: blue;
+    line-width: 4;
+  
+  	[cartodb_id=11]::glow{
+    line-color: blue;
+    line-width: 10;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+  }
+}
+}
+
+
+######################################
+
+/**  Ashland BRT (zoom 15) */
+
+#transit_future_projects{
+
+
+  [cartodb_id=11]{
+    line-color: blue;
+    line-width: 4;
+  
+  	[cartodb_id=11]::glow{
+    line-color: blue;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+  }
+}
+}
+
+######################################
+
+/**  Blue Line Fixes */
+
+
+#transit_future_projects{
+    [cartodb_id=12]{
+    line-color: #74BBE7;
+    line-width: 5;
+    line-cap: round;
+    line-join: round;
+  
+  	[cartodb_id=12]::glow{
+    line-color: #74BBE7;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+
+  }
+}
+}
+
+
+
+######################################
+
+/**  Gold Line (zoom 12 AND 13) */
+
+#transit_future_projects{
+
+
+  [cartodb_id=13]{
+    line-color: #F3DE71;
+  	line-width: 4;
+  
+  [cartodb_id=13]::glow{
+    line-color: #F3DE71;
+    line-width: 12;
+    line-cap: round;
+    line-join: round;
+    line-opacity: .5;
+  }
+}
+}
+
+
+######################################
+
+
+/**  South Lakefront Corridor */
+
+#transit_future_projects{
+
+
+  [cartodb_id=14]{
+    line-color: grey;
+  	line-width: 4;
+  
+  [cartodb_id=14]::glow{
+    line-color: grey;
+    line-width: 10;
+    line-cap: round;
+    line-join: round;
+    line-opacity: .5;
+  }
+
+   
+}
+}
+
+######################################
+
+/**  South Lakefront Corridor */
+
+
+#transit_future_projects{
+    [cartodb_id=15]{
+    line-color: grey;
+    line-width: 5;
+    line-cap: round;
+    line-join: round;
+  
+  	[cartodb_id=15]::glow{
+    line-color: grey;
+    line-width: 12;
+    line-opacity: .5;
+    line-cap: round;
+    line-join: round;
+
+  }
+}
+}
