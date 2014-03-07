@@ -192,8 +192,8 @@ $(function(){
 
  },function(){});
 
- // every element with the class 'mapstage' is tracked here
- scrollEvent.on("middle", $(".mapstage"), function(el, i){
+  // every element with the class 'mapstage' is tracked here
+  scrollEvent.on("middle", $(".mapstage"), function(el, i){
 
     // select mapstage
     if(i == current_view || views[i] === null){
@@ -201,42 +201,14 @@ $(function(){
       return;
     }
     current_view = i;
-
-    // if view is defined with [south,west,north,east] bounds, calculate lat,lng,zoom
-    if(views[current_view].length == 4){
-      var lat_coefficient = 0.00051144938704069;
-      var lng_coefficient = 0.00068664550781251;
-      var zoom_coefficient = 11;
-      var pixel_lng = (views[current_view][3] - views[current_view][1]) / lng_coefficient;
-      var pixel_lat = (views[current_view][2] - views[current_view][0]) / lat_coefficient;
-
-      views[current_view][0] = (views[current_view][0] + views[current_view][2]) / 2; // lat
-      views[current_view][1] = (views[current_view][1] + views[current_view][3]) / 2; // lng
-      views[current_view].pop();
-
-      // explaining the math:
-      // pixels_at_zoom_11 = SCREEN_DIMENSION_TO_STRETCH / DEGREE_PER_PIXEL
-      // multiply_scale_by = (AVAILABLE_PIXELS / pixels_at_zoom_11)
-      // zoom_delta = log(multiply_scale_by) / log(2) because width is 2^zoom
-
-      if(pixel_lng / pixel_lat > $("#map").width() / $("#map").height()){
-        // we're going to squeeze until the width fits
-        views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lng / $("#map").width()) ) / Math.log(2) );
-      }
-      else{
-        // we're going to squeeze until the height fits
-        views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lat / $("#map").height()) ) / Math.log(2) );
-      }
+    setCurrentView(current_view);
+  });
+  scrollEvent.on("bottom", $(".mapstage"), function(el, i){
+    if(i == current_view && i > 0){
+      // currently on a mapstage which is falling below the window
+      // switch to previous page
+      setCurrentView(current_view-1);
     }
-
-    // Ease to lat/lon/z view of current paragraph - the first p element
-    // below the top edge of the box. This gets called the instant the previous
-    // element's offset becomes negative.
-    map.ease.location({
-      lat: views[current_view][0],
-      lon: views[current_view][1]
-    }).zoom(views[current_view][2]).optimal();
-
   });
 
   $(".navbar .nav li a").on("click touchend", function(e){
@@ -253,6 +225,7 @@ $(function(){
   // set map to follow map_follow_element and map_tail_element
   map_follow_element = null;
   map_tail_element = null;
+  current_layer_state = null;
   var scrollUpdate = function(){
     if(map_follow_element){
       // move top of map to follow the map_follow_element
@@ -308,8 +281,6 @@ $(function(){
     trigger: 'hover'
   });
 
-
-  //$($("#map").children()[1]).css("z-index", "1");
 
   var colors = ["#5db7ad", "#88c5be", "#9ccdc8", "#aed5d1", "#c2dedb", "#d4e7e5", "#e8f2f1", "#FFFFFF"];
 
@@ -381,6 +352,90 @@ $(function(){
 
 });
 
+function setCurrentView(current_view){
+  // if view is defined with [south,west,north,east] bounds, calculate lat,lng,zoom
+  if(views[current_view].length > 3 && typeof views[current_view][3] != "string"){
+    var lat_coefficient = 0.00051144938704069;
+    var lng_coefficient = 0.00068664550781251;
+    var zoom_coefficient = 11;
+    var pixel_lng = (views[current_view][3] - views[current_view][1]) / lng_coefficient;
+    var pixel_lat = (views[current_view][2] - views[current_view][0]) / lat_coefficient;
+
+    views[current_view][0] = (views[current_view][0] + views[current_view][2]) / 2; // lat
+    views[current_view][1] = (views[current_view][1] + views[current_view][3]) / 2; // lng
+
+    if(views[current_view].length == 5){
+      views[current_view][3] = views[current_view][4]
+    }
+    views[current_view].pop();
+
+    // explaining the math:
+    // pixels_at_zoom_11 = SCREEN_DIMENSION_TO_STRETCH / DEGREE_PER_PIXEL
+    // multiply_scale_by = (AVAILABLE_PIXELS / pixels_at_zoom_11)
+    // zoom_delta = log(multiply_scale_by) / log(2) because width is 2^zoom
+
+    if(pixel_lng / pixel_lat > $("#map").width() / $("#map").height()){
+      // we're going to squeeze until the width fits
+      views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lng / $("#map").width()) ) / Math.log(2) );
+    }
+    else{
+      // we're going to squeeze until the height fits
+      views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lat / $("#map").height()) ) / Math.log(2) );
+    }
+  }
+
+  // add and remove special CartoCSS style layers
+  // a mapstage has a CartoCSS layer if you add a named layer_state string
+  // [lat, lng, zoom, layer_state] or [south, west, north, east, layer_state]
+  if(views[current_view].length > 3 && typeof views[current_view][3] == "string"){
+    if(current_layer_state !== views[current_view][3]){
+      // change last layer_state to the current map state
+      if(highlight_layer){
+        map.removeLayer(highlight_layer);
+      }
+      current_layer_state = views[current_view][3];
+
+      if(typeof layer_states[current_layer_state] == "string"){
+        // need to generate the tile template URL for this CartoCSS layer
+        var custom_layer = $.extend(true, {}, map_data);
+        custom_layer.layers[0].options.cartocss = layer_states[current_layer_state];
+        custom_layer.layers.pop(); // remove L layer
+
+        // call for a tile template URL for the CartoCSS
+        layer_to_set = current_layer_state;
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = "http://jpvelez.cartodb.com/api/v1/map?"
+          + "config=" + escape(JSON.stringify(custom_layer))
+          + "&callback=loadedToken&t="
+          + (new Date()) * 1;
+        document.body.appendChild(s);
+      }
+      else{
+        // use a known tile template for this layer
+        highlight_layer = new MM.Layer(layer_states[current_layer_state]);
+        map.addLayer(highlight_layer);
+      }
+    }
+  }
+  else if(current_layer_state){
+    // this mapstage has no CartoCSS layer
+    // remove any existing CartoCSS layer
+    if(highlight_layer){
+      map.removeLayer(highlight_layer);
+    }
+    current_layer_state = null;
+  }
+
+  // Ease to lat/lon/z view of current paragraph - the first p element
+  // below the top edge of the box. This gets called the instant the previous
+  // element's offset becomes negative.
+  map.ease.location({
+    lat: views[current_view][0],
+    lon: views[current_view][1]
+  }).zoom(views[current_view][2]).optimal();
+
+}
 
 if (!Array.prototype.indexOf)
 {
