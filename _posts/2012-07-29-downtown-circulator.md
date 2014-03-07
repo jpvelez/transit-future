@@ -7,4 +7,4 @@ published: true
 extrapadding: 100px
 ---
 
-## Commuters and tourists can zip from Union and Ogilvie stations to Millennium Park, Streeterville and Navy Pier.
+## Shrink downtown for workers, connect tourists to the sights.

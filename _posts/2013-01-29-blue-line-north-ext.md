@@ -7,6 +7,6 @@ published: true
 extrapadding: 100px
 ---
 
-## Northwest Suburban residents can get to jobs at O'Hare.
+## Suburbanites can get to jobs at O'Hare.
 
 ## Chicagoans can get to jobs in Schaumburg.

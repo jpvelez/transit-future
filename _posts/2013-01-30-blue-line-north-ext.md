@@ -7,4 +7,4 @@ published: true
 extrapadding: 100px
 ---
 
-## Connects O'Hare airport to the Northwest suburbs.
+## Connects O'Hare to the Northwest suburbs.

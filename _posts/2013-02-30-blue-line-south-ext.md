@@ -9,4 +9,6 @@ extrapadding: 100px
 
 <div class="mapstage"></div>
 
-## The Blue line will be extended west from Forest Park to Oak Brook, creating a fast and convenient commute to one of the Chicagoland's biggest job centers.
+### Extends the Blue Line from Forest Park to Oak Brook.
+
+### Creates a fast commute to one of Chicagoland's top job centers.

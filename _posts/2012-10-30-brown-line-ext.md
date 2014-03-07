@@ -7,4 +7,6 @@ published: true
 extrapadding: 100px
 ---
 
-## Connect the North Side to O'Hare.
+<div class="mapstage"></div>
+
+## Connects the North Side to O'Hare.
