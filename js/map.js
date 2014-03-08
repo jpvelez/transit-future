@@ -278,7 +278,6 @@ var views = [
 [41.92276600,  -87.790292373, 12, "brown_line_extension"],  // Brown Line extension
 [42.00440721,  -87.624933922, 13, "red_purple"],            // Red/Purple Modernization
 [42.04387172,  -87.733292373, 14, "yellow_line"],           // Yellow line
-[41.88087172,  -87.628292373, 15],                          // Downtown circulator
 // [41.88087172,  -87.628292373, 15],                       // West Loop Transportation Center
 [41.66887172,  -87.624292373, 11, "southeast"],             // Southeast Service
 ];

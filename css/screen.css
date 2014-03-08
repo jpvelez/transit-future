@@ -174,7 +174,7 @@ li {
 }
 
 #loading{
-  background:url("../img/chicago-seal-background.jpg") no-repeat;
+  background-color: black;
 /*background:#a6d5ef;*/
   background-size:cover;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/chicago-seal-background.jpg', sizingMethod='scale')";
@@ -452,6 +452,31 @@ input[type="text"] {
   background-position:right;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/downtownarial.jpg', sizingMethod='scale')";
 }
+
+
+
+.pagebg.transitmap1{
+  background: url("../img/cta_l.png") no-repeat;
+  background-size: auto 100%;
+  background-position: right bottom;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/cta_l.png', sizingMethod='scale')";
+}
+
+
+.pagebg.transitmap2{
+  background: url("../img/cta_l_withproplines.png") no-repeat;
+  background-size: auto 100%;
+  background-position: right bottom;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/cta_l_withproplines.png', sizingMethod='scale')";
+}
+
+.pagebg.lamap{
+  background: url("../img/la-transit.jpg") no-repeat;
+  background-size:cover;
+  background-position:right;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/downtownarial.jpg', sizingMethod='scale')";
+}
+
 
 
 /*Open data images*/
@@ -2235,6 +2260,7 @@ img.progicons {
 
   .page.quote {
     padding-bottom: 300px;
+    text-align: right;
   }
 
   .page.story {

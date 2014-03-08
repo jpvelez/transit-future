@@ -6,6 +6,5 @@ published: true
 extrapadding: 100px
 ---
 
-<div class="mapstage"></div>
-
-# THE DOWNTOWN CIRCULATOR
+# Meet the transit lines 
+# that will transform Chicagoland.
