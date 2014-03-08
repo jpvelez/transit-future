@@ -383,6 +383,11 @@ input[type="text"] {
   text-shadow: none;
 }
 
+/*Align the text in the intro to the right of the transit maps in the background*/
+.page.quote.map.textright h1{
+  text-align: right;
+}
+
 
 .sidebar{
   width:400px;
@@ -2260,7 +2265,6 @@ img.progicons {
 
   .page.quote {
     padding-bottom: 300px;
-    text-align: right;
   }
 
   .page.story {
