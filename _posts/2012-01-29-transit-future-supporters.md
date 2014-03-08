@@ -7,7 +7,7 @@ bgcolor: FF8000
 
 These organizations are supporting Transit Future:
 
-![link text](../img/supporters/Active Trans.jpg)
+![Active Transportation Alliance](../img/supporters/Active Trans.jpg)
 ### LOGO HERE	
 ### LOGO HERE
 
