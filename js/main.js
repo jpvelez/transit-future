@@ -65,7 +65,6 @@ $(function(){
         if(typeof el !== "object")
           continue;
 
-        //console.log(el);
         //middle
         if(($(el).offset().top <= (pos + height/2)) &&
            ($(el).offset().top + $(el).outerHeight()  >= (pos + height/2))){
@@ -195,6 +194,12 @@ $(function(){
   // every element with the class 'mapstage' is tracked here
   scrollEvent.on("middle", $(".mapstage"), function(el, i){
 
+
+    console.log("-");
+    console.log(i);
+    console.log(current_view);
+    console.log(views[i]);
+
     // select mapstage
     if(i == current_view || views[i] === null){
       // already viewing this mapstage, or one does not exist
@@ -207,7 +212,8 @@ $(function(){
     if(i == current_view && i > 0){
       // currently on a mapstage which is falling below the window
       // switch to previous page
-      setCurrentView(current_view-1);
+      current_view--;
+      setCurrentView(current_view);
     }
   });
 
@@ -411,7 +417,7 @@ function setCurrentView(current_view){
           + (new Date()) * 1;
         document.body.appendChild(s);
       }
-      else{
+      else if(layer_states[current_layer_state]){
         // use a known tile template for this layer
         highlight_layer = new MM.Layer(layer_states[current_layer_state]);
         map.addLayer(highlight_layer);
