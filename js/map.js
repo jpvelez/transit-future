@@ -2,6 +2,11 @@
 var map;
 function main(){
 
+// when page is refreshed, jump back to the top
+if($(document.body).scrollTop() > 300){
+  $(document.body).scrollTop(0);
+}
+
 // Define a basemap
 var basemap = mapbox.layer().id('jpvelez.map-h88danj5');
 
@@ -27,6 +32,10 @@ var highlight_layer = null;
 var layer_to_set = null;
 function loadedToken(tokenInfo){
   var token = tokenInfo.layergroupid;
+  if(!token){
+    layer_to_set = null;
+    return;
+  }
   var template = new MM.Template('http://3.api.cartocdn.com/jpvelez/tiles/layergroup/' + token + '/{Z}/{X}/{Y}.png');
   if(layer_to_set){
     layer_states[layer_to_set] = template;
@@ -265,7 +274,7 @@ var views = [
 [41.69887172,  -87.624292373, 14, "red_line_extension"],    // Red line extension
 [41.93747172,  -87.873292373, 12, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
 [41.88926600,  -87.733292373, 12, "blue_line_extension"],   // Blue Line fixes
-[41.88926600,  -87.733292373, 12, "inner_circle"],          // Inner Circumferential
+[41.88926600,  -87.733292373, 11, "inner_circle"],          // Inner Circumferential
 [41.92276600,  -87.790292373, 12, "brown_line_extension"],  // Brown Line extension
 [42.00440721,  -87.624933922, 13, "red_purple"],            // Red/Purple Modernization
 [42.04387172,  -87.733292373, 14, "yellow_line"],           // Yellow line
