@@ -184,7 +184,7 @@ var views = [
 [41.87876395, -87.61411926, 13, "ashland"],                 // BRT
 [41.87876395, -87.65411926, 15, "ashland"],                 // BRT closeup
 [41.86426600, -87.48822491, 11, "lime_line"],               // Lime line
-[41.87648077,  -87.684650268, 13, "lime_line"],             // Lime line West side
+[41.67431721606141,-87.98108173291017,42.09350445879808,-87.71672321240234, "lime_line"],             // Lime line West side
 [41.79448077,  -87.692650268, 13, "lime_line"],             // Lime line South side
 [41.77848077,  -87.719650268, 14, "orange_line_extension"], // Orange line extension
 [41.69887172,  -87.624292373, 14, "red_line_extension"],    // Red line extension
