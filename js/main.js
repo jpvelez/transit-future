@@ -387,6 +387,9 @@ function setCurrentView(current_view){
     }
   }
 
+  // if map is not initial state, minimal opacity
+  $($("#map").children()[1]).css({ opacity: 0.35 });
+
   // add and remove special CartoCSS style layers
   // a mapstage has a CartoCSS layer if you add a named layer_state string
   // [lat, lng, zoom, layer_state] or [south, west, north, east, layer_state]
