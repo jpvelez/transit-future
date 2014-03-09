@@ -377,15 +377,22 @@ function setCurrentView(current_view){
     // multiply_scale_by = (AVAILABLE_PIXELS / pixels_at_zoom_11)
     // zoom_delta = log(multiply_scale_by) / log(2) because width is 2^zoom
 
-    if(pixel_lng / pixel_lat > $("#map").width() / $("#map").height()){
+    var effective_width = $("#map").width() / 3;
+    if(pixel_lng / pixel_lat > effective_width / $("#map").height()){
       // we're going to squeeze until the width fits
-      views[current_view][2] = Math.round(11 - Math.ceil( Math.log( pixel_lng / $("#map").width() ) / Math.log(2) ));
+      views[current_view][2] = Math.round(11 - Math.ceil( Math.log( pixel_lng / effective_width ) / Math.log(2) ));
     }
     else{
       // we're going to squeeze until the height fits
       views[current_view][2] = Math.round(11 - Math.ceil( Math.log( pixel_lat / $("#map").height() ) / Math.log(2) ));
     }
+    var effective_lng_offset = (lng_coefficient * effective_width) * Math.pow(2, 11 - views[current_view][2]);
+    views[current_view][1] += effective_lng_offset;
+
   }
+
+  // if map is not initial state, minimal opacity
+  $($("#map").children()[1]).css({ opacity: 0.35 });
 
   // add and remove special CartoCSS style layers
   // a mapstage has a CartoCSS layer if you add a named layer_state string
