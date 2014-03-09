@@ -194,12 +194,6 @@ $(function(){
   // every element with the class 'mapstage' is tracked here
   scrollEvent.on("middle", $(".mapstage"), function(el, i){
 
-
-    console.log("-");
-    console.log(i);
-    console.log(current_view);
-    console.log(views[i]);
-
     // select mapstage
     if(i == current_view || views[i] === null){
       // already viewing this mapstage, or one does not exist
@@ -229,8 +223,8 @@ $(function(){
   $(window).scroll(scrollEvent.onScroll);
 
   // set map to follow map_follow_element and map_tail_element
-  map_follow_element = null;
-  map_tail_element = null;
+  map_follow_element = $($(".mapstage")[0]);
+  map_tail_element = $($(".mapstage")[$(".mapstage").length-1]);
   current_layer_state = null;
   var scrollUpdate = function(){
     if(map_follow_element){
@@ -238,21 +232,24 @@ $(function(){
       // when map_follow_element is above the top of the window, fix map to top of window
       var suggestTop = map_follow_element.offset().top - $($(".pagebg")[0]).offset().top;
       if(suggestTop > 10){
-        $("#map").css({"top": suggestTop, "height": "auto" });
+        $("#map").css({"top": suggestTop, "height": "auto", "visibility": "visible"});
       }
       else{
-        $("#map").css({"top": 10 });
+        $("#map").css({"top": 10, "visibility": "visible"});
       }
     }
     if(map_tail_element){
       // move bottom of map to follow the map_tail_element
       // when map_tail_element is below the bottom of the window, forget about the tail element
-      var suggestBottom = $(window).height() - $(".scrollout").offset().top + $($(".pagebg")[0]).offset().top;
-      if(suggestBottom < $(window).height() + $("#map").height() ){
-        $("#map").css({"bottom": suggestBottom, "height": "auto"});
+      var suggestBottom = $(".scrollout").offset().top - $(window).scrollTop();
+      if(suggestBottom >= $(window).height()){
+        $("#map").css({"bottom": 0});
+      }
+      else if(suggestBottom < 0 ){
+        $("#map").css({"bottom": $(window).height()*2})
       }
       else{
-        map_tail_element = null;
+        $("#map").css({"bottom": $(window).height() - suggestBottom, "height": "auto", "visibility": "visible"});
       }
     }
   };
@@ -382,11 +379,11 @@ function setCurrentView(current_view){
 
     if(pixel_lng / pixel_lat > $("#map").width() / $("#map").height()){
       // we're going to squeeze until the width fits
-      views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lng / $("#map").width()) ) / Math.log(2) );
+      views[current_view][2] = Math.round(11 - Math.ceil( Math.log( pixel_lng / $("#map").width() ) / Math.log(2) ));
     }
     else{
       // we're going to squeeze until the height fits
-      views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lat / $("#map").height()) ) / Math.log(2) );
+      views[current_view][2] = Math.round(11 - Math.ceil( Math.log( pixel_lat / $("#map").height() ) / Math.log(2) ));
     }
   }
 

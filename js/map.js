@@ -263,8 +263,8 @@ var layer_states = {
 // Format 3: add a string like "gold_line" to enable a special CartoCSS layer
 var current_view = -1;
 var views = [
-[41.79876395, -87.50411926, 12, "gold_line"],               // Gold line
-[41.77177479, -87.53053094, 13, "gold_line"],               // Gold line closeup
+[41.85492902952661,-87.62409507729365,41.866802895473384,-87.59480535485102, "gold_line"],               // Gold line
+[41.85492902952661,-87.62409507729365,41.866802895473384,-87.59480535485102, "gold_line"],               // Gold line closeup
 [41.87876395, -87.61411926, 13, "ashland"],                 // BRT
 [41.87876395, -87.65411926, 15, "ashland"],                 // BRT closeup
 [41.86426600, -87.48822491, 11, "lime_line"],               // Lime line
