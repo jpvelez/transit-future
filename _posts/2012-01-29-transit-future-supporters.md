@@ -35,18 +35,3 @@ These organizations are supporting Transit Future:
 ![Quad Communities Development Corporation](img/supporters/qcdc.pdf)
 ![RPEG](img/supporters/rpeg.png)
 ![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)
-
-### LOGO HERE	
-### LOGO HERE
-
-### LOGO HERE
-
-### LOGO HERE
-
-### LOGO HERE
-
-### LOGO HERE
-
-### LOGO HERE
-
-### LOGO HERE
