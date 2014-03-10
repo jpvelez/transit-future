@@ -181,19 +181,33 @@ var current_view = -1;
 var views = [
 [41.85492902952661,-87.62409507729365,41.866802895473384,-87.59480535485102, "gold_line"],               // Gold line
 [41.85492902952661,-87.62409507729365,41.866802895473384,-87.59480535485102, "gold_line"],               // Gold line closeup
+[41.86426600, -87.48822491, 11, "lime_line"],               // Lime line
+[41.67431721606141,-87.98108173291017,42.09350445879808,-87.71672321240234, "lime_line"],             // Lime line West Side closeup
+[41.79448077,  -87.692650268, 13, "lime_line"],             // Lime line South Side closeup
 [41.87876395, -87.61411926, 13, "ashland"],                 // BRT
 [41.87876395, -87.65411926, 15, "ashland"],                 // BRT closeup
-[41.86426600, -87.48822491, 11, "lime_line"],               // Lime line
-[41.67431721606141,-87.98108173291017,42.09350445879808,-87.71672321240234, "lime_line"],             // Lime line West side
-[41.79448077,  -87.692650268, 13, "lime_line"],             // Lime line South side
-[41.77848077,  -87.719650268, 14, "orange_line_extension"], // Orange line extension
 [41.69887172,  -87.624292373, 14, "red_line_extension"],    // Red line extension
-[41.93747172,  -87.873292373, 12, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
-[41.88926600,  -87.733292373, 12, "blue_line_extension"],   // Blue Line fixes
-[41.88926600,  -87.733292373, 11, "inner_circle"],          // Inner Circumferential
 [41.92276600,  -87.790292373, 12, "brown_line_extension"],  // Brown Line extension
-[42.00440721,  -87.624933922, 13, "red_purple"],            // Red/Purple Modernization
-[42.04387172,  -87.733292373, 14, "yellow_line"],           // Yellow line
-// [41.88087172,  -87.628292373, 15],                       // West Loop Transportation Center
+[42.00440721,  -87.624933922, 13, "red_purple"],            // Red/Purple Modernization NEED TO UPDATE
+[41.93747172,  -87.873292373, 12, "blue_line_extension"],   // BLUE REHAB - CREATE
+[41.77848077,  -87.719650268, 14, "orange_line_extension"], // Orange line extension
+[41.88926600,  -87.733292373, 11, "inner_circle"],          // Other projects CREATE
+
+[41.66887172,  -87.624292373, 10, "southeast"],             // South suburbs, CREATE
 [41.66887172,  -87.624292373, 11, "southeast"],             // Southeast Service
+[41.36887172,  -87.324292373, 11, "southeast"],             // ART, CREATE
+
+
+[41.93747172,  -87.873292373, 10, "blue_line_extension"],   // West suburbs, CREATE
+[41.88926600,  -87.733292373, 11, "inner_circle"],          // Inner Circumferential
+[41.93747172,  -87.873292373, 12, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
+[41.83747172,  -87.873292373, 12, "blue_line_extension"],   // ART, CREATE
+
+[42.04387172,  -87.733292373, 10, "yellow_line"],           // North suburbs, CREATE
+[41.93747172,  -87.873292373, 12, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
+[42.00440721,  -87.624933922, 13, "red_purple"],            // Purple Line Rehab, CREATE
+[42.04387172,  -87.733292373, 14, "yellow_line"],           // Yellow line
+[42.04387172,  -87.933292373, 11, "yellow_line"],           // ART, CREATE
+// [41.88087172,  -87.628292373, 15],                       // West Loop Transportation Center
+
 ];

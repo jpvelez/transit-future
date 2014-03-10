@@ -7,6 +7,5 @@ published: true
 extrapadding: 100px
 ---
 
-<div class="mapstage"></div>
 
 ## There will be a ton of new ART lines in the West Suburbs. 

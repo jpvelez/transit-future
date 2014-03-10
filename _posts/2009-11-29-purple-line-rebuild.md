@@ -7,8 +7,6 @@ published: true
 extrapadding: 100px
 ---
 
-<div class="mapstage"></div>
-
 ## We're going to rebuild the Purple Line. 
 
 ## Faster commutes.

@@ -6,5 +6,7 @@ published: true
 extrapadding: 100px
 ---
 
+<div class="mapstage"></div>
+
 # BLUE LINE
 # O'HARE TO SCHAUMBURG
