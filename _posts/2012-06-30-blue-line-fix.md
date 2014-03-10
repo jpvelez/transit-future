@@ -1,10 +1,10 @@
 ---
 layout: fullpage
-title: Your New Blue
+title: Rebuilding the Blue Line
 pagetype: story map
 bgcolor: 69579c
 published: true
 extrapadding: 100px
 ---
 
-## Fixes Blue Line tracks and stations from Grand to O'Hare.
+## Fixes Blue Line tracks and stations on the West Side.
