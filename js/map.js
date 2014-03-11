@@ -16,6 +16,7 @@ map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler() ]);
 
 // Center the map.
 map.centerzoom({ lat: 41.853575, lon: -87.615443 }, 11);
+setCurrentView(0);
 
 // Create the tileset in CartoDB using map_data info.
 var s = document.createElement("script");
@@ -177,12 +178,14 @@ var layer_states = {
 // Format 1: [lat, lng, zoom] point
 // Format 2: [south, west, north, east] bounding box
 // Format 3: add a string like "gold_line" to enable a special CartoCSS layer
-var current_view = -1;
+
+var current_view = 0;
 var views = [
+[41.724180549563606,-87.78900146484375,42.082935909407965,-87.54318237304688],
 [41.85492902952661,-87.62409507729365,41.866802895473384,-87.59480535485102, "gold_line"],               // Gold line
 [41.85492902952661,-87.62409507729365,41.866802895473384,-87.59480535485102, "gold_line"],               // Gold line closeup
 [41.86426600, -87.48822491, 11, "lime_line"],               // Lime line
-[41.67431721606141,-87.98108173291017,42.09350445879808,-87.71672321240234, "lime_line"],             // Lime line West Side closeup
+[41.67431721606141,-87.98108173291017,42.09350445879808,-87.71672321240234, "lime_line"],
 [41.79448077,  -87.692650268, 13, "lime_line"],             // Lime line South Side closeup
 [41.87876395, -87.61411926, 13, "ashland"],                 // BRT
 [41.87876395, -87.65411926, 15, "ashland"],                 // BRT closeup

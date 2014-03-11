@@ -165,7 +165,7 @@ $(function(){
 
     // the top of the map follows the top of the map_follow_element until it is at the top of the window
     map_follow_element = $(".fellowship");
-
+    
   }, function(el, i, pos){});
 
   scrollEvent.on("bottom", $(".scrollout"), function(el, i){
@@ -199,11 +199,11 @@ $(function(){
       // already viewing this mapstage, or one does not exist
       return;
     }
-    current_view = i;
+    current_view = i+1;
     setCurrentView(current_view);
   });
   scrollEvent.on("bottom", $(".mapstage"), function(el, i){
-    if(i == current_view && i > 0){
+    if(i+1 == current_view && i > 0){
       // currently on a mapstage which is falling below the window
       // switch to previous page
       current_view--;
@@ -377,22 +377,27 @@ function setCurrentView(current_view){
     // multiply_scale_by = (AVAILABLE_PIXELS / pixels_at_zoom_11)
     // zoom_delta = log(multiply_scale_by) / log(2) because width is 2^zoom
 
-    var effective_width = $("#map").width() / 3;
-    if(pixel_lng / pixel_lat > effective_width / $("#map").height()){
+    var effective_width = $(window).width() / 3;
+    if(pixel_lng / pixel_lat > effective_width / $(window).height()){
       // we're going to squeeze until the width fits
       views[current_view][2] = Math.round(11 - Math.ceil( Math.log( pixel_lng / effective_width ) / Math.log(2) ));
     }
     else{
       // we're going to squeeze until the height fits
-      views[current_view][2] = Math.round(11 - Math.ceil( Math.log( pixel_lat / $("#map").height() ) / Math.log(2) ));
+      views[current_view][2] = Math.round(11 - Math.ceil( Math.log( pixel_lat / $(window).height() ) / Math.log(2) ));
     }
     var effective_lng_offset = (lng_coefficient * effective_width) * Math.pow(2, 11 - views[current_view][2]);
     views[current_view][1] += effective_lng_offset;
 
   }
 
-  // if map is not initial state, minimal opacity
-  $($("#map").children()[1]).css({ opacity: 0.35 });
+  // if map is not initial state, minimal opacity on transit lines
+  if(current_view > 0){
+    $($("#map").children()[1]).css({ opacity: 0.4 });
+  }
+  else{
+    $($("#map").children()[1]).css({ opacity: 1 });
+  }
 
   // add and remove special CartoCSS style layers
   // a mapstage has a CartoCSS layer if you add a named layer_state string
