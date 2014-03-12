@@ -15,7 +15,7 @@
         z-index: 99;
         position: absolute;
         top: 70px;
-        left: 600px;
+        right: 20px;
         color: #444;
         background-color: rgba(250,250,250,0.8);
         font-size: 18px;
@@ -23,7 +23,7 @@
         font-family: arial;
         height: 600px;
         padding: 15px;
-        width: 500px;
+        width: 66%;
         overflow: scroll;
       }
       .text_over p {
@@ -32,7 +32,6 @@
     </style>
   </head>
   <body>
-    <button onclick="logExtent()">Log Extent</button>
     <div id="map"></div>
     <div class="text_over">
       <h3>The plan</h3>
@@ -141,18 +140,17 @@
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
+ <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+ <link rel="stylesheet" href="leaflet.draw.css" />
+ <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+ <script src="leaflet.draw.js"></script>
 
     <script>
 
-// Define Modest Map of region with transit lines.
 var map;
 function main(){
-  var basemap = mapbox.layer().id('mapmeld.map-x20zuxfw');
-  map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler(), MM.DoubleClickHandler(), MM.DragHandler(), MM.MouseWheelHandler() ]);
-  map.centerzoom({ lat: 41.853575, lon: -87.615443 }, 11);
+  map = L.map('map').setView([41.853575, -87.615443], 11);
+  map.addLayer(L.tileLayer('http://a.tiles.mapbox.com/v3/mapmeld.map-x20zuxfw/{z}/{x}/{y}.png'));
 
     var map_data = {
       "version":"1.0.1",
@@ -186,117 +184,36 @@ function main(){
       + "&callback=loadedToken&t="
       + (new Date()) * 1;
     document.body.appendChild(s);
+
+	// Initialise the draw control and pass it the FeatureGroup of editable layers
+	var drawControl = new L.Control.Draw({
+	    draw: {
+	    	polyline: false,
+	    	polygon: false,
+	    	circle: false,
+	    	marker: false
+	    }
+	});
+	map.addControl(drawControl);
+	map.on('draw:created', function(e){
+		var rectangle = e.layer;
+		logExtent( e.layer.getBounds() );
+	});
 }
 
 function loadedToken(tokenInfo){
   var token = tokenInfo.layergroupid;
-  var template = new MM.Template('http://3.api.cartocdn.com/jpvelez/tiles/layergroup/' + token + '/{Z}/{X}/{Y}.png');
-  var layer = new MM.Layer(template);
-  map.addLayer(layer);
+  var template = 'http://3.api.cartocdn.com/jpvelez/tiles/layergroup/' + token + '/{z}/{x}/{y}.png';
+  map.addLayer(L.tileLayer(template));
 }
 
 // Load map when window is done loading.
 window.onload = main;
 
-
-// Ease around the map as you scroll through the text.
-// Define map views for each paragraph.
-var current_view = 0;
-var views = [
-  null, // First paragraph stays on the initialization view.
-  [41.79876395, -87.50411926, 12],  // Gold line
-  [41.77177479, -87.53053094, 13],  // Gold line closeup
-  [41.87876395, -87.61411926, 13],  // BRT
-  [41.87876395, -87.65411926, 15],  // BRT closeup
-  [41.86426600, -87.48822491, 11],  // Lime line
-  [41.87648077,  -87.684650268, 13], // Lime line West side
-  [41.79448077,  -87.692650268, 13],  // Lime line South side
-  [41.77848077,  -87.719650268, 14],  // Orange line extension
-  [41.69887172,  -87.624292373, 14],  // Red line extension
-  [41.93747172,  -87.873292373, 12],  // Blue Line West - Forest Park to Oak Brook
-  [41.88926600,  -87.733292373, 12],  // Blue Line fixes
-  [41.88926600,  -87.733292373, 12],  // Inner Circumferential
-  [41.92276600,  -87.790292373, 12],  // Brown Line extension
-  [42.00440721,  -87.624933922, 13],  // Red/Purple Modernization
-  [42.04387172,  -87.733292373, 14],  // Yellow line
-  [41.88087172,  -87.628292373, 15],  // Downtown circulator
-  // [41.88087172,  -87.628292373, 15],  // West Loop Transportation Center
-  [41.66887172,  -87.624292373, 11],  // Southeast Service
-];
-
-
-
-// When you scroll..
-$(".text_over").scroll(function(e){
-
-  var paras = $(".text_over h3");
-
-  // Loop through paragraphs
-  for(var p=0;p<paras.length;p++){
-
-    // Subtract distance between top of page and para from distance between top of page and text_over box.
-    // Positive number means paragraph is below top edge of box, negative number means it's above.
-    var top_offset = $(paras[p]).offset().top - $(".text_over").offset().top;
-
-    // If paragraph is below top offset..
-    if(top_offset >= 0){
-
-      // select paragraph
-      if(p == current_view){
-        // view unchanged
-        break;
-      }
-
-      current_view = p;
-      if(views[current_view] === null){
-        break;
-      }
-
-      // if current_view is a lat/lng bounds, calculate viewport
-      // [south, west, north, east]
-      if(views[current_view].length == 4){
-        var lat_coefficient = 0.00051144938704069;
-        var lng_coefficient = 0.00068664550781251;
-        var zoom_coefficient = 11;
-        var pixel_lng = (views[current_view][3] - views[current_view][1]) / lng_coefficient;
-        var pixel_lat = (views[current_view][2] - views[current_view][0]) / lat_coefficient;
-
-        views[current_view][0] = (views[current_view][0] + views[current_view][2]) / 2; // lat
-        views[current_view][1] = (views[current_view][1] + views[current_view][3]) / 2; // lng
-        views[current_view].pop();
-
-        // explaining the math:
-        // pixels_at_zoom_11 = SCREEN_DIMENSION_TO_STRETCH / DEGREE_PER_PIXEL
-        // multiply_scale_by = (AVAILABLE_PIXELS / pixels_at_zoom_11)
-        // zoom_delta = log(multiply_scale_by) / log(2) because width is 2^zoom
-
-        if(pixel_lng / pixel_lat > $("#map").width() / $("#map").height()){
-          // we're going to squeeze until the width fits
-          views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lng / $("#map").width()) ) / Math.log(2) );
-        }
-        else{
-          // we're going to squeeze until the height fits
-          views[current_view][2] = 11 - Math.ceil( Math.log( Math.round(pixel_lat / $("#map").height()) ) / Math.log(2) );
-        }
-
-      }
-
-      // Ease to lat/lon/z view of current paragraph - the first p element
-      // below the top edge of the box. This gets called the instant the previous
-      // element's offset becomes negative.
-      map.ease.location({
-        lat: views[current_view][0],
-        lon: views[current_view][1]
-      }).zoom(views[current_view][2]).optimal();
-
-      break;
-    }
-  }
-});
-
-function logExtent(){
-  var extent = map.extent();
-  console.log( "[" + [ extent.south, extent.west, extent.north, extent.east ].join(",") + "]" );
+function logExtent(bounds){
+  var sw = bounds.getSouthWest();
+  var ne = bounds.getNorthEast();
+  console.log( "[" + [ sw.lat, sw.lng, ne.lat, ne.lng ].join(",") + "]" );
 }
     </script>
   </body>
