@@ -199,14 +199,14 @@ $(function(){
       // already viewing this mapstage, or one does not exist
       return;
     }
-    current_view++;
+    current_view = i+1;
     setCurrentView(current_view);
   });
   scrollEvent.on("bottom", $(".mapstage"), function(el, i){
     if(i+1 == current_view && i > 0){
       // currently on a mapstage which is falling below the window
       // switch to previous page
-      current_view--;
+      current_view = i;
       setCurrentView(current_view);
     }
   });
