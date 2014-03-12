@@ -29,10 +29,10 @@ These organizations are supporting Transit Future:
 ![Faithful + Gould](img/supporters/fg_logo.JPG)
 ![Greater Auburn-Gresham Community Development Corporation](img/supporters/gagdc_logo.jpg)
 ![Electricians local 9](img/supporters/ibew_local_9.jpg)
-![Electricians Local 134](img/supporters/ibew_logo.tif)
+<!-- ![Electricians Local 134](img/supporters/ibew_logo.tif) -->
 ![Openlands](img/supporters/openlands.jpg)
 ![Perkins + Will](img/supporters/perkinsandwill.jpg)
 ![Progress Center for Independent Living](img/supporters/progress_center.jpg)
-![Quad Communities Development Corporation](img/supporters/qcdc.pdf)
+<!-- ![Quad Communities Development Corporation](img/supporters/qcdc.pdf) -->
 ![RPEG](img/supporters/rpeg.png)
 ![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)
