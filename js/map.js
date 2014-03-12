@@ -16,8 +16,10 @@ map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler() ]);
 
 // Center the map.
 map.centerzoom({ lat: 41.853575, lon: -87.615443 }, 11);
+setCurrentView(0);
 
 // Create the tileset in CartoDB using map_data info.
+/*
 var s = document.createElement("script");
 s.type = "text/javascript";
 s.src = "http://jpvelez.cartodb.com/api/v1/map?"
@@ -25,7 +27,22 @@ s.src = "http://jpvelez.cartodb.com/api/v1/map?"
   + "&callback=loadedToken&t="
   + (new Date()) * 1;
 document.body.appendChild(s);
+*/
+
+  var template_rail = new MM.Template('http://jpvelez.cartodb.com/tiles/cta_rail_updated_cartodb/{Z}/{X}/{Y}.png?sql='
+    + escape(map_data.layers[1].options.sql)
+    + '&style=' + escape(map_data.layers[1].options.cartocss));
+  var layer_rail = new MM.Layer(template_rail);
+  map.addLayer(layer_rail);
+
+  var template_future = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects/{Z}/{X}/{Y}.png?sql='
+    + escape(map_data.layers[0].options.sql)
+    + '&style=' + escape(map_data.layers[0].options.cartocss));
+  var layer_future = new MM.Layer(template_future);
+  map.addLayer(layer_future);
+
 }
+
 
 // Load the tileset onto the Modest Map.
 var highlight_layer = null;
@@ -177,17 +194,19 @@ var layer_states = {
 // Format 1: [lat, lng, zoom] point
 // Format 2: [south, west, north, east] bounding box
 // Format 3: add a string like "gold_line" to enable a special CartoCSS layer
-var current_view = -1;
+
+var current_view = 0;
 var views = [
-[41.85492902952661,-87.62409507729365,41.866802895473384,-87.59480535485102, "gold_line"],               // Gold line
-[41.85492902952661,-87.62409507729365,41.866802895473384,-87.59480535485102, "gold_line"],               // Gold line closeup
-[41.86426600, -87.48822491, 11, "lime_line"],               // Lime line
-[41.67431721606141,-87.98108173291017,42.09350445879808,-87.71672321240234, "lime_line"],             // Lime line West Side closeup
-[41.79448077,  -87.692650268, 13, "lime_line"],             // Lime line South Side closeup
-[41.87876395, -87.61411926, 13, "ashland"],                 // BRT
-[41.87876395, -87.65411926, 15, "ashland"],                 // BRT closeup
-[41.69887172,  -87.624292373, 14, "red_line_extension"],    // Red line extension
-[41.92276600,  -87.790292373, 12, "brown_line_extension"],  // Brown Line extension
+[41.77131167976407,-87.77252197265625,41.95744765908283,-87.67501831054688],
+[41.73519798789358,-87.62763977050781,41.88464303825411,-87.54558563232422, "gold_line"],               // Gold line
+[41.782833048804136,-87.61931419372559,41.80311842739231,-87.5833511352539, "gold_line"],               // Gold line closeup
+[41.74467659677642,-87.76840209960938,41.97786911170172,-87.62557983398438, "lime_line"],               // Lime line
+[41.836444171978776,-87.77286529541016,41.90355467806868,-87.70917892456055, "lime_line"],
+[41.671373126259354,-87.77320861816406,41.79435234802088,-87.71656036376953, "lime_line"],             // Lime line South Side closeup
+[41.70777900286713,-87.73681640625,41.96357478222518,-87.58781433105467, "ashland"],                 // BRT
+[41.8562650797484,-87.68119812011717,41.895057911050564,-87.64291763305664, "ashland"],                 // BRT closeup
+[41.65970350473566,-87.63914108276367,41.723027452614744,-87.59485244750977, "red_line_extension"],    // Red line extension
+[41.92424883732577,-87.76582717895508,41.98871534571069,-87.70523071289062, "brown_line_extension"],  // Brown Line extension
 [42.00440721,  -87.624933922, 13, "red_purple"],            // Red/Purple Modernization NEED TO UPDATE
 [41.93747172,  -87.873292373, 12, "blue_line_extension"],   // BLUE REHAB - CREATE
 [41.77848077,  -87.719650268, 14, "orange_line_extension"], // Orange line extension
