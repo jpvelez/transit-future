@@ -417,7 +417,14 @@ function setCurrentView(current_view){
         custom_layer.layers.pop(); // remove L layer
 
         // call for a tile template URL for the CartoCSS
-        layer_to_set = current_layer_state;
+        //layer_to_set = current_layer_state;
+        var template = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects/{Z}/{X}/{Y}.png?sql='
+          + escape(custom_layer.layers[0].options.sql)
+          + '&style=' + escape(custom_layer.layers[0].options.cartocss));
+        highlight_layer = new MM.Layer(template);
+        map.addLayer(highlight_layer);
+        
+        /*
         var s = document.createElement("script");
         s.type = "text/javascript";
         s.src = "http://jpvelez.cartodb.com/api/v1/map?"
@@ -425,6 +432,7 @@ function setCurrentView(current_view){
           + "&callback=loadedToken&t="
           + (new Date()) * 1;
         document.body.appendChild(s);
+        */
       }
       else if(layer_states[current_layer_state]){
         // use a known tile template for this layer

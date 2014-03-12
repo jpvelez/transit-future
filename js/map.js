@@ -19,6 +19,7 @@ map.centerzoom({ lat: 41.853575, lon: -87.615443 }, 11);
 setCurrentView(0);
 
 // Create the tileset in CartoDB using map_data info.
+/*
 var s = document.createElement("script");
 s.type = "text/javascript";
 s.src = "http://jpvelez.cartodb.com/api/v1/map?"
@@ -26,7 +27,22 @@ s.src = "http://jpvelez.cartodb.com/api/v1/map?"
   + "&callback=loadedToken&t="
   + (new Date()) * 1;
 document.body.appendChild(s);
+*/
+
+  var template_rail = new MM.Template('http://jpvelez.cartodb.com/tiles/cta_rail_updated_cartodb/{Z}/{X}/{Y}.png?sql='
+    + escape(map_data.layers[1].options.sql)
+    + '&style=' + escape(map_data.layers[1].options.cartocss));
+  var layer_rail = new MM.Layer(template_rail);
+  map.addLayer(layer_rail);
+
+  var template_future = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects/{Z}/{X}/{Y}.png?sql='
+    + escape(map_data.layers[0].options.sql)
+    + '&style=' + escape(map_data.layers[0].options.cartocss));
+  var layer_future = new MM.Layer(template_future);
+  map.addLayer(layer_future);
+
 }
+
 
 // Load the tileset onto the Modest Map.
 var highlight_layer = null;
