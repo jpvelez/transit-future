@@ -195,7 +195,7 @@ $(function(){
   scrollEvent.on("middle", $(".mapstage"), function(el, i){
 
     // select mapstage
-    if(i == current_view || views[i] === null){
+    if(i+1 == current_view || views[i+1] === null){
       // already viewing this mapstage, or one does not exist
       return;
     }
