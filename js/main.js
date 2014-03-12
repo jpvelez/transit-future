@@ -199,7 +199,7 @@ $(function(){
       // already viewing this mapstage, or one does not exist
       return;
     }
-    current_view = i+1;
+    current_view++;
     setCurrentView(current_view);
   });
   scrollEvent.on("bottom", $(".mapstage"), function(el, i){
