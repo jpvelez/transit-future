@@ -8,6 +8,7 @@ if($(document.body).scrollTop() > 300){
 }
 
 // Define a basemap
+// We're using a Mapbox basemap, and Mapbox.js to make fetch it easy.
 var basemap = mapbox.layer().id('jpvelez.map-h88danj5');
 
 // Create a map in the map container, using the basemap.
@@ -28,6 +29,14 @@ s.src = "http://jpvelez.cartodb.com/api/v1/map?"
   + (new Date()) * 1;
 document.body.appendChild(s);
 */
+
+// Add base layers for transit future projects, art projects, and exiting L lines.
+// Uses the CartoDB SQL API to get back specifically styled tilsets. That's all defined below.  
+  var template_art = new MM.Template('http://jpvelez.cartodb.com/tiles/art/{Z}/{X}/{Y}.png?sql='
+    + escape(map_data.layers[2].options.sql)
+    + '&style=' + escape(map_data.layers[2].options.cartocss));
+  var layer_art = new MM.Layer(template_art);
+  map.addLayer(layer_art);
 
   var template_rail = new MM.Template('http://jpvelez.cartodb.com/tiles/cta_rail_updated_cartodb/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[1].options.sql)
@@ -70,7 +79,7 @@ function loadedToken(tokenInfo){
 window.onload = main;
 
 
-// Create transit line tileset using CartoDB API.
+// Define transit line layer styles to be fetched above using CartoDB API.
 // You define what features to show using a PostgreSQL-like query.
 // You define how to style those features using CartoCSS.
 var map_data = {
@@ -90,6 +99,14 @@ var map_data = {
       "options":{
         "sql":"select * from cta_rail_updated_cartodb",
         "cartocss":"#cta_rail_updated_cartodb{ \n line-width: 5;\nline-cap: round;\nline-join: round;\n[name_new='Red'] {\nline-color: #EA5854;\n}\n[name_new='Brown'] {\nline-color: #73451C;\n}\n[name_new='Pink'] {\nline-color: #F38CB4;\n}\n[name_new='Purple'] {\nline-color: #823393;\n}\n[name_new='Yellow'] {\nline-color: #FEE800;\n}\n[name_new='Blue'] {\nline-color: #74BBE7;\n}\n[name_new='Orange'] {\nline-color: #F37537;\n}\n[name_new='Green'] {\nline-color: #1DAA4D;\n}\n}",
+        "cartocss_version":"2.1.1"
+      }
+    },
+    {
+      "type":"cartodb",
+      "options":{
+        "sql":"select * from art",
+        "cartocss":"#art{ \n line-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 2, 2, 2, 2;\n}",
         "cartocss_version":"2.1.1"
       }
     }
@@ -186,7 +203,15 @@ var layer_states = {
     + "line-cap: round;"
     + "line-join: round;"
     + "}"
-  + "}"
+  + "}",
+  art: "#art{"
+    + "line-color: #055D00;"
+    + "line-width: 2;"
+    + "line-cap: round;"
+    + "line-join: round;"
+    + "line-opacity: .5;"
+    + "line-dasharray: 2, 2, 2, 2;"
+    + "}"
 };
 
 // Ease around the map as you scroll through the project posts.
@@ -214,19 +239,19 @@ var views = [
 
 [41.454563895325855,-88.13919067382812,41.81943165932009,-87.95722961425781, "southeast"],             // South suburbs, CREATE
 [41.38814294931545,-87.73544311523436,41.887965758804484,-87.56790161132812, "southeast"],             // Southeast Service
-[41.454563895325855,-88.13919067382812,41.81943165932009,-87.95722961425781, "southeast"],             // ART, CREATE
+[41.454563895325855,-88.13919067382812,41.81943165932009,-87.95722961425781, "art"],             // ART, CREATE
 
 
 [41.788208979355666,-88.33419799804688,42.04878275505149,-88.1879425048828, "blue_line_extension"],   // West suburbs, CREATE
 [41.77182378456081,-87.88787841796875,41.99267057124887,-87.78076171875, "inner_circle"],          // Inner Circumferential
 [41.7041906065988,-88.0173110961914,41.880297681402865,-87.92152404785156, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
-[41.83375828633243,-88.29986572265625,42.04521345501039,-88.20030212402344, "blue_line_extension"],   // ART, CREATE
+[41.83375828633243,-88.29986572265625,42.04521345501039,-88.20030212402344, "art"],   // ART, CREATE
 
 [41.97123285764962,-88.34381103515624,42.31590854308647,-88.19000244140625, "yellow_line"],           // North suburbs, CREATE
 [41.97582726102573,-88.05353164672852,42.05897965014623,-88.00821304321289, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
 [42.00695837037897,-87.7045440673828,42.07783959017503,-87.65630722045898, "red_purple"],            // Purple Line Rehab, CREATE
 [42.02092414389371,-87.769775390625,42.06369516045284,-87.74248123168945, "yellow_line"],           // Yellow line
-[41.97123285764962,-88.34381103515624,42.31590854308647,-88.19000244140625, "yellow_line"],           // ART, CREATE
+[41.97123285764962,-88.34381103515624,42.31590854308647,-88.19000244140625, "art"],           // ART, CREATE
 // [41.88087172,  -87.628292373, 15],                       // West Loop Transportation Center
 
 ];
