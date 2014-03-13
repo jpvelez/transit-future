@@ -6,9 +6,9 @@ bgcolor: 013ADF
 image: transitmap2
 ---
 
-## For decades, plans for game-changing transit projects have gathered dust because they've lacked funding.
+## Over the years, Chicagoans have dreamed up dozens of game changing transit projects.
 
-## But now, There's a new way to fund their construction.
+## Due to lack of funding, those plans have gathered dust.
 
 
-#It's time for Transit Future.
+## Transit Future is a way to finally fund their construction.
