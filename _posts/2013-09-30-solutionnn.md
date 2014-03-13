@@ -6,7 +6,7 @@ bgcolor: 013ADF
 image: transitmap2
 ---
 
-## Over the years, Chicagoans have dreamed up dozens of game changing transit projects.
+## Over the years, the region has dreamed up dozens of game changing transit projects.
 
 ## Due to lack of funding, those plans have gathered dust.
 
