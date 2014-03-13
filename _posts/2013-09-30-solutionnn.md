@@ -1,14 +1,14 @@
 ---
 published: true
-pagetype: quote
+pagetype: quote map textright
 layout: fullpage
 bgcolor: 013ADF
+image: transitmap2
 ---
 
-
-
-### For decades, game-changing plans for transit projects have gathered dust because they've lacked funding.
+## For decades, plans for game-changing transit projects have gathered dust because they've lacked funding.
 
 ## But now, There's a new way to fund their construction.
+
 
 #It's time for Transit Future.
