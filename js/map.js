@@ -106,7 +106,7 @@ var map_data = {
       "type":"cartodb",
       "options":{
         "sql":"select * from art",
-        "cartocss":"#art{ \n line-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 2, 2, 2, 2;\n}",
+        "cartocss":"#art{\nline-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 2, 2, 2, 2;\n}",
         "cartocss_version":"2.1.1"
       }
     }
@@ -206,10 +206,9 @@ var layer_states = {
   + "}",
   art: "#art{"
     + "line-color: #055D00;"
-    + "line-width: 2;"
+    + "line-width: 5;"
     + "line-cap: round;"
     + "line-join: round;"
-    + "line-opacity: .5;"
     + "line-dasharray: 2, 2, 2, 2;"
     + "}"
 };
