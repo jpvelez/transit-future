@@ -3,6 +3,7 @@ published: true
 layout: fullpage
 pagetype: quote
 bgcolor: FF8000
+section: supporters
 ---
 
 These organizations are supporting Transit Future:
