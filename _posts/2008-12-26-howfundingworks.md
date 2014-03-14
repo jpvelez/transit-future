@@ -9,8 +9,10 @@ bgcolor: FF8000
 
 ## How funding works
 
-The Cook County Board of Commissioners can create that funding stream. Over the next several months, commissioners will work with Cook County residents to decide what kind of stream they will use.
+Cook County can choose between sales, motor fuel and property taxes, as well as parking or development fees. 
 
-Their options range from sales tax to parking fees to motor fuel taxes to property taxes. Transit Future is a campaign that aims to support the Commissioners in making the right choice and funding the new transit network.
+Over the next several months, the County will work with local residents to decide what kind of tax they might use.
 
-**Join the campaign.** Together we can build our transit future.
+Transit Future recommends that the county choose a tax that hurts our wallets the least while giving the most power to build new transit lines. 
+
+**Join the campaign. Call your County Commissioner. Tell them you believe in Transit Future **
