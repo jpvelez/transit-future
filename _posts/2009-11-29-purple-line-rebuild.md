@@ -9,4 +9,6 @@ extrapadding: 100px
 
 ## The Purple Line is over 100 years old. 
 
-## Rebuilding the tracks means faster commutes to the city and to jobs in Evanston and Wilmette. 
+## Rebuilding the tracks means faster commutes to the city. 
+
+## And it makes, jobs, shopping, school and entertainment more accessible in Evanston and Wilmette. 
