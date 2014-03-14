@@ -7,6 +7,6 @@ published: true
 extrapadding: 100px
 ---
 
-## We're going to rebuild the Purple Line. 
+## The Purple Line is over 100 years old. 
 
-## Faster commutes.
+## Rebuilding the tracks means faster commutes to the city and to jobs in Evanston and Wilmette. 
