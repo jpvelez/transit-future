@@ -2,6 +2,7 @@
 published: true
 pagetype: quote
 layout: fullpage
+bgcolor: FF8000
 ---
 
 ## Who is Transit Future?
