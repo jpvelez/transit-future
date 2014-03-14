@@ -5,6 +5,7 @@ pagetype: story map
 bgcolor: C82A45
 published: true
 extrapadding: 100px
+section: northsuburbs
 ---
 
 ## Suburbanites can get to jobs at O'Hare.

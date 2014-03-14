@@ -5,6 +5,7 @@ pagetype: story map
 bgcolor: 22A7DA
 published: true
 extrapadding: 100px
+section: northsuburbs
 ---
 
 ## The Purple Line is over 100 years old. 

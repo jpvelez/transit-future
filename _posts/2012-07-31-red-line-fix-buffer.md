@@ -4,9 +4,9 @@ pagetype: quote map
 bgcolor: 69579c
 published: true
 extrapadding: 100px
+section: chicago
 ---
 
 <div class="mapstage"></div>
 
-# FIXING THE
-# RED/PURPLE LINE
+# RED/PURPLE MODERNIZATION

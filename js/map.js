@@ -106,7 +106,7 @@ var map_data = {
       "type":"cartodb",
       "options":{
         "sql":"select * from art",
-        "cartocss":"#art{\nline-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 2, 2, 2, 2;\n}",
+        "cartocss":"#art{\nline-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 2, 2, 2, 2;\nline-opacity: .35\n}",
         "cartocss_version":"2.1.1"
       }
     }
@@ -234,7 +234,7 @@ var views = [
 [41.940339655623845,-87.68943786621092,42.02800151556251,-87.65201568603516, "red_purple"],            // Red/Purple Modernization NEED TO UPDATE
 [41.7246930304541,-87.82676696777344,41.8897548444455,-87.7364730834961, "blue_line_extension"],   // BLUE REHAB - CREATE
 [41.748775021355044,-87.76342391967772,41.80036715933411,-87.73612976074217, "orange_line_extension"], // Orange line extension
-[41.67598909594535,-88.0499267578125,42.05439124994332,-87.83843994140625, "inner_circle"],          // Other projects CREATE
+[41.67598909594535,-88.0499267578125,42.05439124994332,-87.83843994140625],          // Other projects CREATE
 
 [41.454563895325855,-88.13919067382812,41.81943165932009,-87.95722961425781, "southeast"],             // South suburbs, CREATE
 [41.38814294931545,-87.73544311523436,41.887965758804484,-87.56790161132812, "southeast"],             // Southeast Service

@@ -5,6 +5,7 @@ pagetype: story map
 bgcolor: C82A45
 published: true
 extrapadding: 100px
+section: southsuburbs
 ---
 
 ## Commuter rail connecting the South Suburbs to jobs in the Loop and beyond.

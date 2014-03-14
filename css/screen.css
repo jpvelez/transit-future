@@ -174,10 +174,9 @@ li {
 }
 
 #loading{
-  background-color: black;
+  background-color: white;
 /*background:#a6d5ef;*/
   background-size:cover;
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/chicago-seal-background.jpg', sizingMethod='scale')";
   position:fixed;
   top:0px;
   left:0px;
@@ -188,7 +187,7 @@ li {
 
 #loading img{
   display:block;
-  margin:100px auto 0px;
+  margin: 250px auto;
 }
 
 #loading h1,
@@ -324,6 +323,11 @@ input[type="text"] {
   padding: 5px 0px 5px 0px;
 }
 
+/*Add space between supporter pics*/
+.page img {
+  margin-bottom: 30px;
+}
+
 .page.quote,
 .page.story{
   overflow-x:hidden;
@@ -370,9 +374,22 @@ input[type="text"] {
 
 .page.quote.map h1,
 .page.quote.map h2,
-.page.quote.map h3 {
+.page.quote.map h3{
   color: black;
   text-shadow: none;
+}
+
+/*Make regular text black on the map */
+.page.map p {
+  color: black;
+  text-shadow: none;
+  font-size: 20px;
+  font-weight: 80;
+}
+
+.page.quote.region h1 {
+  font-size: 100px;
+  font-weight: 600;
 }
 
 
@@ -382,6 +399,8 @@ input[type="text"] {
   color: black;
   text-shadow: none;
 }
+
+
 
 /*Align the text in the intro to the right of the transit maps in the background*/
 .page.quote.map.textright h1{

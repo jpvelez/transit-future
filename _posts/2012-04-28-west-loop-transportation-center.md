@@ -5,6 +5,8 @@ pagetype: story map
 bgcolor: C82A45
 published: true
 extrapadding: 100px
+published: false
+section: chicago
 ---
 
 ## Will someday serve as Chicago's High Speed rail station.

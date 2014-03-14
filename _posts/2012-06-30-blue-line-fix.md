@@ -5,6 +5,7 @@ pagetype: story map
 bgcolor: 69579c
 published: true
 extrapadding: 100px
+section: chicago
 ---
 
 ## Fixes Blue Line tracks and stations on the West Side.

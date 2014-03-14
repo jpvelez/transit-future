@@ -1,9 +1,10 @@
 ---
 layout: fullpage
 pagetype: quote map
-bgcolor: 69579c
+bgcolor: 000000
 published: true
 extrapadding: 100px
+section: northsuburbs
 ---
 
 <div class="mapstage"></div>

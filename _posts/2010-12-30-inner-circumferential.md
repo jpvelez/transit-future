@@ -5,6 +5,7 @@ pagetype: story map
 bgcolor: 22A7DA
 published: true
 extrapadding: 100px
+section: westsuburbs
 ---
 
 ## Connects O’Hare to Midway - with stops in the west Cook County suburbs.

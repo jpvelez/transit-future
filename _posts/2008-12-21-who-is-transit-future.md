@@ -3,9 +3,14 @@ published: true
 pagetype: quote
 layout: fullpage
 bgcolor: FF8000
+section: supporters
 ---
 
 ## Who is Transit Future?
+
+The campaign is lead by  
+
+<br>
 
 ![Center for Neighborhood Technology](img/supporters/cntlogo.jpg)
 
@@ -13,6 +18,7 @@ The **Center for Neighborhood Technology** (CNT) is an award-winning innovations
 
 CNT works across disciplines and issues, including transportation and community development, energy, water, and climate change.
 
+<br><br>
 
 ![Active Transportation Alliance](img/supporters/activetrans.jpg)
 
