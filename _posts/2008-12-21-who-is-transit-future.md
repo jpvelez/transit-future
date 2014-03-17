@@ -8,7 +8,7 @@ section: supporters
 
 ## Who is Transit Future?
 
-The campaign is lead by  
+The campaign is led by  
 
 <br>
 
