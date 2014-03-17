@@ -6,7 +6,7 @@ bgcolor: 00FF00
 section: supporters
 ---
 
-## Cook County Commissioners that support Transit Future:
+## Cook County Commissioners who support Transit Future:
 
 ![Deborah Sims](img/supporters/deborah_sims_sig.jpg)
 ![Earlean Collins](img/supporters/earlean_collins_sig.jpg)
