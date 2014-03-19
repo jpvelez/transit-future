@@ -9,9 +9,9 @@ section: chicago
 ---
 
 ## West Loop Transportation Center
-**The region's new transit hub.
+**The region's new transit hub.**
 
-One central station for the L, commuter rail, Amtrak, and, someday, high-speed rail.**
+**One central station for the L, commuter rail, Amtrak, and, someday, high-speed rail.**
 
 
 ## Road projects
