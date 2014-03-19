@@ -18,24 +18,40 @@ section: supporters
 ![Peter Silvestri](img/supporters/peter_silvestri_sig.jpg)
 ![Robert Steele](img/supporters/robert_steele_sig.jpg)
 
-## The following organizations support the campaign:
+## The following labor organizations support the campaign:
 
-![Active Transportation Alliance](img/supporters/activetrans.jpg)
-![Bethel New Life](img/supporters/bethel_newlife.png)
-![BLUE1647](img/supporters/blue1647.jpg)
-![Bronzeville Urban Development](img/supporters/bud.jpg)
-![Center for Neighborhood Technology](img/supporters/cntlogo.jpg)
-![Christopher B. Burke Engineering](img/supporters/burke_engineering.jpg)
-![Claretian Associates](img/supporters/claretian_associates.jpg)
+
 ![Cook County Building Trades](img/supporters/buildingtrades.jpg)
-![Environmental Defenders of McHenry County](img/supporters/EDMC_logo.jpg)
-![Faithful + Gould](img/supporters/fg_logo.JPG)
-![Greater Auburn-Gresham Community Development Corporation](img/supporters/greater_auburngresham.png)
 ![Electricians local 9](img/supporters/ibew_local_9.jpg)
 ![Electricians Local 134](img/supporters/ibew_logo.jpg)
-![Openlands](img/supporters/openlands.jpg)
+![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)
+
+
+## The following businesses support the campaign:
+
+
+![BLUE1647](img/supporters/blue1647.jpg)
+![Christopher B. Burke Engineering](img/supporters/burke_engineering.jpg)
+![Faithful + Gould](img/supporters/fg_logo.JPG)
+![McCaffery Interests](img/supporters/mccaffery)
 ![Perkins + Will](img/supporters/perkinsandwill.jpg)
+![RPEG](img/supporters/rpeg.jpg)
+
+## The following community organizations support the campaign:
+
+
+[![Active Transportation Alliance](img/supporters/activetrans.jpg)](www.activetrans.org)
+![Bethel New Life](img/supporters/bethel_newlife.png)
+![Bronzeville Retail Initiative](img/supporters/bri.jpg)
+![Bronzeville Urban Development](img/supporters/bud.jpg)
+![Center for Neighborhood Technology](img/supporters/cntlogo.jpg)
+![Claretian Associates](img/supporters/claretian_associates.jpg)
+![Delta Associates](img/supporters/deltalogo.jpg)
+![Enlace](img/supporters/enlace.jpg)
+![Environmental Defenders of McHenry County](img/supporters/EDMC_logo.jpg)
+![Far South Community Development Corporation](img/supporters/fscdc.jpg)
+![Greater Auburn-Gresham Community Development Corporation](img/supporters/greater_auburngresham.png)
+![Openlands](img/supporters/openlands.jpg)
+[![Over The Rainbow Association](img/supporters/otrlogo.jpg)](www.otrassn.org)
 ![Progress Center for Independent Living](img/supporters/progress_center.jpg)
 ![Quad Communities Development Corporation](img/supporters/qcdc.jpg)
-![RPEG](img/supporters/rpeg.jpg)
-![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)
