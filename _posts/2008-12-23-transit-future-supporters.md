@@ -37,20 +37,21 @@ section: supporters
 ![Perkins + Will](img/supporters/perkinsandwill.jpg)
 ![RPEG](img/supporters/rpeg.jpg)
 
-## The following community organizations support the campaign:
+## The following community and civic organizations support the campaign:
 
 
-[![Active Transportation Alliance](img/supporters/activetrans.jpg)](www.activetrans.org)
-![Bethel New Life](img/supporters/bethel_newlife.png)
-![Bronzeville Retail Initiative](img/supporters/bri.jpg)
+[![Active Transportation Alliance](img/supporters/activetrans.jpg)](http://www.activetrans.org)
+[![Bethel New Life](img/supporters/bethel_newlife.png)](http://www.bethelnewlife.org)
+[![Bronzeville Retail Initiative](img/supporters/bri.jpg)](http://www.bronzevilleretail.com)
 ![Bronzeville Urban Development](img/supporters/bud.jpg)
-![Center for Neighborhood Technology](img/supporters/cntlogo.jpg)
+[![Center for Neighborhood Technology](img/supporters/cntlogo.jpg)](http://www.cnt.org)
 ![Claretian Associates](img/supporters/claretian_associates.jpg)
 ![Delta Associates](img/supporters/deltalogo.jpg)
 ![Enlace](img/supporters/enlace.jpg)
 ![Environmental Defenders of McHenry County](img/supporters/EDMC_logo.jpg)
 ![Far South Community Development Corporation](img/supporters/fscdc.jpg)
 ![Greater Auburn-Gresham Community Development Corporation](img/supporters/greater_auburngresham.png)
+
 ![Openlands](img/supporters/openlands.jpg)
 [![Over The Rainbow Association](img/supporters/otrlogo.jpg)](www.otrassn.org)
 ![Progress Center for Independent Living](img/supporters/progress_center.jpg)
