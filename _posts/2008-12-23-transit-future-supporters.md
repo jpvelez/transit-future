@@ -8,7 +8,7 @@ section: supporters
 
 ## Cook County Commissioners who support Transit Future:
 
-![Deborah Sims](img/supporters/deborah_sims_sig.jpg)
+[![Deborah Sims](img/supporters/deborah_sims_sig.jpg)](http://www.deborahsims.org/)
 ![Earlean Collins](img/supporters/earlean_collins_sig.jpg)
 ![Edwin Reyes](img/supporters/edwin_reyes_sig.jpg)
 ![Jeffery Tobolski](img/supporters/jeffrey_tobowlski_sig.jpg)
@@ -33,7 +33,7 @@ section: supporters
 ![BLUE1647](img/supporters/blue1647.jpg)
 ![Christopher B. Burke Engineering](img/supporters/burke_engineering.jpg)
 ![Faithful + Gould](img/supporters/fg_logo.JPG)
-![McCaffery Interests](img/supporters/mccaffery)
+![McCaffery Interests](img/supporters/mccaffery.jpg)
 ![Perkins + Will](img/supporters/perkinsandwill.jpg)
 ![RPEG](img/supporters/rpeg.jpg)
 
@@ -47,12 +47,12 @@ section: supporters
 [![Center for Neighborhood Technology](img/supporters/cntlogo.jpg)](http://www.cnt.org)
 ![Claretian Associates](img/supporters/claretian_associates.jpg)
 ![Delta Associates](img/supporters/deltalogo.jpg)
-![Enlace](img/supporters/enlace.jpg)
-![Environmental Defenders of McHenry County](img/supporters/EDMC_logo.jpg)
+![Enlace](img/supporters/enlacelogo.jpg)
+![Environmental Defenders of McHenry County](img/supporters/edmc_logo.jpg)
 ![Far South Community Development Corporation](img/supporters/fscdc.jpg)
 ![Greater Auburn-Gresham Community Development Corporation](img/supporters/greater_auburngresham.png)
 
 ![Openlands](img/supporters/openlands.jpg)
 [![Over The Rainbow Association](img/supporters/otrlogo.jpg)](www.otrassn.org)
 ![Progress Center for Independent Living](img/supporters/progress_center.jpg)
-![Quad Communities Development Corporation](img/supporters/qcdc.jpg)
+[![Quad Communities Development Corporation](img/supporters/qcdc.jpg)](http://www.qcdc.org/index.html)
