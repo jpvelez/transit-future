@@ -9,33 +9,33 @@ section: supporters
 ## Cook County Commissioners who support Transit Future:
 
 [![Deborah Sims](img/supporters/deborah_sims_sig.jpg)](http://www.deborahsims.org/)
-![Earlean Collins](img/supporters/earlean_collins_sig.jpg)
-![Edwin Reyes](img/supporters/edwin_reyes_sig.jpg)
-![Jeffery Tobolski](img/supporters/jeffrey_tobowlski_sig.jpg)
-![Jerry Butler](img/supporters/jerry_butler_sig.jpg)
-![Joan Murphy](img/supporters/joan_murphy_sig.jpg)
-![Larry Suffredin](img/supporters/larry_suffredin_sig.jpg)
-![Peter Silvestri](img/supporters/peter_silvestri_sig.jpg)
-![Robert Steele](img/supporters/robert_steele_sig.jpg)
+[![Earlean Collins](img/supporters/earlean_collins_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=104)
+[![Edwin Reyes](img/supporters/edwin_reyes_sig.jpg)](http://www.edwinreyes.org/)
+[![Jeffery Tobolski](img/supporters/jeffrey_tobowlski_sig.jpg)](http://www.commissionertobolski.com/)
+[![Jerry Butler](img/supporters/jerry_butler_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=110)
+[![Joan Murphy](img/supporters/joan_murphy_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=485)
+[![Larry Suffredin](img/supporters/larry_suffredin_sig.jpg)](http://www.suffredin.org/)
+[![Peter Silvestri](img/supporters/peter_silvestri_sig.jpg)](http://www.petersilvestri.com/)
+[![Robert Steele](img/supporters/robert_steele_sig.jpg)](http://www.robertsteele.org/)
 
 ## The following labor organizations support the campaign:
 
 
-![Cook County Building Trades](img/supporters/buildingtrades.jpg)
-![Electricians local 9](img/supporters/ibew_local_9.jpg)
-![Electricians Local 134](img/supporters/ibew_logo.jpg)
-![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)
+[![Cook County Building Trades](img/supporters/buildingtrades.jpg)](http://www.chicagobuildingtrades.org/)
+[![Electricians local 9](img/supporters/ibew_local_9.jpg)](http://www.ibew9.org/)
+[![Electricians Local 134](img/supporters/ibew_logo.jpg)](http://lu134.org/)
+[![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)](http://www.smw73.org/)
 
 
 ## The following businesses support the campaign:
 
 
-![BLUE1647](img/supporters/blue1647.jpg)
-![Christopher B. Burke Engineering](img/supporters/burke_engineering.jpg)
-![Faithful + Gould](img/supporters/fg_logo.JPG)
-![McCaffery Interests](img/supporters/mccaffery.jpg)
-![Perkins + Will](img/supporters/perkinsandwill.jpg)
-![RPEG](img/supporters/rpeg.jpg)
+[![BLUE1647](img/supporters/blue1647.jpg)](http://www.blue1647.com/)
+[![Christopher B. Burke Engineering](img/supporters/burke_engineering.jpg)](http://www.cbbel.com/)
+[![Faithful + Gould](img/supporters/fg_logo.JPG)](http://www.fgould.com/americas/)
+[![McCaffery Interests](img/supporters/mccaffery.jpg)](http://www.mccafferyinterests.com/)
+[![Perkins + Will](img/supporters/perkinsandwill.jpg)](http://www.perkinswill.com/)
+[![RPEG](img/supporters/rpeg.jpg)](http://www.repg-lund.com/)
 
 ## The following community and civic organizations support the campaign:
 
@@ -51,7 +51,7 @@ section: supporters
 [![Environmental Defenders of McHenry County](img/supporters/edmc_logo.jpg)](http://www.mcdef.org/)
 [![Far South Community Development Corporation](img/supporters/fscdc.jpg)](http://www.farsouthcdc.org/)
 [![Greater Auburn-Gresham Community Development Corporation](img/supporters/greater_auburngresham.png)](http://www.gagdc.org/index.html)
-{![Openlands](img/supporters/openlands.jpg)}(http://www.openlands.org/)
+[![Openlands](img/supporters/openlands.jpg)](http://www.openlands.org/)
 [![Over The Rainbow Association](img/supporters/otrlogo.jpg)](http://www.otrassn.org)
 [![Progress Center for Independent Living](img/supporters/progress_center.jpg)](http://www.progresscil.org/)
 ![Quad Communities Development Corporation](img/supporters/qcdc.jpg)
