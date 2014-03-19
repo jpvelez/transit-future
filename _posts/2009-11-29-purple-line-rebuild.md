@@ -12,4 +12,4 @@ section: northsuburbs
 
 ## Rebuilding the tracks means faster commutes to the city. 
 
-## And it means quicker trips to jobs, shopping, school and entertainment in Evanston and Wilmette.
+## And quicker trips to jobs, shopping, school and entertainment in Evanston and Wilmette.
