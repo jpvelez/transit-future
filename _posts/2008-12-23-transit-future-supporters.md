@@ -38,6 +38,7 @@ section: supporters
 [![McCaffery Interests](img/supporters/mccaffery.jpg)](http://www.mccafferyinterests.com/)
 [![Perkins + Will](img/supporters/perkinsandwill.jpg)](http://www.perkinswill.com/)
 [![RPEG](img/supporters/rpeg.jpg)](http://www.repg-lund.com/)
+[![Skidmore, Owings & Merrill](img/supporters/som.jpg)](http://www.som.com/)
 
 ## The following community and civic organizations support the campaign:
 
