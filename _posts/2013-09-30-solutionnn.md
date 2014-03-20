@@ -2,7 +2,7 @@
 published: true
 pagetype: quote map textright
 layout: fullpage
-bgcolor: 013ADF
+bgcolor: FFFFFF
 image: transitmap2
 section: transitfuture
 ---
