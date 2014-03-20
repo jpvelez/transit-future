@@ -1,6 +1,6 @@
 ---
 layout: fullpage
-title: RED/PURPLE MODERNIZATION
+title: RED LINE MODERNIZATION
 pagetype: story map
 bgcolor: C82A45
 published: true

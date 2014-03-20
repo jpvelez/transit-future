@@ -7,6 +7,7 @@ extrapadding: 100px
 section: chicago
 ---
 
+<div id="brown" class="mapstage"></div>
 <div class="mapstage"></div>
 
 # BROWN LINE EXTENSION

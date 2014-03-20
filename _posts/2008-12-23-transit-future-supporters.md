@@ -6,6 +6,7 @@ bgcolor: FFFFFF
 section: supporters
 ---
 
+<div id="supporters" class="mapstage"></div>
 ## Cook County Commissioners who support Transit Future:
 
 [![Deborah Sims](img/supporters/deborah_sims_sig.jpg)](http://www.deborahsims.org/)

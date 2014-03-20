@@ -7,6 +7,7 @@ extrapadding: 100px
 section: southsuburbs
 ---
 
+<div id="ses" class="mapstage"></div>
 <div class="mapstage"></div>
 
 # THE SOUTHEAST SERVICE
