@@ -393,7 +393,7 @@ function setCurrentView(current_view){
 
   // if map is not initial state, minimal opacity on transit lines
   if(current_view > 0){
-    $($("#map").children()[1]).css({ opacity: 0.4 });
+    $($("#map").children()[1]).css({ opacity: 1 });
     $($("#map").children()[2]).css({ opacity: 0.4 });
     $($("#map").children()[3]).css({ opacity: 0.4 });
   }
