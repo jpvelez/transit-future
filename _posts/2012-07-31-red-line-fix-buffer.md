@@ -7,6 +7,7 @@ extrapadding: 100px
 section: chicago
 ---
 
+<div id="redrehab" class="mapstage"></div>
 <div class="mapstage"></div>
 
-# RED/PURPLE MODERNIZATION
+# RED LINE MODERNIZATION
