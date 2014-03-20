@@ -16,7 +16,7 @@ section: chicago
 
 ## Road projects
 
-**These projects will make bridges and tunnels for freight trains - so you don't have to wait for the train to pass.
+**These projects will make bridges and tunnels for freight trains - so you don't have to wait for the train to pass.**
 
  **63rd/Harlem bridge or tunnel**
 
