@@ -401,6 +401,11 @@ input[type="text"] {
 }
 
 
+/*Make the navbar text bigger. Hacks the bootstrap styles.*/
+.navbar-inverse a {
+  font-size: 18px;
+}
+
 
 /*Align the text in the intro to the right of the transit maps in the background*/
 .page.quote.map.textright h1{
