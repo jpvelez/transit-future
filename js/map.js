@@ -100,7 +100,7 @@ var map_data = {
       "type":"cartodb",
       "options":{
         "sql":"select * from transit_future_projects_updated",
-        "cartocss": "#transit_future_projects_updated{\nline-width: 5;\nline-join: round;\nline-cap: round;\n[type='Rapid Transit']{\n  line-color: #f84f40;\n}\n[type='Commuter Rail']{\n  line-color: #2e5387;\n}\n[type='BRT']{\n  line-color: #229A00;\n}\n [cartodb_id=1]{\nline-color: #5EEA8C;\n}\n [cartodb_id=2]{\nline-color:  #F37537;\n}\n[cartodb_id=3]{\nline-color:  #74BBE7;\n}\n [cartodb_id=4]{\n  line-color:  #EA5854;\n}\n[cartodb_id=5]{\n  line-color:  #FEE800;\n}\n[cartodb_id=6]{\n  line-color: #73451C;\n}\n[cartodb_id=7]{\n  line-color:  #74BBE7;\n}\n[cartodb_id=8]{\n  line-color:  grey;\n}\n[cartodb_id=9]{\n  line-color:  #9A51A0 ;\n}\n[cartodb_id=10]{\n  line-color:  #EA5854;\n  line-width: 3;\n[cartodb_id=10]::offset{\nline-color: #823393;\n  line-offset: 4;\n  line-width: 3;\n  line-cap: round;\nline-join: round;\n}\n}\n[cartodb_id=11]{\nline-color:  blue;\n}\n[cartodb_id=12]{\nline-color:  #74BBE7;\n}\n[cartodb_id=13]{\nline-color:  #E0CE4B;\n}\n[cartodb_id=14]{\nline-color:  grey;\n}\n[cartodb_id=15]{\nline-color:  grey;\n}\n}",
+        "cartocss": "#transit_future_projects_updated{\nline-width: 5;\nline-join: round;\nline-cap: round;\n[type='Rapid Transit']{\n  line-color: #f84f40;\n}\n[type='Commuter Rail']{\n  line-color: #2e5387;\n}\n[type='BRT']{\n  line-color: #229A00;\n}\n [cartodb_id=1]{\nline-color: #5EEA8C;\n}\n [cartodb_id=2]{\nline-color:  #F37537;\n}\n[cartodb_id=3]{\nline-color:  #74BBE7;\n}\n [cartodb_id=4]{\n  line-color:  #EA5854;\n}\n[cartodb_id=5]{\n  line-color:  #FEE800;\n}\n[cartodb_id=6]{\n  line-color: #73451C;\n}\n[cartodb_id=7]{\n  line-color:  #74BBE7;\n}\n[cartodb_id=8]{\n  line-color:  grey;\n}\n[cartodb_id=9]{\n  line-color:  #9A51A0 ;\n}\n[cartodb_id=10]{\n  line-color:  #EA5854;\n  line-width: 3;\n[cartodb_id=10]::offset{\nline-color: #823393;\n  line-offset: 4;\n  line-width: 3;\n  line-cap: round;\nline-join: round;\n}\n}\n[cartodb_id=11]{\nline-color:  blue;\n}\n[cartodb_id=12]{\nline-color:  #74BBE7;\n}\n[cartodb_id=13]{\nline-color:  #E0CE4B;\n}\n[cartodb_id=14]{\nline-color:  grey;\n}\n[cartodb_id=15]{\nline-color:  #823393;\n}\n}",
         "cartocss_version":"2.1.1"
       }
     },
@@ -127,31 +127,31 @@ var map_data = {
 // can contain multiple styles / zoom levels
 // only styling #transit_future_projects_updated and not existing L line layer
 var layer_states = {
-  gold_line: "#transit_future_projects{"
+  gold_line: "#transit_future_projects_updated{"
     + "[cartodb_id=13]{"
     + "  line-color: #F3DE71;"
     + "  line-width: 7;"
     + "}"
   + "}",
-  ashland: "#transit_future_projects{"
+  ashland: "#transit_future_projects_updated{"
   + "[cartodb_id=11]{"
   + "  line-color: blue;"
   + "  line-width: 7;"
   + "}"
   + "}",
-  lime_line: "#transit_future_projects{"
+  lime_line: "#transit_future_projects_updated{"
       + "[cartodb_id=1]{"
       + "line-color: lime;"
       + "line-width: 7;"
       + "}"
   + "}",
-  orange_line_extension: "#transit_future_projects{"
+  orange_line_extension: "#transit_future_projects_updated{"
       + "[cartodb_id=2]{"
       + "line-color: #F37537;"
       + "line-width: 7;"
       + "}"
   + "}",
-  red_line_extension: "#transit_future_projects{"
+  red_line_extension: "#transit_future_projects_updated{"
     + "[cartodb_id=4]{"
     + "line-color: #EA5854;"
     + "line-width: 7;"
@@ -159,7 +159,7 @@ var layer_states = {
     + "line-join: round;"
     + "}"
   + "}",
-  blue_line_extension: "#transit_future_projects{"
+  blue_line_extension: "#transit_future_projects_updated{"
      + "[cartodb_id=3]{"
      + "line-color: #74BBE7;"
      + "line-width: 7;"
@@ -173,7 +173,7 @@ var layer_states = {
     + "line-cap: round;"
     + "}"
   + "}",
-  inner_circle: "#transit_future_projects{"
+  inner_circle: "#transit_future_projects_updated{"
     + "[cartodb_id=9]{"
     + "line-color: #9A51A0;"
     + "line-width: 7;"
@@ -181,7 +181,7 @@ var layer_states = {
     + "line-join: round;"
   + "}"
 + "}",
-  brown_line_extension: "#transit_future_projects{"
+  brown_line_extension: "#transit_future_projects_updated{"
       + "[cartodb_id=6]{"
       + "line-color: #73451C;"
       + "line-width: 7;"
@@ -189,7 +189,7 @@ var layer_states = {
       + "line-join: round;"
     + "}"
   + "}",
-  red_purple: "#transit_future_projects{"
+  red_purple: "#transit_future_projects_updated{"
       + "[cartodb_id=10]{"
       + "line-color: #EA5854;"
       + "line-width: 7;"
@@ -197,16 +197,29 @@ var layer_states = {
       + "line-join: round;"
     + "}"
   + "}",
-  yellow_line: "#transit_future_projects{"
-    + "[cartodb_id=5]{"
-    + "line-color: #FEE800;"
+  yellow_line: "#transit_future_projects_updated{"
+   + "[cartodb_id=5]::glow{"
+    + "line-color: FEE800;"
     + "line-width: 7;"
+    + "line-cap: round;"
+    + "line-join: cap;"
+    + "[cartodb_id=5]{"
+    + "line-color: #000000;"
+    + "line-width: 10;"
+    + "line-cap: round;"
+    + "line-join: round;"
+    + "}"
+  + "}",
+  purple_line: "#transit_future_projects_updated{"
+    + "[cartodb_id=15]{"
+    + "line-color: #823393;"
+    + "line-width: 8;"
     + "line-cap: round;"
     + "line-join: round;"
     + "}"
   + "}",
   downtown: "",
-  southeast: "#transit_future_projects{"
+  southeast: "#transit_future_projects_updated{"
     + "[cartodb_id=8]{"
     + "line-color: grey;"
     + "line-width: 7;"
@@ -258,7 +271,7 @@ var views = [
 
 [41.97123285764962,-88.34381103515624,42.31590854308647,-88.19000244140625, "yellow_line"],           // North suburbs, CREATE
 [41.97582726102573,-88.05353164672852,42.05897965014623,-88.00821304321289, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
-[42.00695837037897,-87.7045440673828,42.07783959017503,-87.65630722045898, "red_purple"],            // Purple Line Rehab, CREATE
+[42.00695837037897,-87.7045440673828,42.07783959017503,-87.65630722045898, "purple_line"],            // Purple Line Rehab, CREATE
 [42.02092414389371,-87.769775390625,42.06369516045284,-87.74248123168945, "yellow_line"],           // Yellow line
 [41.97123285764962,-88.34381103515624,42.31590854308647,-88.19000244140625, "art"],           // ART, CREATE
 // [41.88087172,  -87.628292373, 15],                       // West Loop Transportation Center

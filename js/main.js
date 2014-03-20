@@ -422,7 +422,7 @@ function setCurrentView(current_view){
 
         // call for a tile template URL for the CartoCSS
         //layer_to_set = current_layer_state;
-        var template = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects/{Z}/{X}/{Y}.png?sql='
+        var template = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
           + escape(custom_layer.layers[0].options.sql)
           + '&style=' + escape(custom_layer.layers[0].options.cartocss));
         highlight_layer = new MM.Layer(template);
