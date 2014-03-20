@@ -1,25 +1,19 @@
 // Define Modest Map of region with transit lines.
 var map;
 function main(){
+  // Define a basemap
+  // We're using a Mapbox basemap, and Mapbox.js to make fetch it easy.
+  var basemap = mapbox.layer().id('jpvelez.map-h88danj5');
 
-// when page is refreshed, jump back to the top
-if($(document.body).scrollTop() > 300){
-  $(document.body).scrollTop(0);
-}
+  // Create a map in the map container, using the basemap.
+  // We're using Modest Maps with mapbox.js on top.
+  map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler() ]);
 
-// Define a basemap
-// We're using a Mapbox basemap, and Mapbox.js to make fetch it easy.
-var basemap = mapbox.layer().id('jpvelez.map-h88danj5');
+  // Center the map.
+  map.centerzoom({ lat: 41.853575, lon: -87.615443 }, 11);
+  setCurrentView(0);
 
-// Create a map in the map container, using the basemap.
-// We're using Modest Maps with mapbox.js on top.
-map = mapbox.map('map', basemap, null, [ easey_handlers.DragHandler() ]);
-
-// Center the map.
-map.centerzoom({ lat: 41.853575, lon: -87.615443 }, 11);
-setCurrentView(0);
-
-// Create the tileset in CartoDB using map_data info.
+  // Create the tileset in CartoDB using map_data info.
 /*
 var s = document.createElement("script");
 s.type = "text/javascript";
@@ -30,8 +24,8 @@ s.src = "http://jpvelez.cartodb.com/api/v1/map?"
 document.body.appendChild(s);
 */
 
-// Add base layers for transit future projects, art projects, and exiting L lines.
-// Uses the CartoDB SQL API to get back specifically styled tilsets. That's all defined below.  
+  // Add base layers for transit future projects, art projects, and exiting L lines.
+  // Uses the CartoDB SQL API to get back specifically styled tilsets. That's all defined below.  
   var template_art = new MM.Template('http://jpvelez.cartodb.com/tiles/art/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[2].options.sql)
     + '&style=' + escape(map_data.layers[2].options.cartocss));
@@ -49,6 +43,22 @@ document.body.appendChild(s);
     + '&style=' + escape(map_data.layers[0].options.cartocss));
   var layer_future = new MM.Layer(template_future);
   map.addLayer(layer_future);
+
+  if($(document.body).scrollTop() + $(window).height() > $(".fellowship").offset().top
+    && $(document.body).scrollTop() < $(".scrollout").offset().top){
+    // starting out somewhere where the map should be visible
+    map_follow_element = $($(".mapstage")[0]);
+    map_tail_element = $($(".mapstage")[$(".mapstage").length-1]);
+    $("#map").css({top: 10, visibility: "visible", position: "fixed"});
+    var mapstages = $(".mapstage");
+    for(var m=0; m<mapstages.length; m++){
+      if($(mapstages[m]).offset().top > $(document.body).scrollTop()){
+        current_view = m;
+        setCurrentView(current_view);
+        break;
+      }
+    }
+  }
 
 }
 
