@@ -38,7 +38,7 @@ document.body.appendChild(s);
   var layer_rail = new MM.Layer(template_rail);
   map.addLayer(layer_rail);
 
-  var template_future = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects/{Z}/{X}/{Y}.png?sql='
+  var template_future = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[0].options.sql)
     + '&style=' + escape(map_data.layers[0].options.cartocss));
   var layer_future = new MM.Layer(template_future);
@@ -99,8 +99,8 @@ var map_data = {
     {
       "type":"cartodb",
       "options":{
-        "sql":"select * from transit_future_projects",
-        "cartocss": "#transit_future_projects{\nline-width: 5;\nline-join: round;\nline-cap: round;\n[type='Rapid Transit']{\n  line-color: #f84f40;\n}\n[type='Commuter Rail']{\n  line-color: #2e5387;\n}\n[type='BRT']{\n  line-color: #229A00;\n}\n [cartodb_id=1]{\nline-color: #5EEA8C;\n}\n [cartodb_id=2]{\nline-color:  #F37537;\n}\n[cartodb_id=3]{\nline-color:  #74BBE7;\n}\n [cartodb_id=4]{\n  line-color:  #EA5854;\n}\n[cartodb_id=5]{\n  line-color:  #FEE800;\n}\n[cartodb_id=6]{\n  line-color: #73451C;\n}\n[cartodb_id=7]{\n  line-color:  #74BBE7;\n}\n[cartodb_id=8]{\n  line-color:  grey;\n}\n[cartodb_id=9]{\n  line-color:  #9A51A0 ;\n}\n[cartodb_id=10]{\n  line-color:  #EA5854;\n  line-width: 3;\n[cartodb_id=10]::offset{\nline-color: #823393;\n  line-offset: 4;\n  line-width: 3;\n  line-cap: round;\nline-join: round;\n}\n}\n[cartodb_id=11]{\nline-color:  blue;\n}\n[cartodb_id=12]{\nline-color:  #74BBE7;\n}\n[cartodb_id=13]{\nline-color:  #E0CE4B;\n}\n[cartodb_id=14]{\nline-color:  grey;\n}\n[cartodb_id=15]{\nline-color:  grey;\n}\n}",
+        "sql":"select * from transit_future_projects_updated",
+        "cartocss": "#transit_future_projects_updated{\nline-width: 5;\nline-join: round;\nline-cap: round;\n[type='Rapid Transit']{\n  line-color: #f84f40;\n}\n[type='Commuter Rail']{\n  line-color: #2e5387;\n}\n[type='BRT']{\n  line-color: #229A00;\n}\n [cartodb_id=1]{\nline-color: #5EEA8C;\n}\n [cartodb_id=2]{\nline-color:  #F37537;\n}\n[cartodb_id=3]{\nline-color:  #74BBE7;\n}\n [cartodb_id=4]{\n  line-color:  #EA5854;\n}\n[cartodb_id=5]{\n  line-color:  #FEE800;\n}\n[cartodb_id=6]{\n  line-color: #73451C;\n}\n[cartodb_id=7]{\n  line-color:  #74BBE7;\n}\n[cartodb_id=8]{\n  line-color:  grey;\n}\n[cartodb_id=9]{\n  line-color:  #9A51A0 ;\n}\n[cartodb_id=10]{\n  line-color:  #EA5854;\n  line-width: 3;\n[cartodb_id=10]::offset{\nline-color: #823393;\n  line-offset: 4;\n  line-width: 3;\n  line-cap: round;\nline-join: round;\n}\n}\n[cartodb_id=11]{\nline-color:  blue;\n}\n[cartodb_id=12]{\nline-color:  #74BBE7;\n}\n[cartodb_id=13]{\nline-color:  #E0CE4B;\n}\n[cartodb_id=14]{\nline-color:  grey;\n}\n[cartodb_id=15]{\nline-color:  grey;\n}\n}",
         "cartocss_version":"2.1.1"
       }
     },
@@ -125,7 +125,7 @@ var map_data = {
 
 // store a CartoCSS string for each state
 // can contain multiple styles / zoom levels
-// only styling #transit_future_projects and not existing L line layer
+// only styling #transit_future_projects_updated and not existing L line layer
 var layer_states = {
   gold_line: "#transit_future_projects{"
     + "[cartodb_id=13]{"

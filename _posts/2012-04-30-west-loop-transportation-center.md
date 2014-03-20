@@ -9,10 +9,14 @@ section: chicago
 ---
 
 ## West Loop Transportation Center
+
 **The region's new transit hub.**
 
 **One central station for the L, commuter rail, Amtrak, and, someday, high-speed rail.**
 
+## Orange Line Extension
+
+**Extending the Orange Line to Ford City Mall and Richard J. Daley College means shops, jobs and classrooms are just an L stop away.**
 
 ## Road projects
 
