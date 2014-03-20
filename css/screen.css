@@ -227,7 +227,7 @@ ul.posts span {
 
 h2 {
   text-align: left;
-  font-size: 40px;
+  font-size: 35px;
   margin-top: 80px;
   line-height: 50px;
 }
@@ -372,6 +372,7 @@ input[type="text"] {
   padding-top:400px !important;
 }
 
+/*Font on project and region buffers posts.*/
 .page.quote.map h1,
 .page.quote.map h2,
 .page.quote.map h3{
@@ -393,11 +394,19 @@ input[type="text"] {
 }
 
 
+/*Font on project detail posts.*/
+/*The margin left makes sure the project copy doesn't crowd out the lines in the left 1/3rd of the screen.*/
 .page.story.map h1,
 .page.story.map h2,
 .page.story.map h3 {
   color: black;
   text-shadow: none;
+  margin-left: 60px;
+}
+
+/*Align BRT image with project text.*/
+.page.story.map img {
+  margin-left: 60px;
 }
 
 

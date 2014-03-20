@@ -130,31 +130,31 @@ var layer_states = {
   gold_line: "#transit_future_projects_updated{"
     + "[cartodb_id=13]{"
     + "  line-color: #F3DE71;"
-    + "  line-width: 7;"
+    + "  line-width: 8;"
     + "}"
   + "}",
   ashland: "#transit_future_projects_updated{"
   + "[cartodb_id=11]{"
   + "  line-color: blue;"
-  + "  line-width: 7;"
+  + "  line-width: 8;"
   + "}"
   + "}",
   lime_line: "#transit_future_projects_updated{"
       + "[cartodb_id=1]{"
       + "line-color: lime;"
-      + "line-width: 7;"
+      + "line-width: 8;"
       + "}"
   + "}",
   orange_line_extension: "#transit_future_projects_updated{"
       + "[cartodb_id=2]{"
       + "line-color: #F37537;"
-      + "line-width: 7;"
+      + "line-width: 8;"
       + "}"
   + "}",
   red_line_extension: "#transit_future_projects_updated{"
     + "[cartodb_id=4]{"
     + "line-color: #EA5854;"
-    + "line-width: 7;"
+    + "line-width: 8;"
     + "line-cap: round;"
     + "line-join: round;"
     + "}"
@@ -162,13 +162,13 @@ var layer_states = {
   blue_line_extension: "#transit_future_projects_updated{"
      + "[cartodb_id=3]{"
      + "line-color: #74BBE7;"
-     + "line-width: 7;"
+     + "line-width: 8;"
      + "line-join: round;"
      + "line-cap: round;"
      + "}"
     + "[cartodb_id=7]{"
     + "line-color: #74BBE7;"
-    + "line-width: 7;"
+    + "line-width: 8;"
     + "line-join: round;"
     + "line-cap: round;"
     + "}"
@@ -176,7 +176,7 @@ var layer_states = {
   inner_circle: "#transit_future_projects_updated{"
     + "[cartodb_id=9]{"
     + "line-color: #9A51A0;"
-    + "line-width: 7;"
+    + "line-width: 8;"
     + "line-cap: round;"
     + "line-join: round;"
   + "}"
@@ -184,7 +184,7 @@ var layer_states = {
   brown_line_extension: "#transit_future_projects_updated{"
       + "[cartodb_id=6]{"
       + "line-color: #73451C;"
-      + "line-width: 7;"
+      + "line-width: 8;"
       + "line-cap: round;"
       + "line-join: round;"
     + "}"
@@ -192,7 +192,7 @@ var layer_states = {
   red_purple: "#transit_future_projects_updated{"
       + "[cartodb_id=10]{"
       + "line-color: #EA5854;"
-      + "line-width: 7;"
+      + "line-width: 8;"
       + "line-cap: round;"
       + "line-join: round;"
     + "}"
@@ -200,7 +200,7 @@ var layer_states = {
   yellow_line: "#transit_future_projects_updated{"
    + "[cartodb_id=5]::glow{"
     + "line-color: FEE800;"
-    + "line-width: 7;"
+    + "line-width: 8;"
     + "line-cap: round;"
     + "line-join: cap;"
     + "[cartodb_id=5]{"
@@ -222,7 +222,7 @@ var layer_states = {
   southeast: "#transit_future_projects_updated{"
     + "[cartodb_id=8]{"
     + "line-color: grey;"
-    + "line-width: 7;"
+    + "line-width: 8;"
     + "line-cap: round;"
     + "line-join: round;"
     + "}"
@@ -254,9 +254,9 @@ var views = [
 [41.86531032384558,-87.67780780792236,41.881384048319816,-87.66647815704346, "ashland"],                 // BRT closeup
 [41.659960002665635,-87.63862609863281,41.74365194975239,-87.61373519897461, "red_line_extension"],    // Red line extension
 [41.89959391982876,-87.77183532714844,41.97582726102573,-87.71038055419922, "brown_line_extension"],  // Brown Line extension
-[41.940339655623845,-87.68943786621092,42.02800151556251,-87.65201568603516, "red_purple"],            // Red/Purple Modernization NEED TO UPDATE
+[41.940339655623845,-87.68943786621092,42.02800151556251,-87.65201568603516, "red_purple"],            // Red/Purple Modernization
 [41.7246930304541,-87.82676696777344,41.8897548444455,-87.7364730834961, "blue_line_extension"],   // BLUE REHAB - CREATE
-[41.748775021355044,-87.76342391967772,41.80036715933411,-87.73612976074217, "orange_line_extension"], // Orange line extension
+// [41.748775021355044,-87.76342391967772,41.80036715933411,-87.73612976074217, "orange_line_extension"], // Orange line extension
 [41.67598909594535,-88.0499267578125,42.05439124994332,-87.83843994140625],          // Other projects CREATE
 
 [41.454563895325855,-88.13919067382812,41.81943165932009,-87.95722961425781, "southeast"],             // South suburbs, CREATE
@@ -264,14 +264,14 @@ var views = [
 [41.454563895325855,-88.13919067382812,41.81943165932009,-87.95722961425781, "art"],             // ART, CREATE
 
 
-[41.788208979355666,-88.33419799804688,42.04878275505149,-88.1879425048828, "blue_line_extension"],   // West suburbs, CREATE
+[41.68163038712496,-88.24218749999999,42.02328335531967,-88.10691833496094, "blue_line_extension"],   // West suburbs, CREATE
 [41.77182378456081,-87.88787841796875,41.99267057124887,-87.78076171875, "inner_circle"],          // Inner Circumferential
 [41.7041906065988,-88.0173110961914,41.880297681402865,-87.92152404785156, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
 [41.83375828633243,-88.29986572265625,42.04521345501039,-88.20030212402344, "art"],   // ART, CREATE
 
 [41.97123285764962,-88.34381103515624,42.31590854308647,-88.19000244140625, "yellow_line"],           // North suburbs, CREATE
 [41.97582726102573,-88.05353164672852,42.05897965014623,-88.00821304321289, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
-[42.00695837037897,-87.7045440673828,42.07783959017503,-87.65630722045898, "purple_line"],            // Purple Line Rehab, CREATE
+[42.00695837037897,-87.7045440673828,42.07783959017503,-87.65630722045898, "purple_line"],            // Purple Line Rehab
 [42.02092414389371,-87.769775390625,42.06369516045284,-87.74248123168945, "yellow_line"],           // Yellow line
 [41.97123285764962,-88.34381103515624,42.31590854308647,-88.19000244140625, "art"],           // ART, CREATE
 // [41.88087172,  -87.628292373, 15],                       // West Loop Transportation Center
