@@ -6,6 +6,7 @@ bgcolor: FF8000
 section: supporters
 ---
 
+<div id="learn" class="mapstage"></div>
 ## Learn more
 
 Learn more about [Transit Future.](http://transitfuture.org)
