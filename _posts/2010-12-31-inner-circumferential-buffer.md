@@ -9,4 +9,4 @@ section: westsuburbs
 
 <div class="mapstage"></div>
 
-# THE AIRPORT CONNECTOR EXPRESS - THE ACE LINE
+# AIRPORT CONNECTOR EXPRESS
