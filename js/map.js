@@ -64,7 +64,7 @@ document.body.appendChild(s);
 
 
 // Load the tileset onto the Modest Map.
-var highlight_layer = null;
+var highlight_layers = [];
 var layer_to_set = null;
 function loadedToken(tokenInfo){
   var token = tokenInfo.layergroupid;
@@ -75,8 +75,9 @@ function loadedToken(tokenInfo){
   var template = new MM.Template('http://3.api.cartocdn.com/jpvelez/tiles/layergroup/' + token + '/{Z}/{X}/{Y}.png');
   if(layer_to_set){
     layer_states[layer_to_set] = template;
-    highlight_layer = new MM.Layer(template);
+    var highlight_layer = new MM.Layer(template);
     map.addLayer(highlight_layer);
+    highlight_layers.push(highlight_layer);
   }
   else{
     var layer = new MM.Layer(template);
@@ -244,36 +245,36 @@ var layer_states = {
 
 var current_view = 0;
 var views = [
-[41.67598909594535,-88.0499267578125,42.05439124994332,-87.83843994140625],
-[41.746213536653045,-87.6375961303711,41.88617662305848,-87.54352569580078, "gold_line"],               // Gold line
-[41.787761002359865,-87.61656761169434,41.802222678668265,-87.59322166442871, "gold_line"],               // Gold line closeup
-[41.74467659677642,-87.76840209960938,41.97786911170172,-87.62557983398438, "lime_line"],               // Lime line
-[41.79256059297935,-87.75123596191405,41.96995657567428,-87.73578643798827, "lime_line"],
-[41.69547509615208,-87.78385162353516,41.79435234802088,-87.73921966552734, "lime_line"],             // Lime line South Side closeup
-[41.70777900286713,-87.73681640625,41.96357478222518,-87.58781433105467, "ashland"],                 // BRT
-[41.86531032384558,-87.67780780792236,41.881384048319816,-87.66647815704346, "ashland"],                 // BRT closeup
-[41.659960002665635,-87.63862609863281,41.74365194975239,-87.61373519897461, "red_line_extension"],    // Red line extension
-[41.89959391982876,-87.77183532714844,41.97582726102573,-87.71038055419922, "brown_line_extension"],  // Brown Line extension
-[41.940339655623845,-87.68943786621092,42.02800151556251,-87.65201568603516, "red_purple"],            // Red/Purple Modernization
-[41.7246930304541,-87.82676696777344,41.8897548444455,-87.7364730834961, "blue_line_extension"],   // BLUE REHAB - CREATE
-// [41.748775021355044,-87.76342391967772,41.80036715933411,-87.73612976074217, "orange_line_extension"], // Orange line extension
-[41.67598909594535,-88.0499267578125,42.05439124994332,-87.83843994140625],          // Other projects CREATE
+[41.675989,-88.049926,42.054391,-87.838439],
+[41.746213,-87.637596,41.886176,-87.543525, ["gold_line"]],             // Gold line
+[41.787761,-87.616567,41.802222,-87.593221, ["gold_line"]],             // Gold line closeup
+[41.744676,-87.768402,41.977869,-87.625579, ["lime_line"]],             // Lime line
+[41.792560,-87.751235,41.969956,-87.735786, ["lime_line"]],
+[41.695475,-87.783851,41.794352,-87.739219, ["lime_line"]],             // Lime line South Side closeup
+[41.707779,-87.736816,41.963574,-87.587814, ["ashland"]],               // BRT
+[41.865310,-87.677807,41.881384,-87.666478, ["ashland"]],               // BRT closeup
+[41.659960,-87.638626,41.743651,-87.613735, ["red_line_extension"]],    // Red line extension
+[41.899593,-87.771835,41.975827,-87.710380, ["brown_line_extension"]],  // Brown Line extension
+[41.940339,-87.689437,42.028001,-87.652015, ["red_purple"]],            // Red/Purple Modernization
+[41.724693,-87.826766,41.889754,-87.736473, ["blue_line_extension"]],   // BLUE REHAB - CREATE
+// [41.748775,-87.763423,41.800367,-87.736129, ["orange_line_extension"]], // Orange line extension
+[41.675989,-88.049926,42.054391,-87.838439],          // Other projects CREATE
 
-[41.454563895325855,-88.13919067382812,41.81943165932009,-87.95722961425781, "southeast"],             // South suburbs, CREATE
-[41.38814294931545,-87.73544311523436,41.887965758804484,-87.56790161132812, "southeast"],             // Southeast Service
-[41.454563895325855,-88.13919067382812,41.81943165932009,-87.95722961425781, "art"],             // ART, CREATE
+[41.454563,-88.139190,41.819431,-87.957229, ["southeast"]],             // South suburbs, CREATE
+[41.388142,-87.735443,41.887965,-87.567901, ["southeast"]],             // Southeast Service
+[41.454563,-88.139190,41.819431,-87.957229, ["art"]],                   // ART, CREATE
 
 
-[41.68163038712496,-88.24218749999999,42.02328335531967,-88.10691833496094, "blue_line_extension"],   // West suburbs, CREATE
-[41.77182378456081,-87.88787841796875,41.99267057124887,-87.78076171875, "inner_circle"],          // Inner Circumferential
-[41.7041906065988,-88.0173110961914,41.880297681402865,-87.92152404785156, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
-[41.83375828633243,-88.29986572265625,42.04521345501039,-88.20030212402344, "art"],   // ART, CREATE
+[41.681630,-88.242187,42.023283,-88.106918, ["blue_line_extension"]],   // West suburbs, CREATE
+[41.771823,-87.887878,41.992670,-87.780761, ["inner_circle"]],          // Inner Circumferential
+[41.704190,-88.017311,41.880297,-87.921524, ["blue_line_extension"]],   // Blue Line West - Forest Park to Oak Brook
+[41.833758,-88.299865,42.045213,-88.200302, ["art"]],   // ART, CREATE
 
-[41.97123285764962,-88.34381103515624,42.31590854308647,-88.19000244140625, "yellow_line"],           // North suburbs, CREATE
-[41.97582726102573,-88.05353164672852,42.05897965014623,-88.00821304321289, "blue_line_extension"],   // Blue Line West - Forest Park to Oak Brook
-[42.00695837037897,-87.7045440673828,42.07783959017503,-87.65630722045898, "purple_line"],            // Purple Line Rehab
-[42.02092414389371,-87.769775390625,42.06369516045284,-87.74248123168945, "yellow_line"],           // Yellow line
-[41.97123285764962,-88.34381103515624,42.31590854308647,-88.19000244140625, "art"],           // ART, CREATE
-// [41.88087172,  -87.628292373, 15],                       // West Loop Transportation Center
+[41.971232,-88.343811,42.315908,-88.190002, ["yellow_line"]],           // North suburbs, CREATE
+[41.975827,-88.053531,42.058979,-88.008213, ["blue_line_extension"]],   // Blue Line West - Forest Park to Oak Brook
+[42.006958,-87.704544,42.077839,-87.656307, ["purple_line"]],           // Purple Line Rehab
+[42.020924,-87.769775,42.063695,-87.742481, ["yellow_line"]],           // Yellow line
+[41.971232,-88.343811,42.315908,-88.190002, ["art"]],           // ART, CREATE
+// [41.880871,  -87.628292, 15],                       // West Loop Transportation Center
 
 ];

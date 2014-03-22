@@ -284,75 +284,6 @@ $(function(){
     trigger: 'hover'
   });
 
-
-  var colors = ["#5db7ad", "#88c5be", "#9ccdc8", "#aed5d1", "#c2dedb", "#d4e7e5", "#e8f2f1", "#FFFFFF"];
-
-  $(".bargraph").each(function(i, el){
-
-    var that = this;
-
-    var total = 0;
-    // Count all the money for each data point in the source
-    $("."+$(el).attr("data-source")).each(function(i, el){
-      // remove commas and dollar signs
-      total += parseInt($(el).text().replace(/,/g, "").replace("$", ""));
-    });
-
-    // for each group add the hover events
-    $(".financialsgroup").each(function(i, el) {
-      var group = $(el).attr("data-group");
-      $(el).hover(function() {
-        $(el).addClass("active");
-        $('.group' + group).addClass('active');
-      }, function(){
-        $(el).removeClass("active");
-        $('.group' + group).removeClass('active');
-      });
-    });
-
-    // for each data point add a section to the graph and hover events
-    $("."+$(el).attr("data-source")).each(function(i, el){
-      var count = parseInt($(el).text().replace(/,/g, "").replace("$", ""));
-      var perc = (count/total)*100;
-      var group = $(el).attr("data-group");
-
-      // create section
-      var section = $("<div class='graphsection'></div>").css({
-        width:perc + "%",
-        background:colors[i]
-      });
-
-      // add classs for group
-      if(group !== undefined) {
-        $(el).addClass('group' + group);
-        section.addClass('group' + group);
-      }
-
-      //hover over the numbers
-      $(el).hover(highlight, unhighlight);
-      $(section).hover(highlight, unhighlight);
-
-      function  highlight() {
-        $(el).addClass('active');
-        $(section).addClass('active');
-      }
-
-      function unhighlight() {
-        $(el).removeClass('active');
-        $(section).removeClass('active');
-      }
-
-
-      $(that).append(section);
-    });
-
-
-
-  });
-
-
-
-
 });
 
 function setCurrentView(current_view){
@@ -409,47 +340,52 @@ function setCurrentView(current_view){
   if(views[current_view].length > 3 && typeof views[current_view][3] == "string"){
     if(current_layer_state !== views[current_view][3]){
       // change last layer_state to the current map state
-      if(highlight_layer){
-        map.removeLayer(highlight_layer);
+      for(var hl=0;hl<highlight_layers.length;hl++){
+        map.removeLayer(highlight_layers[hl]);
       }
       current_layer_state = views[current_view][3];
+      for(var hl=0;hl<current_layer_state.length;hl++){
+        var activate_layer_state = current_layer_state[hl];
 
-      if(typeof layer_states[current_layer_state] == "string"){
-        // need to generate the tile template URL for this CartoCSS layer
-        var custom_layer = $.extend(true, {}, map_data);
-        custom_layer.layers[0].options.cartocss = layer_states[current_layer_state];
-        custom_layer.layers.pop(); // remove L layer
+        if(typeof layer_states[activate_layer_state] == "string"){
+          // need to generate the tile template URL for this CartoCSS layer
+          var custom_layer = $.extend(true, {}, map_data);
+          custom_layer.layers[0].options.cartocss = layer_states[activate_layer_state];
+          // custom_layer.layers.pop(); // remove L layer
 
-        // call for a tile template URL for the CartoCSS
-        //layer_to_set = current_layer_state;
-        var template = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
-          + escape(custom_layer.layers[0].options.sql)
-          + '&style=' + escape(custom_layer.layers[0].options.cartocss));
-        highlight_layer = new MM.Layer(template);
-        map.addLayer(highlight_layer);
+          // call for a tile template URL for the CartoCSS
+          //layer_to_set = current_layer_state;
+          var template = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
+            + escape(custom_layer.layers[0].options.sql)
+            + '&style=' + escape(custom_layer.layers[0].options.cartocss));
+          var highlight_layer = new MM.Layer(template);
+          map.addLayer(highlight_layer);
+          highlight_layers.push(highlight_layer);
         
-        /*
-        var s = document.createElement("script");
-        s.type = "text/javascript";
-        s.src = "http://jpvelez.cartodb.com/api/v1/map?"
-          + "config=" + escape(JSON.stringify(custom_layer))
-          + "&callback=loadedToken&t="
-          + (new Date()) * 1;
-        document.body.appendChild(s);
-        */
-      }
-      else if(layer_states[current_layer_state]){
-        // use a known tile template for this layer
-        highlight_layer = new MM.Layer(layer_states[current_layer_state]);
-        map.addLayer(highlight_layer);
+          /*
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.src = "http://jpvelez.cartodb.com/api/v1/map?"
+            + "config=" + escape(JSON.stringify(custom_layer))
+            + "&callback=loadedToken&t="
+            + (new Date()) * 1;
+          document.body.appendChild(s);
+          */
+        }
+        else if(layer_states[current_layer_state]){
+          // use a known tile template for this layer
+          var highlight_layer = new MM.Layer(layer_states[activate_layer_state]);
+          map.addLayer(highlight_layer);
+          highlight_layers.push(highlight_layer);
+        }
       }
     }
   }
   else if(current_layer_state){
     // this mapstage has no CartoCSS layer
     // remove any existing CartoCSS layer
-    if(highlight_layer){
-      map.removeLayer(highlight_layer);
+    for(var hl=0;hl<highlight_layers.length;hl++){
+      map.removeLayer(highlight_layers[hl]);
     }
     current_layer_state = null;
   }
@@ -457,6 +393,7 @@ function setCurrentView(current_view){
   // Ease to lat/lon/z view of current paragraph - the first p element
   // below the top edge of the box. This gets called the instant the previous
   // element's offset becomes negative.
+  console.log(views[current_view]);
   map.ease.location({
     lat: views[current_view][0],
     lon: views[current_view][1]
