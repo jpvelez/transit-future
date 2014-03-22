@@ -287,8 +287,11 @@ $(function(){
 });
 
 function setCurrentView(current_view){
+  console.log("set current view: " + current_view);
+  console.log(views[current_view]);
+
   // if view is defined with [south,west,north,east] bounds, calculate lat,lng,zoom
-  if(views[current_view].length > 3 && typeof views[current_view][3] != "string"){
+  if(views[current_view].length > 3 && typeof views[current_view][3] != "object"){
     var lat_coefficient = 0.00051144938704069;
     var lng_coefficient = 0.00068664550781251;
     var zoom_coefficient = 11;
