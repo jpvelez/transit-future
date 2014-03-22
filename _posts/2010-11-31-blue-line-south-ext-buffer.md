@@ -7,7 +7,7 @@ extrapadding: 100px
 section: westsuburbs
 ---
 
-<div class="mapstage"></div>
+<div id="bluewest" class="mapstage"></div>
 
 # BLUE LINE EXTENSION
 # FOREST PARK TO OAK BROOK

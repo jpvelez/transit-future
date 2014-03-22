@@ -26,7 +26,7 @@ document.body.appendChild(s);
 
   // Add base layers for transit future projects, art projects, and exiting L lines.
   // Uses the CartoDB SQL API to get back specifically styled tilsets. That's all defined below.  
-  var template_art = new MM.Template('http://jpvelez.cartodb.com/tiles/art/{Z}/{X}/{Y}.png?sql='
+  var template_art = new MM.Template('http://jpvelez.cartodb.com/tiles/art_revised/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[2].options.sql)
     + '&style=' + escape(map_data.layers[2].options.cartocss));
   var layer_art = new MM.Layer(template_art);
@@ -90,7 +90,7 @@ function loadedToken(tokenInfo){
 window.onload = main;
 
 // array of tables in CartoDB
-var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art","oakbrookshaumburg_boundaries"];
+var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art_revised","oakbrookshaumburg_boundaries"];
 
 // Define transit line layer styles to be fetched above using CartoDB API.
 // You define what features to show using a PostgreSQL-like query.
@@ -118,8 +118,8 @@ var map_data = {
     {
       "type":"cartodb",
       "options":{
-        "sql":"select * from art",
-        "cartocss":"#art{\nline-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 2, 2, 2, 2;\nline-opacity: .35\n}",
+        "sql":"select * from art_revised",
+        "cartocss":"#art_revised{\nline-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 2, 2, 2, 2;\nline-opacity: .35\n}",
         "cartocss_version":"2.1.1"
       }
     }

@@ -7,7 +7,7 @@ extrapadding: 100px
 section: northsuburbs
 ---
 
-<div class="mapstage"></div>
+<div id="bluenorth" class="mapstage"></div>
 
 # BLUE LINE EXTENSION
 # O'HARE TO SCHAUMBURG

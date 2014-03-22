@@ -7,7 +7,7 @@ extrapadding: 100px
 section: southsuburbs
 ---
 
-<div class="mapstage"></div>
+<div id="southart" class="mapstage"></div>
 
 # SOUTH SUBURBAN
 # ART NETWORK
