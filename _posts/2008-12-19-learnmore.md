@@ -18,6 +18,6 @@ Learn more about [CNT’s research](http://www.cnt.org/resources/) in the fields
 
 ## Contact
 
-If your organization wants to join the campaign, contact [Edward Oser]<eoser@cnt.org>.
+If your organization wants to join the campaign, contact [Edward Oser<eoser@cnt.org>.]
 
-If you are a member of the media, contact [Ryan Kilpatrick]<rkilpatrick@cnt.org>.
+If you are a member of the media, contact [Ryan Kilpatrick<rkilpatrick@cnt.org>.]
