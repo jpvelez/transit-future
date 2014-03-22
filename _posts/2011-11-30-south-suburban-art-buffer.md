@@ -7,7 +7,6 @@ extrapadding: 100px
 section: southsuburbs
 ---
 
-<div id="southart" class="mapstage"></div>
 <div class="mapstage"></div>
 
 # SOUTH SUBURBAN
