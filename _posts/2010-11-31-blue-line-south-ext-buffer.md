@@ -7,7 +7,6 @@ extrapadding: 100px
 section: westsuburbs
 ---
 
-<div id="bluewest" class="mapstage"></div>
 <div class="mapstage"></div>
 
 # BLUE LINE EXTENSION
