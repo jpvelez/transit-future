@@ -8,6 +8,5 @@ section: chicago
 ---
 
 <!-- <div class="mapstage"></div> -->
-<div id="chicago" class="mapstage"></div>
 
 # CHICAGO
