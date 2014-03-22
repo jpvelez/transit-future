@@ -7,7 +7,7 @@ extrapadding: 100px
 section: northsuburbs
 ---
 
-<div class="mapstage"></div>
+<div id="northart" class="mapstage"></div>
 
 # NORTH SUBURBAN
 # ART NETWORK
