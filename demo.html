@@ -213,7 +213,15 @@ window.onload = main;
 function logExtent(bounds){
   var sw = bounds.getSouthWest();
   var ne = bounds.getNorthEast();
-  console.log( "[" + [ sw.lat, sw.lng, ne.lat, ne.lng ].join(",") + "]" );
+  console.log( "["
+    + sw.lat.toFixed(6)
+    + ","
+    + sw.lng.toFixed(6)
+    + ","
+    + ne.lat.toFixed(6)
+    + ","
+    + ne.lng.toFixed(6)
+    + "]" );
 }
     </script>
   </body>

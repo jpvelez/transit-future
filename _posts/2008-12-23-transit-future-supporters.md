@@ -19,7 +19,7 @@ section: supporters
 [![Peter Silvestri](img/supporters/peter_silvestri_sig.jpg)](http://www.petersilvestri.com/)
 [![Robert Steele](img/supporters/robert_steele_sig.jpg)](http://www.robertsteele.org/)
 
-## The following labor organizations support the campaign:
+## These labor organizations support the campaign:
 
 
 [![Cook County Building Trades](img/supporters/buildingtrades.jpg)](http://www.chicagobuildingtrades.org/)
@@ -29,30 +29,37 @@ section: supporters
 [![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)](http://www.smw73.org/)
 
 
-## The following businesses support the campaign:
+## These businesses support Transit Future:
 
 
 [![BLUE1647](img/supporters/blue1647.jpg)](http://www.blue1647.com/)
 [![Christopher B. Burke Engineering](img/supporters/burke_engineering.jpg)](http://www.cbbel.com/)
 [![Faithful + Gould](img/supporters/fg_logo.JPG)](http://www.fgould.com/americas/)
 [![McCaffery Interests](img/supporters/mccaffery.jpg)](http://www.mccafferyinterests.com/)
+[![MGLM](img/supporters/mglm.jpg)](http://www.mglmarchitects.com/Site/MGLMArchitects.html)
 [![Perkins + Will](img/supporters/perkinsandwill.jpg)](http://www.perkinswill.com/)
+[![Revolution Brewing](img/supporters/revolution.jpg)](http://revbrew.com/)
 [![RPEG](img/supporters/rpeg.jpg)](http://www.repg-lund.com/)
+[![Skidmore, Owings & Merrill](img/supporters/som.jpg)](http://www.som.com/)
+[![Solomon Cordwell Buenz](img/supporters/scb.jpg)](http://www.scb.com/)
 
-## The following community and civic organizations support the campaign:
+## These community and civic organizations support Transit Future:
 
 
+[![Access Living](img/supporters/accessliving.jpg)](http://www.accessliving.org/)
 [![Active Transportation Alliance](img/supporters/activetrans.jpg)](http://www.activetrans.org)
 [![Bethel New Life](img/supporters/bethel_newlife.png)](http://www.bethelnewlife.org)
 [![Bronzeville Retail Initiative](img/supporters/bri.jpg)](http://www.bronzevilleretail.com)
 ![Bronzeville Urban Development](img/supporters/bud.jpg)
 [![Center for Neighborhood Technology](img/supporters/cntlogo.jpg)](http://www.cnt.org)
 [![Claretian Associates](img/supporters/claretian_associates.jpg)](http://www.claretianassociates.org/index.html)
+[![CNU](img/supporters/cnu.jpg)(https://www.cnu.org/)
 [![Delta Associates](img/supporters/deltalogo.jpg)](http://www.delta-institute.org/)
 [![Enlace Chicago](img/supporters/enlacelogo.jpg)](http://enlacechicago.org/)
 [![Environmental Defenders of McHenry County](img/supporters/edmc_logo.jpg)](http://www.mcdef.org/)
 [![Far South Community Development Corporation](img/supporters/fscdc.jpg)](http://www.farsouthcdc.org/)
 [![Greater Auburn-Gresham Community Development Corporation](img/supporters/greater_auburngresham.png)](http://www.gagdc.org/index.html)
+[![MoveLA](img/supporters/movela.jpg)(http://movela.org/)
 [![Openlands](img/supporters/openlands.jpg)](http://www.openlands.org/)
 [![Over The Rainbow Association](img/supporters/otrlogo.jpg)](http://www.otrassn.org)
 [![Progress Center for Independent Living](img/supporters/progress_center.jpg)](http://www.progresscil.org/)
