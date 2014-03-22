@@ -337,15 +337,16 @@ function setCurrentView(current_view){
   // add and remove special CartoCSS style layers
   // a mapstage has a CartoCSS layer if you add a named layer_state string
   // [lat, lng, zoom, layer_state] or [south, west, north, east, layer_state]
-  if(views[current_view].length > 3 && typeof views[current_view][3] == "string"){
-    if(current_layer_state !== views[current_view][3]){
+  if(views[current_view].length > 3 && typeof views[current_view][3] == "object"){
+    if(current_layer_state !== views[current_view][3].join(",")){
       // change last layer_state to the current map state
       for(var hl=0;hl<highlight_layers.length;hl++){
         map.removeLayer(highlight_layers[hl]);
       }
-      current_layer_state = views[current_view][3];
-      for(var hl=0;hl<current_layer_state.length;hl++){
-        var activate_layer_state = current_layer_state[hl];
+      highlight_layers = [];
+      current_layer_state = views[current_view][3].join(",");
+      for(var hl=0;hl<views[current_view][3].length;hl++){
+        var activate_layer_state = views[current_view][3][hl];
 
         if(typeof layer_states[activate_layer_state] == "string"){
           // need to generate the tile template URL for this CartoCSS layer
@@ -355,8 +356,21 @@ function setCurrentView(current_view){
 
           // call for a tile template URL for the CartoCSS
           //layer_to_set = current_layer_state;
-          var template = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
-            + escape(custom_layer.layers[0].options.sql)
+          
+          // make sure the tile URL and SQL match the CartoDB table used in the CartoCSS
+          var accept_layer = null;
+          for(var a=0;a<accept_layers.length;a++){
+            if(custom_layer.layers[0].options.cartocss.indexOf(accept_layers[a]) > -1){
+              accept_layer = accept_layers[a];
+              break;
+            }
+          }
+          if(!accept_layer){
+            continue;
+          }
+          
+          var template = new MM.Template('http://jpvelez.cartodb.com/tiles/' + accept_layer + '/{Z}/{X}/{Y}.png?sql='
+            + escape('select * from ' + accept_layer)
             + '&style=' + escape(custom_layer.layers[0].options.cartocss));
           var highlight_layer = new MM.Layer(template);
           map.addLayer(highlight_layer);
@@ -372,7 +386,7 @@ function setCurrentView(current_view){
           document.body.appendChild(s);
           */
         }
-        else if(layer_states[current_layer_state]){
+        else if(layer_states[activate_layer_state]){
           // use a known tile template for this layer
           var highlight_layer = new MM.Layer(layer_states[activate_layer_state]);
           map.addLayer(highlight_layer);
@@ -387,13 +401,13 @@ function setCurrentView(current_view){
     for(var hl=0;hl<highlight_layers.length;hl++){
       map.removeLayer(highlight_layers[hl]);
     }
+    highlight_layers = [];
     current_layer_state = null;
   }
 
   // Ease to lat/lon/z view of current paragraph - the first p element
   // below the top edge of the box. This gets called the instant the previous
   // element's offset becomes negative.
-  console.log(views[current_view]);
   map.ease.location({
     lat: views[current_view][0],
     lon: views[current_view][1]

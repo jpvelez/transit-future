@@ -89,6 +89,8 @@ function loadedToken(tokenInfo){
 // The map will only be displayed once you scroll the to the right part of the page.
 window.onload = main;
 
+// array of tables in CartoDB
+var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art","oakbrookshaumburg_boundaries"];
 
 // Define transit line layer styles to be fetched above using CartoDB API.
 // You define what features to show using a PostgreSQL-like query.
