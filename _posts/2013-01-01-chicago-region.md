@@ -7,6 +7,6 @@ extrapadding: 100px
 section: chicago
 ---
 
-<div id="chicago" class="mapstage"></div>
+<div id="chicago"></div>
 
 # CHICAGO
