@@ -8,4 +8,9 @@ extrapadding: 100px
 section: chicago
 ---
 
-## Fixes Blue Line tracks and stations on the West Side.
+
+## The Blue Line tracks are filled with slow zones.
+
+## Many stations are not wheelchair accessible
+
+## Let's revamp the West Side Blue Line, so it's faster. For everyone. 
