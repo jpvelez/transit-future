@@ -100,7 +100,7 @@ function loadedToken(tokenInfo){
 window.onload = main;
 
 // array of tables in CartoDB
-var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art_revised","oakbrookshaumburg_boundaries"];
+var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art_revised","tf_areas","tf_airports","tf_connections"];
 
 // Define transit line layer styles to be fetched above using CartoDB API.
 // You define what features to show using a PostgreSQL-like query.
@@ -152,7 +152,7 @@ var layer_states = {
   + "  line-width: 8;"
   + "}"
   + "}",
-  ashland_closeup: "#tf_areas_campuses{"
+  ashland_closeup: "#tf_areas{"
   + "polygon-fill: #000000"
   + "}",
   lime_line: "#transit_future_projects_updated{"

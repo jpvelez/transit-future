@@ -287,8 +287,6 @@ $(function(){
 });
 
 function setCurrentView(current_view){
-  console.log("set current view: " + current_view);
-  console.log(views[current_view]);
 
   // if view is defined with [south,west,north,east] bounds, calculate lat,lng,zoom
   if(views[current_view].length > 3 && typeof views[current_view][3] != "object"){
@@ -362,6 +360,9 @@ function setCurrentView(current_view){
           
           // make sure the tile URL and SQL match the CartoDB table used in the CartoCSS
           var accept_layer = null;
+          
+        console.log("accepting layer " + activate_layer_state);
+
           for(var a=0;a<accept_layers.length;a++){
             if(custom_layer.layers[0].options.cartocss.indexOf(accept_layers[a]) > -1){
               accept_layer = accept_layers[a];
