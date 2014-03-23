@@ -2,7 +2,7 @@
 layout: fullpage
 title: Blue Line - Oak Brook Extension
 pagetype: story map
-bgcolor: C82A45
+bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: westsuburbs

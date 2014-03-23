@@ -2,7 +2,7 @@
 layout: fullpage
 title: The ACE Line
 pagetype: story map
-bgcolor: 22A7DA
+bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: westsuburbs

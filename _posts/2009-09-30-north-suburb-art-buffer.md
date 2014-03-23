@@ -1,7 +1,7 @@
 ---
 layout: fullpage
 pagetype: quote map
-bgcolor: 0
+bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: northsuburbs

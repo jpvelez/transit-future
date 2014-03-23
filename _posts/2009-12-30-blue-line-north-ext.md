@@ -2,7 +2,7 @@
 layout: fullpage
 title: Blue Line - Schaumburg Extension
 pagetype: story map
-bgcolor: C82A45
+bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: northsuburbs
