@@ -2,7 +2,7 @@
 layout: fullpage
 title: Rebuilding the Blue Line
 pagetype: story map
-bgcolor: 69579c
+bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
