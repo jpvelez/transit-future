@@ -8,5 +8,8 @@ extrapadding: 100px
 section: westsuburbs
 ---
 
+## ART Lines will bring speedy, frequent bus service to major streets. 
 
-## There will be a ton of new ART lines in the West Suburbs. 
+## They have new, high-speed buses, special stations, and can turn the traffic light green
+
+## Plus, they can jump ahead of traffic jams at major intersections.
