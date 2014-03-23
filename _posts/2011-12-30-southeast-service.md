@@ -2,7 +2,7 @@
 layout: fullpage
 title: The Southeast Service
 pagetype: story map
-bgcolor: C82A45
+bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: southsuburbs
