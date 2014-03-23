@@ -1,5 +1,7 @@
 // Define Modest Map of region with transit lines.
 var map;
+var verifyMapTimer;
+
 function main(){
   // Define a basemap
   // We're using a Mapbox basemap, and Mapbox.js to make fetch it easy.
@@ -44,6 +46,15 @@ document.body.appendChild(s);
   var layer_future = new MM.Layer(template_future);
   map.addLayer(layer_future);
 
+  verifyMap();
+  verifyMapTimer = setInterval(verifyMap, 300);
+
+}
+
+function verifyMap(){
+  if($("#map").css("position") == "fixed"){
+    return clearInterval(verifyMapTimer);
+  }
   if($(document.body).scrollTop() + $(window).height() > $(".fellowship").offset().top
     && $(document.body).scrollTop() < $(".scrollout").offset().top){
     // starting out somewhere where the map should be visible
@@ -59,7 +70,6 @@ document.body.appendChild(s);
       }
     }
   }
-
 }
 
 
