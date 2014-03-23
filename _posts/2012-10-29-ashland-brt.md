@@ -7,6 +7,7 @@ published: true
 extrapadding: 100px
 section: chicago
 ---
+<div class="mapstage"></div>
 
 ## BRT on Ashland will run from the North Side to the Far South Side. 
 

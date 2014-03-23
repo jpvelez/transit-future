@@ -129,7 +129,7 @@ var map_data = {
       "type":"cartodb",
       "options":{
         "sql":"select * from art_revised",
-        "cartocss":"#art_revised{\nline-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 2, 2, 2, 2;\nline-opacity: .35\n}",
+        "cartocss":"#art_revised{\nline-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 6,5;\nline-opacity: .35\n}",
         "cartocss_version":"2.1.1"
       }
     }
@@ -146,20 +146,71 @@ var layer_states = {
     + "  line-width: 8;"
     + "}"
   + "}",
+  gold_line_closeup: "#tf_areas{"
+  + "polygon-fill: #FF2900;"
+  + "polygon-opacity: .035;"
+  + "line-color: #000000;"
+  + "line-width: 1.5;"
+  + "line-opacity: .3;"
+  + "}",
   ashland: "#transit_future_projects_updated{"
   + "[cartodb_id=11]{"
   + "  line-color: blue;"
   + "  line-width: 8;"
   + "}"
   + "}",
+  ashland_connections: "#tf_connections{"
+  + "[cartodb_id=1],"
+  + "[cartodb_id=3],"
+  + "[cartodb_id=6],"
+  + "[cartodb_id=9],"
+  // + "[cartodb_id=10],"
+  + "[cartodb_id=12],"
+  + "[cartodb_id=22],"
+  + "[cartodb_id=19]{"
+  + "marker-placement: point;"
+  + "marker-type: ellipse;"
+  + "marker-allow-overlap: true;"
+  + "marker-line-color: #000000;"
+  + "marker-line-opacity: 1;"
+  + "marker-line-width: 3;"
+  + "marker-fill: #FFFFFF;"
+  + "marker-opacity: 1;"
+  + "marker-width: 6;"
+  + "}"
+  + "}",
   ashland_closeup: "#tf_areas{"
-  + "polygon-fill: #000000"
+  + "polygon-fill: #FF2900;"
+  + "polygon-opacity: .035;"
+  + "line-color: #000000;"
+  + "line-width: 1.5;"
+  + "line-opacity: .3;"
   + "}",
   lime_line: "#transit_future_projects_updated{"
       + "[cartodb_id=1]{"
       + "line-color: lime;"
       + "line-width: 8;"
       + "}"
+  + "}",
+  lime_line_connections: "#tf_connections{"
+  + "[cartodb_id=21],"
+  + "[cartodb_id=20],"
+  + "[cartodb_id=19],"
+  + "[cartodb_id=18],"
+  + "[cartodb_id=17],"
+  + "[cartodb_id=16],"
+  + "[cartodb_id=15],"
+  + "[cartodb_id=14]{"
+  + "marker-placement: point;"
+  + "marker-type: ellipse;"
+  + "marker-allow-overlap: true;"
+  + "marker-line-color: #000000;"
+  + "marker-line-opacity: 1;"
+  + "marker-line-width: 3;"
+  + "marker-fill: #FFFFFF;"
+  + "marker-opacity: 1;"
+  + "marker-width: 6;"
+  + "}"
   + "}",
   orange_line_extension: "#transit_future_projects_updated{"
       + "[cartodb_id=2]{"
@@ -175,13 +226,24 @@ var layer_states = {
     + "line-join: round;"
     + "}"
   + "}",
-  blue_line_extension: "#transit_future_projects_updated{"
+  blue_line_ext_oak_brook: "#transit_future_projects_updated{"
      + "[cartodb_id=3]{"
      + "line-color: #74BBE7;"
      + "line-width: 8;"
      + "line-join: round;"
      + "line-cap: round;"
      + "}"
+  + "}",
+  blue_line_oak_brook_nabe: "#tf_areas{"
+  + "[cartodb_id=7]{"
+  + "polygon-fill: #FF2900;"
+  + "polygon-opacity: .035;"
+  + "line-color: #000000;"
+  + "line-width: 1.5;"
+  + "line-opacity: .3;"
+  + "}"
+  + "}",
+  blue_line_ext_schaumburg: "#transit_future_projects_updated{"
     + "[cartodb_id=7]{"
     + "line-color: #74BBE7;"
     + "line-width: 8;"
@@ -189,14 +251,37 @@ var layer_states = {
     + "line-cap: round;"
     + "}"
   + "}",
-  inner_circle: "#transit_future_projects_updated{"
+  blue_line_schaumburg_nabe: "#tf_areas{"
+    + "[cartodb_id=6]{"
+    + "polygon-fill: #FF2900;"
+    + "polygon-opacity: .035;"
+    + "line-color: #000000;"
+    + "line-width: 1.5;"
+    + "line-opacity: .3;"
+    + "}"
+    + "}",
+  blue_line_ohare: "#tf_airports{"
+    + "polygon-fill: #FF2900;"
+    + "polygon-opacity: .035;"
+    + "line-color: #000000;"
+    + "line-width: 1.5;"
+    + "line-opacity: .3;"
+    + "}",
+  ace: "#transit_future_projects_updated{"
     + "[cartodb_id=9]{"
     + "line-color: #9A51A0;"
     + "line-width: 8;"
     + "line-cap: round;"
     + "line-join: round;"
-  + "}"
-+ "}",
+    + "}"
+    + "}",
+  ace_airports: "#tf_airports{"
+    + "polygon-fill: #FF2900;"
+    + "polygon-opacity: .035;"
+    + "line-color: #000000;"
+    + "line-width: 1.5;"
+    + "line-opacity: .3;"
+    + "}",
   brown_line_extension: "#transit_future_projects_updated{"
       + "[cartodb_id=6]{"
       + "line-color: #73451C;"
@@ -214,13 +299,8 @@ var layer_states = {
     + "}"
   + "}",
   yellow_line: "#transit_future_projects_updated{"
-   + "[cartodb_id=5]::glow{"
-    + "line-color: FEE800;"
-    + "line-width: 8;"
-    + "line-cap: round;"
-    + "line-join: cap;"
     + "[cartodb_id=5]{"
-    + "line-color: #000000;"
+    + "line-color: #FEE800;"
     + "line-width: 10;"
     + "line-cap: round;"
     + "line-join: round;"
@@ -243,13 +323,27 @@ var layer_states = {
     + "line-join: round;"
     + "}"
   + "}",
-  art: "#art{"
+  art_north: "#art_revised{"
     + "line-color: #055D00;"
-    + "line-width: 5;"
+    + "line-width: 3;"
     + "line-cap: round;"
     + "line-join: round;"
-    + "line-dasharray: 2, 2, 2, 2;"
-    + "}"
+    + "line-dasharray: 6, 5;"
+    + "}",
+  art_south: "#art_revised{"
+    + "line-color: #055D00;"
+    + "line-width: 3;"
+    + "line-cap: round;"
+    + "line-join: round;"
+    + "line-dasharray: 6, 5;"
+    + "}",
+  art_west: "#art_revised{"
+    + "line-color: #055D00;"
+    + "line-width: 3;"
+    + "line-cap: round;"
+    + "line-join: round;"
+    + "line-dasharray: 6, 5;"
+    + "}",
 };
 
 // Ease around the map as you scroll through the project posts.
@@ -262,34 +356,40 @@ var current_view = 0;
 var views = [
 [41.675989,-88.049926,42.054391,-87.838439],
 [41.746213,-87.637596,41.886176,-87.543525, ["gold_line"]],             // Gold line
-[41.787761,-87.616567,41.802222,-87.593221, ["gold_line"]],             // Gold line closeup
+[41.787761,-87.616567,41.802222,-87.593221, ["gold_line_closeup", "gold_line"]],             // Gold line closeup
 [41.744676,-87.768402,41.977869,-87.625579, ["lime_line"]],             // Lime line
-[41.792560,-87.751235,41.969956,-87.735786, ["lime_line"]],
-[41.695475,-87.783851,41.794352,-87.739219, ["lime_line"]],             // Lime line South Side closeup
+[41.744676,-87.768402,41.977869,-87.625579, ["lime_line", "lime_line_connections"]],             // ADD DOTS
+[41.695475,-87.783851,41.794352,-87.739219, ["lime_line", "lime_line_connections"]],             // Lime line South Side closeup ADD DOTS
 [41.707779,-87.736816,41.963574,-87.587814, ["ashland"]],               // BRT
-[41.865310,-87.677807,41.881384,-87.666478, ["ashland", "ashland_closeup"]],               // BRT closeup
-[41.659960,-87.638626,41.743651,-87.613735, ["red_line_extension"]],    // Red line extension
-[41.899593,-87.771835,41.975827,-87.710380, ["brown_line_extension"]],  // Brown Line extension
+[41.787779,-87.736816,41.903574,-87.587814, ["ashland", "ashland_connections"]],               // BRT connections
+[41.865310,-87.677807,41.881384,-87.666478, ["ashland_closeup", "ashland"]],               // BRT closeup
+[41.659960,-87.638626,41.743651,-87.613735, ["red_line_extension"]],    // Red line extension, ADD NABES?
+[41.899593,-87.771835,41.975827,-87.710380, ["brown_line_extension"]],  // Brown Line extension, ADD NABES?
 [41.940339,-87.689437,42.028001,-87.652015, ["red_purple"]],            // Red/Purple Modernization
 [41.724693,-87.826766,41.889754,-87.736473, ["blue_line_extension"]],   // BLUE REHAB - CREATE
 // [41.748775,-87.763423,41.800367,-87.736129, ["orange_line_extension"]], // Orange line extension
 [41.675989,-88.049926,42.054391,-87.838439],          // Other projects CREATE
 
-[41.454563,-88.139190,41.819431,-87.957229, ["southeast"]],             // South suburbs, CREATE
+[41.454563,-88.139190,41.819431,-87.957229, ["art_south", "southeast"]],             // South suburbs
 [41.388142,-87.735443,41.887965,-87.567901, ["southeast"]],             // Southeast Service
-[41.454563,-88.139190,41.819431,-87.957229, ["art"]],                   // ART, CREATE
+[41.454563,-88.139190,41.819431,-87.957229, ["art_south"]],                   // ART, CREATE REGIONAL LINES
 
 
-[41.681630,-88.242187,42.023283,-88.106918, ["blue_line_extension"]],   // West suburbs, CREATE
-[41.771823,-87.887878,41.992670,-87.780761, ["inner_circle"]],          // Inner Circumferential
-[41.704190,-88.017311,41.880297,-87.921524, ["blue_line_extension"]],   // Blue Line West - Forest Park to Oak Brook
-[41.833758,-88.299865,42.045213,-88.200302, ["art"]],   // ART, CREATE
+[41.683169,-88.393250,42.082936,-88.211288, ["art_west", "ace", "blue_line_ext_oak_brook"]],   // West suburbs, CREATE REGIONAL LINES
+[41.781823,-87.897878,42.002670,-87.790761, ["ace"]],          // ACE
+[41.781823,-87.897878,42.002670,-87.790761, ["ace_airports", "ace"]],          // Ace airport
+[41.781823,-87.897878,42.002670,-87.790761, ["ace"]],          // Ace west suburbs
+[41.704190,-88.017311,41.880297,-87.921524, ["blue_line_ext_oak_brook"]],   // Blue Line West Buffer
+[41.766062,-88.005123,41.868283,-87.949848,  ["blue_line_oak_brook_nabe", "blue_line_ext_oak_brook"]],   // Blue Line West Oak Brook highlight
+[41.683169,-88.393250,42.082936,-88.211288, ["art_west"]],   // ART, CREATE REGIONAL LINES
 
-[41.971232,-88.343811,42.315908,-88.190002, ["yellow_line"]],           // North suburbs, CREATE
-[41.975827,-88.053531,42.058979,-88.008213, ["blue_line_extension"]],   // Blue Line West - Forest Park to Oak Brook
+[41.978380,-88.384323,42.379344,-88.176270, ["art_north", "blue_line_ext_schaumburg", "purple_line"]],           // North suburbs, CREATE REGIONAL LINES
+[41.975827,-88.083531,42.058979,-88.038213, ["blue_line_ext_schaumburg"]],   // Blue Line West - Forest Park to Oak Brook
+[41.975827,-88.083531,42.058979,-88.038213, ["blue_line_ohare","blue_line_ext_schaumburg"]],   // Blue Line West O'Hare
+[41.975827,-88.083531,42.058979,-88.038213, ["blue_line_schaumburg_nabe", "blue_line_ohare", "blue_line_ext_schaumburg"]],   // Blue Line West Schaumburg
 [42.006958,-87.704544,42.077839,-87.656307, ["purple_line"]],           // Purple Line Rehab
 [42.020924,-87.769775,42.063695,-87.742481, ["yellow_line"]],           // Yellow line
-[41.971232,-88.343811,42.315908,-88.190002, ["art"]],           // ART, CREATE
+[41.971232,-88.343811,42.315908,-88.190002, ["art_north"]],           // ART, CREATE REGIONAL LINES
 // [41.880871,  -87.628292, 15],                       // West Loop Transportation Center
 
 ];

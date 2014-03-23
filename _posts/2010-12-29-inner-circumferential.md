@@ -7,5 +7,5 @@ published: true
 extrapadding: 100px
 section: westsuburbs
 ---
-
-## Connects Western suburbs to each other - and to the L.
+<div class="mapstage"></div>
+## Connects Western suburbs to each other.
