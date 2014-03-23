@@ -2,7 +2,7 @@
 layout: fullpage
 title: ART Network
 pagetype: story map
-bgcolor: 0
+bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: northsuburbs
