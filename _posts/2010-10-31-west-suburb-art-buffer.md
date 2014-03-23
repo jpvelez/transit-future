@@ -7,7 +7,7 @@ extrapadding: 100px
 section: westsuburbs
 ---
 
-<div class="mapstage"></div>
+<div id="westart" class="mapstage"></div>
 
 # WEST SUBURBAN
 # ART NETWORK

@@ -7,6 +7,6 @@ extrapadding: 100px
 section: chicago
 ---
 
-<div class="mapstage"></div>
+<div id="aqua" class="mapstage"></div>
 
 # THE AQUA LINE
