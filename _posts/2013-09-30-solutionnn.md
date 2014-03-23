@@ -1,9 +1,9 @@
 ---
 published: true
-pagetype: quote map textright
+pagetype: quote
 layout: fullpage
 bgcolor: FFFFFF
-image: transitmap2
+image: downtownarial
 section: transitfuture
 ---
 

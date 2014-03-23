@@ -19,18 +19,8 @@ section: supporters
 [![Peter Silvestri](img/supporters/peter_silvestri_sig.jpg)](http://www.petersilvestri.com/)
 [![Robert Steele](img/supporters/robert_steele_sig.jpg)](http://www.robertsteele.org/)
 
-## These labor organizations support the campaign:
-
-
-[![Cook County Building Trades](img/supporters/buildingtrades.jpg)](http://www.chicagobuildingtrades.org/)
-[![Electricians local 9](img/supporters/ibew_local_9.jpg)](http://www.ibew9.org/)
-[![Electricians Local 134](img/supporters/ibew_logo.jpg)](http://lu134.org/)
-[![Roofers Local 11](img/supporters/roofers.jpg)](http://www.rooferslocal11.org/)
-[![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)](http://www.smw73.org/)
-
 
 ## These businesses support Transit Future:
-
 
 [![BLUE1647](img/supporters/blue1647.jpg)](http://www.blue1647.com/)
 [![Christopher B. Burke Engineering](img/supporters/burke_engineering.jpg)](http://www.cbbel.com/)
@@ -42,6 +32,16 @@ section: supporters
 [![RPEG](img/supporters/rpeg.jpg)](http://www.repg-lund.com/)
 [![Skidmore, Owings & Merrill](img/supporters/som.jpg)](http://www.som.com/)
 [![Solomon Cordwell Buenz](img/supporters/scb.jpg)](http://www.scb.com/)
+
+## These labor organizations support the campaign:
+
+
+[![Cook County Building Trades](img/supporters/buildingtrades.jpg)](http://www.chicagobuildingtrades.org/)
+[![Electricians local 9](img/supporters/ibew_local_9.jpg)](http://www.ibew9.org/)
+[![Electricians Local 134](img/supporters/ibew_logo.jpg)](http://lu134.org/)
+[![Roofers Local 11](img/supporters/roofers.jpg)](http://www.rooferslocal11.org/)
+[![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)](http://www.smw73.org/)
+
 
 ## These community and civic organizations support Transit Future:
 
