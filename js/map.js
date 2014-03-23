@@ -152,6 +152,9 @@ var layer_states = {
   + "  line-width: 8;"
   + "}"
   + "}",
+  ashland_closeup: "#tf_areas_campuses{"
+  + "polygon-fill: #000000"
+  + "}",
   lime_line: "#transit_future_projects_updated{"
       + "[cartodb_id=1]{"
       + "line-color: lime;"
@@ -264,7 +267,7 @@ var views = [
 [41.792560,-87.751235,41.969956,-87.735786, ["lime_line"]],
 [41.695475,-87.783851,41.794352,-87.739219, ["lime_line"]],             // Lime line South Side closeup
 [41.707779,-87.736816,41.963574,-87.587814, ["ashland"]],               // BRT
-[41.865310,-87.677807,41.881384,-87.666478, ["ashland"]],               // BRT closeup
+[41.865310,-87.677807,41.881384,-87.666478, ["ashland", "ashland_closeup"]],               // BRT closeup
 [41.659960,-87.638626,41.743651,-87.613735, ["red_line_extension"]],    // Red line extension
 [41.899593,-87.771835,41.975827,-87.710380, ["brown_line_extension"]],  // Brown Line extension
 [41.940339,-87.689437,42.028001,-87.652015, ["red_purple"]],            // Red/Purple Modernization
