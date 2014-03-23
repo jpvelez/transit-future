@@ -2,7 +2,7 @@
 layout: fullpage
 title: Ashland BRT
 pagetype: story map
-bgcolor: C82A45
+bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
