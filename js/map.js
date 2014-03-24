@@ -372,24 +372,24 @@ var views = [
 
 [41.454563,-88.139190,41.819431,-87.957229, ["art_south", "southeast"]],             // South suburbs
 [41.388142,-87.735443,41.887965,-87.567901, ["southeast"]],             // Southeast Service
-[41.454563,-88.139190,41.819431,-87.957229, ["art_south"]],                   // ART, CREATE REGIONAL LINES
+[41.454563,-88.139190,41.819431,-87.957229, ["art_south"]],                   // ART, ADD ART
 
 
-[41.683169,-88.393250,42.082936,-88.211288, ["art_west", "ace", "blue_line_ext_oak_brook"]],   // West suburbs, CREATE REGIONAL LINES
+[41.681630,-88.242187,42.023283,-88.106918, ["art_west", "ace", "blue_line_ext_oak_brook"]],   // West suburbs, CREATE
 [41.781823,-87.897878,42.002670,-87.790761, ["ace"]],          // ACE
 [41.781823,-87.897878,42.002670,-87.790761, ["ace_airports", "ace"]],          // Ace airport
 [41.781823,-87.897878,42.002670,-87.790761, ["ace"]],          // Ace west suburbs
 [41.704190,-88.017311,41.880297,-87.921524, ["blue_line_ext_oak_brook"]],   // Blue Line West Buffer
 [41.766062,-88.005123,41.868283,-87.949848,  ["blue_line_oak_brook_nabe", "blue_line_ext_oak_brook"]],   // Blue Line West Oak Brook highlight
-[41.683169,-88.393250,42.082936,-88.211288, ["art_west"]],   // ART, CREATE REGIONAL LINES
+[41.833758,-88.299865,42.045213,-88.200302, ["art_west"]],   // ART, CREATE
 
-[41.978380,-88.384323,42.379344,-88.176270, ["art_north", "blue_line_ext_schaumburg", "purple_line"]],           // North suburbs, CREATE REGIONAL LINES
+[41.971232,-88.343811,42.315908,-88.190002, ["art_north", "blue_line_ext_schaumburg", "purple_line"]],           // North suburbs, CREATE
 [41.975827,-88.083531,42.058979,-88.038213, ["blue_line_ext_schaumburg"]],   // Blue Line West - Forest Park to Oak Brook
 [41.975827,-88.083531,42.058979,-88.038213, ["blue_line_ohare","blue_line_ext_schaumburg"]],   // Blue Line West O'Hare
 [41.975827,-88.083531,42.058979,-88.038213, ["blue_line_schaumburg_nabe", "blue_line_ohare", "blue_line_ext_schaumburg"]],   // Blue Line West Schaumburg
 [42.006958,-87.704544,42.077839,-87.656307, ["purple_line"]],           // Purple Line Rehab
 [42.020924,-87.769775,42.063695,-87.742481, ["yellow_line"]],           // Yellow line
-[41.971232,-88.343811,42.315908,-88.190002, ["art_north"]],           // ART, CREATE REGIONAL LINES
+[41.971232,-88.343811,42.315908,-88.190002, ["art_north"]],           // ART, CREATE
 // [41.880871,  -87.628292, 15],                       // West Loop Transportation Center
 
 ];

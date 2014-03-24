@@ -404,6 +404,11 @@ input[type="text"] {
   margin-left: 60px;
 }
 
+/*Move the text on the "problem" slide over even more, to accomodated the subway map behind.*/
+.page.story.map.intro h2 {
+  margin-left: 140px;
+}
+
 /*Align BRT image with project text.*/
 .page.story.map img {
   margin-left: 60px;
