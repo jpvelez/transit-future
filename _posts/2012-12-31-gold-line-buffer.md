@@ -9,4 +9,4 @@ section: chicago
 
 <div id="aqua" class="mapstage"></div>
 
-# THE AQUA LINE
+# THE GOLD LINE
