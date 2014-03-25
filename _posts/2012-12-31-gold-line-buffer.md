@@ -7,6 +7,6 @@ extrapadding: 100px
 section: chicago
 ---
 
-<div id="aqua" class="mapstage"></div>
+<div id="southlake" class="mapstage"></div>
 
-# THE GOLD LINE
+# THE SOUTH LAKEFRONT CORRIDOR
