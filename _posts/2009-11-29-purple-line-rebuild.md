@@ -12,4 +12,4 @@ section: northsuburbs
 
 ## Rebuilding the tracks means faster commutes from the North Suburbs to the city. 
 
-## And quicker trips from the City.
+## And quicker trips from the city.
