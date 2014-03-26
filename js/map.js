@@ -49,11 +49,34 @@ document.body.appendChild(s);
   verifyMap();
   verifyMapTimer = setInterval(verifyMap, 300);
 
+  // down arrow
+  var arrowInterval = setInterval(function(){
+    $(".downarrow").animate({opacity:1}, 800, "swing", function(){
+      $(".downarrow").animate({opacity:0}, 800, "swing");
+    })
+  }, 2000);
+  $(".downarrow svg").on("click", function(){
+    // advance to next
+    var mapstages = $(".mapstage");
+    for(var m=0; m<mapstages.length-1; m++){
+      if($(mapstages[m]).offset().top > $(document.body).scrollTop()){
+        $(document.body).scrollTop( $(mapstages[m+1]).offset().top + 100 );
+        current_view = m+1;
+        setCurrentView(current_view);
+        break;
+      }
+    }
+  });
+
 }
 
 function verifyMap(){
-  if($("#map").css("position") == "fixed" && $("#map").css("top") == browser_top){
+  if($("#map").css("position") == "fixed" && $("#map").css("top") == browser_map_top + "px"){
+    $(".downarrow").css({ visibility: "visible" });
     return;
+  }
+  else{
+    $(".downarrow").css({ visibility: "hidden" });
   }
   if($(document.body).scrollTop() + $(window).height() > $(".fellowship").offset().top
     && $(document.body).scrollTop() < $(".scrollout").offset().top){
