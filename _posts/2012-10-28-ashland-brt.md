@@ -18,4 +18,4 @@ section: chicago
 * Malcolm X College
 * Whitney Young High School
 
-## Now everyone can get to school - and to the hospital.
+## Now everyone can get to school—and to the hospital.
