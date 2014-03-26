@@ -123,7 +123,7 @@ function loadedToken(tokenInfo){
 window.onload = main;
 
 // array of tables in CartoDB
-var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art_revised","tf_areas","tf_airports","tf_connections"];
+var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art_revised","tf_areas_campuses","tf_airports","tf_connections"];
 
 // Define transit line layer styles to be fetched above using CartoDB API.
 // You define what features to show using a PostgreSQL-like query.
@@ -169,7 +169,7 @@ var layer_states = {
     + "  line-width: 8;"
     + "}"
   + "}",
-  gold_line_closeup: "#tf_areas{"
+  gold_line_closeup: "#tf_areas_campuses{"
   + "polygon-fill: #FF2900;"
   + "polygon-opacity: .035;"
   + "line-color: #000000;"
@@ -202,7 +202,7 @@ var layer_states = {
   + "marker-width: 6;"
   + "}"
   + "}",
-  ashland_closeup: "#tf_areas{"
+  ashland_closeup: "#tf_areas_campuses{"
   + "polygon-fill: #FF2900;"
   + "polygon-opacity: .035;"
   + "line-color: #000000;"
@@ -265,7 +265,7 @@ var layer_states = {
      + "line-cap: round;"
      + "}"
   + "}",
-  blue_line_oak_brook_nabe: "#tf_areas{"
+  blue_line_oak_brook_nabe: "#tf_areas_campuses{"
   + "[cartodb_id=7]{"
   + "polygon-fill: #FF2900;"
   + "polygon-opacity: .035;"
@@ -282,7 +282,7 @@ var layer_states = {
     + "line-cap: round;"
     + "}"
   + "}",
-  blue_line_schaumburg_nabe: "#tf_areas{"
+  blue_line_schaumburg_nabe: "#tf_areas_campuses{"
     + "[cartodb_id=6]{"
     + "polygon-fill: #FF2900;"
     + "polygon-opacity: .035;"
@@ -321,6 +321,17 @@ var layer_states = {
       + "line-join: round;"
     + "}"
   + "}",
+  brown_line_nabes: "#tf_areas_campuses{"
+    + "[cartodb_id=8],"
+    + "[cartodb_id=9],"
+    + "[cartodb_id=10]{"
+    + "polygon-fill: #FF2900;"
+    + "polygon-opacity: .035;"
+    + "line-color: #000000;"
+    + "line-width: 1.5;"
+    + "line-opacity: .3;"
+    + "}"
+    + "}",
   red_line_modernization: "#transit_future_projects_updated{"
       + "[cartodb_id=10]{"
       + "line-color: #EA5854;"
@@ -396,6 +407,7 @@ var views = [
 [41.865310,-87.677807,41.881384,-87.666478, ["ashland_closeup", "ashland"]],               // BRT closeup
 [41.659960,-87.638626,41.743651,-87.613735, ["red_line_extension"]],    // Red line extension, ADD NABES?
 [41.899593,-87.771835,41.975827,-87.710380, ["brown_line_extension"]],  // Brown Line extension, ADD NABES?
+[41.942383,-87.748060,41.982718,-87.721024, ["brown_line_nabes", "brown_line_extension"]],  // Brown Line extension, ADD NABES?
 [41.940339,-87.689437,42.028001,-87.652015, ["red_line_modernization"]],            // Red/Purple Modernization
 [41.724693,-87.826766,41.889754,-87.736473, ["blue_line_modernization"]],   // BLUE REHAB - CREATE
 // [41.748775,-87.763423,41.800367,-87.736129, ["orange_line_extension"]], // Orange line extension
