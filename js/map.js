@@ -52,8 +52,8 @@ document.body.appendChild(s);
 }
 
 function verifyMap(){
-  if($("#map").css("position") == "fixed"){
-    return clearInterval(verifyMapTimer);
+  if($("#map").css("position") == "fixed" && $("#map").css("top") == browser_top){
+    return;
   }
   if($(document.body).scrollTop() + $(window).height() > $(".fellowship").offset().top
     && $(document.body).scrollTop() < $(".scrollout").offset().top){
