@@ -13,3 +13,5 @@ section: southsuburbs
 ## They have new, high-speed buses, special stations, and can turn the stoplights green.
 
 ## Unlike BRT, they don't have dedicated road lanes.
+
+## But they can jump ahead of traffic jams at major intersections.
