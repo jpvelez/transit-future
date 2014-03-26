@@ -1,10 +1,12 @@
-var color2011 = "fedd44",
-    color2012 = "C82A45";
 
 if (typeof console === "undefined" || typeof console.log === "undefined") {
   console = {log:function(){}};
 }
 
+var browser_map_top = 10;
+if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+  browser_map_top = 40;
+}
 
 // Fadeout loading once first image is loaded.
 $(function(){
@@ -195,18 +197,18 @@ $(function(){
   scrollEvent.on("middle", $(".mapstage"), function(el, i){
 
     // select mapstage
-    if(i+1 == current_view || views[i+1] === null){
+    if(i == current_view || views[i] === null){
       // already viewing this mapstage, or one does not exist
       return;
     }
-    current_view = i+1;
+    current_view = i;
     setCurrentView(current_view);
   });
   scrollEvent.on("bottom", $(".mapstage"), function(el, i){
-    if(i+1 == current_view && i > 0){
+    if(i == current_view && i > 0){
       // currently on a mapstage which is falling below the window
       // switch to previous page
-      current_view = i;
+      current_view = i-1;
       setCurrentView(current_view);
     }
   });
@@ -231,11 +233,11 @@ $(function(){
       // move top of map to follow the map_follow_element
       // when map_follow_element is above the top of the window, fix map to top of window
       var suggestTop = map_follow_element.offset().top - $($(".pagebg")[0]).offset().top;
-      if(suggestTop > 10){
+      if(suggestTop > browser_map_top){
         $("#map").css({"top": suggestTop, "height": "auto", "visibility": "visible"});
       }
       else{
-        $("#map").css({"top": 10, "visibility": "visible"});
+        $("#map").css({"top": browser_map_top, "visibility": "visible"});
       }
     }
     if(map_tail_element){
@@ -361,8 +363,6 @@ function setCurrentView(current_view){
           // make sure the tile URL and SQL match the CartoDB table used in the CartoCSS
           var accept_layer = null;
           
-        console.log("accepting layer " + activate_layer_state);
-
           for(var a=0;a<accept_layers.length;a++){
             if(custom_layer.layers[0].options.cartocss.indexOf(accept_layers[a]) > -1){
               accept_layer = accept_layers[a];

@@ -60,7 +60,7 @@ function verifyMap(){
     // starting out somewhere where the map should be visible
     map_follow_element = $($(".mapstage")[0]);
     map_tail_element = $($(".mapstage")[$(".mapstage").length-1]);
-    $("#map").css({top: 10, visibility: "visible", position: "fixed"});
+    $("#map").css({top: browser_map_top, visibility: "visible", position: "fixed"});
     var mapstages = $(".mapstage");
     for(var m=0; m<mapstages.length; m++){
       if($(mapstages[m]).offset().top > $(document.body).scrollTop()){
