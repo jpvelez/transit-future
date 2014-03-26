@@ -317,9 +317,9 @@ input[type="text"] {
 }
 
 .page ul li{
-  border-top-style: solid;
-  border-color: #fff;
-  border-width: 2px;
+  /*border-top-style: solid;*/
+  /*border-color: #fff;*/
+  /*border-width: 2px;*/
   padding: 5px 0px 5px 0px;
 }
 
@@ -402,6 +402,21 @@ input[type="text"] {
   color: black;
   text-shadow: none;
   margin-left: 60px;
+}
+
+
+.page.story.map ul{
+  padding-bottom: 5px;
+  border-width: 0;
+}
+
+.page.story.map ul li {
+  color: black;
+  text-shadow: none;
+  font-size: 35px;
+  padding: 15px 0px 15px 0px;
+  margin-left: 60px;
+  line-height: 50px;
 }
 
 /*Move the text on the "problem" slide over even more, to accomodated the subway map behind.*/
@@ -519,10 +534,30 @@ input[type="text"] {
   background: url("../img/la-transit.jpg") no-repeat;
   background-size:cover;
   background-position:right;
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/downtownarial.jpg', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/la-transit.jpg', sizingMethod='scale')";
+}
+
+.pagebg.lanight{
+  background: url("../img/la.jpg") no-repeat;
+  background-size:cover;
+  background-position:right;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/la.jpg', sizingMethod='scale')";
 }
 
 
+.pagebg.cookbg{
+  background: url("../img/cook_bg.png") no-repeat;
+  background-size:cover;
+  background-position:right;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/cook_bg.png', sizingMethod='scale')";
+}
+
+.pagebg.supportersbg{
+  background: url("../img/supporters_bg.jpg") no-repeat;
+  background-size:cover;
+  background-position:right;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/supporters_bg.jpg', sizingMethod='scale')";
+}
 
 /*Open data images*/
 .pagebg.eltrain{

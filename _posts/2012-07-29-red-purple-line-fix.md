@@ -8,4 +8,4 @@ extrapadding: 100px
 section: chicago
 ---
 
-## Rebuilding track from Lakeview to Evanston = faster North Side commutes
+## For faster North Side commutes, we need to rebuild L track from Lakeview to Evanston.

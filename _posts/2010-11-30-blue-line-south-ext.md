@@ -12,4 +12,4 @@ section: westsuburbs
 
 ## Extends the Blue Line from Forest Park to Oak Brook.
 
-## Creates a fast commute to one of Chicagoland's top job centers.
+## Creates a fast commute to one of our region's top job centers.

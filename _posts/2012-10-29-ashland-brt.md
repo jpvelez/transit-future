@@ -11,4 +11,4 @@ section: chicago
 
 ## BRT on Ashland will run from the North Side to the Far South Side. 
 
-## You'll be able to zip from **Lakeview** to **Wicker Park**, from the **West Loop** to **Rush Medical Center**, from **Pilsen** to **Englewood** - and beyond.
+## It will connect to five L lines and two commuter rail lines.

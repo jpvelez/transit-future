@@ -10,6 +10,6 @@ section: northsuburbs
 
 ## The Purple Line is over 100 years old. 
 
-## Rebuilding the tracks means faster commutes to the city. 
+## Rebuilding the tracks means faster commutes from the North Suburbs to the city. 
 
-## And quicker trips to jobs, shopping, school and entertainment in Evanston and Wilmette.
+## And quicker trips from the City.

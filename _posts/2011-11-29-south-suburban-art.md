@@ -8,8 +8,8 @@ extrapadding: 100px
 section: southsuburbs
 ---
 
-## ART Lines will bring speedy, frequent bus service to major streets. 
+## Arterial Rapid Transit (ART) Lines will bring speedy, frequent bus service to major streets. 
 
-## They have new, high-speed buses, special stations, and can turn the traffic light green
+## They have new, high-speed buses, special stations, and can turn the stoplights green.
 
-## Plus, they can jump ahead of traffic jams at major intersections. 
+## Unlike BRT, they don't have dedicated road lanes.

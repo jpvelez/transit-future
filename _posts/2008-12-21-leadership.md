@@ -2,7 +2,7 @@
 published: true
 pagetype: quote
 layout: fullpage
-bgcolor: FF8000
+bgcolor: cf1b41
 section: supporters
 ---
 

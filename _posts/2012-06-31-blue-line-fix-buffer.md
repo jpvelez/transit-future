@@ -9,5 +9,5 @@ section: chicago
 
 <div id="bluerehab" class="mapstage"></div>
 
-# RECONSTRUCTING THE
-# BLUE LINE
+# BLUE LINE MODERNIZATION:
+# FOREST PARK BRANCH

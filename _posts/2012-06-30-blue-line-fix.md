@@ -9,8 +9,10 @@ section: chicago
 ---
 
 
-## The Blue Line tracks are filled with slow zones.
+## The Blue Line route to Forest Park is filled with slow zones.
 
-## Many stations are not wheelchair accessible
+## Many stations are not wheelchair accessible.
 
-## Let's revamp the West Side Blue Line, so it's faster. For everyone. 
+<br><br><br><br>
+<br><br><br><br>
+## Fixing track and stations will make the line faster for everyone.
