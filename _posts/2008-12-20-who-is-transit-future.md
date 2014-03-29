@@ -2,15 +2,13 @@
 published: true
 pagetype: quote
 layout: fullpage
-bgcolor: FF8000
+bgcolor: 2f3d4a
 section: supporters
 ---
 
-## Who is Transit Future?
+# Who is Transit Future?
 
 The campaign is led by  
-
-<br>
 
 ![Center for Neighborhood Technology](img/supporters/cntlogo.jpg)
 

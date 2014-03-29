@@ -9,4 +9,4 @@ section: northsuburbs
 
 <div id="purple" class="mapstage"></div>
 
-# PURPLE LINE REBUILD
+# PURPLE LINE MODERNIZATION

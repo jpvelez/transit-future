@@ -10,6 +10,12 @@ section: chicago
 
 <div class="mapstage"></div>
 
-## The route also runs by **Whitney Young High School**, **Malcolm X College**, and the **University of Illinois at Chicago**. 
+## The route also runs by
+<br>
 
-## **Now everyone can get to school**.
+* Rush Medical Center
+* UIC
+* Malcolm X College
+* Whitney Young High School
+
+## Now everyone can get to school—and to the hospital.

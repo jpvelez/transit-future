@@ -1,6 +1,6 @@
 ---
 layout: fullpage
-title: Blue Line - Schaumburg Extension
+title: "Blue Line - Schaumburg Extension"
 pagetype: story map
 bgcolor: FFFFFF
 published: true
@@ -10,6 +10,8 @@ section: northsuburbs
 
 <div class="mapstage"></div>
 
-## Suburbanites can get to jobs at O'Hare.
+## This is huge for employment.
 
-## Chicagoans can get to jobs in Schaumburg.
+## Chicagoans can get to Schaumburg — one of the region's top job centers.
+
+## West suburban residents can get to jobs at O'Hare.

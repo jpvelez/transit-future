@@ -9,4 +9,4 @@ section: chicago
 
 <div id="southlake" class="mapstage"></div>
 
-# THE SOUTH LAKEFRONT CORRIDOR
+# THE SOUTH LAKEFRONT SERVICE

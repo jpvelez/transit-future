@@ -10,4 +10,4 @@ section: northsuburbs
 
 <div class="mapstage"></div>
 
-## Connects O'Hare to the Northwest suburbs.
+## Connects the Northwest suburbs to O'Hare.

@@ -8,4 +8,6 @@ extrapadding: 100px
 section: chicago
 ---
 
-## The Red Line extension will slice commute times to the Loop, bringing opportunity to **Roseland**, **Pullman**, and **Altgeld Gardens**.
+## The Red Line extension will cut commute times to the Loop.
+
+## That will bring opportunity to Roseland, Pullman, and Altgeld Gardens.

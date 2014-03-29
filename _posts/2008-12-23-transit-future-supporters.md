@@ -7,7 +7,7 @@ section: supporters
 ---
 
 <div id="supporters" class="mapstage"></div>
-## Cook County Commissioners who support Transit Future:
+# Cook County Commissioners
 
 [![Deborah Sims](img/supporters/deborah_sims_sig.jpg)](http://www.deborahsims.org/)
 [![Earlean Collins](img/supporters/earlean_collins_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=104)
@@ -19,8 +19,8 @@ section: supporters
 [![Peter Silvestri](img/supporters/peter_silvestri_sig.jpg)](http://www.petersilvestri.com/)
 [![Robert Steele](img/supporters/robert_steele_sig.jpg)](http://www.robertsteele.org/)
 
-
-## These businesses support Transit Future:
+<br><br><br>
+# Business
 
 [![BLUE1647](img/supporters/blue1647.jpg)](http://www.blue1647.com/)
 [![Christopher B. Burke Engineering](img/supporters/burke_engineering.jpg)](http://www.cbbel.com/)
@@ -33,8 +33,8 @@ section: supporters
 [![Skidmore, Owings & Merrill](img/supporters/som.jpg)](http://www.som.com/)
 [![Solomon Cordwell Buenz](img/supporters/scb.jpg)](http://www.scb.com/)
 
-## These labor organizations support the campaign:
-
+<br><br><br>
+# Labor
 
 [![Cook County Building Trades](img/supporters/buildingtrades.jpg)](http://www.chicagobuildingtrades.org/)
 [![Electricians local 9](img/supporters/ibew_local_9.jpg)](http://www.ibew9.org/)
@@ -43,12 +43,12 @@ section: supporters
 [![Sheet Metal Local 73](img/supporters/sheet_metal.jpg)](http://www.smw73.org/)
 
 
-## These community and civic organizations support Transit Future:
-
+<br><br><br>
+# Community and civic organizations
 
 [![Access Living](img/supporters/accessliving.jpg)](http://www.accessliving.org/)
 [![Active Transportation Alliance](img/supporters/activetrans.jpg)](http://www.activetrans.org)
-!{Alternative Transportation for Chicagoland](img/supporters/atc.jpg)
+![Alternative Transportation for Chicagoland](img/supporters/atc.jpg)
 [![Bethel New Life](img/supporters/bethel_newlife.png)](http://www.bethelnewlife.org)
 [![Bronzeville Retail Initiative](img/supporters/bri.jpg)](http://www.bronzevilleretail.com)
 ![Bronzeville Urban Development](img/supporters/bud.jpg)

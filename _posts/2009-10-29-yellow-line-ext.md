@@ -8,4 +8,4 @@ extrapadding: 100px
 section: northsuburbs
 ---
 
-## Now everyone can work, study and shop at **Old Orchard Mall** and **National Lewis University**.
+## Now everyone can work, shop, and study at **the Mall**, **National Louis University**, and **Niles North High School**.
