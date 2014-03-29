@@ -1,0 +1,14 @@
+{
+  "author": "MemCachier Inc.",
+  "name": "memcachier-node",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "> 3.x",
+    "memjs": "> 0.2",
+    "request": "> 0.0.1",
+    "md5": "1.0.X"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
