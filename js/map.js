@@ -28,19 +28,19 @@ document.body.appendChild(s);
 
   // Add base layers for transit future projects, art projects, and exiting L lines.
   // Uses the CartoDB SQL API to get back specifically styled tilsets. That's all defined below.  
-  var template_art = new MM.Template('http://jpvelez.cartodb.com/tiles/art_revised/{Z}/{X}/{Y}.png?sql='
+  var template_art = new MM.Template('http://transit-cache.herokuapp.com/tiles/art_revised/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[2].options.sql)
     + '&style=' + escape(map_data.layers[2].options.cartocss));
   var layer_art = new MM.Layer(template_art);
   map.addLayer(layer_art);
 
-  var template_rail = new MM.Template('http://jpvelez.cartodb.com/tiles/cta_rail_updated_cartodb/{Z}/{X}/{Y}.png?sql='
+  var template_rail = new MM.Template('http://transit-cache.herokuapp.com/tiles/cta_rail_updated_cartodb/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[1].options.sql)
     + '&style=' + escape(map_data.layers[1].options.cartocss));
   var layer_rail = new MM.Layer(template_rail);
   map.addLayer(layer_rail);
 
-  var template_future = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
+  var template_future = new MM.Template('http://transit-cache.herokuapp.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[0].options.sql)
     + '&style=' + escape(map_data.layers[0].options.cartocss));
   var layer_future = new MM.Layer(template_future);
