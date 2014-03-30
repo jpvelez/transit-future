@@ -448,4 +448,4 @@ var views = [
 [41.971232,-88.343811,42.315908,-88.190002, ["art_north"]],           // ART, CREATE
 // [41.880871,  -87.628292, 15],                       // West Loop Transportation Center
 
-];
+]; 
