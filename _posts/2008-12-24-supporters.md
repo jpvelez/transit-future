@@ -5,7 +5,7 @@ image: supportersbg
 pagetype: quote
 published: true
 bgcolor: FF8000
-section: funding
+section: supporters
 ---
 
 <br><br><br><br><br><br>
