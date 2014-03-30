@@ -52,16 +52,34 @@ document.body.appendChild(s);
   // down arrow
   var arrowInterval = setInterval(function(){
     $(".downarrow").animate({opacity:1}, 800, "swing", function(){
-      $(".downarrow").animate({opacity:0}, 800, "swing");
+      $(".downarrow").animate({opacity:0}, 800, "swing", function(){
+        if(!arrowInterval){
+          $(".downarrow").css({ opacity: 1 });
+        }
+      });
     })
   }, 2000);
   $(".downarrow svg").on("click", function(){
+    // stop blinking arrow
+    clearInterval(arrowInterval);
+    arrowInterval = null;
+    $(".downarrow").css({ opacity: 1 });
+
     // advance to next
     var pages = $(".page");
     for(var m=0; m<pages.length-1; m++){
       if($(pages[m]).offset().top > $(document.body).scrollTop() + 350){
+        if(m == 1 && $(document.body).scrollTop() < 90){
+          $(document.body).scrollTop( $(pages[0]).offset().top + 350 );
+          break;
+        }
         if($(pages[m]).find(".mapstage").length){
-          $(document.body).scrollTop( $(pages[m]).offset().top + 350 );
+          if($(pages[m]).find("h1").length){
+            $(document.body).scrollTop( $(pages[m]).offset().top + 350 );
+          }
+          else{
+            $(document.body).scrollTop( $(pages[m]).offset().top + 450 );
+          }
           var mapstages = $(".mapstage");
           for(var j=0;j<mapstages.length;j++){
             if(mapstages[j].parentElement == pages[m]){
@@ -72,7 +90,7 @@ document.body.appendChild(s);
           }
         }
         else{
-          $(document.body).scrollTop( $(pages[m]).offset().top + 150 );
+          $(document.body).scrollTop( $(pages[m]).offset().top + 50 );
         }
         break;
       }
@@ -85,7 +103,7 @@ function verifyMap(){
   if($("#map").css("position") == "fixed" && $("#map").css("top") == browser_map_top + "px"){
     return;
   }
-  if($(document.body).scrollTop() + $(window).height() > $(".fellowship").offset().top
+  if($(document.body).scrollTop() > $(".fellowship").offset().top
     && $(document.body).scrollTop() < $(".scrollout").offset().top){
     // starting out somewhere where the map should be visible
     map_follow_element = $($(".mapstage")[0]);
