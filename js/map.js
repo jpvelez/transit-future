@@ -373,25 +373,31 @@ var layer_states = {
     + "}"
   + "}",
   art_north: "#art_revised{"
+    + "[art_region='north']{"
     + "line-color: #055D00;"
     + "line-width: 3;"
     + "line-cap: round;"
     + "line-join: round;"
     + "line-dasharray: 6, 5;"
+    + "}"
     + "}",
   art_south: "#art_revised{"
+    + "[art_region='south']{"
     + "line-color: #055D00;"
     + "line-width: 3;"
     + "line-cap: round;"
     + "line-join: round;"
     + "line-dasharray: 6, 5;"
+    + "}"
     + "}",
   art_west: "#art_revised{"
+    + "[art_region='west']{"
     + "line-color: #055D00;"
     + "line-width: 3;"
     + "line-cap: round;"
     + "line-join: round;"
     + "line-dasharray: 6, 5;"
+    + "}"
     + "}",
 };
 
@@ -431,9 +437,9 @@ var views = [
 [41.781823,-87.897878,42.002670,-87.790761, ["ace"]],          // Ace west suburbs
 [41.704190,-88.017311,41.880297,-87.921524, ["blue_line_ext_oak_brook"]],   // Blue Line West Buffer
 [41.766062,-88.005123,41.868283,-87.949848, ["blue_line_oak_brook_nabe", "blue_line_ext_oak_brook"]],   // Blue Line West Oak Brook highlight
-[41.833758,-88.299865,42.045213,-88.200302, ["art_west"]],   // ART, CREATE
+[41.688809,-88.369904,42.047253,-88.163223, ["art_west"]],   // ART, CREATE
 
-[41.971232,-88.343811,42.315908,-88.190002, ["art_north", "blue_line_ext_schaumburg", "purple_line_modernization"]],           // North suburbs, CREATE
+[41.971232,-88.343811,42.315908,-88.190002, ["art_north", "yellow_line", "blue_line_ext_schaumburg", "purple_line_modernization"]],           // North suburbs, CREATE
 [41.975827,-88.083531,42.058979,-88.038213, ["blue_line_ext_schaumburg"]],   // Blue Line West - Forest Park to Oak Brook
 [41.975827,-88.083531,42.058979,-88.038213, ["blue_line_ohare","blue_line_ext_schaumburg"]],   // Blue Line West O'Hare
 [41.975827,-88.083531,42.058979,-88.038213, ["blue_line_schaumburg_nabe", "blue_line_ohare", "blue_line_ext_schaumburg"]],   // Blue Line West Schaumburg
