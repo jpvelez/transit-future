@@ -28,19 +28,19 @@ document.body.appendChild(s);
 
   // Add base layers for transit future projects, art projects, and exiting L lines.
   // Uses the CartoDB SQL API to get back specifically styled tilsets. That's all defined below.  
-  var template_art = new MM.Template('http://jpvelez.cartodb.com/tiles/art_revised/{Z}/{X}/{Y}.png?sql='
+  var template_art = new MM.Template('http://transit-cache.herokuapp.com/tiles/art_revised/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[2].options.sql)
     + '&style=' + escape(map_data.layers[2].options.cartocss));
   var layer_art = new MM.Layer(template_art);
   map.addLayer(layer_art);
 
-  var template_rail = new MM.Template('http://jpvelez.cartodb.com/tiles/cta_rail_updated_cartodb/{Z}/{X}/{Y}.png?sql='
+  var template_rail = new MM.Template('http://transit-cache.herokuapp.com/tiles/cta_rail_updated_cartodb/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[1].options.sql)
     + '&style=' + escape(map_data.layers[1].options.cartocss));
   var layer_rail = new MM.Layer(template_rail);
   map.addLayer(layer_rail);
 
-  var template_future = new MM.Template('http://jpvelez.cartodb.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
+  var template_future = new MM.Template('http://transit-cache.herokuapp.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[0].options.sql)
     + '&style=' + escape(map_data.layers[0].options.cartocss));
   var layer_future = new MM.Layer(template_future);
@@ -52,17 +52,46 @@ document.body.appendChild(s);
   // down arrow
   var arrowInterval = setInterval(function(){
     $(".downarrow").animate({opacity:1}, 800, "swing", function(){
-      $(".downarrow").animate({opacity:0}, 800, "swing");
+      $(".downarrow").animate({opacity:0}, 800, "swing", function(){
+        if(!arrowInterval){
+          $(".downarrow").css({ opacity: 1 });
+        }
+      });
     })
   }, 2000);
   $(".downarrow svg").on("click", function(){
+    // stop blinking arrow
+    clearInterval(arrowInterval);
+    arrowInterval = null;
+    $(".downarrow").css({ opacity: 1 });
+
     // advance to next
-    var mapstages = $(".mapstage");
-    for(var m=0; m<mapstages.length-1; m++){
-      if($(mapstages[m]).offset().top > $(document.body).scrollTop()){
-        $(document.body).scrollTop( $(mapstages[m+1]).offset().top + 100 );
-        current_view = m+1;
-        setCurrentView(current_view);
+    var pages = $(".page");
+    for(var m=0; m<pages.length-1; m++){
+      if($(pages[m]).offset().top > $(document.body).scrollTop() + 350){
+        if(m == 1 && $(document.body).scrollTop() < 90){
+          $(document.body).scrollTop( $(pages[0]).offset().top + 350 );
+          break;
+        }
+        if($(pages[m]).find(".mapstage").length){
+          if($(pages[m]).find("h1").length){
+            $(document.body).scrollTop( $(pages[m]).offset().top + 350 );
+          }
+          else{
+            $(document.body).scrollTop( $(pages[m]).offset().top + 450 );
+          }
+          var mapstages = $(".mapstage");
+          for(var j=0;j<mapstages.length;j++){
+            if(mapstages[j].parentElement == pages[m]){
+              current_view = j;
+              setCurrentView(current_view);
+              break;
+            }
+          }
+        }
+        else{
+          $(document.body).scrollTop( $(pages[m]).offset().top + 50 );
+        }
         break;
       }
     }
@@ -72,13 +101,9 @@ document.body.appendChild(s);
 
 function verifyMap(){
   if($("#map").css("position") == "fixed" && $("#map").css("top") == browser_map_top + "px"){
-    $(".downarrow").css({ visibility: "visible" });
     return;
   }
-  else{
-    $(".downarrow").css({ visibility: "hidden" });
-  }
-  if($(document.body).scrollTop() + $(window).height() > $(".fellowship").offset().top
+  if($(document.body).scrollTop() > $(".fellowship").offset().top
     && $(document.body).scrollTop() < $(".scrollout").offset().top){
     // starting out somewhere where the map should be visible
     map_follow_element = $($(".mapstage")[0]);
@@ -123,7 +148,7 @@ function loadedToken(tokenInfo){
 window.onload = main;
 
 // array of tables in CartoDB
-var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art_revised","tf_areas_campuses","tf_airports","tf_connections"];
+var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art_revised","tf_areas_campuses","tf_airports","transitfuture_connections_brt"];
 
 // Define transit line layer styles to be fetched above using CartoDB API.
 // You define what features to show using a PostgreSQL-like query.
@@ -182,15 +207,8 @@ var layer_states = {
   + "  line-width: 8;"
   + "}"
   + "}",
-  ashland_connections: "#tf_connections{"
-  + "[cartodb_id=1],"
-  + "[cartodb_id=3],"
-  + "[cartodb_id=6],"
-  + "[cartodb_id=9],"
-  // + "[cartodb_id=10],"
-  + "[cartodb_id=12],"
-  + "[cartodb_id=22],"
-  + "[cartodb_id=19]{"
+  ashland_connections: "#transitfuture_connections_brt{"
+  + "[type='BRT_Stop']{"
   + "marker-placement: point;"
   + "marker-type: ellipse;"
   + "marker-allow-overlap: true;"
@@ -215,15 +233,8 @@ var layer_states = {
       + "line-width: 8;"
       + "}"
   + "}",
-  lime_line_connections: "#tf_connections{"
-  + "[cartodb_id=21],"
-  + "[cartodb_id=20],"
-  + "[cartodb_id=19],"
-  + "[cartodb_id=18],"
-  + "[cartodb_id=17],"
-  + "[cartodb_id=16],"
-  + "[cartodb_id=15],"
-  + "[cartodb_id=14]{"
+  lime_line_connections: "#transitfuture_connections_brt{"
+  + "[type='Lime_Line_Connection']{"
   + "marker-placement: point;"
   + "marker-type: ellipse;"
   + "marker-allow-overlap: true;"
@@ -332,6 +343,19 @@ var layer_states = {
     + "line-opacity: .3;"
     + "}"
     + "}",
+  brown_line_connections: "#transitfuture_connections_brt{"
+  + "[type='BrownBlueConnection']{"
+  + "marker-placement: point;"
+  + "marker-type: ellipse;"
+  + "marker-allow-overlap: true;"
+  + "marker-line-color: #000000;"
+  + "marker-line-opacity: 1;"
+  + "marker-line-width: 3;"
+  + "marker-fill: #FFFFFF;"
+  + "marker-opacity: 1;"
+  + "marker-width: 6;"
+  + "}"
+  + "}",
   red_line_modernization: "#transit_future_projects_updated{"
       + "[cartodb_id=10]{"
       + "line-color: #EA5854;"
@@ -366,25 +390,31 @@ var layer_states = {
     + "}"
   + "}",
   art_north: "#art_revised{"
+    + "[art_region='north']{"
     + "line-color: #055D00;"
     + "line-width: 3;"
     + "line-cap: round;"
     + "line-join: round;"
     + "line-dasharray: 6, 5;"
+    + "}"
     + "}",
   art_south: "#art_revised{"
+    + "[art_region='south']{"
     + "line-color: #055D00;"
     + "line-width: 3;"
     + "line-cap: round;"
     + "line-join: round;"
     + "line-dasharray: 6, 5;"
+    + "}"
     + "}",
   art_west: "#art_revised{"
+    + "[art_region='west']{"
     + "line-color: #055D00;"
     + "line-width: 3;"
     + "line-cap: round;"
     + "line-join: round;"
     + "line-dasharray: 6, 5;"
+    + "}"
     + "}",
 };
 
@@ -406,10 +436,10 @@ var views = [
 [41.787779,-87.736816,41.903574,-87.587814, ["ashland", "ashland_connections"]],               // BRT connections
 [41.865310,-87.677807,41.881384,-87.666478, ["ashland_closeup", "ashland"]],               // BRT closeup
 [41.659960,-87.638626,41.743651,-87.613735, ["red_line_extension"]],    // Red line extension, ADD NABES?
-[41.899593,-87.771835,41.975827,-87.710380, ["brown_line_extension"]],  // Brown Line extension, ADD NABES?
-[41.942383,-87.748060,41.982718,-87.721024, ["brown_line_nabes", "brown_line_extension"]],  // Brown Line extension, ADD NABES?
+[41.899593,-87.771835,41.975827,-87.710380, ["brown_line_extension", "brown_line_connections"]],  // Brown Line extension
+[41.942383,-87.748060,41.982718,-87.721024, ["brown_line_nabes", "brown_line_extension"]],  // Brown Line extension
 [41.940339,-87.689437,42.028001,-87.652015, ["red_line_modernization"]],            // Red/Purple Modernization
-[41.724693,-87.826766,41.889754,-87.736473, ["blue_line_modernization"]],   // BLUE REHAB - CREATE
+[41.724693,-87.826766,41.889754,-87.736473, ["blue_line_modernization"]],   // Blue Modernization
 // [41.748775,-87.763423,41.800367,-87.736129, ["orange_line_extension"]], // Orange line extension
 [41.675989,-88.049926,42.054391,-87.838439],          // Other projects CREATE
 
@@ -424,9 +454,9 @@ var views = [
 [41.781823,-87.897878,42.002670,-87.790761, ["ace"]],          // Ace west suburbs
 [41.704190,-88.017311,41.880297,-87.921524, ["blue_line_ext_oak_brook"]],   // Blue Line West Buffer
 [41.766062,-88.005123,41.868283,-87.949848, ["blue_line_oak_brook_nabe", "blue_line_ext_oak_brook"]],   // Blue Line West Oak Brook highlight
-[41.833758,-88.299865,42.045213,-88.200302, ["art_west"]],   // ART, CREATE
+[41.688809,-88.369904,42.047253,-88.163223, ["art_west"]],   // ART, CREATE
 
-[41.971232,-88.343811,42.315908,-88.190002, ["art_north", "blue_line_ext_schaumburg", "purple_line_modernization"]],           // North suburbs, CREATE
+[41.971232,-88.343811,42.315908,-88.190002, ["art_north", "yellow_line", "blue_line_ext_schaumburg", "purple_line_modernization"]],           // North suburbs, CREATE
 [41.975827,-88.083531,42.058979,-88.038213, ["blue_line_ext_schaumburg"]],   // Blue Line West - Forest Park to Oak Brook
 [41.975827,-88.083531,42.058979,-88.038213, ["blue_line_ohare","blue_line_ext_schaumburg"]],   // Blue Line West O'Hare
 [41.975827,-88.083531,42.058979,-88.038213, ["blue_line_schaumburg_nabe", "blue_line_ohare", "blue_line_ext_schaumburg"]],   // Blue Line West Schaumburg
@@ -435,4 +465,4 @@ var views = [
 [41.971232,-88.343811,42.315908,-88.190002, ["art_north"]],           // ART, CREATE
 // [41.880871,  -87.628292, 15],                       // West Loop Transportation Center
 
-];
+]; 

@@ -373,7 +373,7 @@ function setCurrentView(current_view){
             continue;
           }
           
-          var template = new MM.Template('http://jpvelez.cartodb.com/tiles/' + accept_layer + '/{Z}/{X}/{Y}.png?sql='
+          var template = new MM.Template('http://transit-cache.herokuapp.com/tiles/' + accept_layer + '/{Z}/{X}/{Y}.png?sql='
             + escape('select * from ' + accept_layer)
             + '&style=' + escape(custom_layer.layers[0].options.cartocss));
           var highlight_layer = new MM.Layer(template);

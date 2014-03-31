@@ -7,7 +7,6 @@ published: true
 extrapadding: 100px
 section: chicago
 ---
-
 ## Connects the North Side to O'Hare.
 
 <br><br><br><br>
