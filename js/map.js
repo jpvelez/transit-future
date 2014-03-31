@@ -148,7 +148,7 @@ function loadedToken(tokenInfo){
 window.onload = main;
 
 // array of tables in CartoDB
-var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art_revised","tf_areas_campuses","tf_airports","tf_connections"];
+var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb","art_revised","tf_areas_campuses","tf_airports","transitfuture_connections_brt"];
 
 // Define transit line layer styles to be fetched above using CartoDB API.
 // You define what features to show using a PostgreSQL-like query.
@@ -207,15 +207,8 @@ var layer_states = {
   + "  line-width: 8;"
   + "}"
   + "}",
-  ashland_connections: "#tf_connections{"
-  + "[cartodb_id=1],"
-  + "[cartodb_id=3],"
-  + "[cartodb_id=6],"
-  + "[cartodb_id=9],"
-  // + "[cartodb_id=10],"
-  + "[cartodb_id=12],"
-  + "[cartodb_id=22],"
-  + "[cartodb_id=19]{"
+  ashland_connections: "#transitfuture_connections_brt{"
+  + "[type='BRT_Stop']{"
   + "marker-placement: point;"
   + "marker-type: ellipse;"
   + "marker-allow-overlap: true;"
@@ -240,15 +233,8 @@ var layer_states = {
       + "line-width: 8;"
       + "}"
   + "}",
-  lime_line_connections: "#tf_connections{"
-  + "[cartodb_id=21],"
-  + "[cartodb_id=20],"
-  + "[cartodb_id=19],"
-  + "[cartodb_id=18],"
-  + "[cartodb_id=17],"
-  + "[cartodb_id=16],"
-  + "[cartodb_id=15],"
-  + "[cartodb_id=14]{"
+  lime_line_connections: "#transitfuture_connections_brt{"
+  + "[type='Lime_Line_Connection']{"
   + "marker-placement: point;"
   + "marker-type: ellipse;"
   + "marker-allow-overlap: true;"
@@ -357,6 +343,19 @@ var layer_states = {
     + "line-opacity: .3;"
     + "}"
     + "}",
+  brown_line_connections: "#transitfuture_connections_brt{"
+  + "[type='BrownBlueConnection']{"
+  + "marker-placement: point;"
+  + "marker-type: ellipse;"
+  + "marker-allow-overlap: true;"
+  + "marker-line-color: #000000;"
+  + "marker-line-opacity: 1;"
+  + "marker-line-width: 3;"
+  + "marker-fill: #FFFFFF;"
+  + "marker-opacity: 1;"
+  + "marker-width: 6;"
+  + "}"
+  + "}",
   red_line_modernization: "#transit_future_projects_updated{"
       + "[cartodb_id=10]{"
       + "line-color: #EA5854;"
@@ -437,10 +436,10 @@ var views = [
 [41.787779,-87.736816,41.903574,-87.587814, ["ashland", "ashland_connections"]],               // BRT connections
 [41.865310,-87.677807,41.881384,-87.666478, ["ashland_closeup", "ashland"]],               // BRT closeup
 [41.659960,-87.638626,41.743651,-87.613735, ["red_line_extension"]],    // Red line extension, ADD NABES?
-[41.899593,-87.771835,41.975827,-87.710380, ["brown_line_extension"]],  // Brown Line extension, ADD NABES?
-[41.942383,-87.748060,41.982718,-87.721024, ["brown_line_nabes", "brown_line_extension"]],  // Brown Line extension, ADD NABES?
+[41.899593,-87.771835,41.975827,-87.710380, ["brown_line_extension", "brown_line_connections"]],  // Brown Line extension
+[41.942383,-87.748060,41.982718,-87.721024, ["brown_line_nabes", "brown_line_extension"]],  // Brown Line extension
 [41.940339,-87.689437,42.028001,-87.652015, ["red_line_modernization"]],            // Red/Purple Modernization
-[41.724693,-87.826766,41.889754,-87.736473, ["blue_line_modernization"]],   // BLUE REHAB - CREATE
+[41.724693,-87.826766,41.889754,-87.736473, ["blue_line_modernization"]],   // Blue Modernization
 // [41.748775,-87.763423,41.800367,-87.736129, ["orange_line_extension"]], // Orange line extension
 [41.675989,-88.049926,42.054391,-87.838439],          // Other projects CREATE
 
