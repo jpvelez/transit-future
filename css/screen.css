@@ -309,9 +309,6 @@ input[type="text"] {
 }
 
 .page ul{
-  border-bottom-style: solid;
-  border-color: #fff;
-  border-width: 2px;
   padding-bottom: 5px;
 
 }
@@ -321,7 +318,13 @@ input[type="text"] {
   /*border-color: #fff;*/
   /*border-width: 2px;*/
   padding: 5px 0px 5px 0px;
+  font-size: 35px;
+  padding: 15px 0px 15px 0px;
+  margin-left: 60px;
+  line-height: 50px;
 }
+
+
 
 /*Add space between supporter pics*/
 .page img {
