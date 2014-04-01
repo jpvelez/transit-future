@@ -5,6 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
+image: southlakefront
 ---
 
 <div id="southlake" class="mapstage"></div>

@@ -3,6 +3,14 @@ var map;
 var verifyMapTimer;
 
 function main(){
+  // check for mobile browser
+  var browser = window.navigator.userAgent.toLowerCase();
+  if(browser.indexOf("android") > -1 || browser.indexOf("iphone") > -1 || browser.indexOf("ipod") > -1 || window.location.href.indexOf("mobilized") > -1){
+    $(document.body).addClass("mobile");
+    $("#map, .downarrow").remove();
+    return;
+  }
+
   // Define a basemap
   // We're using a Mapbox basemap, and Mapbox.js to make fetch it easy.
   var basemap = mapbox.layer().id('jpvelez.map-h88danj5');

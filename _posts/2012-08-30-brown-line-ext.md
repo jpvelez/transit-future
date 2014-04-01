@@ -6,6 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
+image: brownlineext
 ---
 ## Connects the North Side to O'Hare.
 
