@@ -7,7 +7,7 @@ published: true
 extrapadding: 100px
 section: northsuburbs
 ---
-
+<div class="mapstage"></div>
 ## The Purple Line is over 100 years old. 
 
 ## Rebuilding the tracks means faster commutes from the North Suburbs to the city. 

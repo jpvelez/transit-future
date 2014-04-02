@@ -7,5 +7,6 @@ published: true
 extrapadding: 100px
 section: southsuburbs
 ---
+<div class="mapstage"></div>
 
 ## Commuter rail connecting the South Suburbs to jobs in the Loop and beyond.
