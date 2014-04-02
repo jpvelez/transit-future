@@ -22,7 +22,7 @@ section: supporters
 <br><br><br>
 # Business
 
-[![All Points](img/supporters/allpoints.jpg)(http://www.allpointssecurityinc.com/)
+[![All Points](img/supporters/allpoints.jpg)](http://www.allpointssecurityinc.com/)
 [![BLUE1647](img/supporters/blue1647.jpg)](http://www.blue1647.com/)
 [![Bombardier](img/supporters/bombardier.jpg)](http://www.bombardier.com/en/home.html)
 [![Christopher B. Burke Engineering](img/supporters/burke_engineering.jpg)](http://www.cbbel.com/)
@@ -64,7 +64,7 @@ section: supporters
 [![Environmental Defenders of McHenry County](img/supporters/edmc_logo.jpg)](http://www.mcdef.org/)
 [![Far South Community Development Corporation](img/supporters/fscdc.jpg)](http://www.farsouthcdc.org/)
 [![Greater Auburn-Gresham Community Development Corporation](img/supporters/greater_auburngresham.png)](http://www.gagdc.org/index.html)
-[![GECDC](img/supporters/gecdc/jpg)](http://greaterenglewoodcdc.org/)
+[![GECDC](img/supporters/gecdc.jpg)](http://greaterenglewoodcdc.org/)
 [![MoveLA](img/supporters/movela.jpg)](http://movela.org/)
 [![Openlands](img/supporters/openlands.jpg)](http://www.openlands.org/)
 [![Over The Rainbow Association](img/supporters/otrlogo.jpg)](http://www.otrassn.org)
@@ -72,4 +72,4 @@ section: supporters
 [![Quad Communities Development Corporation](img/supporters/qcdc.jpg)](http://www.qcdc.org/index.html)
 [![RAGE](img/supporters/rage.jpg)](http://ragenglewood.org/)
 [![Southeast Environmental Task Force](img/supporters/setf.jpg)](http://setaskforce.org/)
-[![Teamwork Englewood](img/supporters/teamwork/jpg)](http://www.teamworkenglewood.org/index.html)
+[![Teamwork Englewood](img/supporters/teamwork.jpg)](http://www.teamworkenglewood.org/index.html)
