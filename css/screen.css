@@ -519,20 +519,20 @@ input[type="text"] {
 
 
 .pagebg.transitmap1{
-  background: url("../img/cta_l.png") no-repeat;
+  background: url("../img/system_map_l.png") no-repeat;
   background-size: auto 100%;
   background-position: left bottom;
   background-position-x: -20px;
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/cta_l.png', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/system_map_l.png', sizingMethod='scale')";
 }
 
 
 .pagebg.transitmap2{
-  background: url("../img/cta_l_withproplines.png") no-repeat;
+  background: url("../img/system_map_newlines.png") no-repeat;
   background-size: auto 100%;
   background-position: left bottom;
   background-position-x: -20px;
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/cta_l_withproplines.png', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/system_map_newlines.png', sizingMethod='scale')";
 }
 
 .pagebg.lamap{
