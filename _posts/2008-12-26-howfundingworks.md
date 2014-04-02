@@ -8,7 +8,7 @@ bgcolor: 0
 section: funding
 ---
 
-## Our region has more than $20 billion in unmet transit needs.
+## Expanding on this scale will cost our region about $20 billion.
 <br><br><br>
 <br><br><br>
-## That's a big number — but there's a way to get there!
+## That's a big number — but there's a way to get there.
