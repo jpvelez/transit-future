@@ -25,6 +25,10 @@ body {
   text-shadow: 0px 2px 6px rgba(0, 0, 0, .4);
 }
 
+a {
+  text-decoration: underline;
+}
+
 .chart {
   position: static;
   bottom: 20px;
@@ -116,7 +120,6 @@ p {
 
 a {
   color: #fff;
-  text-decoration: none;
   font-weight: 700;
   cursor: pointer;
 }
@@ -124,7 +127,6 @@ a {
 a:hover {
   color: #fff;
   border-bottom: #fff solid 1px;
-  text-decoration: none;
 }
 
 table {
