@@ -581,6 +581,10 @@ input[type="text"] {
   background-size: auto 100% !important;
 }
 
+.mobile .sharebutton {
+  display: none;
+}
+
 .mobile .page {
   width: 450px !important;
 }
@@ -1095,11 +1099,15 @@ img.progicons {
   bottom:10px;
   left:30px;
   z-index:100;
-  height:70px;
 }
 
 .sharebutton iframe{
-  min-height:auto;
+  min-height: 62px !important;
+}
+
+.sharebutton #twitter-widget-0 {
+  float: left !important;
+  margin-left: 10px !important;
 }
 
 .sharebutton a{
