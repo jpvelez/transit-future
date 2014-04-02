@@ -44,7 +44,7 @@ title: Transit Future
 <div class="pagebg {{ p.pagetype }} {{ p.image }}" style="background-color:#{{ p.bgcolor }};" >
 </div>
 {% endif %}
-{% endfor %}  
+{% endfor %}
 
 
 <div id="page">
@@ -62,16 +62,16 @@ title: Transit Future
     </div>
 
     {% endfor %}
-    
+
   </div>
-  
+
   {% for p in site.posts %}
 
   {% if p.url != "/index.html" %}
   <a name="{{ p.section }}"></a>
   <div class="page {{ p.pagetype }}" style="background-color:#{{ p.bgslide }};padding-top:{{ p.extrapadding }}" data-section="nav{{ p.section }}">
     {{ p.content | markdownify }}
-    <div class="clear"></div>  
+    <div class="clear"></div>
   </div>
   {% endif %}
   {% endfor %}
@@ -79,12 +79,25 @@ title: Transit Future
 </div>
 
 <!-- Twitter sharing stuff -->
-<!-- Currently set to open data report, change this. -->
-<!-- 
 <div class="sharebutton">
- <a href="http://www.github.com/Chicago/open-data-annual-report"><img src="img/dev.png" alt="Download source" width="44" height="44" /></a>  <a href="http://report.cityofchicago.org/open-data-2013.pdf"><img src="img/download.png" alt="Download PDF" width="44" height="44" /></a>
+  <!-- The GitHub link
+ <a href="https://github.com/jpvelez/transit-future"><img src="img/dev.png" alt="Download source" width="44" height="44" /></a>
  <br />
-  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://report.cityofchicago.org/open-data-2013" data-text="Take a look at @ChicagoCDO open data annual report:">Tweet</a>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</div>
  -->
+
+  <!-- Facebook part -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=38481464681";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+   <div class="fb-share-button" data-href="http://vision.transitfuture.org" data-type="box_count" style="float: left;"></div>
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://vision.transitfuture.org" data-count="vertical" data-text="Take a look at Chicagoland's transit future: " style="min-height:62px;float:left;">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+</div>
