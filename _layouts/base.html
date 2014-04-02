@@ -29,7 +29,7 @@
     <div class="downarrow">
         <svg  xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
           version="1.0" width="500px" height="600px" viewBox="-500, -600 ,1000, 1200" >
-        <polygon  style="stroke:#000; fill:#000000;" 
+        <polygon  style="stroke:#000; fill:#000000;"
           points="100,-600 100,200  500,-200 500,100  0,600  -500,100 -500,-200 -100,200 -100,-600 " />
         </svg>
     </div>
@@ -37,7 +37,19 @@
   {{ content }}
 
   <!-- Google Analytics -->
+<script type="text/javascript">
 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40392123-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
   <!-- Google Analytics end -->
 
   </body>
