@@ -22,3 +22,8 @@ section: supporters
 ## If your organization wants to join the campaign, contact [Edward Oser](mailto:eoser@cnt.org).
 
 ## Member of the media? Contact [Ryan Kilpatrick](mailto:rkilpatrick@cnt.org).
+
+<br><br><br><br>
+# Graphics
+![System map](img/system_map_thumbnail.png)
+## Feel free to re-use our Transit Future map: [large](img/transit_future_system_map_large.jpg), [small](img/transit_future_system_map_small.jpg), [vector](img/transit_future_system_map.pdf).
