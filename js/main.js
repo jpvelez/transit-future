@@ -15,7 +15,7 @@ if(user_agent.indexOf('firefox') > -1){
 else if(user_agent.indexOf(' msie ') > -1){
   browser_easy = true;
 }
-else if(user_agent.indexOf('safari') > -1){
+else if(user_agent.indexOf('safari') > -1 && user_agent.indexOf('chrome') == -1){
   browser_easy = true;
 }
 
@@ -174,7 +174,9 @@ $(function(){
 
   // When you hit map section, make map appear
   scrollEvent.on("bottom", $(".fellowship"), function(el,i){
-    $("#map").css({"position":"fixed", "top": $(".fellowship").offset().top - $($(".pagebg")[0]).offset().top, "visibility": "visible" });
+    if(!browser_easy){
+      $("#map").css({"position":"fixed", "top": $(".fellowship").offset().top - $($(".pagebg")[0]).offset().top, "visibility": "visible" });
+    }
 
     // the top of the map follows the top of the map_follow_element until it is at the top of the window
     map_follow_element = $(".fellowship");
@@ -245,7 +247,12 @@ $(function(){
       // when map_follow_element is above the top of the window, fix map to top of window
       var suggestTop = map_follow_element.offset().top - $($(".pagebg")[0]).offset().top;
       if(suggestTop > browser_map_top){
-        $("#map").css({"top": suggestTop, "height": "auto", "visibility": "visible"});
+        if(!browser_easy){
+          $("#map").css({"top": suggestTop, "height": "auto", "visibility": "visible"});
+        }
+        else if(suggestTop > $(window).height()){
+          $('#map').css({ top: suggestTop })
+        }
       }
       else{
         $("#map").css({"top": browser_map_top, "visibility": "visible"});
