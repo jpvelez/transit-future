@@ -588,17 +588,24 @@ input[type="text"] {
 }
 
 .mobile .page {
-  width: 450px !important;
+  width: 100% !important;
+  padding: 0;
+}
+
+.mobile .page.story.map h1, .mobile .page.story.map h2 {
+  margin-left: 20% !important;
+}
+
+.mobile .page.story.map h2 {
+  font-size: 30px !important;
 }
 
 .mobile .page.quote.region h1 {
-  margin-left: -80px;
-  font-size: 80px;
+  margin-left: 20% !important;
 }
 
 .mobile .page.quote.map h1 {
-  margin-left: -70px;
-  font-size: 40px;
+  margin-left: 20% !important;
 }
 
 
