@@ -430,15 +430,17 @@ function setCurrentView(current_view){
   // Ease to lat/lon/z view of current paragraph - the first p element
   // below the top edge of the box. This gets called the instant the previous
   // element's offset becomes negative.
+  /*
   if(browser_easy){
     map.setZoom(views[current_view][2]).setCenter({ lat: views[current_view][0], lon: views[current_view][1] });
   }
   else{
+  */
     map.ease.location({
       lat: views[current_view][0],
       lon: views[current_view][1]
     }).zoom(views[current_view][2]).optimal();
-  }
+  //}
 }
 
 if (!Array.prototype.indexOf)
