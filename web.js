@@ -6,8 +6,14 @@ var mm = require("memjs").Client
 var mj = mm.create();
 
 var server = http.createServer(function(req, res){
+  var tile_root = 'http://jpvelez.cartodb.com/tiles';
   if(req.url.indexOf("tile") == -1){
-    return;
+    if(req.url.indexOf('/mb') != -1){
+      tile_root = 'http://a.tiles.mapbox.com/v3/jpvelez.map-h88danj5';
+    }
+    else{
+      return;
+    }
   }
   var tile_val;
   try{
@@ -23,7 +29,7 @@ var server = http.createServer(function(req, res){
     }
     else{
       var requestOptions = {
-        uri: req.url.replace('/tiles','http://jpvelez.cartodb.com/tiles'),
+        uri: req.url.replace('/tiles', root).replace('/mb', tile_root),
         encoding: 'binary'
       };
       request(requestOptions, function (err, response, body) {
