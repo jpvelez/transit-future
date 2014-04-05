@@ -35,7 +35,7 @@ document.body.appendChild(s);
 */
 
   // Add base layers for transit future projects, art projects, and exiting L lines.
-  // Uses the CartoDB SQL API to get back specifically styled tilsets. That's all defined below.  
+  // Uses the CartoDB SQL API to get back specifically styled tilsets. That's all defined below.
   var template_art = new MM.Template('http://transit-cache.herokuapp.com/tiles/art_revised/{Z}/{X}/{Y}.png?sql='
     + escape(map_data.layers[2].options.sql)
     + '&style=' + escape(map_data.layers[2].options.cartocss));
@@ -76,8 +76,8 @@ document.body.appendChild(s);
     // advance to next
     var pages = $(".page");
     for(var m=0; m<pages.length-1; m++){
-      if($(pages[m]).offset().top > $(document.body).scrollTop() + 350){
-        if(m == 1 && $(document.body).scrollTop() < 90){
+      if($(pages[m]).offset().top > $(window).scrollTop() + 350){
+        if(m == 1 && $(window).scrollTop() < 90){
           $(document.body).scrollTop( $(pages[0]).offset().top + 350 );
           break;
         }
@@ -111,15 +111,15 @@ function verifyMap(){
   if($("#map").css("position") == "fixed" && $("#map").css("top") == browser_map_top + "px"){
     return;
   }
-  if($(document.body).scrollTop() > $(".fellowship").offset().top
-    && $(document.body).scrollTop() < $(".scrollout").offset().top){
+  if($(window).scrollTop() > $(".fellowship").offset().top
+    && $(window).scrollTop() < $(".scrollout").offset().top){
     // starting out somewhere where the map should be visible
     map_follow_element = $($(".mapstage")[0]);
     map_tail_element = $($(".mapstage")[$(".mapstage").length-1]);
     $("#map").css({top: browser_map_top, visibility: "visible", position: "fixed"});
     var mapstages = $(".mapstage");
     for(var m=0; m<mapstages.length; m++){
-      if($(mapstages[m]).offset().top > $(document.body).scrollTop()){
+      if($(mapstages[m]).offset().top > $(window).scrollTop()){
         current_view = m;
         setCurrentView(current_view);
         break;
@@ -643,4 +643,4 @@ var views = [
 [41.971232,-88.343811,42.315908,-88.190002, ["art_north", "art_north_connections"]],           // ART, CREATE
 // [41.880871,  -87.628292, 15],                       // West Loop Transportation Center
 
-]; 
+];
