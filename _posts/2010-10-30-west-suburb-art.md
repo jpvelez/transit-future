@@ -6,6 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: westsuburbs
+image: westart
 ---
 
 ## Arterial Rapid Transit (ART) Lines will bring speedy, frequent bus service to major streets. 

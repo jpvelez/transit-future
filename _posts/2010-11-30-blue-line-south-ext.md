@@ -6,6 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: westsuburbs
+image: bluewest
 ---
 
 <div class="mapstage"></div>

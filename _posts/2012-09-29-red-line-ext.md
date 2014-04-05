@@ -6,7 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: redlineext
+image: red
 ---
 
 ## The Red Line extension will cut commute times to the Loop.

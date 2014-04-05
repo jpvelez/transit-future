@@ -601,18 +601,39 @@ input[type="text"] {
   font-size: 40px;
 }
 
-.mobile .chicagopage {
-  background: url('../img/mobile/chicago-p1.png');
+
+/*Background images for mobile version of site.*/
+/*Jekyll posts can't refer to images directly, need to map classes to line pics.*/
+
+.mobile .all-lines {
+  background: url('../img/mobile/all-lines.png');
   background-position: center;
 }
 
-.mobile .southlakefront {
-  background: url('../img/mobile/southlakefront.png');
+
+/*CHICAGO LINES*/
+.mobile .southlake {
+  background: url('../img/mobile/southlake.png');
   background-position: left;
 }
 
-.mobile .limeline {
-  background: url('../img/mobile/limeline.png');
+.mobile .southlake2 {
+  background: url('../img/mobile/southlake2.png');
+  background-position: left;
+}
+
+.mobile .lime1 {
+  background: url('../img/mobile/lime1.png');
+  background-position: left;
+}
+
+.mobile .lime2 {
+  background: url('../img/mobile/lime2.png');
+  background-position: left;
+}
+
+.mobile .lime3 {
+  background: url('../img/mobile/lime3.png');
   background-position: left;
 }
 
@@ -621,28 +642,30 @@ input[type="text"] {
   background-position: left;
 }
 
-.mobile .redlineext {
-  background: url('../img/mobile/redlineext.png');
+.mobile .red {
+  background: url('../img/mobile/red.png');
   background-position: left;
 }
 
-.mobile .brownlineext {
-  background: url('../img/mobile/brownlineext.png');
+.mobile .brown {
+  background: url('../img/mobile/brown.png');
   background-position: left;
 }
 
-.mobile .redlinefix {
-  background: url('../img/mobile/redlinefix.png');
+.mobile .redrehab {
+  background: url('../img/mobile/redrehab.png');
   background-position: left;
 }
 
-.mobile .bluelinefix {
-  background: url('../img/mobile/bluelinefix.png');
+.mobile .bluerehab {
+  background: url('../img/mobile/bluerehab.png');
   background-position: left;
 }
 
-.mobile .airportconnector {
-  background: url('../img/mobile/airportconnector.png');
+
+
+.mobile .ace {
+  background: url('../img/mobile/ace.png');
   background-position: left;
 }
 

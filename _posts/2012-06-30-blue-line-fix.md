@@ -6,7 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: bluelinefix
+image: bluerehab
 ---
 
 

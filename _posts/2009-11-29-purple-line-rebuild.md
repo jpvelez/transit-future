@@ -6,6 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: northsuburbs
+image: purple
 ---
 <div class="mapstage"></div>
 ## The Purple Line is over 100 years old. 

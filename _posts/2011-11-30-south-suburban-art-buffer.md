@@ -5,6 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: southsuburbs
+image: southart
 ---
 
 <div id="southart" class="mapstage"></div>

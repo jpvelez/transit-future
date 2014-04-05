@@ -5,7 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: westsuburbs
-image: airportconnector
+image: ace
 ---
 
 <div id="ace" class="mapstage"></div>

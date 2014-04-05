@@ -5,7 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: redlinefix
+image: redrehab
 ---
 
 <div id="redrehab" class="mapstage"></div>

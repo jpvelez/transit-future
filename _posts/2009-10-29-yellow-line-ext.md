@@ -6,5 +6,6 @@ bgcolor: FFFFFF
 published: false
 extrapadding: 100px
 section: northsuburbs
+image: yellow
 ---
 

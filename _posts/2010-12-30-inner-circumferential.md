@@ -6,7 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: westsuburbs
-image: airportconnector
+image: ace
 ---
 <div class="mapstage"></div>
 ## Connects O’Hare to Midway airport.
