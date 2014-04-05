@@ -8,11 +8,14 @@ var browser_easy = false;
 var user_agent = navigator.userAgent.toLowerCase();
 if(user_agent.indexOf('firefox') > -1){
   browser_map_top = 40;
-  if(user_agent.indexOf('windows') > -1){
+  if(user_agent.indexOf('macintosh') > -1){
     browser_easy = true;
   }
 }
 else if(user_agent.indexOf(' msie ') > -1){
+  browser_easy = true;
+}
+else if(user_agent.indexOf('safari') > -1){
   browser_easy = true;
 }
 
