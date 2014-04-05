@@ -5,7 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: brown
+image: brown1
 ---
 
 <div id="brown" class="mapstage"></div>

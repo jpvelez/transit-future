@@ -5,7 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: chicagopage
+image: all-lines
 ---
 
 <div id="chicago"></div>

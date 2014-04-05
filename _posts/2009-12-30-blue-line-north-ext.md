@@ -6,7 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: northsuburbs
-image: bluenorth
+image: bluenorth2
 ---
 
 <div class="mapstage"></div>

@@ -5,7 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: northsuburbs
-image: purple
+image: purple1
 ---
 
 <div id="purple" class="mapstage"></div>

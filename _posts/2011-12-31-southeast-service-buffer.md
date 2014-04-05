@@ -5,7 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: southsuburbs
-image: ses
+image: ses1
 ---
 
 <div id="ses" class="mapstage"></div>
