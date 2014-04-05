@@ -4,8 +4,16 @@ if (typeof console === "undefined" || typeof console.log === "undefined") {
 }
 
 var browser_map_top = 10;
-if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+var browser_easy = false;
+var user_agent = navigator.userAgent.toLowerCase();
+if(user_agent.indexOf('firefox') > -1){
   browser_map_top = 40;
+  if(user_agent.indexOf('windows') > -1){
+    browser_easy = true;
+  }
+}
+else if(user_agent.indexOf(' msie ') > -1){
+  browser_easy = true;
 }
 
 // Fadeout loading once first image is loaded.
@@ -167,7 +175,7 @@ $(function(){
 
     // the top of the map follows the top of the map_follow_element until it is at the top of the window
     map_follow_element = $(".fellowship");
-    
+
   }, function(el, i, pos){});
 
   scrollEvent.on("bottom", $(".scrollout"), function(el, i){
@@ -359,10 +367,10 @@ function setCurrentView(current_view){
 
           // call for a tile template URL for the CartoCSS
           //layer_to_set = current_layer_state;
-          
+
           // make sure the tile URL and SQL match the CartoDB table used in the CartoCSS
           var accept_layer = null;
-          
+
           for(var a=0;a<accept_layers.length;a++){
             if(custom_layer.layers[0].options.cartocss.indexOf(accept_layers[a]) > -1){
               accept_layer = accept_layers[a];
@@ -372,14 +380,14 @@ function setCurrentView(current_view){
           if(!accept_layer){
             continue;
           }
-          
+
           var template = new MM.Template('http://transit-cache.herokuapp.com/tiles/' + accept_layer + '/{Z}/{X}/{Y}.png?sql='
             + escape('select * from ' + accept_layer)
             + '&style=' + escape(custom_layer.layers[0].options.cartocss));
           var highlight_layer = new MM.Layer(template);
           map.addLayer(highlight_layer);
           highlight_layers.push(highlight_layer);
-        
+
           /*
           var s = document.createElement("script");
           s.type = "text/javascript";
@@ -412,11 +420,15 @@ function setCurrentView(current_view){
   // Ease to lat/lon/z view of current paragraph - the first p element
   // below the top edge of the box. This gets called the instant the previous
   // element's offset becomes negative.
-  map.ease.location({
-    lat: views[current_view][0],
-    lon: views[current_view][1]
-  }).zoom(views[current_view][2]).optimal();
-
+  if(browser_easy){
+    map.setZoom(views[current_view][2]).setCenter({ lat: views[current_view][0], lon: views[current_view][1] });
+  }
+  else{
+    map.ease.location({
+      lat: views[current_view][0],
+      lon: views[current_view][1]
+    }).zoom(views[current_view][2]).optimal();
+  }
 }
 
 if (!Array.prototype.indexOf)
