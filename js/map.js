@@ -13,7 +13,9 @@ function main(){
 
   // Define a basemap
   // We're using a Mapbox basemap, and Mapbox.js to make fetch it easy.
-  var basemap = mapbox.layer().id('jpvelez.map-h88danj5');
+  //var basemap = mapbox.layer().id('jpvelez.map-h88danj5');
+  var basemap_temp = new MM.Template('http://transit-cache.herokuapp.com/mb/{Z}/{X}/{Y}.png';
+  var basemap = new MM.Layer(basemap_temp);
 
   // Create a map in the map container, using the basemap.
   // We're using Modest Maps with mapbox.js on top.
