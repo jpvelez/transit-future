@@ -617,13 +617,13 @@ input[type="text"] {
 .mobile h1 {
   font-size: 35px !important;
   text-align: right;
-  margin-left: 0px;
+  margin-left: 0;
 }
 .mobile h2 {
   font-size: 22px !important;
   text-align: right;
-  margin-top: 0px;
-  margin-left: 0px;
+  margin-top: 0;
+  margin-left: 10% !important;
 }
 
 /*Make BRT list smaller*/
@@ -665,6 +665,7 @@ input[type="text"] {
 .mobile .all-lines {
   background: url('../img/mobile/all-lines.png');
   background-position: center;
+  background-size: 100% auto !important;
 }
 
 
@@ -672,175 +673,205 @@ input[type="text"] {
 .mobile .southlake {
   background: url('../img/mobile/southlake1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .southlake2 {
   background: url('../img/mobile/southlake2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .lime1 {
   background: url('../img/mobile/lime1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .lime2 {
   background: url('../img/mobile/lime2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .lime3 {
   background: url('../img/mobile/lime3.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .ashland1 {
   background: url('../img/mobile/ashland1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .ashland2 {
   background: url('../img/mobile/ashland2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .ashland3 {
   background: url('../img/mobile/ashland3.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
-
 
 .mobile .red1 {
   background: url('../img/mobile/red1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .brown1 {
   background: url('../img/mobile/brown1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .brown2 {
   background: url('../img/mobile/brown2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .redrehab1 {
   background: url('../img/mobile/redrehab1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .bluerehab1 {
   background: url('../img/mobile/bluerehab1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 /*SOUTH SUBURBS*/
 .mobile .south {
   background: url('../img/mobile/south.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .ses1 {
   background: url('../img/mobile/ses1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .ses2 {
   background: url('../img/mobile/ses2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .southart {
   background: url('../img/mobile/southart.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 /*WEST SUBURBS*/
 .mobile .west {
   background: url('../img/mobile/west.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .ace1 {
   background: url('../img/mobile/ace1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .ace2 {
   background: url('../img/mobile/ace2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .ace3 {
   background: url('../img/mobile/ace3.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 
 .mobile .bluewest1 {
   background: url('../img/mobile/bluewest1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 
 .mobile .bluewest2 {
   background: url('../img/mobile/bluewest2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .westart {
   background: url('../img/mobile/westart.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 /*NORTH SUBURBS*/
 .mobile .north {
   background: url('../img/mobile/north.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .bluenorth1 {
   background: url('../img/mobile/bluenorth1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .bluenorth2 {
   background: url('../img/mobile/bluenorth2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .bluenorth3 {
   background: url('../img/mobile/bluenorth3.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .purple1 {
   background: url('../img/mobile/purple1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .purple2 {
   background: url('../img/mobile/purple2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .yellow1 {
   background: url('../img/mobile/yellow1.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .yellow2 {
   background: url('../img/mobile/yellow2.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
 
 .mobile .northart {
   background: url('../img/mobile/northart.png');
   background-position: left;
+  background-size: 100% auto !important;
 }
-
-
 
 
 
