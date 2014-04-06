@@ -333,6 +333,9 @@ input[type="text"] {
   margin-bottom: 30px;
 }
 
+
+/*BASIC POSTS*/
+/*Basic setup of posts*/
 .page.quote,
 .page.story{
   overflow-x:hidden;
@@ -342,24 +345,6 @@ input[type="text"] {
   -moz-box-sizing:border-box; /* Firefox */
   -webkit-box-sizing:border-box; /* Safari */
   padding-bottom:400px;
-}
-.page.story.nosidebar{
-  padding:0px;
-}
-
-
-.page.quote h1,
-.page.story h1 {
-  text-align:left;
-  color:#fff;
-  font-size: 56px;
-  list-style: none;
-  line-height: 60px;
-}
-
-
-.page.quote h1 {
-  margin-bottom: 0px;
 }
 
 .page.story{
@@ -373,19 +358,30 @@ input[type="text"] {
   -webkit-box-sizing:border-box; /* Safari */
 }
 
-.page.quote.map{
-  padding-top:400px !important;
+/*Story pages with no sidebar.*/
+.page.story.nosidebar{
+  padding:0px;
 }
 
-/*Font on project and region buffers posts.*/
-.page.quote.map h1,
-.page.quote.map h2,
-.page.quote.map h3{
-  color: black;
-  text-shadow: none;
+/*Styles H1 text on non-map posts*/
+.page.quote h1,
+.page.story h1 {
+  text-align:left;
+  color:#fff;
+  font-size: 56px;
+  list-style: none;
+  line-height: 60px;
 }
 
-/*Make regular text black on the map */
+.page.quote h1 {
+  margin-bottom: 0px;
+}
+
+
+
+/*MAP POSTS*/
+/*H1 tags on non-map posts.*/
+/*Make regular text black on the map. */
 .page.map p {
   color: black;
   text-shadow: none;
@@ -393,13 +389,32 @@ input[type="text"] {
   font-weight: 80;
 }
 
+
+/*Add extra space to top of map slides.*/
+/*This allows the map to transition before the project name comes up.*/
+.page.quote.map{
+  padding-top:400px !important;
+}
+
+/*Font on MAP BUFFER posts.*/
+/*These posts introduce projects and regions.*/
+/*Make these titles black, and appear in the left 2/3rds of the map.*/
+.page.quote.map h1,
+.page.quote.map h2,
+.page.quote.map h3{
+  color: black;
+  text-shadow: none;
+  margin-left: 300px;
+}
+
+
 .page.quote.region h1 {
   font-size: 100px;
   font-weight: 600;
 }
 
 
-/*Font on project detail posts.*/
+/*Font on MAP PROJECT posts.*/
 /*The margin left makes sure the project copy doesn't crowd out the lines in the left 1/3rd of the screen.*/
 .page.story.map h1,
 .page.story.map h2,
@@ -410,6 +425,7 @@ input[type="text"] {
 }
 
 
+/*List on ADDITIONAL PROJECTS page*/
 .page.story.map ul{
   padding-bottom: 5px;
   border-width: 0;
@@ -424,29 +440,30 @@ input[type="text"] {
   line-height: 50px;
 }
 
-/*Move the text on the "problem" slide over even more, to accomodated the subway map behind.*/
+/*Move the text on the INTRO POSTS over even more, to accomodated the subway map behind.*/
 .page.story.map.intro h2 {
   margin-left: 140px;
 }
+.page.quote.map.textright h1{
+  text-align: right;
+}
 
-/*Align BRT image with project text.*/
+
+/*Align image in BRT POST with project text.*/
 .page.story.map img {
   margin-left: 60px;
 }
 
 
+
+/*NAVBAR STYLES*/
 /*Make the navbar text bigger. Hacks the bootstrap styles.*/
 .navbar-inverse a {
   font-size: 18px;
 }
 
 
-/*Align the text in the intro to the right of the transit maps in the background*/
-.page.quote.map.textright h1{
-  text-align: right;
-}
-
-
+/*SIDE BAR STYLES*/
 .sidebar{
   width:400px;
   position:fixed;
@@ -491,6 +508,8 @@ input[type="text"] {
   -webkit-transition: left 1s;
 }
 
+
+/*PAGE BACKGROUND*/
 .pagebg{
   position:fixed;
   top:0px;
@@ -507,8 +526,13 @@ input[type="text"] {
 
 }
 
+.pagebg img{
+  min-width:100%;
+  min-height:100%;
+}
 
-/*Transit future images*/
+
+/*STATIC BACKGROUND IMAGES - NON-MAP PROJECTS*/
 .pagebg.downtownarial{
   background: url("../img/downtownarial.jpg") no-repeat;
   background-size:cover;
@@ -564,20 +588,15 @@ input[type="text"] {
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/supporters_bg.jpg', sizingMethod='scale')";
 }
 
-/*Open data images*/
 .pagebg.eltrain{
   background: url("../img/eltrain.jpg") no-repeat;
   background-size:cover;
   background-position:right;
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/eltrain.jpg', sizingMethod='scale')";
 }
-/*.pagebg.imagebike{
-  background: url("../img/bike.jpg");
-  background-size:cover;
-  background-position:center;
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bike.jpg', sizingMethod='scale')";
-}*/
 
+
+/* MOBILE STYLES */
 .mobile div {
   background-repeat: no-repeat !important;
   background-size: auto 100% !important;
@@ -590,24 +609,55 @@ input[type="text"] {
 .mobile .page {
   width: 100% !important;
   padding: 0;
+  margin: 0;
 }
 
-.mobile .page.story.map h1, .mobile .page.story.map h2 {
-  margin-left: 20% !important;
+
+/*Make H1 and H2 text smaller throughout site.*/
+.mobile h1 {
+  font-size: 35px !important;
+  text-align: right;
+  margin-left: 0px;
+}
+.mobile h2 {
+  font-size: 22px !important;
+  text-align: right;
+  margin-top: 0px;
+  margin-left: 0px;
 }
 
-.mobile .page.story.map h2 {
-  font-size: 30px !important;
+/*Make BRT list smaller*/
+/*Add a little padding under the list.. hacky.*/
+.mobile .page.story.map ul {
+  padding-bottom: 30px;
+}
+.mobile .page.story.map ul li {
+  font-size: 15px;
+}
+
+
+/*Override margins, so H1 text doesn't get squeezed out.*/
+/* Also makes region and project titles align right, so there's enough room for map.*/
+/*Need to do this explictly, general H1 align right doesn't work.*/
+.mobile .page.quote.map h1 {
+  margin-left: 0px !important;
+  text-align: right !important;
 }
 
 .mobile .page.quote.region h1 {
-  margin-left: 20% !important;
+  margin-left: 0px !important;
 }
 
-.mobile .page.quote.map h1 {
-  margin-left: 20% !important;
-}
+/*Trying to reduce padding between posts on mobile. NOT WORKING RIGHT NOW.*/
+/*.mobile .page.quote.map {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+*/}
 
+
+
+
+/*STATIC BACKGROUND IMAGES - PROJECTS IN MOBILE*/
 
 /*Background images for mobile version of site.*/
 /*Jekyll posts can't refer to images directly, need to map classes to line pics.*/
@@ -796,12 +846,7 @@ input[type="text"] {
 
 
 
-
-
-.pagebg img{
-  min-width:100%;
-  min-height:100%;
-}
+/*OLD CFA STYLES*/
 
 iframe {
   width: 100%;

@@ -12,7 +12,6 @@ image: ashland3
 <div class="mapstage"></div>
 
 ## The route also runs by
-<br>
 
 * Rush Medical Center
 * UIC
