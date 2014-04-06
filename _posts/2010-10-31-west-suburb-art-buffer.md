@@ -5,6 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: westsuburbs
+image: westart
 ---
 
 <div id="westart" class="mapstage"></div>

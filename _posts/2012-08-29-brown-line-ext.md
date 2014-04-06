@@ -6,7 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: brownlineext
+image: brown2
 ---
 
 <div class="mapstage"></div>

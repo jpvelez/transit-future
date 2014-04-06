@@ -6,7 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: ashland
+image: ashland2
 ---
 <div class="mapstage"></div>
 

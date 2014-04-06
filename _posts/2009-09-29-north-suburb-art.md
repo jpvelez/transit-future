@@ -6,6 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: northsuburbs
+image: northart
 ---
 
 ## Arterial Rapid Transit (ART) Lines will bring speedy, frequent bus service to major streets. 

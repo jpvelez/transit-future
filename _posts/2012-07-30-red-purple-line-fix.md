@@ -6,7 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: redlinefix
+image: redrehab1
 ---
 
 ## The Red Line is over a hundred years old.

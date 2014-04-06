@@ -5,7 +5,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: bluelinefix
+image: bluerehab1
 ---
 
 <div id="bluerehab" class="mapstage"></div>

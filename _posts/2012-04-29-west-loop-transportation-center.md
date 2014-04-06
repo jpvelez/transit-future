@@ -7,6 +7,7 @@ published: true
 extrapadding: 100px
 published: false
 section: chicago
+image: additional
 ---
 
 ## Will let people jump from Metra and Amtrak to the L.
