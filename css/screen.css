@@ -662,12 +662,11 @@ input[type="text"] {
 /*Background images for mobile version of site.*/
 /*Jekyll posts can't refer to images directly, need to map classes to line pics.*/
 
-.mobile .all-lines {
-  background: url('../img/mobile/all-lines.png');
+.mobile .lines {
+  background: url('../img/mobile/lines.png');
   background-position: center;
   background-size: 100% auto !important;
 }
-
 
 /*CHICAGO LINES*/
 .mobile .southlake {

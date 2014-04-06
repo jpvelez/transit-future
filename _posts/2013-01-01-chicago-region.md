@@ -1,11 +1,11 @@
 ---
 layout: fullpage
 pagetype: quote map region
-bgcolor: FFFFFF
+<!-- bgcolor: FFFFFF -->
 published: true
 extrapadding: 100px
 section: chicago
-image: all-lines
+image: lines
 ---
 
 <div id="chicago"></div>
