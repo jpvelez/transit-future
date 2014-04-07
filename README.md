@@ -10,6 +10,8 @@ This project is an explanatory web graphic that introduces people to the project
 
 The site is live at [vision.transitfuture.org](http://vision.transitfuture.org).
 
+To get in touch with the team, email us at [transitfuture@opencityapps.org](mailto:transitfuture@opencityapps.org)
+
 Project layout
 --------------
 This one-page site is built using [Jekyll](http://jekyllrb.com/), a static website generator. It's just HTML/CSS and Javascript. It's hosted on [github pages](https://pages.github.com/) directly from the `gh-pages` branch of this repo.
@@ -63,7 +65,7 @@ Want to generate all the static files that make up the site, for upload to a web
 Image Credits
 -------------
 Several images were used with Creative Commons licensing. We would like to thank and acknowledge the use of following images:
-+ Catalian Velez, [Transit Future System map](img/transit_future_system_map.pdf)
++ Catalina Velez, [Transit Future System map](img/transit_future_system_map.pdf)
 + Dave Sizer, [Around Chicago](http://www.flickr.com/photos/aphid00/5917233995/)
 + Yonah Freemark, [The Transport Politic](http://www.thetransportpolitic.com/)
 + Joel Carranza, [Los Angeles Night Horizon](https://flic.kr/p/79tVGJ)
