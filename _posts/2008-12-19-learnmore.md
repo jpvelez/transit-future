@@ -27,3 +27,8 @@ section: supporters
 # Graphics
 ![System map](img/system_map_thumbnail.png)
 ## Feel free to re-use our Transit Future map: [large](img/transit_future_system_map_large.jpg), [small](img/transit_future_system_map_small.jpg), [vector](img/transit_future_system_map.pdf).
+
+<br><br><br><br>
+# Code
+![Github](img/octocat.png)
+## The code that powers this website is available on [Github](https://github.com/open-city/transit-future) for all to re-use.
