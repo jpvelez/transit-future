@@ -22,18 +22,18 @@ Here's a breakdown of the project.
 
 * `transit-cache`: to keep the map fast and our bank accounts in the black, our tiles are cached by transit-cache, a little node.js app that caches tiles in heroku memcached. transit-caches lives in a different repo. 
 
-*`data`: the geospatial datasets shown on the map. `cta_lines.geojson` originally comes from City of Chicago [Data Portal](https://data.cityofchicago.org/Transportation/CTA-L-Rail-Lines-KML/m3d6-pubu) and have been improved by Adam Jentleson of [Cartografika](cartografika.net). `transit_future_lines.geojson` originally comes from CMAP - the lines are subset of that agency's GO TO 2040 regional plan transportation projects. `transit_future_connections.geojson` data was created by Adam Jentleson. `highlighted_places.geojson` was created by Adam Jentleson from open datasets of [building footprints](https://data.cityofchicago.org/Buildings/Building-Footprints/qv97-3bvb), [community areas](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas/i65m-w5fr) and [Cook County municipalities](https://datacatalog.cookcountyil.gov/Economic-Development/Cook-County-Municipalities/yads-xpqn).
+* `data`: the geospatial datasets shown on the map. `cta_lines.geojson` originally comes from City of Chicago [Data Portal](https://data.cityofchicago.org/Transportation/CTA-L-Rail-Lines-KML/m3d6-pubu) and have been improved by Adam Jentleson of [Cartografika](cartografika.net). `transit_future_lines.geojson` originally comes from CMAP - the lines are subset of that agency's GO TO 2040 regional plan transportation projects. `transit_future_connections.geojson` data was created by Adam Jentleson. `highlighted_places.geojson` was created by Adam Jentleson from open datasets of [building footprints](https://data.cityofchicago.org/Buildings/Building-Footprints/qv97-3bvb), [community areas](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas/i65m-w5fr) and [Cook County municipalities](https://datacatalog.cookcountyil.gov/Economic-Development/Cook-County-Municipalities/yads-xpqn).
 
-*`css`: the site uses twitter bootstrap, and additional styles on top. those styles live in `screen.css`.
+* `css`: the site uses twitter bootstrap, and additional styles on top. those styles live in `screen.css`.
 
-*`img`: all site images live here, including background images and organization logos.
+* `img`: all site images live here, including background images and organization logos.
 
-*`img/mobile`: to make the site mobile friendly, we remove the interactive map and use special static background images instead. those live in `img/mobile`, and they have dimensions of 320x568 to work with long mobile phones like the iPhone5. the logic that tells the site to display these images on mobile devices lives in `js/main.js` and `css/screen.css`.
+* `img/mobile`: to make the site mobile friendly, we remove the interactive map and use special static background images instead. those live in `img/mobile`, and they have dimensions of 320x568 to work with long mobile phones like the iPhone5. the logic that tells the site to display these images on mobile devices lives in `js/main.js` and `css/screen.css`.
 
 
 Origin
 -----
-This project is a fork of Chicago's first [annual open data report](report.cityofchicago.org/open-data-2013) [repo](https://github.com/Chicago/open-data-annual-report), which was itself a of Code for America's 2012 [Annual Report](http://2012.codeforamerica.org) [repo](https://github.com/codeforamerica/annual). 
+This project is a fork of Chicago's first [annual open data report](http://report.cityofchicago.org/open-data-2013) [repo](https://github.com/Chicago/open-data-annual-report), which was itself a of Code for America's 2012 [Annual Report](http://2012.codeforamerica.org) [repo](https://github.com/codeforamerica/annual). 
 
 Thanks for the inspiration, and the code!
 
