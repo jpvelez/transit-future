@@ -6,7 +6,7 @@ bgcolor: FFFFFF
 published: true
 extrapadding: 100px
 section: chicago
-image: all-lines
+image: lines
 ---
 
 ## West Loop Transportation Center

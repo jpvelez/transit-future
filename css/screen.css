@@ -662,13 +662,20 @@ input[type="text"] {
 /*Background images for mobile version of site.*/
 /*Jekyll posts can't refer to images directly, need to map classes to line pics.*/
 
+/*CHICAGO LINES*/
+/*For some reason the first image in this list doesn't show up on site. Making a sacrifical class so things just work. HACK*/
+.mobile .sacrifialclass {
+  background: url('../img/mobile/southlake1.png');
+  background-position: left;
+  background-size: 100% auto !important;
+}
+
 .mobile .lines {
   background: url('../img/mobile/lines.png');
   background-position: center;
   background-size: 100% auto !important;
 }
 
-/*CHICAGO LINES*/
 .mobile .southlake {
   background: url('../img/mobile/southlake1.png');
   background-position: left;
@@ -746,6 +753,62 @@ input[type="text"] {
   background-position: left;
   background-size: 100% auto !important;
 }
+
+
+/*GENERAL PAGES*/
+
+.mobile .transitmap1 {
+  background: url('../img/mobile/system_map_newlines_no_metra_mobile.png')  no-repeat;
+  background-position: center;
+  background-size: 100% auto !important;
+}
+
+.mobile .transitmap2 {
+  background: url('../img/mobile/system_map_newlines_no_metra_mobile.png')  no-repeat;
+  background-position: center;
+  background-size: 100% auto !important;
+}
+
+
+.mobile .downtownarial{
+  background: url("../img/mobile/downtownarial.jpg") no-repeat;
+  background-position: center;
+  background-size: 100% auto !important;
+}
+
+
+.mobile .lamap{
+  background: url("../img/mobile/la-transit.jpg") no-repeat;
+  background-position: center;
+  background-size: 100% auto !important;
+}
+
+.mobile .lanight{
+  background: url("../img/mobile/la.jpg") no-repeat;
+  background-position: center;
+  background-size: 100% auto !important;
+}
+
+
+.mobile .cookbg{
+  background: url("../img/mobile/cook_bg.png") no-repeat;
+  background-position: center;
+  background-size: 100% auto !important;
+}
+
+.mobile .supportersbg{
+  background: url("../img/mobile/supporters_bg.jpg") no-repeat;
+  background-position: center;
+  background-size: 100% auto !important;
+}
+
+.mobile .eltrain{
+  background: url("../img/mobile/eltrain.jpg") no-repeat;
+  background-position: center;
+  background-size: 100% auto !important;
+}
+
+
 
 /*SOUTH SUBURBS*/
 .mobile .south {
