@@ -16,7 +16,7 @@ This one-page site is built using [Jekyll](http://jekyllrb.com/), a static websi
 
 Here's a breakdown of the project.
 
-* `posts`: the big page is actually composed of a bunch of jekyll posts. those live here. the posts are markdown files with dates in the title. they appear on the page in reverse chronological order.
+* `posts`: the big page is actually composed of a bunch of jekyll posts. those live here. the posts are markdown files with dates in the title. they appear on the page in reverse chronological order. the posts are mostly text that hold the content of the site - rest of the HTML/CSS css lives in `_layouts`. read the Jekyll docs for more info on how this works.
 
 * `js`: this is where the magic happens. `main.js` makes the background images and map transitions work. we use [Modest Maps](http://modestmaps.com/) for mapping. the map zooming, technically called map easing, uses the [easey](https://github.com/mapbox/easey) extension of modest maps through an older version of [mapbox.js](https://www.mapbox.com/mapbox.js/api/v1.6.2/). our basemap is hosted by [Mapbox](http://mapbox.com). `map.js` specifies how the additional layers should look. our transit layers for existing L lines and proposed transit future lines are hosted by [CartoDB](http://cartodb.com), and rendered dynamically by CartoDB's API using CartoCSS every time a user loads the map. The key idea driving the map is a map `view` - a set of bounding box locations + one or more CartoCSS layers. These data structures tell the map where to zoom to next, and what layers to show on the map when it gets there. they're basically map states. the order of these map views mirror the order of project posts. some posts have divs with class mapstage (i.e. `<div id="southlake" class="mapstage"></div>`). when `main.js` trips over these divs, it makes the map to transition to the next view. (the id in those divs allow us to link to particular parts of the page.) @mapmeld wrote much of this code, get in touch with him for a walkthrough of how it works.
 
@@ -49,7 +49,9 @@ Run
 ---
 The following command will let you view the site on your local machine:
 
-    jekyll serve
+    jekyll serve --watch
+
+Just point your browser to localhost:4000 to see the page!
 
 Build
 -----
