@@ -72,7 +72,7 @@ Team
 ----
 
 * [Nick Doiron](http://mapmeld.appspot.com/) - front-end development
-* [Adam Jentleson](http//www.cartografika.net) - GIS
+* [Adam Jentleson](http://www.cartografika.net) - GIS
 * [Taylor McKinley](http://resusstudio.com/ourteam.html) - GIS
 * [Edward Oser](https://www.linkedin.com/pub/edward-oser/34/83b/552) - writing, concept
 * [Catalina Velez](http://www.catalinavelez.co.uk) - graphic design
