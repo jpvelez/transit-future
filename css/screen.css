@@ -758,13 +758,13 @@ input[type="text"] {
 /*GENERAL PAGES*/
 
 .mobile .transitmap1 {
-  background: url('../img/mobile/system_map_newlines_no_metra_mobile.png')  no-repeat;
+  background: url('../img/mobile/system_map_l.png')  no-repeat;
   background-position: center;
   background-size: 100% auto !important;
 }
 
 .mobile .transitmap2 {
-  background: url('../img/mobile/system_map_newlines_no_metra_mobile.png')  no-repeat;
+  background: url('../img/mobile/system_map_newlines.png')  no-repeat;
   background-position: center;
   background-size: 100% auto !important;
 }
