@@ -8,10 +8,13 @@ How do we pay for it? Cook County can create a dedicate revenue stream to build 
 
 This project is an explanatory web graphic that introduces people to the projects and how we'll pay for them.
 
+The site is live at [vision.transitfuture.org](http://vision.transitfuture.org).
 
 Project layout
 --------------
-This one-page site is built using [Jekyll](http://jekyllrb.com/), a static website generator. It's just HTML/CSS and Javascript.
+This one-page site is built using [Jekyll](http://jekyllrb.com/), a static website generator. It's just HTML/CSS and Javascript. It's hosted on [github pages](https://pages.github.com/) directly from the `gh-pages` branch of this repo.
+
+Here's a breakdown of the project.
 
 * `posts`: the big page is actually composed of a bunch of jekyll posts. those live here. the posts are markdown files with dates in the title. they appear on the page in reverse chronological order.
 
