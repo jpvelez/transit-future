@@ -344,7 +344,7 @@ input[type="text"] {
   box-sizing: border-box;
   -moz-box-sizing:border-box; /* Firefox */
   -webkit-box-sizing:border-box; /* Safari */
-  padding-bottom:400px;
+  padding-bottom:100px;
 }
 
 .page.story{
@@ -393,7 +393,7 @@ input[type="text"] {
 /*Add extra space to top of map slides.*/
 /*This allows the map to transition before the project name comes up.*/
 .page.quote.map{
-  padding-top:400px !important;
+  padding-top:400px;
 }
 
 /*Font on MAP BUFFER posts.*/
@@ -407,6 +407,14 @@ input[type="text"] {
   margin-left: 300px;
 }
 
+/*Makes text black on non-map post with light backgrounds.*/
+/*Like .map styles for header text, but without left margin that makes room for map projects.*/
+.page.black h1,
+.page.black h2,
+.page.black h3{
+  color: black;
+  text-shadow: none;
+}
 
 .page.quote.region h1 {
   font-size: 100px;

@@ -1,7 +1,7 @@
 ---
 published: true
 layout: fullpage
-pagetype: quote map
+pagetype: quote black
 bgcolor: FFFFFF
 section: supporters
 ---
