@@ -10,7 +10,13 @@ This project is an explanatory web graphic that introduces people to the project
 
 The site is live at [vision.transitfuture.org](http://vision.transitfuture.org).
 
-To get in touch with the team, email us at [transitfuture@opencityapps.org](mailto:transitfuture@opencityapps.org)
+
+This project is a collaboration between
+
+[![OpenCity](img/open_city_logo.png)](http://opencityapps.org/) + [![Cartografika](img/cartografika_logo.png)](http://cartografika.net/)
+
+To get in touch, email us at [transitfuture@opencityapps.org](mailto:transitfuture@opencityapps.org)
+
 
 Project layout
 --------------
@@ -60,6 +66,19 @@ Build
 Want to generate all the static files that make up the site, for upload to a web server? Just type:
 
      jekyll build
+
+
+Team
+----
+
+* [Nick Doiron](http://mapmeld.appspot.com/) - front-end development
+* [Adam Jentleson](http//www.cartografika.net) - GIS
+* [Taylor McKinley](http://resusstudio.com/ourteam.html) - GIS
+* [Edward Oser](https://www.linkedin.com/pub/edward-oser/34/83b/552) - writing, concept
+* [Catalina Velez](http://www.catalinavelez.co.uk) - graphic design
+* [Juan-Pablo Velez](http://opencityapps.org) - front-end development, writing, concept
+
+Want to get in touch with us? Email [transitfuture@opencityapps.org](mailto:transitfuture@opencityapps.org).
 
 
 Image Credits
