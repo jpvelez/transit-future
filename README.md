@@ -1,6 +1,6 @@
 What Is Transit Future?
 ------------------------------------
-!(Transit Future Logo)[img/transit_future_logo.jpg]
+![Transit Future Logo](img/transit_future_logo.jpg)
 
 Transit Future is a campaign by the Center for Neighborhood Technology to build a dozen transit lines in Cook County.
 
