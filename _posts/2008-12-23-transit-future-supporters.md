@@ -76,3 +76,4 @@ section: supporters
 [![Roosevelt University](img/supporters/roosevelt.jpg)](http://www.roosevelt.edu/)
 [![Southeast Environmental Task Force](img/supporters/setf.jpg)](http://setaskforce.org/)
 [![Teamwork Englewood](img/supporters/teamwork.jpg)](http://www.teamworkenglewood.org/index.html)
+[![UIC Transportation Center](img/supporters/uic.jpg)](http://www.utc.uic.edu/)
