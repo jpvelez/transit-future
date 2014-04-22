@@ -24,7 +24,7 @@ image: lines
 
 * These projects will make bridges and tunnels for freight trains. No more waiting for the train to pass.
 * 63rd/Harlem bridge or tunnel
-* Central/54th Ave bridge or tunnel
+* Central/54th St. bridge or tunnel
 * Columbus/Maplewood Ave bridge or tunnel
 * Archer/Kenton Ave bridge or tunnel
 * 87th/Rockwell bridge or tunnel
