@@ -17,6 +17,7 @@ These leaders from Cook County's business, civic, labor and cultural communities
 ## Ellen Craig – Managing Director, the Brattle Group
 ## Graham Grady - Partner, Taft Law
 ## David Mosena – President and CEO, Chicago Museum of Science and Industry
+## Steve Schlickman – Executive Director, Urban Transportation Center, UIC
 ## John Schmidt – Partner, Mayer Brown
 ## Tom Villanova – President, Chicago and Cook County Construction and Building Trades Council
 ## Karen Walker – Managing Director, Siebert Brandford Shank & Co.
