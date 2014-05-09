@@ -14,4 +14,4 @@ section: funding
 ## This local revenue will open the door to federal and other financing tools that will pay for the rest.
 <br><br><br>
 <br><br><br>
-## Transit Future is a campaign to convince the Cook County Board to create that local revenue stream—and to do it this year.
+## Transit Future is a campaign to convince the Cook County Board to create that local revenue stream—and to do it soon.
