@@ -58,6 +58,7 @@ section: supporters
 [![Bronzeville Retail Initiative](img/supporters/bri.jpg)](http://www.bronzevilleretail.com)
 ![Bronzeville Urban Development](img/supporters/bud.jpg)
 [![Center for Neighborhood Technology](img/supporters/cntlogo.jpg)](http://www.cnt.org)
+[![Chicago Jobs Council](img/supporters/cjc.jpg)](http://cjc.net/)
 [![Claretian Associates](img/supporters/claretian_associates.jpg)](http://www.claretianassociates.org/index.html)
 [![CNU](img/supporters/cnu.jpg)](https://www.cnu.org/)
 [![Delta Associates](img/supporters/deltalogo.jpg)](http://www.delta-institute.org/)
@@ -76,4 +77,5 @@ section: supporters
 [![Roosevelt University](img/supporters/roosevelt.jpg)](http://www.roosevelt.edu/)
 [![Southeast Environmental Task Force](img/supporters/setf.jpg)](http://setaskforce.org/)
 [![Teamwork Englewood](img/supporters/teamwork.jpg)](http://www.teamworkenglewood.org/index.html)
-[![UIC Transportation Center](img/supporters/uic.jpg)](http://www.utc.uic.edu/)
+[![UIC Transportation Center](img/supporters/uic.jpg)](http://www.utc.uic.edu/)\
+[![Universidad Popular](img/supporters/universidad.jpg)](http://www.universidadpopular.us/)
