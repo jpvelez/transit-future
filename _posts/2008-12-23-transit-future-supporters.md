@@ -39,6 +39,7 @@ section: supporters
 <br><br><br>
 # Labor
 
+[![Chicago Federation of Labor](img/supporters/cfl.jpg)](http://www.chicagolabor.org/)
 [![Cook County Building Trades](img/supporters/buildingtrades.jpg)](http://www.chicagobuildingtrades.org/)
 [![Electricians local 9](img/supporters/ibew_local_9.jpg)](http://www.ibew9.org/)
 [![Electricians Local 134](img/supporters/ibew_logo.jpg)](http://lu134.org/)
