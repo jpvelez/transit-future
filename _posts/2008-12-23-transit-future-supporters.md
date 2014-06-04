@@ -12,7 +12,6 @@ section: supporters
 [![Deborah Sims](img/supporters/deborah_sims_sig.jpg)](http://www.deborahsims.org/)
 [![Earlean Collins](img/supporters/earlean_collins_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=104)
 [![Edwin Reyes](img/supporters/edwin_reyes_sig.jpg)](http://www.edwinreyes.org/)
-[![Jeffery Tobolski](img/supporters/jeffrey_tobowlski_sig.jpg)](http://www.commissionertobolski.com/)
 [![Jerry Butler](img/supporters/jerry_butler_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=110)
 [![Joan Murphy](img/supporters/joan_murphy_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=485)
 [![Larry Suffredin](img/supporters/larry_suffredin_sig.jpg)](http://www.suffredin.org/)
