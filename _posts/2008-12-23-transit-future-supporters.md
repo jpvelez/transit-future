@@ -69,7 +69,7 @@ section: supporters
 [![Far South Community Development Corporation](img/supporters/fscdc.jpg)](http://www.farsouthcdc.org/)
 [![Greater Auburn-Gresham Community Development Corporation](img/supporters/greater_auburngresham.png)](http://www.gagdc.org/index.html)
 [![GECDC](img/supporters/gecdc.jpg)](http://greaterenglewoodcdc.org/)
-[![ICA](img/supporters/gecdc.jpg)](http://www.ica-usa.org/)
+[![ICA](img/supporters/ica.jpg)](http://www.ica-usa.org/)
 [![MoveLA](img/supporters/movela.jpg)](http://movela.org/)
 [![Openlands](img/supporters/openlands.jpg)](http://www.openlands.org/)
 [![Over The Rainbow Association](img/supporters/otrlogo.jpg)](http://www.otrassn.org)
