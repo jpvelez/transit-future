@@ -1,4 +1,17 @@
 
+// thank you page after supporter form submission
+// (needs to be ahead of the "loading" screen)
+$(function(){
+  if(window.location.hash) {
+      var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+      if (hash='thankyou'){
+        $("#loading").hide();
+        $('#ThankYouModal').modal('show');
+        readytoshow = true;
+      }
+   } 
+});
+
 if (typeof console === "undefined" || typeof console.log === "undefined") {
   console = {log:function(){}};
 }
@@ -465,3 +478,4 @@ if (!Array.prototype.indexOf)
     return -1;
   };
 }
+
