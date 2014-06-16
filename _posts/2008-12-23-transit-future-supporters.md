@@ -12,7 +12,6 @@ section: supporters
 [![Deborah Sims](img/supporters/deborah_sims_sig.jpg)](http://www.deborahsims.org/)
 [![Earlean Collins](img/supporters/earlean_collins_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=104)
 [![Edwin Reyes](img/supporters/edwin_reyes_sig.jpg)](http://www.edwinreyes.org/)
-[![Jeffery Tobolski](img/supporters/jeffrey_tobowlski_sig.jpg)](http://www.commissionertobolski.com/)
 [![Jerry Butler](img/supporters/jerry_butler_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=110)
 [![Joan Murphy](img/supporters/joan_murphy_sig.jpg)](http://www.cookcountygov.com/portal/server.pt/gateway/PTARGS_0_0_336_226_0_43/http%3B/www.cookcountygov.com/ccWeb.Leadership/LeadershipProfile.aspx?commiss_id=485)
 [![Larry Suffredin](img/supporters/larry_suffredin_sig.jpg)](http://www.suffredin.org/)
@@ -33,6 +32,7 @@ section: supporters
 [![Perkins + Will](img/supporters/perkinsandwill.jpg)](http://www.perkinswill.com/)
 [![Revolution Brewing](img/supporters/revolution.jpg)](http://revbrew.com/)
 [![RPEG](img/supporters/rpeg.jpg)](http://www.repg-lund.com/)
+[![SBA](img/supporters/sba.jpg)](http://sba2013.publishpath.com/)
 [![Skidmore, Owings & Merrill](img/supporters/som.jpg)](http://www.som.com/)
 [![Solomon Cordwell Buenz](img/supporters/scb.jpg)](http://www.scb.com/)
 
@@ -69,6 +69,7 @@ section: supporters
 [![Far South Community Development Corporation](img/supporters/fscdc.jpg)](http://www.farsouthcdc.org/)
 [![Greater Auburn-Gresham Community Development Corporation](img/supporters/greater_auburngresham.png)](http://www.gagdc.org/index.html)
 [![GECDC](img/supporters/gecdc.jpg)](http://greaterenglewoodcdc.org/)
+[![ICA](img/supporters/ica.jpg)](http://www.ica-usa.org/)
 [![MoveLA](img/supporters/movela.jpg)](http://movela.org/)
 [![Openlands](img/supporters/openlands.jpg)](http://www.openlands.org/)
 [![Over The Rainbow Association](img/supporters/otrlogo.jpg)](http://www.otrassn.org)
