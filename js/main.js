@@ -1,17 +1,4 @@
 
-// thank you page after supporter form submission
-// (needs to be ahead of the "loading" screen)
-$(function(){
-  if(window.location.hash) {
-      var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-      if (hash='thankyou'){
-        $("#loading").hide();
-        $('#ThankYouModal').modal('show');
-        readytoshow = true;
-      }
-   } 
-});
-
 if (typeof console === "undefined" || typeof console.log === "undefined") {
   console = {log:function(){}};
 }
@@ -239,7 +226,7 @@ $(function(){
     }
   });
 
-  $(".navbar .nav li a").on("click touchend", function(e){
+  $(".navbar .nav li a").not( ".supportbutton a" ).on("click touchend", function(e){
     e.preventDefault();
     var section = $(e.currentTarget).parent().attr("class").split(" ")[0];
     $("body,html").animate({scrollTop: $($("div.page[data-section='"+section+"']")[0]).offset().top}, 1000);
