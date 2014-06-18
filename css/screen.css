@@ -1616,24 +1616,96 @@ img.progicons {
 
 
 .support_button_box {
-    text-align:right; margin: 3em 0;
+    margin-bottom: 3em;
+    margin-left: 300px;
+    margin-top: 3em;
+    text-align: left;
 }
-.support_button_box > a {
+.support_button_box > button {
     width:200px;
     height:60px;
     text-decoration:none;
     vertical-align:middle;
     border-radius: 3px;
-    line-height:60px;
+    /*line-height:60px;*/
 }
 @media (max-width: 480px) {
-  .support_button_box > a {
-    width:150px;
-    height:40px;
-    line-height:40px;
-  }
-  
   .support_button_box {
     margin: 2em 0;
+    text-align: right;
   }
+}
+
+.modal {
+    color: #333333;
+    text-shadow: none;
+    display:none;
+}
+
+.modal .modal-title {
+   margin-top:0;
+   line-height:1.20em;
+}
+.modal-header {
+    border-bottom: none;
+    padding: 9px 15px;
+}
+
+.modal-body {
+    padding: 15px 25px;
+}
+
+.wFormContainer {
+    margin: auto;
+    width: auto;
+}
+.wFormContainer {
+    overflow: visible;
+}
+
+.wForm {
+    padding: 0px;
+}
+
+.wForm .actions {
+    padding: 0px 6px;
+}
+
+.small {
+   font-size:0.8em;
+   line-height:1.1em;
+}
+
+.wForm div > div.oneField, .wForm fieldset > div.oneField, .wForm form > div.oneField, .wForm fieldset, .wForm .matrixLayout, .wForm .gridLayout, .wForm h4, .wForm .wfPagingButtons, .wForm .actions {
+    margin-top: 0px;
+}
+
+.label, .badge {
+    background-color: transparent;
+    color: inherit;
+    line-height: 1em;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.01);
+ }
+ .wForm .labelsAbove .preField {
+    padding-bottom: 0px;
+}
+.wForm .primaryAction, .wForm .secondaryAction {
+    padding: 9px 15px;
+}
+.wForm .errMsg {
+    margin-top:-10px;
+}
+.wForm .oneField {
+    padding: 0px;
+}
+h4.modal-title {
+    color: #FF6600;
+}
+.wForm .actions {
+    padding: 0px;
+}
+#commissionerInfo p {
+   font-size: 90%;
+   line-height:1.25em;
+   margin-bottom: 1.5em;
 }

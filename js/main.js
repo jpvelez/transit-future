@@ -1,3 +1,28 @@
+// BEGIN modal and hash code
+// thank you page after supporter form submission
+// (needs to be ahead of the "loading" screen)
+$(function(){
+  if(window.location.hash) {
+      var hash= window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+      if (hash == 'thankyou'){
+        $("#loading").hide();
+        readytoshow = true;
+        $('#ThankYouModal').modal('show');
+      }
+      if (hash == 'I-Support-This'){
+        $("#loading").hide();
+        readytoshow = true;
+        $('#myModal').modal('show');
+      }
+   }
+   $('#myModal').on('show.bs.modal', function (e) {
+      window.location.hash = '#I-Support-This';
+   })
+   $('#myModal').on('hide.bs.modal', function (e) {
+      window.location.hash = '#';
+   })
+});
+// END modal and hash code
 
 if (typeof console === "undefined" || typeof console.log === "undefined") {
   console = {log:function(){}};
@@ -466,3 +491,65 @@ if (!Array.prototype.indexOf)
   };
 }
 
+// BEGIN AJAX Google Civic Information API Call
+$(function(){
+   $("#tfa_2").on("keyup", function(e){
+      findCommissionerFromAddress( $(this).val() );
+   });
+   $('#commissionerInfo').html('');
+   findCommissionerFromAddress( $("#tfa_2").val() ); //onLoad
+});
+
+function findCommissionerFromAddress(address){
+
+      if (address.length > 5){   // we want at least 5 chars before call the API
+         delay(function(){
+            $.ajax({
+               url: "https://www.googleapis.com/civicinfo/v1/representatives/lookup?key=AIzaSyDCmhSkgw-kNAabPl2Btt93RjB3CJHwNrc",
+               type: 'post',
+               data: "{ address: ' " + $('#tfa_2').val() + " ' }",
+               dataType: 'json',
+               contentType: 'application/json'
+            })
+            .done(function( response ) {
+               if (response.status == 'success'){
+
+                  // find the commissioner for this address
+                  // the ID can change randomly, so we have to search for it via the 'scope' value
+                  var wantedOfficeId = '';
+                  $.each(response.divisions, function( i, val ) {
+                     if (val.scope == 'countyCouncil'){
+                        wantedOfficeId = val.officeIds[0];
+                     }
+                  });
+
+                  if (wantedOfficeId != '') {
+                     // load comisionerName
+                     var wantedOfficalId = response.offices[wantedOfficeId]['officialIds'][0];
+                     var wantedOfficalDistict = response.offices[wantedOfficeId]['name'];
+                     var wantedOfficalInfo = response.officials[wantedOfficalId];
+                     var commissionerName = wantedOfficalInfo.name;
+                     var commissionerEmail = wantedOfficalInfo['emails'][0];
+
+                     if (commissionerName != '' && commissionerName != undefined){
+                        $('#tfa_3').val(commissionerName);
+                        //$('#commissionerEmail').val(commissionerEmail);
+                        $('#commissionerInfo').html('<p><strong>'+ commissionerName +'</strong><br />'+ wantedOfficalDistict +'</p>');
+                     }
+                  }
+               } else {
+
+               }
+            });
+         }, 1000 );   // 1 sec delay before ajax call
+      }
+}
+
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+// END AJAX Google Civic Information API Call
