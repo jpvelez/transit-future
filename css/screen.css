@@ -1589,7 +1589,7 @@ img.progicons {
 .btn {
     font-size: 1.25em;
     font-family: 'Open Sans',sans-serif;
-    font-weight:bold;
+    font-weight: bold;
     text-transform: none;
     background-color: #FF6600;
     color:#FFFFFF;
@@ -1597,23 +1597,25 @@ img.progicons {
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+    border-radius: 2px;
     background-color: #FF6600;
     color: #FFFFFF;
 }
 .btn:hover {
+    font-weight:bold;
+    border-radius: 2px;
     background-color: #F06000;
     cursor:pointer;
 }
 
-
-.navbar-inverse .nav li.supportbutton > a, .navbar-inverse .nav li.supportbutton > a:hover, .navbar-inverse .nav li.supportbutton > a:focus {
+.navbar-inverse .nav li.supportbutton > button, .navbar-inverse .nav li.supportbutton > button:hover, .navbar-inverse .nav li.supportbutton > button:focus {
+    font-weight:bold;
     background-color: #FF6600;
     color: #FFFFFF;
     padding: 6px 10px;
     border-radius: 2px;
     display:inline-block;
 }
-
 
 .support_button_box {
     margin-bottom: 3em;
@@ -1703,6 +1705,9 @@ h4.modal-title {
 }
 .wForm .actions {
     padding: 0px;
+}
+#commissionerInfo {
+   min-height:0px;
 }
 #commissionerInfo p {
    font-size: 90%;
