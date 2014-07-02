@@ -501,7 +501,7 @@ var commissionerImages = {
     'Jerry Butler'  : 'JerryButler.jpeg',
     'Stanley Moore'  : 'StanleyMoore.jpeg',
     'Deborah Sims'  : 'DeborahSims.jpeg',
-    'Joan Patricia Murphy' : 'JoanPatriciaMurphy.jpeg',
+    'Joan Murphy' : 'JoanPatriciaMurphy.jpeg',
     'Jesus Garcia'  : 'JesusGarcia.jpeg',
     'Edwin Reyes'  : 'EdwinReyes.jpeg',
     'Peter Silvestri'  : 'PeterNSilvestri.jpeg',
@@ -512,7 +512,7 @@ var commissionerImages = {
     'Gregg Goslin'  : 'GreggGoslin.jpeg',
     'Timothy Schneider'  : 'TimothySchneider.jpeg',
     'Jeffery Tobolski'  : 'JefferyRTobolski.jpeg',
-    'Liz Doody Gorman' : 'LizDoodyGorman.jpeg',
+    'Liz Gorman' : 'LizDoodyGorman.jpeg',
 };
 
 $(function(){

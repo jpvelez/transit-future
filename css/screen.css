@@ -1643,7 +1643,7 @@ img.progicons {
     text-shadow: none;
     display:none;
     margin-left: -344px;
-    width: 676px;
+    width: 688px;
 }
 
 .modal .modal-title {
@@ -1697,7 +1697,8 @@ img.progicons {
     padding: 0px 6px;
 }
 .wForm #tfa_1,
-.wForm #tfa_2
+.wForm #tfa_2,
+.wForm #tfa_4
     {
     border-radius: 5px;
     color: #555555;
