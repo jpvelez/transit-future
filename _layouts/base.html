@@ -50,6 +50,8 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script src="http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+
 
 
 <!-- START Modal -->
@@ -61,8 +63,10 @@
         <!--<h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
       </div>
       <div class="modal-body">
-      <h4 class="modal-title">Thank you for supporting a new Chicago transit future</h4>
-      <p>Please add your name and address so that we can tell your County representative that you support our new vision for better transit in Chicagoland.</p>
+      <h4 class="modal-title">IT'S TIME TO MAKE THIS TRANSIT FUTURE A REALITY</h4>
+      <p>Cook County, the county government around Chicago, is currently considering building these train and bus lines. <a href="#" id="modalHowItWorks">How it works.</a></p>
+      <p>Tell your County representative that you want to make Transit Future a reality! To make your voice heard, simply submit your name and address.</p>
+      <p>This is a petition &ndash; we will never share your info with <b>anyone</b> but your elected representative. </p>
 
       <!-- START FormAssembly Form -->
       <div class="wFormContainer"  >
@@ -81,8 +85,8 @@
             </div>
             <div id="tfa_2-D" class="oneField    ">
             <label id="tfa_2-L" for="tfa_2" class="label preField reqMark">Mailing Address</label><br>
-            <div class="inputWrapper" style="margin-bottom:0.5em">
-               <input type="text" class="required" placeholder="" value="" name="tfa_2" id="tfa_2" style="margin-bottom:0">
+            <div id="locationField" class="inputWrapper" style="margin-bottom:0.5em">
+               <input type="text" class="required" placeholder="" value="" name="tfa_2" id="tfa_2" style="margin-bottom:0"><br />
                <small style="color:rgb(200,200,200); font-style:italic">Address, City</small>
             </div>
             </div>
@@ -94,18 +98,16 @@
             <!-- END FormAssembly Form -->
 
          </div>
-
-         <div id="commissionerInfo" class="span6">
-         </div>
+        <div id="commissionerInfo" class="span5"  style="text-align:center;"></div>
       </div> <!-- end .row -->
 
-      <div class="actions" id="tfa_0-A"><input type="submit" class="btn btn-primary btn-lg primaryAction" value="I'm in!"></div>
+      <div class="actions" id="tfa_0-A"><input type="submit" class="btn btn-primary btn-lg primaryAction" value="Count me in!"></div>
 
       </form>
       </div></div> <!-- end wForm, wFormContainer -->
 
 
-      <p class="small">We won't share you information with anyone other than your elected representative. By submitting above you agree to our privacy policy.</p>
+      <p class="small">By submitting above you agree to our <a href="#">privacy policy</a>.</p>
       </div> <!-- end .modal-body -->
       <!--
             <div class="modal-footer">
