@@ -495,24 +495,24 @@ if (!Array.prototype.indexOf)
 // BEGIN AJAX Google Civic Information API Call
 
 var commissionerImages = {
-    'Toni Preckwinkle'  : 'ToniPreckwinkle.jpeg',
-    'Earlean Collins'  : 'EarleanCollins.jpeg',
-    'Robert Steele'  : 'RobertSteele.jpeg',
-    'Jerry Butler'  : 'JerryButler.jpeg',
-    'Stanley Moore'  : 'StanleyMoore.jpeg',
-    'Deborah Sims'  : 'DeborahSims.jpeg',
+    'Toni Preckwinkle'  : 'ToniPreckwinkle.jpeg',  // shouldn't come up, but just in case
+    'Earlean Collins'  : 'EarleanCollins.jpeg', // checked
+    'Robert Steele'  : 'RobertSteele.jpeg', // checked
+    'Jerry "Iceman" Butler'  : 'JerryButler.jpeg',  // checked
+    'Stanley Moore'  : 'StanleyMoore.jpeg', // checked
+    'Deborah Sims'  : 'DeborahSims.jpeg', //checked
     'Joan Murphy' : 'JoanPatriciaMurphy.jpeg',
-    'Jesus Garcia'  : 'JesusGarcia.jpeg',
-    'Edwin Reyes'  : 'EdwinReyes.jpeg',
-    'Peter Silvestri'  : 'PeterNSilvestri.jpeg',
-    'Bridget Gainer'  : 'BridgetGainer.jpeg',
-    'John Daley'  : 'JohnPDaley.jpeg',
-    'John Fritchey'  : 'JohnFritchey.jpeg',
-    'Larry Suffredin'  : 'LarrySuffredin.jpeg',
-    'Gregg Goslin'  : 'GreggGoslin.jpeg',
-    'Timothy Schneider'  : 'TimothySchneider.jpeg',
-    'Jeffery Tobolski'  : 'JefferyRTobolski.jpeg',
-    'Liz Gorman' : 'LizDoodyGorman.jpeg',
+    'Jesus Garcia'  : 'JesusGarcia.jpeg', // checked
+    'Edwin Reyes'  : 'EdwinReyes.jpeg', // checked
+    'Peter Silvestri'  : 'PeterNSilvestri.jpeg',  //checked
+    'Bridget Gainer'  : 'BridgetGainer.jpeg', // checked
+    'John Daley'  : 'JohnPDaley.jpeg', // checked
+    'John Fritchey'  : 'JohnFritchey.jpeg', // checked
+    'Larry Suffredin'  : 'LarrySuffredin.jpeg', // checked
+    'Gregg Goslin'  : 'GreggGoslin.jpeg', // checked
+    'Timothy Schneider'  : 'TimothySchneider.jpeg', // checked
+    'Jeffrey Tobolski'  : 'JefferyRTobolski.jpeg',  // checked
+    'Elizabeth Doody Gorman' : 'LizDoodyGorman.jpeg',  // checked
 };
 
 $(function(){
@@ -575,7 +575,12 @@ function findCommissionerFromAddress(address){
                      var wantedOfficalDistict = response.offices[wantedOfficeId]['name'];
                      var wantedOfficalInfo = response.officials[wantedOfficalId];
                      var commissionerName = wantedOfficalInfo.name;          // eg., "Edwin Reyes"
-                     var commissionerEmail = wantedOfficalInfo['emails'][0]; // eg., "County Commissioner, District 8"
+
+                     if (typeof wantedOfficalInfo['emails'] !== 'undefined') {
+                         if (typeof wantedOfficalInfo['emails'][0] !== 'undefined') {
+                            var commissionerEmail = wantedOfficalInfo['emails'][0]; // eg., "County Commissioner, District 8"
+                        }
+                     }
 
                      if (commissionerName != '' && commissionerName != undefined){
                         //populate hidden fields
