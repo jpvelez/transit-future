@@ -1586,6 +1586,7 @@ img.progicons {
   }
 }
 
+/** MODAL-RELATED STYLING **/
 .btn {
     font-size: 1.25em;
     font-family: 'Open Sans',sans-serif;
@@ -1631,12 +1632,6 @@ img.progicons {
     border-radius: 3px;
     /*line-height:60px;*/
 }
-@media (max-width: 480px) {
-  .support_button_box {
-    margin: 2em 0;
-    text-align: right;
-  }
-}
 
 .modal {
     color: #333333;
@@ -1660,7 +1655,7 @@ img.progicons {
     margin-right: 15px;
     margin-top: 15px;
     padding: 0 25px 15px;
-    max-height: 460px;
+    max-height: 532px;
 }
 
 .modal-body a {
@@ -1703,13 +1698,13 @@ img.progicons {
     border-radius: 5px;
     color: #555555;
     display: inline-block;
-    font-size: 14px;
+    font-size: 17px;
     height: 24px;
     line-height: 20px;
     margin-bottom: 10px;
     padding: 4px 6px;
     vertical-align: middle;
-    width: 285px;
+    width: 100%;
 }
 
 .small {
@@ -1732,6 +1727,7 @@ img.progicons {
 }
 .wForm .primaryAction, .wForm .secondaryAction {
     padding: 9px 15px;
+    border-radius: 2px;
 }
 .wForm .errMsg {
     margin-top:-10px;
@@ -1746,7 +1742,12 @@ h4.modal-title {
     padding: 0px;
 }
 
-
+.wForm .inputWrapper {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 99%;
+}
 
 #commissionerInfo {
    min-height:0px;
@@ -1779,7 +1780,55 @@ h4.modal-title {
     line-height:1.42em;
 }
 
+.label, .badge {
+    font-size: 14px;
+}
 
+@media (max-width: 1024px) {
+    .support_button_box {
+        margin: 2em 0;
+        text-align: right;
+    }
+
+    .modal {
+        left: 50%;
+        margin-left: -34%;
+        width: 68%;
+    }
+    .modal-body {
+        /*max-height: 95%;*/
+    }
+    .wForm #tfa_1, .wForm #tfa_2, .wForm #tfa_4 {
+        width: 100%;
+    }
+
+}
+@media (max-width: 640px) {
+    .modal {
+        left: 50%;
+        margin-left: -49.5%;
+        width: 99%;
+    }
+}
+@media (max-width: 480px) {
+    .modal-body {
+        overflow-y:auto;
+        max-height: 360px;
+    }
+    .wForm #tfa_1, .wForm #tfa_2, .wForm #tfa_4 {
+        width: 100%;
+    }
+    .wForm .inputWrapper {
+        width: 99%;
+    }
+    #commissionerInfo {
+        margin-bottom: 1em;
+    }
+    .wForm .primaryAction, .wForm .secondaryAction {
+        padding: 15px 15px;
+        width:99%;
+    }
+}
 
 
 
@@ -1808,12 +1857,6 @@ h4.modal-title {
   }
   .wideField {
     width: 200px;
-  }
-  #locationField {
-    /*
-    height: 20px;
-    margin-bottom: 2px;
-    */
   }
   .pac-container{
     z-index: 1105;
