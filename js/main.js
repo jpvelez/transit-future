@@ -1,3 +1,28 @@
+// BEGIN modal and hash code
+// thank you page after supporter form submission
+// (needs to be ahead of the "loading" screen)
+$(function(){
+  if(window.location.hash) {
+      var hash= window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+      if (hash == 'thankyou'){
+        $("#loading").hide();
+        readytoshow = true;
+        $('#ThankYouModal').modal('show');
+      }
+      if (hash == 'I-Support-This'){
+        $("#loading").hide();
+        readytoshow = true;
+        $('#myModal').modal('show');
+      }
+   }
+   $('#myModal').on('show.bs.modal', function (e) {
+      window.location.hash = '#I-Support-This';
+   })
+   $('#myModal').on('hide.bs.modal', function (e) {
+      window.location.hash = '#';
+   })
+});
+// END modal and hash code
 
 if (typeof console === "undefined" || typeof console.log === "undefined") {
   console = {log:function(){}};
@@ -226,7 +251,7 @@ $(function(){
     }
   });
 
-  $(".navbar .nav li a").on("click touchend", function(e){
+  $(".navbar .nav li a").not( ".supportbutton a" ).on("click touchend", function(e){
     e.preventDefault();
     var section = $(e.currentTarget).parent().attr("class").split(" ")[0];
     $("body,html").animate({scrollTop: $($("div.page[data-section='"+section+"']")[0]).offset().top}, 1000);
@@ -465,3 +490,191 @@ if (!Array.prototype.indexOf)
     return -1;
   };
 }
+
+
+// BEGIN AJAX Google Civic Information API Call
+
+var commissionerImages = {
+    'Toni Preckwinkle'  : 'ToniPreckwinkle.jpeg',  // shouldn't come up, but just in case
+    'Earlean Collins'  : 'EarleanCollins.jpeg', // checked
+    'Robert Steele'  : 'RobertSteele.jpeg', // checked
+    'Jerry "Iceman" Butler'  : 'JerryButler.jpeg',  // checked
+    'Stanley Moore'  : 'StanleyMoore.jpeg', // checked
+    'Deborah Sims'  : 'DeborahSims.jpeg', //checked
+    'Joan Murphy' : 'JoanPatriciaMurphy.jpeg',
+    'Jesus Garcia'  : 'JesusGarcia.jpeg', // checked
+    'Edwin Reyes'  : 'EdwinReyes.jpeg', // checked
+    'Peter Silvestri'  : 'PeterNSilvestri.jpeg',  //checked
+    'Bridget Gainer'  : 'BridgetGainer.jpeg', // checked
+    'John Daley'  : 'JohnPDaley.jpeg', // checked
+    'John Fritchey'  : 'JohnFritchey.jpeg', // checked
+    'Larry Suffredin'  : 'LarrySuffredin.jpeg', // checked
+    'Gregg Goslin'  : 'GreggGoslin.jpeg', // checked
+    'Timothy Schneider'  : 'TimothySchneider.jpeg', // checked
+    'Jeffrey Tobolski'  : 'JefferyRTobolski.jpeg',  // checked
+    'Elizabeth Doody Gorman' : 'LizDoodyGorman.jpeg',  // checked
+};
+
+$(function(){
+   initialize();
+
+   $("#tfa_2").on("keyup", function(e){
+      //findCommissionerFromAddress( $(this).val() );
+   });
+
+   $('#commissionerInfo').html('');
+   //findCommissionerFromAddress( $("#tfa_2").val() ); //onLoad
+
+    $('#tfa_2').keypress(function(e){
+
+        if (e.keyCode == 10 || e.keyCode == 13)
+            e.preventDefault();
+
+      });
+
+    $('#modalHowItWorks').click(function(e){
+        $('#myModal').modal('hide');
+        $('.navfunding a').trigger('click');
+        e.preventDefault();
+        return false;
+    });
+
+});
+
+function findCommissionerFromAddress(address){
+
+      $('#commissionerInfo').fadeOut(function(){
+        $('#commissionerInfo').html('');
+
+
+      if (address.length > 5){   // we want at least 5 chars before call the API
+         delay(function(){
+            $.ajax({
+               url: "https://www.googleapis.com/civicinfo/v1/representatives/lookup?key=AIzaSyDCmhSkgw-kNAabPl2Btt93RjB3CJHwNrc",
+               type: 'post',
+               data: "{ address: ' " + $('#tfa_2').val() + " ' }",
+               dataType: 'json',
+               contentType: 'application/json'
+            })
+            .done(function( response ) {
+               if (response.status == 'success'){
+
+                  // find the commissioner for this address
+                  // the ID can change randomly, so we have to search for it via the 'scope' value
+                  var wantedOfficeId = '';
+                  $.each(response.divisions, function( i, val ) {
+                     if (val.scope == 'countyCouncil'){
+                        wantedOfficeId = val.officeIds[0];
+                     }
+                  });
+
+                  if (wantedOfficeId != '') {
+
+                     // load comisioner data
+                     var wantedOfficalId = response.offices[wantedOfficeId]['officialIds'][0];
+                     var wantedOfficalDistict = response.offices[wantedOfficeId]['name'];
+                     var wantedOfficalInfo = response.officials[wantedOfficalId];
+                     var commissionerName = wantedOfficalInfo.name;          // eg., "Edwin Reyes"
+
+                     if (typeof wantedOfficalInfo['emails'] !== 'undefined') {
+                         if (typeof wantedOfficalInfo['emails'][0] !== 'undefined') {
+                            var commissionerEmail = wantedOfficalInfo['emails'][0]; // eg., "County Commissioner, District 8"
+                        }
+                     }
+
+                     if (commissionerName != '' && commissionerName != undefined){
+                        //populate hidden fields
+                        $('#tfa_3').val(commissionerName);  // we're only sending the name to FormAssembly
+                        //$('#commissionerEmail').val(commissionerEmail);
+
+                        // output to user
+                        $('#commissionerInfo').html('<div class="img_box"><img src="/img/commissioners/'+commissionerImages[commissionerName] +'" alt=""/></div><div class="commissioner_box">Your <a href="http://en.wikipedia.org/wiki/Cook_County_Board_of_Commissioners" style="font-weight: 600;">county commissioner<\/a> is <strong>'+ commissionerName +'<\/strong></div>');
+                        $('#commissionerInfo').fadeIn();
+                     } else {
+
+                     }
+                } else {
+                  $('#commissionerInfo').html('');
+                }
+               } else {
+                  $('#commissionerInfo').html('');
+               }
+            });
+         }, 1 );   // delay before ajax call
+      } else {
+        $('#commissionerInfo').html('');
+      }
+      });
+}
+
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+// END AJAX Google Civic Information API Call
+
+
+
+///////////////////////////////////////
+// START Google Location Autocomplete
+
+var placeSearch, autocomplete;
+var componentForm = {
+  street_number: 'short_name',
+  route: 'long_name',
+  locality: 'long_name',
+  administrative_area_level_1: 'short_name',
+  country: 'long_name',
+  postal_code: 'short_name'
+};
+
+function initialize() {
+  // Create the autocomplete object, restricting the search
+  // to geographical location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      (document.getElementById('tfa_2')),  /** @type {HTMLInputElement} */
+      { types: ['geocode'], location:'Chicago', radius: '100 miles', key: 'AIzaSyDCmhSkgw-kNAabPl2Btt93RjB3CJHwNrc' }
+  );
+  //autocomplete.setComponentRestrictions({ state: 'il'  });
+
+  // When the user selects an address from the dropdown,
+  // populate the address fields in the form.
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+  //google.maps.event.addListener(autocomplete, 'click', function() {
+
+    var place = autocomplete.getPlace();
+
+    console.log(place);
+
+    var street_number = '';
+    var route         = '';
+    var city          = '';
+    var state         = '';
+    var zip           = '';
+    $.each(place.address_components,function(key, val){
+        if (val.types[0] == 'street_number')               street_number = val.long_name;
+        if (val.types[0] == 'route')                       route         = val.long_name;
+        if (val.types[0] == "locality")                    city          = val.long_name;
+        if (val.types[0] == "administrative_area_level_1") state         = val.long_name;
+        if (val.types[0] == "postal_code")                 zip           = val.long_name;
+    });
+    var streetString = street_number + ' ' + route + ', ' + city + ', ' + state + ' ' + zip;
+    delay(function(){
+      $('#tfa_2').val(streetString);
+
+      // load commissioner
+      findCommissionerFromAddress( $('#tfa_2').val() );
+    }, 100);
+  });
+
+  // load on init
+  findCommissionerFromAddress( $('#tfa_2').val() );
+}
+
+// END Google Location Autocomplete
+////////////////////////////////////
+
+
