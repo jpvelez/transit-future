@@ -12,6 +12,29 @@
 
   <title>{{ page.title }}</title>
 
+<!-- START FormAssembly -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="http://www.tfaforms.com/form-builder/4.1.0/css/wforms-layout.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 8]>
+    <link href="http://www.tfaforms.com/form-builder/4.1.0/css/wforms-layout-ie8.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 7]>
+    <link href="http://www.tfaforms.com/form-builder/4.1.0/css/wforms-layout-ie7.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 6]>
+    <link href="http://www.tfaforms.com/form-builder/4.1.0/css/wforms-layout-ie6.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <link href="http://www.tfaforms.com/themes/get/17258" rel="stylesheet" type="text/css" />
+    <link href="http://www.tfaforms.com/form-builder/4.1.0/css/wforms-jsonly.css" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+    <script type="text/javascript" src="http://www.tfaforms.com/wForms/3.7/js/wforms.js"></script>
+    <script type="text/javascript">
+        wFORMS.behaviors.prefill.skip = false;
+    </script>
+    <script type="text/javascript" src="http://www.tfaforms.com/wForms/3.7/js/localization-en_US.js"></script>
+<!-- END FormAssembly -->
+
+
     <!-- Homepage CSS -->
     <link rel='icon' href='favicon.png' type='image/x-icon' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,600,700' rel='stylesheet' type='text/css' />
@@ -27,6 +50,104 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script src="http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+
+
+
+<!-- START Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-target=".bs-example-modal-lg">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <!--<h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
+      </div>
+      <div class="modal-body">
+      <h4 class="modal-title">IT'S TIME TO MAKE THIS TRANSIT FUTURE A REALITY</h4>
+      <p>Cook County, the county government around Chicago, is currently considering building these train and bus lines. <a href="/#funding">How it works.</a></p>
+
+      <p>Tell your County Commissioner that you want to make Transit Future a reality! To make your voice heard, simply submit your name, address, and e-mail.</p>
+      <p>This is a petition &ndash; we will never share your info with <strong>anyone</strong> but your elected representative.</p>
+
+      <!-- START FormAssembly Form -->
+      <div class="wFormContainer"  >
+      <div class="wForm" id="tfa_0-WRPR" dir="ltr">
+
+      <div class="codesection" id="code-tfa_0"></div>
+
+      <div class="row-fluid">
+         <div id="formLeft" class="span7">
+
+
+            <form method="post" action="http://www.tfaforms.com/responses/processor" class="hintsBelow labelsAbove" id="tfa_0">
+            <div id="tfa_1-D" class="oneField    ">
+            <label id="tfa_1-L" for="tfa_1" class="label preField reqMark">Full Name</label><br>
+            <div class="inputWrapper"><input type="text" id="tfa_1" name="tfa_1" value="" placeholder="" class="required"></div>
+            </div>
+            <div id="tfa_2-D" class="oneField">
+                <label id="tfa_2-L" for="tfa_2" class="label preField reqMark">Mailing Address</label><br>
+                <div id="locationField" class="inputWrapper" >
+                   <input type="text" class="required" placeholder="" value="" name="tfa_2" id="tfa_2" style="margin-bottom:0"><br />
+                   <small style="color:rgb(200,200,200); font-style:italic">Address, City</small>
+                </div>
+            </div>
+            <div id="tfa_4-D" class="oneField">
+            <label id="tfa_4-L" for="tfa_4" class="label preField reqMark">E-mail Address</label><br />
+                <div class="inputWrapper" style="margin-bottom:0.5em">
+                    <input type="text" id="tfa_4" name="tfa_4" value="" placeholder="" class="validate-email required">
+                </div>
+            </div>
+            <input type="hidden" id="tfa_3" name="tfa_3" value="" class="">
+
+            <div style="clear:both"></div>
+            <input type="hidden" value="335294" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="7a80517c4657deab0ca83f28500312c8" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="2" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+
+            <!-- END FormAssembly Form -->
+
+         </div>
+        <div id="commissionerInfo" class="span5"  style="text-align:center;"></div>
+      </div> <!-- end .row -->
+
+      <div class="actions" id="tfa_0-A"><input type="submit" class="btn btn-primary btn-lg primaryAction" value="Count me in!"></div>
+
+      </form>
+      </div></div> <!-- end wForm, wFormContainer -->
+
+
+      <!--<p class="small">By submitting above you agree to our <a href="#">privacy policy</a>.</p>-->
+      </div> <!-- end .modal-body -->
+      <!--
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+      -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ThankYouModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:hidden;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <!--<h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title">Thank you for supporting a new Chicago transit future</h4>
+        <p>You name has been added to our list of supporters, and we will notify your county commissioner about your support.  Every voice counts!</p>
+      </div>
+      </div>
+      <!--
+      <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
+<!-- END Modal -->
 
      {{ page.script }}
   </head>
@@ -39,6 +160,7 @@
           </polygon>
         </svg>
     </div>
+
 
   {{ content }}
 
