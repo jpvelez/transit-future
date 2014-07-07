@@ -516,6 +516,7 @@ var commissionerImages = {
 };
 
 $(function(){
+
    initialize();
 
    $("#tfa_2").on("keyup", function(e){
@@ -539,15 +540,22 @@ $(function(){
         return false;
     });
 
+    $("#tfa_2").on("blur", function(e){
+        delay(function(){
+
+          // load commissioner
+          findCommissionerFromAddress( $('#tfa_2').val() );
+        }, 1);
+    });
 });
 
 function findCommissionerFromAddress(address){
 
-      $('#commissionerInfo').fadeOut(function(){
-        $('#commissionerInfo').html('');
+    $('#commissionerInfo').fadeOut(function(){
+      $('#commissionerInfo').html('');
 
+      if (address.length > 5){   // we want at least 5 chars before calling the API
 
-      if (address.length > 5){   // we want at least 5 chars before call the API
          delay(function(){
             $.ajax({
                url: "https://www.googleapis.com/civicinfo/v1/representatives/lookup?key=AIzaSyDCmhSkgw-kNAabPl2Btt93RjB3CJHwNrc",
@@ -604,7 +612,7 @@ function findCommissionerFromAddress(address){
       } else {
         $('#commissionerInfo').html('');
       }
-      });
+    });
 }
 
 var delay = (function(){
@@ -643,7 +651,6 @@ function initialize() {
   // When the user selects an address from the dropdown,
   // populate the address fields in the form.
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
-  //google.maps.event.addListener(autocomplete, 'click', function() {
 
     var place = autocomplete.getPlace();
 
@@ -662,13 +669,8 @@ function initialize() {
         if (val.types[0] == "postal_code")                 zip           = val.long_name;
     });
     var streetString = street_number + ' ' + route + ', ' + city + ', ' + state + ' ' + zip;
-    delay(function(){
-      $('#tfa_2').val(streetString);
-
-      // load commissioner
-      findCommissionerFromAddress( $('#tfa_2').val() );
-    }, 100);
   });
+
 
   // load on init
   findCommissionerFromAddress( $('#tfa_2').val() );
