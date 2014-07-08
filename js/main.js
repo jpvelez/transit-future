@@ -1,6 +1,9 @@
 // BEGIN modal and hash code
 // thank you page after supporter form submission
 // (needs to be ahead of the "loading" screen)
+function resizeModal(){
+      $('.modal-body').css('height',$( window ).height()*0.7);
+}
 $(function(){
   if(window.location.hash) {
       var hash= window.location.hash.substring(1); //Puts hash in variable, and removes the # character
@@ -15,12 +18,17 @@ $(function(){
         $('#myModal').modal('show');
       }
    }
-   $('#myModal').on('show.bs.modal', function (e) {
+   $('#myModal').on('shown.bs.modal', function () {   //show.bs.modal doesn't work on init for some reason
       window.location.hash = '#I-Support-This';
+      resizeModal();
    })
-   $('#myModal').on('hide.bs.modal', function (e) {
+   $('#myModal').on('hide.bs.modal', function () {
       window.location.hash = '#';
    })
+   $( window ).resize(function() {  //shortcut fn for .on('resize')
+      resizeModal();
+   });
+   resizeModal(); // on init;
 });
 // END modal and hash code
 
@@ -519,18 +527,12 @@ $(function(){
 
    initialize();
 
-   $("#tfa_2").on("keyup", function(e){
-      //findCommissionerFromAddress( $(this).val() );
-   });
+   $('#commissionerInfo').html('');  //init
 
-   $('#commissionerInfo').html('');
-   //findCommissionerFromAddress( $("#tfa_2").val() ); //onLoad
 
-    $('#tfa_2').keypress(function(e){
-
-        if (e.keyCode == 10 || e.keyCode == 13)
-            e.preventDefault();
-
+    $('#tfa_2').keypress(function(event){
+        if (event.keyCode == 10 || event.keyCode == 13)
+            event.preventDefault();
       });
 
     $('#modalHowItWorks').click(function(e){
@@ -540,13 +542,14 @@ $(function(){
         return false;
     });
 
-    $("#tfa_2").on("blur", function(e){
+    $("#tfa_2").on("input", function(){
         delay(function(){
 
           // load commissioner
           findCommissionerFromAddress( $('#tfa_2').val() );
-        }, 1);
+        }, 500);
     });
+
 });
 
 function findCommissionerFromAddress(address){
@@ -556,7 +559,6 @@ function findCommissionerFromAddress(address){
 
       if (address.length > 5){   // we want at least 5 chars before calling the API
 
-         delay(function(){
             $.ajax({
                url: "https://www.googleapis.com/civicinfo/v1/representatives/lookup?key=AIzaSyDCmhSkgw-kNAabPl2Btt93RjB3CJHwNrc",
                type: 'post',
@@ -608,7 +610,7 @@ function findCommissionerFromAddress(address){
                   $('#commissionerInfo').html('');
                }
             });
-         }, 1 );   // delay before ajax call
+
       } else {
         $('#commissionerInfo').html('');
       }
@@ -639,23 +641,9 @@ var componentForm = {
   postal_code: 'short_name'
 };
 
-function initialize() {
-  // Create the autocomplete object, restricting the search
-  // to geographical location types.
-  autocomplete = new google.maps.places.Autocomplete(
-      (document.getElementById('tfa_2')),  /** @type {HTMLInputElement} */
-      { types: ['geocode'], location:'Chicago', radius: '100 miles', key: 'AIzaSyDCmhSkgw-kNAabPl2Btt93RjB3CJHwNrc' }
-  );
-  //autocomplete.setComponentRestrictions({ state: 'il'  });
-
-  // When the user selects an address from the dropdown,
-  // populate the address fields in the form.
-  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+function cleanAddress(autocomplete){
 
     var place = autocomplete.getPlace();
-
-    console.log(place);
-
     var street_number = '';
     var route         = '';
     var city          = '';
@@ -669,6 +657,26 @@ function initialize() {
         if (val.types[0] == "postal_code")                 zip           = val.long_name;
     });
     var streetString = street_number + ' ' + route + ', ' + city + ', ' + state + ' ' + zip;
+    delay(function(){
+      $('#tfa_2').val(streetString);
+    }, 100);
+
+}
+
+function initialize() {
+  // Create the autocomplete object, restricting the search
+  // to geographical location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      (document.getElementById('tfa_2')),  /** @type {HTMLInputElement} */
+      { types: ['geocode'], location:'Chicago', radius: '100 miles', key: 'AIzaSyDCmhSkgw-kNAabPl2Btt93RjB3CJHwNrc' }
+  );
+  //autocomplete.setComponentRestrictions({ state: 'il'  });
+
+  // When the user selects an address from the dropdown,
+  // populate the address fields in the form.
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
+    cleanAddress(autocomplete);
   });
 
 

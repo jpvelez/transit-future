@@ -1656,6 +1656,7 @@ img.progicons {
     margin-top: 15px;
     padding: 0 25px 15px;
     max-height: 532px;
+    overflow-y:auto;
 }
 
 .modal-body a {
@@ -1829,7 +1830,6 @@ h4.modal-title {
         width:99%;
     }
 }
-
 
 
 /* BEGIN Google Location Autocomplete */
