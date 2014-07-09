@@ -542,13 +542,16 @@ $(function(){
         return false;
     });
 
+
     $("#tfa_2").on("input, change, keyup", function(){
+
         delay(function(){
 
           // load commissioner
           findCommissionerFromAddress( $('#tfa_2').val() );
         }, 500);
     });
+
 /*
     $('#tfa_0').submit(function(){
 
@@ -560,6 +563,7 @@ $(function(){
       return false;
     });
 */
+
 });
 
 function findCommissionerFromAddress(address){
@@ -571,6 +575,7 @@ function findCommissionerFromAddress(address){
       $('#tfa_3').val('');
 
       if (address.length > 5){   // we want at least 5 chars before calling the API
+
          delay(function(){
          return $.ajax({
             url: "https://www.googleapis.com/civicinfo/v1/representatives/lookup?key=AIzaSyDCmhSkgw-kNAabPl2Btt93RjB3CJHwNrc",
@@ -604,6 +609,7 @@ function findCommissionerFromAddress(address){
                   if (typeof wantedOfficalInfo['emails'] !== 'undefined') {
                       if (typeof wantedOfficalInfo['emails'][0] !== 'undefined') {
                          var commissionerEmail = wantedOfficalInfo['emails'][0]; // eg., "County Commissioner, District 8"
+
                      }
                   }
 
@@ -617,9 +623,11 @@ function findCommissionerFromAddress(address){
                      $('#commissionerInfo').fadeIn();
                   }
                }
+
             }
          });  // END .done()
          }, 300);
+
       }
    });
 }
@@ -684,6 +692,7 @@ function initialize() {
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
 
     //cleanAddress(autocomplete);
+
   });
 
 
