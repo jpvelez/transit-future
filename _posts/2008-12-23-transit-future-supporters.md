@@ -63,6 +63,7 @@ section: supporters
 [![Claretian Associates](img/supporters/claretian_associates.jpg)](http://www.claretianassociates.org/index.html)
 [![CNU](img/supporters/cnu.jpg)](https://www.cnu.org/)
 [![Delta Associates](img/supporters/deltalogo.jpg)](http://www.delta-institute.org/)
+[![DePaul Chaddick](img/supporters/depaul/jpg)](https://las.depaul.edu/centers-and-institutes/chaddick-institute-for-metropolitan-development/pages/default.aspx)
 [![Developing Communities Project](img/supporters/dcp.jpg)](http://www.dcpchicago.org/)
 [![Enlace Chicago](img/supporters/enlacelogo.jpg)](http://enlacechicago.org/)
 [![Environmental Defenders of McHenry County](img/supporters/edmc_logo.jpg)](http://www.mcdef.org/)
