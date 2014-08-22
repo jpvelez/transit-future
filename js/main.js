@@ -529,7 +529,6 @@ $(function(){
 
    $('#commissionerInfo').html('');  //init
 
-
     $('#tfa_2').keypress(function(event){
         if (event.keyCode == 10 || event.keyCode == 13)
             event.preventDefault();
@@ -542,12 +541,10 @@ $(function(){
         return false;
     });
 
-
     $("#tfa_2").on("input, change, keyup", function(){
 
+        // load commissioner
         delay(function(){
-
-          // load commissioner
           findCommissionerFromAddress( $('#tfa_2').val() );
         }, 500);
     });
@@ -690,6 +687,11 @@ function initialize() {
   // When the user selects an address from the dropdown,
   // populate the address fields in the form.
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
+      // load commissioner
+      delay(function(){
+        findCommissionerFromAddress( $('#tfa_2').val() );
+      }, 250);
 
     //cleanAddress(autocomplete);
 
