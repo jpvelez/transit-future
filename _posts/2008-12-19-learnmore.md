@@ -19,7 +19,7 @@ section: supporters
 <br><br><br><br>
 # Contact
 
-## If your organization wants to join the campaign, contact [Edward Oser](mailto:eoser@cnt.org).
+## If your organization wants to join the campaign, contact [Jacky Grimshaw](mailto:jacky@cnt.org).
 
 ## Member of the media? Contact [Ryan Kilpatrick](mailto:rkilpatrick@cnt.org).
 
