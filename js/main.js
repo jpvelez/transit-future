@@ -339,6 +339,7 @@ $(function(){
 
 });
 
+
 function setCurrentView(current_view){
 
   // if view is defined with [south,west,north,east] bounds, calculate lat,lng,zoom
@@ -499,7 +500,15 @@ if (!Array.prototype.indexOf)
   };
 }
 
+// Supporter buttons
+$(function(){
+    $('.btn_supportbutton').on('click', function(){
+        //like if you click on a link (it will be saved in the session history, so back button will work as expected)
+        window.location.href = "http://atrana.convio.net/site/Survey?ACTION_REQUIRED=URI_ACTION_USER_REQUESTS&SURVEY_ID=1922";
+    });
+});
 
+/*
 // BEGIN AJAX Google Civic Information API Call
 
 var commissionerImages = {
@@ -549,17 +558,17 @@ $(function(){
         }, 500);
     });
 
-/*
-    $('#tfa_0').submit(function(){
 
-      // in case the commissioner ajax hasn't been run yet
-      if ($("#tfa_3").val() == '' ) {
-         return findCommissionerFromAddress( $('#tfa_2').val() );
-         alert('1');
-      }
-      return false;
-    });
-*/
+//    $('#tfa_0').submit(function(){
+//
+//      // in case the commissioner ajax hasn't been run yet
+//      if ($("#tfa_3").val() == '' ) {
+//         return findCommissionerFromAddress( $('#tfa_2').val() );
+//         alert('1');
+//      }
+//      return false;
+//    });
+
 
 });
 
@@ -679,7 +688,7 @@ function initialize() {
   // Create the autocomplete object, restricting the search
   // to geographical location types.
   autocomplete = new google.maps.places.Autocomplete(
-      (document.getElementById('tfa_2')),  /** @type {HTMLInputElement} */
+      (document.getElementById('tfa_2')),  // @type {HTMLInputElement}
       { types: ['geocode'], location:'Chicago', radius: '100 miles', key: 'AIzaSyDCmhSkgw-kNAabPl2Btt93RjB3CJHwNrc' }
   );
   //autocomplete.setComponentRestrictions({ state: 'il'  });
@@ -704,5 +713,6 @@ function initialize() {
 
 // END Google Location Autocomplete
 ////////////////////////////////////
+*/
 
 
