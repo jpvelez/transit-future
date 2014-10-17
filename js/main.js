@@ -504,7 +504,7 @@ if (!Array.prototype.indexOf)
 $(function(){
     $('.btn_supportbutton').on('click', function(){
         //like if you click on a link (it will be saved in the session history, so back button will work as expected)
-        window.location.href = "http://atrana.convio.net/site/Survey?ACTION_REQUIRED=URI_ACTION_USER_REQUESTS&SURVEY_ID=1922";
+        window.open("http://atrana.convio.net/site/Survey?ACTION_REQUIRED=URI_ACTION_USER_REQUESTS&SURVEY_ID=1922", "_blank");
     });
 });
 
