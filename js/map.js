@@ -14,7 +14,7 @@ function main(){
   // Define a basemap
   // We're using a Mapbox basemap, and Mapbox.js to make fetch it easy.
   //var basemap = mapbox.layer().id('jpvelez.map-h88danj5');
-  var basemap_temp = new MM.Template('http://transit-cache.herokuapp.com/mb/{Z}/{X}/{Y}.png');
+  var basemap_temp = new MM.Template('http://a.tiles.mapbox.com/v3/jpvelez.map-h88danj5/{Z}/{X}/{Y}.png');
   var basemap = new MM.Layer(basemap_temp);
 
   // Create a map in the map container, using the basemap.
@@ -38,23 +38,39 @@ document.body.appendChild(s);
 
   // Add base layers for transit future projects, art projects, and exiting L lines.
   // Uses the CartoDB SQL API to get back specifically styled tilsets. That's all defined below.
-  var template_art = new MM.Template('http://transit-cache.herokuapp.com/tiles/art_revised/{Z}/{X}/{Y}.png?sql='
-    + escape(map_data.layers[2].options.sql)
-    + '&style=' + escape(map_data.layers[2].options.cartocss));
-  var layer_art = new MM.Layer(template_art);
-  map.addLayer(layer_art);
 
-  var template_rail = new MM.Template('http://transit-cache.herokuapp.com/tiles/cta_rail_updated_cartodb/{Z}/{X}/{Y}.png?sql='
-    + escape(map_data.layers[1].options.sql)
-    + '&style=' + escape(map_data.layers[1].options.cartocss));
-  var layer_rail = new MM.Layer(template_rail);
-  map.addLayer(layer_rail);
+  function addConfigMap(table, css) {
+    var mapConfig = {
+      "version": "1.3.1",
+      "layers": [{
+        "type": "cartodb",
+        "options": {
+          "sql": "select * from " + table,
+          "cartocss": css,
+          "cartocss_version":"2.1.1"
+        }
+      }]
+    };
 
-  var template_future = new MM.Template('http://transit-cache.herokuapp.com/tiles/transit_future_projects_updated/{Z}/{X}/{Y}.png?sql='
-    + escape(map_data.layers[0].options.sql)
-    + '&style=' + escape(map_data.layers[0].options.cartocss));
-  var layer_future = new MM.Layer(template_future);
-  map.addLayer(layer_future);
+    $.ajax({
+      crossOrigin: true,
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json',
+      url: 'https://jpvelez.cartodb.com/api/v1/map',
+      data: JSON.stringify(mapConfig),
+      success: function(data) {
+        var templateUrl = 'https://jpvelez.cartodb.com/api/v1/map/' + data.layergroupid + '/{Z}/{X}/{Y}.png'
+        var template_art = new MM.Template(templateUrl);
+        var layer_art = new MM.Layer(template_art);
+        map.addLayer(layer_art);
+      }
+    });
+  }
+
+  addConfigMap("art_revised", "#art_revised{\nline-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 6,5;\nline-opacity: .35\n}");
+  addConfigMap("transit_future_projects_updated", "#transit_future_projects_updated{\nline-width: 5;\nline-join: round;\nline-cap: round;\n[type='Rapid Transit']{\n  line-color: #f84f40;\n}\n[type='Commuter Rail']{\n  line-color: #2e5387;\n}\n[type='BRT']{\n  line-color: #229A00;\n}\n [cartodb_id=1]{\nline-color: #5EEA8C;\n}\n [cartodb_id=2]{\nline-color:  #F37537;\n}\n[cartodb_id=3]{\nline-color:  #74BBE7;\n}\n [cartodb_id=4]{\n  line-color:  #EA5854;\n}\n[cartodb_id=5]{\n  line-color:  #FEE800;\n}\n[cartodb_id=6]{\n  line-color: #73451C;\n}\n[cartodb_id=7]{\n  line-color:  #74BBE7;\n}\n[cartodb_id=8]{\n  line-color:  grey;\n}\n[cartodb_id=9]{\n  line-color:  #9A51A0 ;\n}\n[cartodb_id=10]{\n  line-color:  #EA5854;\n  line-width: 3;\n[cartodb_id=10]::offset{\nline-color: #823393;\n  line-offset: 4;\n  line-width: 3;\n  line-cap: round;\nline-join: round;\n}\n}\n[cartodb_id=11]{\nline-color:  blue;\n}\n[cartodb_id=12]{\nline-color:  #74BBE7;\n}\n[cartodb_id=13]{\nline-color:  #E0CE4B;\n}\n[cartodb_id=14]{\nline-color:  grey;\n}\n[cartodb_id=15]{\nline-color:  #823393;\n}\n[cartodb_id=16]{\nline-color:  #74BBE7;\n}\n}");
+  addConfigMap("cta_rail_updated_cartodb", "#cta_rail_updated_cartodb{ \n line-width: 5;\nline-cap: round;\nline-join: round;\n[name_new='Red'] {\nline-color: #EA5854;\n}\n[name_new='Brown'] {\nline-color: #73451C;\n}\n[name_new='Pink'] {\nline-color: #F38CB4;\n}\n[name_new='Purple'] {\nline-color: #823393;\n}\n[name_new='Yellow'] {\nline-color: #FEE800;\n}\n[name_new='Blue'] {\nline-color: #74BBE7;\n}\n[name_new='Orange'] {\nline-color: #F37537;\n}\n[name_new='Green'] {\nline-color: #1DAA4D;\n}\n}");
 
   verifyMap();
   verifyMapTimer = setInterval(verifyMap, 300);
@@ -163,437 +179,13 @@ var accept_layers = ["transit_future_projects_updated","cta_rail_updated_cartodb
 // Define transit line layer styles to be fetched above using CartoDB API.
 // You define what features to show using a PostgreSQL-like query.
 // You define how to style those features using CartoCSS.
-var map_data = {
-  "version":"1.0.1",
-  "stat_tag":"f1e3cbd2-a15f-11e3-8d43-0edbca4b5057",
-  "layers":[
-    {
-      "type":"cartodb",
-      "options":{
-        "sql":"select * from transit_future_projects_updated",
-        "cartocss": "#transit_future_projects_updated{\nline-width: 5;\nline-join: round;\nline-cap: round;\n[type='Rapid Transit']{\n  line-color: #f84f40;\n}\n[type='Commuter Rail']{\n  line-color: #2e5387;\n}\n[type='BRT']{\n  line-color: #229A00;\n}\n [cartodb_id=1]{\nline-color: #5EEA8C;\n}\n [cartodb_id=2]{\nline-color:  #F37537;\n}\n[cartodb_id=3]{\nline-color:  #74BBE7;\n}\n [cartodb_id=4]{\n  line-color:  #EA5854;\n}\n[cartodb_id=5]{\n  line-color:  #FEE800;\n}\n[cartodb_id=6]{\n  line-color: #73451C;\n}\n[cartodb_id=7]{\n  line-color:  #74BBE7;\n}\n[cartodb_id=8]{\n  line-color:  grey;\n}\n[cartodb_id=9]{\n  line-color:  #9A51A0 ;\n}\n[cartodb_id=10]{\n  line-color:  #EA5854;\n  line-width: 3;\n[cartodb_id=10]::offset{\nline-color: #823393;\n  line-offset: 4;\n  line-width: 3;\n  line-cap: round;\nline-join: round;\n}\n}\n[cartodb_id=11]{\nline-color:  blue;\n}\n[cartodb_id=12]{\nline-color:  #74BBE7;\n}\n[cartodb_id=13]{\nline-color:  #E0CE4B;\n}\n[cartodb_id=14]{\nline-color:  grey;\n}\n[cartodb_id=15]{\nline-color:  #823393;\n}\n[cartodb_id=16]{\nline-color:  #74BBE7;\n}\n}",
-        "cartocss_version":"2.1.1"
-      }
-    },
-    {
-      "type":"cartodb",
-      "options":{
-        "sql":"select * from cta_rail_updated_cartodb",
-        "cartocss":"#cta_rail_updated_cartodb{ \n line-width: 5;\nline-cap: round;\nline-join: round;\n[name_new='Red'] {\nline-color: #EA5854;\n}\n[name_new='Brown'] {\nline-color: #73451C;\n}\n[name_new='Pink'] {\nline-color: #F38CB4;\n}\n[name_new='Purple'] {\nline-color: #823393;\n}\n[name_new='Yellow'] {\nline-color: #FEE800;\n}\n[name_new='Blue'] {\nline-color: #74BBE7;\n}\n[name_new='Orange'] {\nline-color: #F37537;\n}\n[name_new='Green'] {\nline-color: #1DAA4D;\n}\n}",
-        "cartocss_version":"2.1.1"
-      }
-    },
-    {
-      "type":"cartodb",
-      "options":{
-        "sql":"select * from art_revised",
-        "cartocss":"#art_revised{\nline-width: 2;\nline-cap: round;\nline-join: round;\nline-color: #055D00;\nline-dasharray: 6,5;\nline-opacity: .35\n}",
-        "cartocss_version":"2.1.1"
-      }
-    }
-  ]
-};
+var map_data = {};
 
 // store a CartoCSS string for each state
 // can contain multiple styles / zoom levels
 // only styling #transit_future_projects_updated and not existing L line layer
 var layer_states = {
-  gold_line: "#transit_future_projects_updated{"
-    + "[cartodb_id=13]{"
-    + "  line-color: #F3DE71;"
-    + "  line-width: 8;"
-    + "}"
-    + "}",
-  gold_line_closeup: "#tf_areas_campuses{"
-    + "polygon-fill: #FF2900;"
-    + "polygon-opacity: .035;"
-    + "line-color: #000000;"
-    + "line-width: 1.5;"
-    + "line-opacity: .3;"
-    + "}",
-  ashland: "#transit_future_projects_updated{"
-    + "[cartodb_id=11]{"
-    + "  line-color: blue;"
-    + "  line-width: 8;"
-    + "}"
-    + "}",
-  ashland_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=1],"
-    + "[cartodb_id=3],"
-    + "[cartodb_id=6],"
-    + "[cartodb_id=9],"
-    + "[cartodb_id=12],"
-    + "[cartodb_id=22],"
-    + "[cartodb_id=23],"
-    + "[cartodb_id=24],"
-    + "[cartodb_id=45],"
-    + "[cartodb_id=19]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-  ashland_closeup: "#tf_areas_campuses{"
-    + "polygon-fill: #FF2900;"
-    + "polygon-opacity: .035;"
-    + "line-color: #000000;"
-    + "line-width: 1.5;"
-    + "line-opacity: .3;"
-    + "}",
-  lime_line: "#transit_future_projects_updated{"
-    + "[cartodb_id=1]{"
-    + "line-color: lime;"
-    + "line-width: 8;"
-    + "}"
-    + "}",
-  lime_line_connections: "#transitfuture_connections_brt{"
-    + "[type='Lime_Line_Connection']{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-  orange_line_extension: "#transit_future_projects_updated{"
-    + "[cartodb_id=2]{"
-    + "line-color: #F37537;"
-    + "line-width: 8;"
-    + "}"
-    + "}",
-  red_line_extension: "#transit_future_projects_updated{"
-    + "[cartodb_id=4]{"
-    + "line-color: #EA5854;"
-    + "line-width: 8;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "}"
-    + "}",
-  blue_line_modernization: "#transit_future_projects_updated{"
-    + "[cartodb_id=16]{"
-    + "line-color: #74BBE7;"
-    + "line-width: 8;"
-    + "line-join: round;"
-    + "line-cap: round;"
-    + "}"
-    + "}",
-  blue_line_ext_oak_brook: "#transit_future_projects_updated{"
-     + "[cartodb_id=3]{"
-     + "line-color: #74BBE7;"
-     + "line-width: 8;"
-     + "line-join: round;"
-     + "line-cap: round;"
-     + "}"
-    + "}",
-  blue_line_oak_brook_nabe: "#tf_areas_campuses{"
-    + "[cartodb_id=7]{"
-    + "polygon-fill: #FF2900;"
-    + "polygon-opacity: .035;"
-    + "line-color: #000000;"
-    + "line-width: 1.5;"
-    + "line-opacity: .3;"
-    + "}"
-    + "}",
-  blue_line_oak_brook_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=54],"
-    + "[cartodb_id=53],"
-    + "[cartodb_id=52],"
-    + "[cartodb_id=51],"
-    + "[cartodb_id=50]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-  blue_line_ext_schaumburg: "#transit_future_projects_updated{"
-    + "[cartodb_id=7]{"
-    + "line-color: #74BBE7;"
-    + "line-width: 8;"
-    + "line-join: round;"
-    + "line-cap: round;"
-    + "}"
-    + "}",
-  blue_line_schaumburg_nabe: "#tf_areas_campuses{"
-    + "[cartodb_id=6]{"
-    + "polygon-fill: #FF2900;"
-    + "polygon-opacity: .035;"
-    + "line-color: #000000;"
-    + "line-width: 1.5;"
-    + "line-opacity: .3;"
-    + "}"
-    + "}",
-  blue_line_schaumburg_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=35],"
-    + "[cartodb_id=34]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-  blue_line_ohare: "#tf_airports{"
-    + "polygon-fill: #FF2900;"
-    + "polygon-opacity: .035;"
-    + "line-color: #000000;"
-    + "line-width: 1.5;"
-    + "line-opacity: .3;"
-    + "}",
-  ace: "#transit_future_projects_updated{"
-    + "[cartodb_id=9]{"
-    + "line-color: #9A51A0;"
-    + "line-width: 8;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "}"
-    + "}",
-  ace_airports: "#tf_airports{"
-    + "polygon-fill: #FF2900;"
-    + "polygon-opacity: .035;"
-    + "line-color: #000000;"
-    + "line-width: 1.5;"
-    + "line-opacity: .3;"
-    + "}",
-  ace_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=55],"
-    + "[cartodb_id=36],"
-    + "[cartodb_id=37],"
-    + "[cartodb_id=38],"
-    + "[cartodb_id=41],"
-    + "[cartodb_id=42],"
-    + "[cartodb_id=43],"
-    + "[cartodb_id=18]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-  brown_line_extension: "#transit_future_projects_updated{"
-    + "[cartodb_id=6]{"
-    + "line-color: #73451C;"
-    + "line-width: 8;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "}"
-    + "}",
-  brown_line_nabes: "#tf_areas_campuses{"
-    + "[cartodb_id=8],"
-    + "[cartodb_id=9],"
-    + "[cartodb_id=10]{"
-    + "polygon-fill: #FF2900;"
-    + "polygon-opacity: .035;"
-    + "line-color: #000000;"
-    + "line-width: 1.5;"
-    + "line-opacity: .3;"
-    + "}"
-    + "}",
-  brown_line_connections: "#transitfuture_connections_brt{"
-    + "[type='BrownBlueConnection']{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-  red_line_modernization: "#transit_future_projects_updated{"
-    + "[cartodb_id=10]{"
-    + "line-color: #EA5854;"
-    + "line-width: 8;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "}"
-    + "}",
-  yellow_line: "#transit_future_projects_updated{"
-    + "[cartodb_id=5]{"
-    + "line-color: #FEE800;"
-    + "line-width: 10;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "}"
-    + "}",
-  yellow_line_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=29],"
-    + "[cartodb_id=30]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-  purple_line_modernization: "#transit_future_projects_updated{"
-    + "[cartodb_id=15]{"
-    + "line-color: #823393;"
-    + "line-width: 8;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "}"
-    + "}",
-  purple_line_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=31],"
-    + "[cartodb_id=32]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-  downtown: "",
-  southeast: "#transit_future_projects_updated{"
-    + "[cartodb_id=8]{"
-    + "line-color: grey;"
-    + "line-width: 8;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "}"
-    + "}",
-  southeast_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=20],"
-    + "[cartodb_id=47],"
-    + "[cartodb_id=48],"
-    + "[cartodb_id=49]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-  art_north: "#art_revised{"
-    + "[art_region='north']{"
-    + "line-color: #055D00;"
-    + "line-width: 3;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "line-dasharray: 6, 5;"
-    + "}"
-    + "}",
-  art_south: "#art_revised{"
-    + "[art_region='south']{"
-    + "line-color: #055D00;"
-    + "line-width: 3;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "line-dasharray: 6, 5;"
-    + "}"
-    + "}",
-  art_west: "#art_revised{"
-    + "[art_region='west']{"
-    + "line-color: #055D00;"
-    + "line-width: 3;"
-    + "line-cap: round;"
-    + "line-join: round;"
-    + "line-dasharray: 6, 5;"
-    + "}"
-    + "}",
-  art_south_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=18],"
-    + "[cartodb_id=43],"
-    + "[cartodb_id=45],"
-    + "[cartodb_id=46],"
-    + "[cartodb_id=47],"
-    + "[cartodb_id=48],"
-    + "[cartodb_id=49]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-art_north_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=29],"
-    + "[cartodb_id=30],"
-    + "[cartodb_id=31],"
-    + "[cartodb_id=32],"
-    + "[cartodb_id=26],"
-    + "[cartodb_id=27],"
-    + "[cartodb_id=55],"
-    + "[cartodb_id=34],"
-    + "[cartodb_id=35]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
-art_west_connections: "#transitfuture_connections_brt{"
-    + "[cartodb_id=36],"
-    + "[cartodb_id=37],"
-    + "[cartodb_id=39],"
-    + "[cartodb_id=40],"
-    + "[cartodb_id=41],"
-    + "[cartodb_id=42],"
-    + "[cartodb_id=43],"
-    + "[cartodb_id=50],"
-    + "[cartodb_id=51],"
-    + "[cartodb_id=52],"
-    + "[cartodb_id=53],"
-    + "[cartodb_id=54]{"
-    + "marker-placement: point;"
-    + "marker-type: ellipse;"
-    + "marker-allow-overlap: true;"
-    + "marker-line-color: #000000;"
-    + "marker-line-opacity: 1;"
-    + "marker-line-width: 3;"
-    + "marker-fill: #FFFFFF;"
-    + "marker-opacity: 1;"
-    + "marker-width: 6;"
-    + "}"
-    + "}",
+
 };
 
 // Ease around the map as you scroll through the project posts.
